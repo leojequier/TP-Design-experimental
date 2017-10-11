@@ -1,23 +1,21 @@
-t0 = read.csv("C:/Users/leoje/Dropbox/Uni/Desing expérimental/ExpDes_TP/Data_csv/T0.csv",header = T)
+
 #charger les données
+path = "C:/Users/leoje/Dropbox/Uni/Desing expérimental/ExpDes_TP/Data_csv/T"
 List = vector(mode = "list", length = 8)
 csv = c()
-for(i in 1:7){
-  csv[i] = paste("C:/Users/leoje/Dropbox/Uni/Desing expérimental/ExpDes_TP/Data_csv/T",i,".csv", sep = "")
-  assign(paste("t" , i, sep = ""), read.csv(csv[i], header = T)) 
-}
-#version 2
 for(i in 1:8){
   List[[i]]= paste("T" , i-1, sep = "")
-  csv[i] = paste("C:/Users/leoje/Dropbox/Uni/Desing expérimental/ExpDes_TP/Data_csv/T",i-1,".csv", sep = "")
+  csv[i] = paste(path,i-1,".csv", sep = "")
   assign(paste("T" , i-1, sep = ""), read.csv(csv[i], header = T)) 
 }
-#echanger A5,6,7 avec E5,6,7 version 2
-x1 = List[[2]][40:48,]
+
+#echanger A5,6,7 avec E5,6,7 pour T1
 x1 = T1[40:48,]
 y1 = T1[64:72,]
 T1[40:48,] = y1
 T1[64:72,] = x1
+T1$Well.ID[40:48] = rep(c("A5", "A6", "A7"),times = 3)
+T1$Well.ID[64:72] = rep(c("E5", "E6", "E7"),times = 3)
 
 #t0 % 10 et T1
 T0$All.Abs..Count = T0$All.Abs..Count/10
@@ -26,14 +24,6 @@ T0$SYTO.9.Abs..Count = T0$SYTO.9.Abs..Count/10
 T1$All.Abs..Count = T1$All.Abs..Count/10
 T1$mChe.SYTO.9.Abs..Count = T1$mChe.SYTO.9.Abs..Count/10
 T1$SYTO.9.Abs..Count = T1$SYTO.9.Abs..Count/10
-
-#t1, échangé A5,6,7 avec E 5,6,7
-x= t1[40:48,]
-y = t1[64:72,]
-t1[40:48,] = y
-t1[64:72,] = x
-t1$Well.ID[40:48] = rep(c("A1", "A2", "A3"),times = 3)
-t1$Well.ID[64:72] = rep(c("E1", "E2", "E3"),times = 3)
 
 #noms de traitements: Toluène vs mix C, SC vs PP vs PPSC, replicat
 mil = rep(c("MixC","Tolu" ), each = 9)
@@ -87,7 +77,7 @@ for(i in 1:8){
     #parcours syto 2 en ligne, prend les comptes absolu syto9 de T[i] qui ont le nom lech[j] (deux replicat tech) et fait une moyenne 
   }}
 
-#graphiques
+#graphiques SYTO-9
 par(mfrow = c(3,3))
 for(i in 2:10){
   plot(syto2[,1],syto2[,i], log = "y", main = List_treat[[i-1]], xlab = "time[h]", ylab = "SYTO-9 count")
@@ -118,6 +108,16 @@ for(i in 1:8){
     
   }}
 
+#graphiques
+par(mfrow = c(3,3))
+for(i in 2:10){
+  plot(cher[,1],cher[,i], log = "y", main = List_treat[[i-1]], xlab = "time[h]", ylab = "mChe count")
+}
+
+for(i in 11:19){
+  plot(cher[,1],cher[,i], log = "y", main = List_treat[[i-1]],xlab = "time[h]", ylab = "mChe count")
+}
+
 ### ------------------------------------------------ALL- ABSOLUT COUNT
 #créer le data frame pour acceuillir les données
 absol = data.frame(time, List_treat)
@@ -136,3 +136,29 @@ for(i in 1:8){
     
   }}
 
+#graphiques
+par(mfrow = c(3,3))
+for(i in 2:10){
+  plot(absol[,1],absol[,i], log = "y", main = List_treat[[i-1]], xlab = "time[h]", ylab = "Absolut count")
+}
+
+for(i in 11:19){
+  plot(absol[,1],absol[,i], log = "y", main = List_treat[[i-1]],xlab = "time[h]", ylab = "Absolut count")
+}
+
+#puissance stat 
+SC_t6_mixC_syto9 = c(syto2$MixCSC1[syto2$time == 43],syto2$MixCSC2[syto2$time == 43],syto2$MixCSC3[syto2$time == 43] )
+
+PP_t6_mixC_mChe = c(cher$ToluPP1[cher$time == 43],cher$ToluPP2[cher$time == 43],cher$ToluPP3[cher$time == 43] )
+
+SC_t6_Tol_syto9 = c(syto2$ToluSC1[syto2$time == 43],syto2$ToluSC2[syto2$time == 43],syto2$ToluSC3[syto2$time == 43] )
+
+PP_t6_Tol_mChe = c(cher$ToluPP1[cher$time == 43],cher$ToluPP2[cher$time == 43],cher$ToluSC3[cher$time == 43])
+
+var(SC_t6_mixC_syto9)
+
+var(PP_t6_Tol_mChe)
+
+var(PP_t6_mixC_mChe)
+
+var(SC_t6_Tol_syto9)
