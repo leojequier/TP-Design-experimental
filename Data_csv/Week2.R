@@ -83,7 +83,7 @@ for(i in 1:18){
 time = c(0, 14, 17, 20, 34, 39, 42 ,45 )
 
 #création du data.frame stained
-syto_stained = data.frame(time, MixCPV1)
+syto_stained = data.frame(time, MixCPV_stained1)
 for(i in 2:18){
   data_stained = get(List_treat_stained[[i]])
   syto_stained[,i+1] = data_stained
@@ -91,7 +91,7 @@ for(i in 2:18){
 names(syto_stained) = c("time", List_treat_stained)
 
 #création du data.frame UNstained
-syto_unstained = data.frame(time, MixCPV1)
+syto_unstained = data.frame(time, MixCPV_unstained1)
 for(i in 2:18){
   data_unstained = get(List_treat_unstained[[i]])
   syto_unstained[,i+1] = data_unstained
@@ -135,11 +135,11 @@ for(i in 1:8){
 #graphiques SYTO-9
 par(mfrow = c(3,3))
 for(i in 2:10){
-  plot(syto_stained[,1],syto_stained[,i], log = "y", main = List_treat_stained[[i-1]], xlab = "time[h]", ylab = "SYTO-9 count")
+  plot(syto_stained[,1],syto_stained[,i], log = "y", ylim = c(min(syto_unstained[,2:10]), max(syto_unstained[,2:10])),main = List_treat_stained[[i-1]], xlab = "time[h]", ylab = "SYTO-9 count")
 }
 
 for(i in 11:19){
-  plot(syto_stained[,1],syto_stained[,i], log = "y", main = List_treat_stained[[i-1]],xlab = "time[h]", ylab = "SYTO-9 count")
+  plot(syto_stained[,1],syto_stained[,i], log = "y", ylim = c(min(syto_unstained[,2:10]), max(syto_unstained[,2:10])),main = List_treat_stained[[i-1]],xlab = "time[h]", ylab = "SYTO-9 count")
 }
 
 #-------------------------------mCHE_stained
@@ -163,11 +163,11 @@ for(i in 1:8){
 
 par(mfrow = c(3,3))
 for(i in 2:10){
-  plot(cher_stained[,1],cher_stained[,i], log = "y", main = List_treat_stained[[i-1]], xlab = "time[h]", ylab = "mChe count")
+  plot(cher_stained[,1],cher_stained[,i], log = "y", ylim = c(min(cher_stained[,2:10]), max(cher_stained[,2:10])),main = List_treat_stained[[i-1]], xlab = "time[h]", ylab = "mChe count")
 }
 
 for(i in 11:19){
-  plot(cher_stained[,1],cher_stained[,i], log = "y", main = List_treat_stained[[i-1]],xlab = "time[h]", ylab = "mChe count")
+  plot(cher_stained[,1],cher_stained[,i], log = "y",ylim = c(min(cher_stained[,2:10]), max(cher_stained[,2:10])), main = List_treat_stained[[i-1]],xlab = "time[h]", ylab = "mChe count")
 }
 
 
@@ -194,11 +194,11 @@ for(i in 1:8){
 
 par(mfrow = c(3,3))
 for(i in 2:10){
-  plot(cher_unstained[,1],cher_unstained[,i], log = "y", main = List_treat_unstained[[i-1]], xlab = "time[h]", ylab = "mChe count")
+  plot(cher_unstained[,1],cher_unstained[,i], log = "y",ylim = c(min(cher_unstained[,2:10]), max(cher_unstained[,2:10])), main = List_treat_unstained[[i-1]], xlab = "time[h]", ylab = "mChe count")
 }
 
 for(i in 11:19){
-  plot(cher_unstained[,1],cher_unstained[,i], log = "y", main = List_treat_unstained[[i-1]],xlab = "time[h]", ylab = "mChe count")
+  plot(cher_unstained[,1],cher_unstained[,i], log = "y",ylim = c(min(cher_unstained[,2:10]), max(cher_unstained[,2:10])), main = List_treat_unstained[[i-1]],xlab = "time[h]", ylab = "mChe count")
 }
 
 
