@@ -1,7 +1,7 @@
 
 #charger les données, après avoir fait session, set working directory, to source file location
 path = "T"
-List = vector(mode = "list", length = 8)
+List = vector(mode = "list", length = 8) #sorte de liste qui peut contenir des variables
 csv = c()
 for(i in 1:8){
   List[[i]]= paste("T" , i-1, sep = "")
@@ -73,7 +73,7 @@ for(i in 1:18){
   assign(List_treat[[i]], rep(NA, times = 8))
 }
 
-#vecteur contenant le temps
+#vecteur contenant le temps en heure
 time = c(0, 12, 15, 18,24, 39,43 ,48 )
 
 #creer le dataframe a proprement parler
@@ -186,4 +186,6 @@ var(PP_t6_Tol_mChe)
 var(PP_t6_mixC_mChe)
 
 var(SC_t6_Tol_syto9)
+
+
 
