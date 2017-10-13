@@ -1,6 +1,6 @@
 
-#charger les données
-path = "C:/Users/leoje/Dropbox/Uni/Desing expérimental/ExpDes_TP/Data_csv/T"
+#charger les donn?es
+path = "C:/Users/leoje/Dropbox/Uni/Desing exp?rimental/ExpDes_TP/Data_csv/T"
 List = vector(mode = "list", length = 8)
 csv = c()
 for(i in 1:8){
@@ -25,7 +25,7 @@ T1$All.Abs..Count = T1$All.Abs..Count/10
 T1$mChe.SYTO.9.Abs..Count = T1$mChe.SYTO.9.Abs..Count/10
 T1$SYTO.9.Abs..Count = T1$SYTO.9.Abs..Count/10
 
-#noms de traitements: Toluène vs mix C, SC vs PP vs PPSC, replicat
+#noms de traitements: Tolu?ne vs mix C, SC vs PP vs PPSC, replicat
 mil = rep(c("MixC","Tolu" ), each = 9)
 tre = rep(rep(c("SC", "PP", "PPSC"), each = 3),times = 2)
 n = rep(c(1,2,3), times= 6)
@@ -34,15 +34,15 @@ for(i in 1:18){
   names[i] = paste(mil[i], tre[i], n[i], sep = "")
 }
 
-#crer un data frame pour acceuilir les données dans le mauvais sens
+#crer un data frame pour acceuilir les donn?es dans le mauvais sens
 for(i in 1:8){
   assign(paste("t_", i-1, sep=""), rep(NA, times = 18))
 }
 syto = data.frame(names,t_0, t_1, t_2, t_3, t_4, t_5, t_6, t_7)
 
 ###------------------------------------------------------------------ SYTO-9
-##créer un data frame pour acceuilir les données dans le bon sens
-#créer une liste contenant les noms de traitement et leur assigner un vecteur 8xNA 
+##cr?er un data frame pour acceuilir les donn?es dans le bon sens
+#cr?er une liste contenant les noms de traitement et leur assigner un vecteur 8xNA 
 List_treat = vector(mode = "list", length = 18)
 for(i in 1:18){
   List_treat[[i]] = names[i]
@@ -60,7 +60,7 @@ for(i in 2:18){
 }
 names(syto2) = c("time", List_treat)
 
-#créer un vecteur contenant les noms des puits d'intérêt
+#cr?er un vecteur contenant les noms des puits d'int?r?t
 let = rep(c(rep("A", times = 3),rep("C", times = 3),rep("E", times = 3)),times = 2)
 chi = c(rep(c(1,2,3), times = 3), rep(c(5,6,7),times= 3))
 lech = c()
@@ -88,7 +88,7 @@ for(i in 11:19){
 }
 
 ###------------------------------------------------------------------m-che 
-#creer data frame pour acceuilir les données
+#creer data frame pour acceuilir les donn?es
 
 time = c(0, 12, 15, 18,24, 39,43 ,48 )
 
@@ -119,7 +119,7 @@ for(i in 11:19){
 }
 
 ### ------------------------------------------------ALL- ABSOLUT COUNT
-#créer le data frame pour acceuillir les données
+#cr?er le data frame pour acceuillir les donn?es
 absol = data.frame(time, List_treat)
 for(i in 1:18){
   data = get(List_treat[[i]])
@@ -162,3 +162,6 @@ var(PP_t6_Tol_mChe)
 var(PP_t6_mixC_mChe)
 
 var(SC_t6_Tol_syto9)
+
+
+#testwesch
