@@ -163,11 +163,11 @@ for(i in 1:8){
 #graphiques
 par(mfrow = c(3,3))
 for(i in 2:10){
-  plot(absol[,1],absol[,i], log = "y", main = List_treat[[i-1]], xlab = "time[h]", ylab = "Absolut count")
+  plot(absol[,1],absol[,i], ylim = c(min(absol[,2:10]), max(absol[,2:10])), log = "y", main = List_treat[[i-1]], xlab = "time[h]", ylab = "Absolut count")
 }
 
 for(i in 11:19){
-  plot(absol[,1],absol[,i], log = "y", main = List_treat[[i-1]],xlab = "time[h]", ylab = "Absolut count")
+  plot(absol[,1],absol[,i],  ylim = c(min(absol[,2:19]), max(absol[,2:19])),log = "y", main = List_treat[[i-1]],xlab = "time[h]", ylab = "Absolut count")
 }
 
 #puissance stat 
