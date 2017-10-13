@@ -1,6 +1,6 @@
 
-#charger les données
-path = "C:/Users/obutz/Documents/GitHub/TP-Design-experimental/Data_csv/T"
+#charger les données, après avoir fait session, set working directory, to source file location
+path = "T"
 List = vector(mode = "list", length = 8)
 csv = c()
 for(i in 1:8){
