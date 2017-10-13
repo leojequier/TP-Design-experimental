@@ -67,7 +67,79 @@ for(i in 1:18){
 #créer une liste contenant les noms de traitement et leur assigner un vecteur 8xNA 
 
 
+List_treat_stain = vector(mode = "list", length = 18)
+for(i in 1:18){
+  List_treat_stain[[i]] = names_stain[i]
+  assign(List_treat_stain[[i]], rep(NA, times = 8))
+}
+
+List_treat_unstain = vector(mode = "list", length = 18)
+for(i in 1:18){
+  List_treat_unstain[[i]] = names_unstain[i]
+  assign(List_treat_unstain[[i]], rep(NA, times = 8))
+}
+
+#vecteur contenant le temps en heure
+time = c(0, 14, 17, 20, 34, 39, 42 ,45 )
+
+#création du data.frame STAIN
+syto_stain = data.frame(time, MixCPV1)
+for(i in 2:18){
+  data_stain = get(List_treat_stain[[i]])
+  syto_stain[,i+1] = data_stain
+}
+names(syto_stain) = c("time", List_treat_stain)
+
+#création du data.frame UNSTAIN
+syto_unstain = data.frame(time, MixCPV1)
+for(i in 2:18){
+  data_unstain = get(List_treat_unstain[[i]])
+  syto_unstain[,i+1] = data_unstain
+}
+names(syto_unstain) = c("time", List_treat_unstain)
 
 
+#créer un vecteur contenant les noms des puits d'intérêt STAIN
+let = rep(c(rep("A", times = 3),rep("C", times = 3),rep("E", times = 3)),times = 2)
+chi = c(rep(c(1,2,3), times = 3), rep(c(5,6,7),times= 3))
+lech = c()
+for(i in 1:18){
+  lech[i] = paste(let[i], chi[i], sep = "")
+} 
+#créer un vecteur contenant les noms des puits d'intérêt UNSTAIN
+chi_un = c(rep(c(7,8,9), times = 3), rep(c(10,11,12),times= 3))
+lech_un = c()
+for(i in 1:18){
+  lech_un[i] = paste(let[i], chi_un[i], sep = "")
+} 
+
+#remplir avec SYTO 9 pour tous les traitements STAIN
+for(i in 1:8){ 
+  for(j in 1:18){
+    Data = get(List[[i]]) #stocke T[I]
+    print(lech[j]) 
+    syto_stain[i,j+1] = mean(Data$SYTO.9.Abs..Count[Data$Well.ID== lech[j]][1:2])
+    #parcours syto 2 en ligne, prend les comptes absolu syto9 de T[i] qui ont le nom lech[j] (deux replicat tech) et fait une moyenne 
+  }}
+
+#remplir avec SYTO 9 pour tous les traitements STAIN
+for(i in 1:8){ 
+  for(j in 1:18){
+    Data = get(List[[i]]) #stocke T[I]
+    print(lech_un[j]) 
+    syto_unstain[i,j+1] = mean(Data$SYTO.9.Abs..Count[Data$Well.ID== lech_un[j]][1:2])
+    #parcours syto 2 en ligne, prend les comptes absolu syto9 de T[i] qui ont le nom lech[j] (deux replicat tech) et fait une moyenne 
+  }}
+
+
+#graphiques SYTO-9
+par(mfrow = c(3,3))
+for(i in 2:10){
+  plot(syto_stain[,1],syto_stain[,i], log = "y", main = List_treat_stain[[i-1]], xlab = "time[h]", ylab = "SYTO-9 count")
+}
+
+for(i in 11:19){
+  plot(syto_stain[,1],syto_stain[,i], log = "y", main = List_treat_stain[[i-1]],xlab = "time[h]", ylab = "SYTO-9 count")
+}
 
 
