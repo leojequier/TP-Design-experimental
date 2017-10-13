@@ -24,7 +24,9 @@ T0$SYTO.9.Abs..Count = T0$SYTO.9.Abs..Count*10
 T1$All.Abs..Count = T1$All.Abs..Count*10
 T1$mChe.SYTO.9.Abs..Count = T1$mChe.SYTO.9.Abs..Count*10
 T1$SYTO.9.Abs..Count = T1$SYTO.9.Abs..Count*10
+
 #T2, 3, 4, 5, 6, 7, 8 dilution adjustment
+
 T2$All.Abs..Count = T2$All.Abs..Count*100
 T2$mChe.SYTO.9.Abs..Count = T2$mChe.SYTO.9.Abs..Count*100
 T2$SYTO.9.Abs..Count = T3$SYTO.9.Abs..Count*100
@@ -43,9 +45,7 @@ T6$SYTO.9.Abs..Count = T6$SYTO.9.Abs..Count*100
 T7$All.Abs..Count = T7$All.Abs..Count*100
 T7$mChe.SYTO.9.Abs..Count = T7$mChe.SYTO.9.Abs..Count*100
 T7$SYTO.9.Abs..Count = T7$SYTO.9.Abs..Count*100
-T8$All.Abs..Count = T8$All.Abs..Count*100
-T8$mChe.SYTO.9.Abs..Count = T8$mChe.SYTO.9.Abs..Count*100
-T8$SYTO.9.Abs..Count = T8$SYTO.9.Abs..Count*100
+
 
 
 
