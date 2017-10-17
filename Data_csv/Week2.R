@@ -24,7 +24,7 @@ T2$SYTO.9.Abs..Count = T3$SYTO.9.Abs..Count*10
 T3$All.Abs..Count = T3$All.Abs..Count*10
 T3$mChe.SYTO.9.Abs..Count = T3$mChe.SYTO.9.Abs..Count*10
 T3$SYTO.9.Abs..Count = T3$SYTO.9.Abs..Count*10
-T4$All.Abs..Count = T4$All.Abs..Count*100
+T4$All.Abs..Count = T4$All.Abs..Count*10
 T4$mChe.SYTO.9.Abs..Count = T4$mChe.SYTO.9.Abs..Count*10
 T4$SYTO.9.Abs..Count = T4$SYTO.9.Abs..Count*10
 

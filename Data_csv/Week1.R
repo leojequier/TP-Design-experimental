@@ -18,9 +18,9 @@ T1$Well.ID[40:48] = rep(c("A5", "A6", "A7"),times = 3)
 T1$Well.ID[64:72] = rep(c("E5", "E6", "E7"),times = 3)
 
 #t0 % 10 et T1
-T0$All.Abs..Count = T0$All.Abs..Count*10
-T0$mChe.SYTO.9.Abs..Count = T0$mChe.SYTO.9.Abs..Count*10
-T0$SYTO.9.Abs..Count = T0$SYTO.9.Abs..Count*10
+T0$All.Abs..Count = T0$All.Abs..Count
+T0$mChe.SYTO.9.Abs..Count = T0$mChe.SYTO.9.Abs..Count
+T0$SYTO.9.Abs..Count = T0$SYTO.9.Abs..Count
 T1$All.Abs..Count = T1$All.Abs..Count*10
 T1$mChe.SYTO.9.Abs..Count = T1$mChe.SYTO.9.Abs..Count*10
 T1$SYTO.9.Abs..Count = T1$SYTO.9.Abs..Count*10
