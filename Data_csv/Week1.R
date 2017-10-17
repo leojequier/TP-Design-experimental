@@ -104,11 +104,11 @@ for(i in 1:8){
 #graphiques SYTO-9
 par(mfrow = c(3,3))
 for(i in 2:10){
-  plot(syto2[,1],syto2[,i], log = "y", main = List_treat[[i-1]], xlab = "time[h]", ylab = "SYTO-9 count")
+  plot(syto2[,1],syto2[,i], log = "y", ylim=c(min(syto2[,2:19]), max(syto2[,2:19])),main = List_treat[[i-1]], xlab = "time[h]", ylab = "SYTO-9 count")
 }
 
 for(i in 11:19){
-  plot(syto2[,1],syto2[,i], log = "y", main = List_treat[[i-1]],xlab = "time[h]", ylab = "SYTO-9 count")
+  plot(syto2[,1],syto2[,i], log = "y", ylim=c(min(syto2[,2:19]), max(syto2[,2:19])), main = List_treat[[i-1]],xlab = "time[h]", ylab = "SYTO-9 count")
 }
 
 ###------------------------------------------------------------------m-che 
@@ -135,11 +135,11 @@ for(i in 1:8){
 #graphiques
 par(mfrow = c(3,3))
 for(i in 2:10){
-  plot(cher[,1],cher[,i], log = "y", main = List_treat[[i-1]], xlab = "time[h]", ylab = "mChe count")
+  plot(cher[,1],cher[,i], log = "y",ylim=c(min(cher[,2:19]), max(cher[,2:19])), main = List_treat[[i-1]], xlab = "time[h]", ylab = "mChe count")
 }
 
 for(i in 11:19){
-  plot(cher[,1],cher[,i], log = "y", main = List_treat[[i-1]],xlab = "time[h]", ylab = "mChe count")
+  plot(cher[,1],cher[,i], log = "y", ylim=c(min(cher[,2:19]), max(cher[,2:19])),main = List_treat[[i-1]],xlab = "time[h]", ylab = "mChe count")
 }
 
 ### ------------------------------------------------ALL- ABSOLUT COUNT
