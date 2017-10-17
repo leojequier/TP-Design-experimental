@@ -1,6 +1,6 @@
 
 #charger les données, après avoir fait session, set working directory, to source file location
-path = "Data_W1/T"
+path = "Data_W1_csv2/T"
 List = vector(mode = "list", length = 8) #sorte de liste qui peut contenir des variables
 csv = c()
 for(i in 1:8){
