@@ -156,7 +156,7 @@ for(i in 1:8){
   for(j in 1:18){
     Data = get(List[[i]])
     print(lech[j])
-    absol[i,j+1] = mean(Data$All.Abs..Count[Data$Well.ID == lech[j]][1:2])
+    absol[i,j+1] = mean(Data$mChe.SYTO.9.Abs..Count[Data$Well.ID == lech[j]][1:2] + Data$SYTO.9.Abs..Count[Data$Well.ID== lech[j]][1:2])
     
   }}
 
