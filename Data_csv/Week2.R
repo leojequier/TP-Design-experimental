@@ -12,9 +12,9 @@ for(i in 1:9){
 ##but I think it will be easier to treat the data that way. 
 
 #T0, 1 , 2, 3, 4 10% dilution adjustment 
-T0$All.Abs..Count = T0$All.Abs..Count*10
-T0$mChe.SYTO.9.Abs..Count = T0$mChe.SYTO.9.Abs..Count*10
-T0$SYTO.9.Abs..Count = T0$SYTO.9.Abs..Count*10
+T0$All.Abs..Count = T0$All.Abs..Count
+T0$mChe.SYTO.9.Abs..Count = T0$mChe.SYTO.9.Abs..Count
+T0$SYTO.9.Abs..Count = T0$SYTO.9.Abs..Count
 T1$All.Abs..Count = T1$All.Abs..Count*10
 T1$mChe.SYTO.9.Abs..Count = T1$mChe.SYTO.9.Abs..Count*10
 T1$SYTO.9.Abs..Count = T1$SYTO.9.Abs..Count*10
