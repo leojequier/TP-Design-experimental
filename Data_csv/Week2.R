@@ -217,6 +217,7 @@ for(i in 1:8){
     Data = get(List[[i]])
     print(lech[j])
     absol_stained[i,j+1] = mean(Data$SYTO.9.Abs..Count[Data$Well.ID == lech[j]][1:2]) + mean(Data$mChe.SYTO.9.Abs..Count[Data$Well.ID == lech_un[j]][1:2])
+    absol_stained[i,j+1] = mean(Data$SYTO.9.Abs..Count[Data$Well.ID == lech[j]][1:2]) + mean(Data$mChe.SYTO.9.Abs..Count[Data$Well.ID == lech[j]][1:2])
     
   }}
 
