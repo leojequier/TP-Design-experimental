@@ -175,9 +175,29 @@ SC_t6_mixC_syto9 = c(syto2$MixCSC1[syto2$time == 43],syto2$MixCSC2[syto2$time ==
 
 PP_t6_mixC_mChe = c(cher$ToluPP1[cher$time == 43],cher$ToluPP2[cher$time == 43],cher$ToluPP3[cher$time == 43] )
 
+
+
 SC_t6_Tol_syto9 = c(syto2$ToluSC1[syto2$time == 43],syto2$ToluSC2[syto2$time == 43],syto2$ToluSC3[syto2$time == 43] )
 
-PP_t6_Tol_mChe = c(cher$ToluPP1[cher$time == 43],cher$ToluPP2[cher$time == 43],cher$ToluSC3[cher$time == 43])
+SC_t6_Tol_mChe = c(c(cher$ToluSC1[cher$time == 43],cher$ToluSC2[cher$time == 43],cher$ToluSC3[cher$time == 43]))
+
+PP_t6_Tol_mChe = c(cher$ToluPP1[cher$time == 43],cher$ToluPP2[cher$time == 43],cher$ToluPP3[cher$time == 43])
+
+PP_T6_Tol_syto9 = c(syto2$ToluPP1[syto2$time == 43],syto2$ToluPP2[syto2$time == 43],syto2$ToluPP3[syto2$time == 43])
+
+PPSC_T6_Tol_syto9 = c(syto2$ToluPPSC1[syto2$time == 43],syto2$ToluPPSC2[syto2$time == 43],syto2$ToluPPSC3[syto2$time == 43])
+
+PPSC_T6_Tol_mChe = c(cher$ToluPPSC1[cher$time == 43],cher$ToluPPSC2[cher$time == 43],cher$ToluPPSC3[cher$time == 43])
+
+t.test(PPSC_T6_Tol_syto9,SC_t6_Tol_syto9, var.equal = T)
+power.t.test(n = 3, delta = mean(PPSC_T6_Tol_syto9) - mean(SC_t6_Tol_syto9), sd = sd(c(SC_t6_Tol_syto9, PPSC_T6_Tol_syto9)))
+mean(PPSC_T6_Tol_syto9)
+
+mean(PP_T6_Tol_syto9)
+
+mean(PPSC_T6_Tol_mChe)
+
+mean(PP_T6_Tol_syto9)
 
 var(SC_t6_mixC_syto9)
 
@@ -186,6 +206,7 @@ var(PP_t6_Tol_mChe)
 var(PP_t6_mixC_mChe)
 
 var(SC_t6_Tol_syto9)
+
 
 
 
