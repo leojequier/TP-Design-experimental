@@ -273,7 +273,7 @@ PPSCTxmixC<-(c(PPSCmixC.T1,PPSCmixC.T2,PPSCmixC.T3,PPSCmixC.T4,PPSCmixC.T5,PPSCm
 par(mfrow = c(1,1))
 
 tot <- data.frame(time, SCTxmixC, SCTxTol, PPSCTxmixC, PPSCTxTol)
-plot(tot$time, tot$SCTxmixC,log="y",ylim=c(min(tot$PPSCTxTol), max(tot$PPSCTxTol)), type="o",main="SC growth",xlab= "Heures", ylab="log(SC count)")
+plot(tot$time, tot$SCTxmixC,log="y",ylim=c(min(tot$PPSCTxTol), max(tot$PPSCTxTol)), type="o",main="SC growth",xlab= "Time [Hours]", ylab="log(SC count)")
 =======
 
 
