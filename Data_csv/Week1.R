@@ -170,12 +170,31 @@ for(i in 11:19){
   plot(absol[,1],absol[,i],  ylim = c(min(absol[,2:19]), max(absol[,2:19])),log = "y", main = List_treat[[i-1]],xlab = "time[h]", ylab = "Absolut count")
 }
 
+#cell count
+list_cell_count = vector(mode = "list", length = 24)
+CvTol = rep(c("MixC", "Tol"), each = 12)
+bac = rep(rep(c("SC", "PP", "PPSC_SC","PPSC_PP"), each = 3), time = 2)
+n = rep(c(1,2,3), times = 8)
+for(i in 1:24){
+  list_cell_count[i] = paste(CvTol[i], paste(bac[i], n[i], sep = ""), sep = "_")
+}
+cell_count = data.frame(time, syto2$MixCSC1, syto2$MixCSC2, syto2$MixCSC3,
+                        cher$MixCPP1,cher$MixCPP2,cher$MixCPP3,
+                        syto2$MixCPPSC1,syto2$MixCPPSC2,syto2$MixCPPSC3,
+                        cher$MixCPPSC1, cher$MixCPPSC2, cher$MixCPPSC3, 
+                        syto2$ToluSC1,syto2$ToluSC2,syto2$ToluSC3,
+                        cher$ToluPP1,cher$ToluPP2,cher$ToluPP3, 
+                        syto2$ToluPPSC1, syto2$ToluPPSC2,syto2$ToluPPSC3,
+                        cher$ToluPPSC1,cher$ToluPPSC2,cher$ToluPPSC3)
+names(cell_count) = list_cell_count
+names(cell_count)
+
+#liste pour aller chercher les données
+
 #puissance stat 
 SC_t6_mixC_syto9 = c(syto2$MixCSC1[syto2$time == 43],syto2$MixCSC2[syto2$time == 43],syto2$MixCSC3[syto2$time == 43] )
 
 PP_t6_mixC_mChe = c(cher$ToluPP1[cher$time == 43],cher$ToluPP2[cher$time == 43],cher$ToluPP3[cher$time == 43] )
-
-
 
 SC_t6_Tol_syto9 = c(syto2$ToluSC1[syto2$time == 43],syto2$ToluSC2[syto2$time == 43],syto2$ToluSC3[syto2$time == 43] )
 
