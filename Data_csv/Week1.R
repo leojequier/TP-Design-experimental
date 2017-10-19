@@ -242,6 +242,19 @@ names(cell_count)
 
 
 
+MixC_PPSC1 <- cell_count$MixC_PPSC_SC1 + cell_count$MixC_PPSC_PP1
+MixC_PPSC2 <- cell_count$MixC_PPSC_SC2 + cell_count$MixC_PPSC_PP2
+MixC_PPSC3 <- cell_count$MixC_PPSC_SC3 + cell_count$MixC_PPSC_PP3
+MixC_PPSCmoy <- (MixC_PPSC1+ MixC_PPSC2+ MixC_PPSC3)/3
+
+Tol_PPSC1 <- cell_count$Tol_PPSC_SC1 + cell_count$Tol_PPSC_PP1
+Tol_PPSC2 <- cell_count$Tol_PPSC_SC2 + cell_count$Tol_PPSC_PP2
+Tol_PPSC3 <- cell_count$Tol_PPSC_SC3 + cell_count$Tol_PPSC_PP3
+Tol_PPSCmoy <- (Tol_PPSC1+ Tol_PPSC2+ Tol_PPSC3)/3
+
+cell_count <- cbind(cell_count, MixC_PPSC1, MixC_PPSC2,MixC_PPSC3, MixC_PPSCmoy, Tol_PPSC1, Tol_PPSC2, Tol_PPSC3, Tol_PPSCmoy)
+
+
 #puissance stat 
 SC_t6_mixC_syto9 = c(syto2$MixCSC1[syto2$time == 43],syto2$MixCSC2[syto2$time == 43],syto2$MixCSC3[syto2$time == 43] )
 
@@ -289,7 +302,7 @@ Tol_deadPPmoy<- c()
 for(i in 1:8){
   Tol_deadPPmoy[i] <- sum(syto2$ToluPP1[time==time[i]],  syto2$ToluPP2[time==time[i]],syto2$ToluPP3[time==time[i]])/3
 }
-plot(totsc$time, totsc$MixC_SCmoy,log="y",ylim=c(min(Tol_deadPPmoy), max(Tol_deadPPmoy)), type="o",main="SC growth",xlab= "Time [Hours]", ylab="log(SC count)")
+plot(totsc$time, totsc$MixC_SCmoy,log="y",ylim=c(min(Tol_deadPPmoy), max(cell_count$Tol_PPSCmoy)), type="o",main="SC growth",xlab= "Time [Hours]", ylab="log(SC count)")
 
 #Plot des comptes de SC
 
@@ -298,7 +311,9 @@ points(totsc$time,totsc$Tol_SCmoy, type="o", col="red")
 points(totsc$time,totsc$MixC_PPSC_SCmoy, type="o", col="blue")
 points(totsc$time,totsc$Tol_PPSC_SCmoy, type="o", col="orange")
 points(totsc$time, Tol_deadPPmoy, type="o", col="green")
-legend("topleft",legend=c("SC in mixC","SC in Tol","SC in PP+SC in mixC","SC in PP+SC in Tol", "Syto-9 count in Tol PPalone"),fill=c("black","red","blue","orange", "green"))
+points(totpp$time, cell_count$MixC_PPSCmoy, type="o", col="brown")
+points(totpp$time, cell_count$Tol_PPSCmoy, type="o", col="gray")
+legend("bottomright",legend=c("SC in mixC","SC in Tol","SC in PP+SC in mixC","SC in PP+SC in Tol", "Syto-9 count in Tol PPalone", "PPSC total in mixC", "PPSC total in Tol"),fill=c("black","red","blue","orange", "green", "brown", "gray"))
 
       
   #SAME WITH PP
@@ -313,5 +328,7 @@ plot(totpp$time, totpp$MixC_PPmoy,log="y",ylim=c(min(totpp$Tol_PPmoy), max(totpp
 points(totpp$time,totpp$Tol_PPmoy, type="o", col="red")
 points(totpp$time,totpp$MixC_PPSC_PPmoy, type="o", col="blue")
 points(totpp$time,totpp$Tol_PPSC_PPmoy, type="o", col="orange")
-legend("topleft",legend=c("PP in mixC","PP in Tol","PP in PP+SC in mixC","PP in PP+SC in Tol"),fill=c("black","red","blue","orange"))
+points(totpp$time, cell_count$MixC_PPSCmoy, type="o", col="brown")
+points(totpp$time, cell_count$Tol_PPSCmoy, type="o", col="gray")
+legend("bottomright",legend=c("PP in mixC","PP in Tol","PP in PP+SC in mixC","PP in PP+SC in Tol", "PPSC total in mixC", "PPSC total in Tol"),fill=c("black","red","blue","orange", "brown", "gray"))
 
