@@ -207,6 +207,61 @@ var(PP_t6_mixC_mChe)
 
 var(SC_t6_Tol_syto9)
 
+#graphiques
+SCT1mixC<-mean(syto2$MixCSC1[time=="0"],syto2$MixCSC2[time=="0"],syto2$MixCSC3[time=="0"])
+SCT2mixC<-mean(syto2$MixCSC1[time=="12"],syto2$MixCSC2[time=="12"],syto2$MixCSC3[time=="12"])
+SCT3mixC<-mean(syto2$MixCSC1[time=="15"],syto2$MixCSC2[time=="15"],syto2$MixCSC3[time=="15"])
+SCT4mixC<-mean(syto2$MixCSC1[time=="18"],syto2$MixCSC2[time=="18"],syto2$MixCSC3[time=="18"])
+SCT5mixC<-mean(syto2$MixCSC1[time=="24"],syto2$MixCSC2[time=="24"],syto2$MixCSC3[time=="24"])
+SCT6mixC<-mean(syto2$MixCSC1[time=="39"],syto2$MixCSC2[time=="39"],syto2$MixCSC3[time=="39"])
+SCT7mixC<-mean(syto2$MixCSC1[time=="43"],syto2$MixCSC2[time=="43"],syto2$MixCSC3[time=="43"])
+SCT8mixC<-mean(syto2$MixCSC1[time=="48"],syto2$MixCSC2[time=="48"],syto2$MixCSC3[time=="48"])
 
+SCT1Tol<-mean(syto2$ToluSC1[time=="0"],syto2$ToluSC2[time=="0"],syto2$ToluSC3[time=="0"])
+SCT2Tol<-mean(syto2$ToluSC1[time=="12"],syto2$ToluSC2[time=="12"],syto2$ToluSC3[time=="12"])
+SCT3Tol<-mean(syto2$ToluSC1[time=="15"],syto2$ToluSC2[time=="15"],syto2$ToluSC3[time=="15"])
+SCT4Tol<-mean(syto2$ToluSC1[time=="18"],syto2$ToluSC2[time=="18"],syto2$ToluSC3[time=="18"])
+SCT5Tol<-mean(syto2$ToluSC1[time=="24"],syto2$ToluSC2[time=="24"],syto2$ToluSC3[time=="24"])
+SCT6Tol<-mean(syto2$ToluSC1[time=="39"],syto2$ToluSC2[time=="39"],syto2$ToluSC3[time=="39"])
+SCT7Tol<-mean(syto2$ToluSC1[time=="43"],syto2$ToluSC2[time=="43"],syto2$ToluSC3[time=="43"])
+SCT8Tol<-mean(syto2$ToluSC1[time=="48"],syto2$ToluSC2[time=="48"],syto2$ToluSC3[time=="48"])
 
+PPSCTol.T1<-mean(syto2$ToluPPSC1[time=="0"],syto2$ToluPPSC2[time=="0"],syto2$ToluPPSC3[time=="0"])
+PPSCTol.T2<-mean(syto2$ToluPPSC1[time=="12"],syto2$ToluPPSC2[time=="12"],syto2$ToluPPSC3[time=="12"])
+PPSCTol.T3<-mean(syto2$ToluPPSC1[time=="15"],syto2$ToluPPSC2[time=="15"],syto2$ToluPPSC3[time=="15"])
+PPSCTol.T4<-mean(syto2$ToluPPSC1[time=="18"],syto2$ToluPPSC2[time=="18"],syto2$ToluPPSC3[time=="18"])
+PPSCTol.T5<-mean(syto2$ToluPPSC1[time=="24"],syto2$ToluPPSC2[time=="24"],syto2$ToluPPSC3[time=="24"])
+PPSCTol.T6<-mean(syto2$ToluPPSC1[time=="39"],syto2$ToluPPSC2[time=="39"],syto2$ToluPPSC3[time=="39"])
+PPSCTol.T7<-mean(syto2$ToluPPSC1[time=="43"],syto2$ToluPPSC2[time=="43"],syto2$ToluPPSC3[time=="43"])
+PPSCTol.T8<-mean(syto2$ToluPPSC1[time=="48"],syto2$ToluPPSC2[time=="48"],syto2$ToluPPSC3[time=="48"])
 
+PPSCmixC.T1<-mean(syto2$MixCPPSC1[time=="0"],syto2$MixCPPSC2[time=="0"],syto2$MixCPPSC3[time=="0"])
+PPSCmixC.T2<-mean(syto2$MixCPPSC1[time=="12"],syto2$MixCPPSC2[time=="12"],syto2$MixCPPSC3[time=="12"])
+PPSCmixC.T3<-mean(syto2$MixCPPSC1[time=="15"],syto2$MixCPPSC2[time=="15"],syto2$MixCPPSC3[time=="15"])
+PPSCmixC.T4<-mean(syto2$MixCPPSC1[time=="18"],syto2$MixCPPSC2[time=="18"],syto2$MixCPPSC3[time=="18"])
+PPSCmixC.T5<-mean(syto2$MixCPPSC1[time=="24"],syto2$MixCPPSC2[time=="24"],syto2$MixCPPSC3[time=="24"])
+PPSCmixC.T6<-mean(syto2$MixCPPSC1[time=="39"],syto2$MixCPPSC2[time=="39"],syto2$MixCPPSC3[time=="39"])
+PPSCmixC.T7<-mean(syto2$MixCPPSC1[time=="43"],syto2$MixCPPSC2[time=="43"],syto2$MixCPPSC3[time=="43"])
+PPSCmixC.T8<-mean(syto2$MixCPPSC1[time=="48"],syto2$MixCPPSC2[time=="48"],syto2$MixCPPSC3[time=="48"])
+
+SCTxTol<-(c(SCT1Tol,SCT2Tol,SCT3Tol,SCT4Tol,SCT5Tol,SCT6Tol,SCT7Tol,SCT8Tol))
+SCTxmixC<-(c(SCT1mixC,SCT2mixC,SCT3mixC,SCT4mixC,SCT5mixC,SCT6mixC,SCT7mixC,SCT8mixC))
+PPSCTxTol<-(c(PPSCTol.T1,PPSCTol.T2,PPSCTol.T3,PPSCTol.T4,PPSCTol.T5,PPSCTol.T6,PPSCTol.T7,PPSCTol.T8))
+PPSCTxmixC<-(c(PPSCmixC.T1,PPSCmixC.T2,PPSCmixC.T3,PPSCmixC.T4,PPSCmixC.T5,PPSCmixC.T6,PPSCmixC.T7,PPSCmixC.T8))
+
+plot(SCTxmixC, col="black")
+points(SCTxTol, col="red")
+points(PPSCTxmixC, col="blue")
+points(PPSCTxTol, col="orange")
+
+tot <- data.frame(time, SCTxmixC, SCTxTol, PPSCTxmixC, PPSCTxTol)
+plot(tot$time, tot$SCTxmixC,log="y",ylim=c(min(tot$PPSCTxTol), max(tot$PPSCTxTol)), type="o",main="Compte de SC",xlab= "Heures", ylab=" Nombre de cellules")
+points(tot$time,tot$SCTxTol, type="o", col="red")
+points(tot$time,tot$PPSCTxmixC, type="o", col="blue")
+points(tot$time,tot$PPSCTxTol, type="o", col="orange")
+legend("topleft",legend=c("SC in mixC","SC in Tol","PP+SC in mixC","PP+SC in Tol"),fill=c("black","red","blue","orange"))
+
+       
+       
+       
+       
