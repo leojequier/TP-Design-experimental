@@ -275,11 +275,10 @@ par(mfrow = c(1,1))
 tot <- data.frame(time, SCTxmixC, SCTxTol, PPSCTxmixC, PPSCTxTol)
 plot(tot$time, tot$SCTxmixC,log="y",ylim=c(min(tot$PPSCTxTol), max(tot$PPSCTxTol)), type="o",main="SC growth",xlab= "Heures", ylab="log(SC count)")
 =======
-tot <- data.frame(time, SCTxmixC, SCTxTol, PPSCTxmixC, PPSCTxTol)
+
 
 #Plot des comptes de SC
-plot(tot$time, tot$SCTxmixC,log="y",ylim=c(min(tot$PPSCTxTol), max(tot$PPSCTxTol)), type="o",main="Compte de SC",xlab= "Heures", ylab=" Nombre de cellules")
->>>>>>> e0f951629b197b4b3b2a7ace29d1d071d45d957c
+
 points(tot$time,tot$SCTxTol, type="o", col="red")
 points(tot$time,tot$PPSCTxmixC, type="o", col="blue")
 points(tot$time,tot$PPSCTxTol, type="o", col="orange")
