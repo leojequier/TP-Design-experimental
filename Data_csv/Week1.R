@@ -281,7 +281,6 @@ var(SC_t6_Tol_syto9)
 
 
 
-
 par(mfrow = c(1,1))
 
 totsc <- data.frame(time, MixC_SCmoy, Tol_SCmoy, MixC_PPSC_SCmoy, Tol_PPSC_SCmoy)
