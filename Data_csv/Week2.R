@@ -260,7 +260,25 @@ for(i in 11:19){
   plot(absol_unstained[,1],absol_unstained[,i],  ylim = c(min(absol_unstained[,2:19]), max(absol_unstained[,2:19])),log = "y", main = List_treat_unstained[[i-1]],xlab = "time[h]", ylab = "Absolut count")
 }
 
-
+#cell count
+list_cell_count = vector(mode = "list", length = 25)
+list_cell_count[1] = "time"
+CvTol = rep(c("MixC", "Tol"), each = 12)
+bac = rep(rep(c("SC", "PV", "PVSC_SC","PPSC_PV"), each = 3), time = 2)
+n = rep(c(1,2,3), times = 8)
+for(i in 1:24){
+  list_cell_count[i+1] = paste(CvTol[i], paste(bac[i], n[i], sep = ""), sep = "_")
+}
+cell_count = data.frame(time, syto_stained$MixCSC_stained1, syto_stained$MixCSC_stained2, syto_stained$MixCSC_stained3,
+                        cher_stained$MixCPV_stained1,cher_stained$MixCPV_stained2,cher_stained$MixCPV_stained3,
+                        syto_stained$MixCPVSC_stained1,syto_stained$MixCPVSC_stained2,syto_stained$MixCPVSC_stained3,
+                        cher_stained$MixCPVSC_stained1, cher_stained$MixCPVSC_stained2, cher_stained$MixCPVSC_stained3, 
+                        syto_stained$ToluSC_stained1,syto_stained$ToluSC_stained2,syto_stained$ToluSC_stained3,
+                        cher_stained$ToluPV_stained1,cher_stained$ToluPV_stained2,cher_stained$ToluPV_stained3, 
+                        syto_stained$ToluPVSC_stained1, syto_stained$ToluPVSC_stained2,syto_stained$ToluPVSC_stained3,
+                        cher_stained$ToluPVSC_stained1,cher_stained$ToluPVSC_stained2,cher_stained$ToluPVSC_stained3)
+names(cell_count) = list_cell_count
+names(cell_count)
 
 
 

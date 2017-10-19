@@ -171,12 +171,13 @@ for(i in 11:19){
 }
 
 #cell count
-list_cell_count = vector(mode = "list", length = 24)
+list_cell_count = vector(mode = "list", length = 25)
+list_cell_count[1] = "time"
 CvTol = rep(c("MixC", "Tol"), each = 12)
 bac = rep(rep(c("SC", "PP", "PPSC_SC","PPSC_PP"), each = 3), time = 2)
 n = rep(c(1,2,3), times = 8)
 for(i in 1:24){
-  list_cell_count[i] = paste(CvTol[i], paste(bac[i], n[i], sep = ""), sep = "_")
+  list_cell_count[i+1] = paste(CvTol[i], paste(bac[i], n[i], sep = ""), sep = "_")
 }
 cell_count = data.frame(time, syto2$MixCSC1, syto2$MixCSC2, syto2$MixCSC3,
                         cher$MixCPP1,cher$MixCPP2,cher$MixCPP3,
@@ -189,7 +190,7 @@ cell_count = data.frame(time, syto2$MixCSC1, syto2$MixCSC2, syto2$MixCSC3,
 names(cell_count) = list_cell_count
 names(cell_count)
 
-#liste pour aller chercher les données
+
 
 #puissance stat 
 SC_t6_mixC_syto9 = c(syto2$MixCSC1[syto2$time == 43],syto2$MixCSC2[syto2$time == 43],syto2$MixCSC3[syto2$time == 43] )
