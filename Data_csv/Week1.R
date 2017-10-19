@@ -269,12 +269,10 @@ SCTxmixC<-(c(SCT1mixC,SCT2mixC,SCT3mixC,SCT4mixC,SCT5mixC,SCT6mixC,SCT7mixC,SCT8
 PPSCTxTol<-(c(PPSCTol.T1,PPSCTol.T2,PPSCTol.T3,PPSCTol.T4,PPSCTol.T5,PPSCTol.T6,PPSCTol.T7,PPSCTol.T8))
 PPSCTxmixC<-(c(PPSCmixC.T1,PPSCmixC.T2,PPSCmixC.T3,PPSCmixC.T4,PPSCmixC.T5,PPSCmixC.T6,PPSCmixC.T7,PPSCmixC.T8))
 
-<<<<<<< HEAD
 par(mfrow = c(1,1))
 
 tot <- data.frame(time, SCTxmixC, SCTxTol, PPSCTxmixC, PPSCTxTol)
 plot(tot$time, tot$SCTxmixC,log="y",ylim=c(min(tot$PPSCTxTol), max(tot$PPSCTxTol)), type="o",main="SC growth",xlab= "Time [Hours]", ylab="log(SC count)")
-=======
 
 
 #Plot des comptes de SC
