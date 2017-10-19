@@ -1,3 +1,6 @@
+rm(list=ls())
+
+
 #charger les données, après avoir fait session, set working directory, to source file location
 path = "Data_W2_csv2/T"
 List = vector(mode = "list", length = 8) #sorte de liste qui peut contenir des variables

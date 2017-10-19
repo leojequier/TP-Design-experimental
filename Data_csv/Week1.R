@@ -1,4 +1,7 @@
 
+rm(list=ls())
+
+
 #charger les données, après avoir fait session, set working directory, to source file location
 path = "Data_W1_csv2/T"
 List = vector(mode = "list", length = 8) #sorte de liste qui peut contenir des variables
@@ -169,24 +172,71 @@ for(i in 2:10){
 for(i in 11:19){
   plot(absol[,1],absol[,i],  ylim = c(min(absol[,2:19]), max(absol[,2:19])),log = "y", main = List_treat[[i-1]],xlab = "time[h]", ylab = "Absolut count")
 }
+#means sc
+MixC_SCmoy<- c()
+
+for(i in 1:8){
+  MixC_SCmoy[i] <- sum(syto2$MixCSC1[time==time[i]],  syto2$MixCSC2[time==time[i]], syto2$MixCSC3[time==time[i]])/3
+}
+
+Tol_SCmoy<- c()
+
+for(i in 1:8){
+  Tol_SCmoy[i] <- sum(syto2$ToluSC1[time==time[i]],  syto2$ToluSC2[time==time[i]], syto2$ToluSC3[time==time[i]])/3
+}
+
+Tol_PPSC_SCmoy <-c()
+
+for(i in 1:8){
+  Tol_PPSC_SCmoy[i] <- sum(syto2$ToluPPSC1[time==time[i]],  syto2$ToluPPSC2[time==time[i]], syto2$ToluPPSC3[time==time[i]])/3
+}
+
+MixC_PPSC_SCmoy <-c()
+
+for(i in 1:8){
+  MixC_PPSC_SCmoy[i] <- sum(syto2$MixCPPSC1[time==time[i]],  syto2$MixCPPSC2[time==time[i]], syto2$MixCPPSC3[time==time[i]])/3
+}
+
+
+# means PP
+
+MixC_PPmoy<- c()
+
+for(i in 1:8){
+  MixC_PPmoy[i] <- sum(cher$MixCPP1[time==time[i]],  cher$MixCPP2[time==time[i]],cher$MixCPP3[time==time[i]])/3
+}
+
+Tol_PPmoy <- c()
+for(i in 1:8){
+  Tol_PPmoy[i] <- sum(cher$ToluPP1[time==time[i]],  cher$ToluPP2[time==time[i]],cher$ToluPP3[time==time[i]])/3
+}
+
+Tol_PPSC_PPmoy <- c()
+for(i in 1:8){
+  Tol_PPSC_PPmoy[i] <- sum(cher$ToluPPSC1[time==time[i]],  cher$ToluPPSC2[time==time[i]],cher$ToluPP3[time==time[i]])/3
+}
+MixC_PPSC_PPmoy <- c()
+for(i in 1:8){
+  MixC_PPSC_PPmoy[i] <- sum(cher$MixCPPSC1[time==time[i]],  cher$MixCPPSC2[time==time[i]],cher$MixCPP3[time==time[i]])/3
+}
 
 #cell count
-list_cell_count = vector(mode = "list", length = 25)
+list_cell_count = vector(mode = "list", length = 33)
 list_cell_count[1] = "time"
-CvTol = rep(c("MixC", "Tol"), each = 12)
-bac = rep(rep(c("SC", "PP", "PPSC_SC","PPSC_PP"), each = 3), time = 2)
-n = rep(c(1,2,3), times = 8)
-for(i in 1:24){
+CvTol = rep(c("MixC", "Tol"), each = 16)
+bac = rep(rep(c("SC", "PP", "PPSC_SC","PPSC_PP"), each = 4), time = 2)
+n = rep(c(1,2,3,"moy"), times = 8)
+for(i in 1:32){
   list_cell_count[i+1] = paste(CvTol[i], paste(bac[i], n[i], sep = ""), sep = "_")
 }
-cell_count = data.frame(time, syto2$MixCSC1, syto2$MixCSC2, syto2$MixCSC3,
-                        cher$MixCPP1,cher$MixCPP2,cher$MixCPP3,
-                        syto2$MixCPPSC1,syto2$MixCPPSC2,syto2$MixCPPSC3,
-                        cher$MixCPPSC1, cher$MixCPPSC2, cher$MixCPPSC3, 
-                        syto2$ToluSC1,syto2$ToluSC2,syto2$ToluSC3,
-                        cher$ToluPP1,cher$ToluPP2,cher$ToluPP3, 
-                        syto2$ToluPPSC1, syto2$ToluPPSC2,syto2$ToluPPSC3,
-                        cher$ToluPPSC1,cher$ToluPPSC2,cher$ToluPPSC3)
+cell_count = data.frame(time, syto2$MixCSC1, syto2$MixCSC2, syto2$MixCSC3,MixC_SCmoy,
+                        cher$MixCPP1,cher$MixCPP2,cher$MixCPP3,MixC_PPmoy,
+                        syto2$MixCPPSC1,syto2$MixCPPSC2,syto2$MixCPPSC3,MixC_PPSC_SCmoy,
+                        cher$MixCPPSC1, cher$MixCPPSC2, cher$MixCPPSC3,Tol_PPSC_SCmoy, 
+                        syto2$ToluSC1,syto2$ToluSC2,syto2$ToluSC3, Tol_SCmoy,
+                        cher$ToluPP1,cher$ToluPP2,cher$ToluPP3, Tol_PPmoy, 
+                        syto2$ToluPPSC1, syto2$ToluPPSC2,syto2$ToluPPSC3,Tol_PPSC_SCmoy,
+                        cher$ToluPPSC1,cher$ToluPPSC2,cher$ToluPPSC3, Tol_PPSC_PPmoy)
 names(cell_count) = list_cell_count
 names(cell_count)
 
@@ -228,63 +278,41 @@ var(PP_t6_mixC_mChe)
 var(SC_t6_Tol_syto9)
 
 #graphiques
-SCT1mixC<-mean(syto2$MixCSC1[time=="0"],syto2$MixCSC2[time=="0"],syto2$MixCSC3[time=="0"])
-SCT2mixC<-mean(syto2$MixCSC1[time=="12"],syto2$MixCSC2[time=="12"],syto2$MixCSC3[time=="12"])
-SCT3mixC<-mean(syto2$MixCSC1[time=="15"],syto2$MixCSC2[time=="15"],syto2$MixCSC3[time=="15"])
-SCT4mixC<-mean(syto2$MixCSC1[time=="18"],syto2$MixCSC2[time=="18"],syto2$MixCSC3[time=="18"])
-SCT5mixC<-mean(syto2$MixCSC1[time=="24"],syto2$MixCSC2[time=="24"],syto2$MixCSC3[time=="24"])
-SCT6mixC<-mean(syto2$MixCSC1[time=="39"],syto2$MixCSC2[time=="39"],syto2$MixCSC3[time=="39"])
-SCT7mixC<-mean(syto2$MixCSC1[time=="43"],syto2$MixCSC2[time=="43"],syto2$MixCSC3[time=="43"])
-SCT8mixC<-mean(syto2$MixCSC1[time=="48"],syto2$MixCSC2[time=="48"],syto2$MixCSC3[time=="48"])
 
-SCT1Tol<-mean(syto2$ToluSC1[time=="0"],syto2$ToluSC2[time=="0"],syto2$ToluSC3[time=="0"])
-SCT2Tol<-mean(syto2$ToluSC1[time=="12"],syto2$ToluSC2[time=="12"],syto2$ToluSC3[time=="12"])
-SCT3Tol<-mean(syto2$ToluSC1[time=="15"],syto2$ToluSC2[time=="15"],syto2$ToluSC3[time=="15"])
-SCT4Tol<-mean(syto2$ToluSC1[time=="18"],syto2$ToluSC2[time=="18"],syto2$ToluSC3[time=="18"])
-SCT5Tol<-mean(syto2$ToluSC1[time=="24"],syto2$ToluSC2[time=="24"],syto2$ToluSC3[time=="24"])
-SCT6Tol<-mean(syto2$ToluSC1[time=="39"],syto2$ToluSC2[time=="39"],syto2$ToluSC3[time=="39"])
-SCT7Tol<-mean(syto2$ToluSC1[time=="43"],syto2$ToluSC2[time=="43"],syto2$ToluSC3[time=="43"])
-SCT8Tol<-mean(syto2$ToluSC1[time=="48"],syto2$ToluSC2[time=="48"],syto2$ToluSC3[time=="48"])
 
-PPSCTol.T1<-mean(syto2$ToluPPSC1[time=="0"],syto2$ToluPPSC2[time=="0"],syto2$ToluPPSC3[time=="0"])
-PPSCTol.T2<-mean(syto2$ToluPPSC1[time=="12"],syto2$ToluPPSC2[time=="12"],syto2$ToluPPSC3[time=="12"])
-PPSCTol.T3<-mean(syto2$ToluPPSC1[time=="15"],syto2$ToluPPSC2[time=="15"],syto2$ToluPPSC3[time=="15"])
-PPSCTol.T4<-mean(syto2$ToluPPSC1[time=="18"],syto2$ToluPPSC2[time=="18"],syto2$ToluPPSC3[time=="18"])
-PPSCTol.T5<-mean(syto2$ToluPPSC1[time=="24"],syto2$ToluPPSC2[time=="24"],syto2$ToluPPSC3[time=="24"])
-PPSCTol.T6<-mean(syto2$ToluPPSC1[time=="39"],syto2$ToluPPSC2[time=="39"],syto2$ToluPPSC3[time=="39"])
-PPSCTol.T7<-mean(syto2$ToluPPSC1[time=="43"],syto2$ToluPPSC2[time=="43"],syto2$ToluPPSC3[time=="43"])
-PPSCTol.T8<-mean(syto2$ToluPPSC1[time=="48"],syto2$ToluPPSC2[time=="48"],syto2$ToluPPSC3[time=="48"])
 
-PPSCmixC.T1<-mean(syto2$MixCPPSC1[time=="0"],syto2$MixCPPSC2[time=="0"],syto2$MixCPPSC3[time=="0"])
-PPSCmixC.T2<-mean(syto2$MixCPPSC1[time=="12"],syto2$MixCPPSC2[time=="12"],syto2$MixCPPSC3[time=="12"])
-PPSCmixC.T3<-mean(syto2$MixCPPSC1[time=="15"],syto2$MixCPPSC2[time=="15"],syto2$MixCPPSC3[time=="15"])
-PPSCmixC.T4<-mean(syto2$MixCPPSC1[time=="18"],syto2$MixCPPSC2[time=="18"],syto2$MixCPPSC3[time=="18"])
-PPSCmixC.T5<-mean(syto2$MixCPPSC1[time=="24"],syto2$MixCPPSC2[time=="24"],syto2$MixCPPSC3[time=="24"])
-PPSCmixC.T6<-mean(syto2$MixCPPSC1[time=="39"],syto2$MixCPPSC2[time=="39"],syto2$MixCPPSC3[time=="39"])
-PPSCmixC.T7<-mean(syto2$MixCPPSC1[time=="43"],syto2$MixCPPSC2[time=="43"],syto2$MixCPPSC3[time=="43"])
-PPSCmixC.T8<-mean(syto2$MixCPPSC1[time=="48"],syto2$MixCPPSC2[time=="48"],syto2$MixCPPSC3[time=="48"])
 
-SCTxTol<-(c(SCT1Tol,SCT2Tol,SCT3Tol,SCT4Tol,SCT5Tol,SCT6Tol,SCT7Tol,SCT8Tol))
-SCTxmixC<-(c(SCT1mixC,SCT2mixC,SCT3mixC,SCT4mixC,SCT5mixC,SCT6mixC,SCT7mixC,SCT8mixC))
-PPSCTxTol<-(c(PPSCTol.T1,PPSCTol.T2,PPSCTol.T3,PPSCTol.T4,PPSCTol.T5,PPSCTol.T6,PPSCTol.T7,PPSCTol.T8))
-PPSCTxmixC<-(c(PPSCmixC.T1,PPSCmixC.T2,PPSCmixC.T3,PPSCmixC.T4,PPSCmixC.T5,PPSCmixC.T6,PPSCmixC.T7,PPSCmixC.T8))
-
-<<<<<<< HEAD
 par(mfrow = c(1,1))
 
-tot <- data.frame(time, SCTxmixC, SCTxTol, PPSCTxmixC, PPSCTxTol)
-plot(tot$time, tot$SCTxmixC,log="y",ylim=c(min(tot$PPSCTxTol), max(tot$PPSCTxTol)), type="o",main="SC growth",xlab= "Time [Hours]", ylab="log(SC count)")
-=======
+totsc <- data.frame(time, MixC_SCmoy, Tol_SCmoy, MixC_PPSC_SCmoy, Tol_PPSC_SCmoy)
+Tol_deadPPmoy<- c()
 
+for(i in 1:8){
+  Tol_deadPPmoy[i] <- sum(syto2$ToluPP1[time==time[i]],  syto2$ToluPP2[time==time[i]],syto2$ToluPP3[time==time[i]])/3
+}
+plot(totsc$time, totsc$MixC_SCmoy,log="y",ylim=c(min(Tol_deadPPmoy), max(Tol_deadPPmoy)), type="o",main="SC growth",xlab= "Time [Hours]", ylab="log(SC count)")
 
 #Plot des comptes de SC
 
-points(tot$time,tot$SCTxTol, type="o", col="red")
-points(tot$time,tot$PPSCTxmixC, type="o", col="blue")
-points(tot$time,tot$PPSCTxTol, type="o", col="orange")
-legend("topleft",legend=c("SC in mixC","SC in Tol","PP+SC in mixC","PP+SC in Tol"),fill=c("black","red","blue","orange"))
 
-       
-       
-       
-       
+points(totsc$time,totsc$Tol_SCmoy, type="o", col="red")
+points(totsc$time,totsc$MixC_PPSC_SCmoy, type="o", col="blue")
+points(totsc$time,totsc$Tol_PPSC_SCmoy, type="o", col="orange")
+points(totsc$time, Tol_deadPPmoy, type="o", col="green")
+legend("topleft",legend=c("SC in mixC","SC in Tol","SC in PP+SC in mixC","SC in PP+SC in Tol", "Syto-9 count in Tol PPalone"),fill=c("black","red","blue","orange", "green"))
+
+      
+  #SAME WITH PP
+
+
+
+totpp <- data.frame(time, MixC_PPmoy, Tol_PPmoy, MixC_PPSC_PPmoy, Tol_PPSC_PPmoy)
+plot(totpp$time, totpp$MixC_PPmoy,log="y",ylim=c(min(totpp$Tol_PPmoy), max(totpp$Tol_PPmoy)), type="o",main="PP growth",xlab= "Time [Hours]", ylab="log(PP count)")
+
+#Plot des comptes de PP
+
+points(totpp$time,totpp$Tol_PPmoy, type="o", col="red")
+points(totpp$time,totpp$MixC_PPSC_PPmoy, type="o", col="blue")
+points(totpp$time,totpp$Tol_PPSC_PPmoy, type="o", col="orange")
+legend("topleft",legend=c("PP in mixC","PP in Tol","PP in PP+SC in mixC","PP in PP+SC in Tol"),fill=c("black","red","blue","orange"))
+
