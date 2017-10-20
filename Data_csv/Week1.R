@@ -298,14 +298,21 @@ par(mfrow = c(1,1))
 
 totsc <- data.frame(time, MixC_SCmoy, Tol_SCmoy, MixC_PPSC_SCmoy, Tol_PPSC_SCmoy)
 Tol_deadPPmoy<- c()
+#ppmortes dans ppseul
 
 for(i in 1:8){
   Tol_deadPPmoy[i] <- sum(syto2$ToluPP1[time==time[i]],  syto2$ToluPP2[time==time[i]],syto2$ToluPP3[time==time[i]])/3
 }
-plot(totsc$time, totsc$MixC_SCmoy,log="y",ylim=c(min(Tol_deadPPmoy), max(cell_count$Tol_PPSCmoy)), type="o",main="SC growth",xlab= "Time [Hours]", ylab="log(SC count)")
+
+#total dans ppseul
+Tol_all_in_pp = c()
+for(i in 1:8){
+  Tol_all_in_pp[i]  <- Tol_deadPPmoy[i] + Tol_PPmoy[i]
+}
 
 #Plot des comptes de SC
 
+plot(totsc$time, totsc$MixC_SCmoy,log="y",ylim=c(min(Tol_deadPPmoy), max(cell_count$Tol_PPSCmoy)), type="o",main="SC growth",xlab= "Time [Hours]", ylab="log(SC count)")
 
 points(totsc$time,totsc$Tol_SCmoy, type="o", col="red")
 points(totsc$time,totsc$MixC_PPSC_SCmoy, type="o", col="blue")
@@ -313,7 +320,8 @@ points(totsc$time,totsc$Tol_PPSC_SCmoy, type="o", col="orange")
 points(totsc$time, Tol_deadPPmoy, type="o", col="green")
 points(totpp$time, cell_count$MixC_PPSCmoy, type="o", col="brown")
 points(totpp$time, cell_count$Tol_PPSCmoy, type="o", col="gray")
-legend("bottomright",legend=c("SC in mixC","SC in Tol","SC in PP+SC in mixC","SC in PP+SC in Tol", "Syto-9 count in Tol PPalone", "PPSC total in mixC", "PPSC total in Tol"),fill=c("black","red","blue","orange", "green", "brown", "gray"))
+points(totpp$time, Tol_all_in_pp, type = "o", col = "pink")
+legend("bottomright",legend=c("SC in mixC","SC in Tol","SC in PP+SC in mixC","SC in PP+SC in Tol", "Syto-9 count in Tol PPalone", "PPSC total in mixC", "PPSC total in Tol", "total count in pp alone"),fill=c("black","red","blue","orange", "green", "brown", "gray", "pink"))
 
       
   #SAME WITH PP
