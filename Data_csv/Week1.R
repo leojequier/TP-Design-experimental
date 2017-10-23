@@ -338,3 +338,42 @@ points(totpp$time, cell_count$MixC_PPSCmoy, type="o", col="brown")
 points(totpp$time, cell_count$Tol_PPSCmoy, type="o", col="gray")
 legend("bottomright",legend=c("PP in mixC","PP in Tol","PP in PP+SC in mixC","PP in PP+SC in Tol", "PPSC total in mixC", "PPSC total in Tol"),fill=c("black","red","blue","orange", "brown", "gray"))
 
+#estimer l'erreur des réplicats technique 
+#mentionner les problèmes avec le 3èmes réplicats techniques
+#erreur type du flow cytometer ? 
+
+#paramètres importants, pls colonnes : SCw1 or w2, Replicat, PV, PP, SC, AIre sous la courbe
+#il aurait fallu faire mixC+tol
+#cmb de ug de carbon dans le tol et dans le mixC? 
+
+
+
+
+#---------------AREA under a CURVE --> WESH CA MARCHE
+#---- INSTALL.PACKAGES("PRACMA") 
+
+
+AUC = trapz(cell_count$time,cell_count$MixC_SC1)
+AUC
+
+##GENERAL LINAR MODEL TABLE
+
+replicat <- rep(c("1", "2", "3"),20) 
+SCweek <- rep(c("1", "2"), each=30)
+PV <- c(rep(c("N"), 30),rep(c("N"), 3), rep(c("Y"), 12),rep(c("N"), 3), rep(c("Y"), 12))
+PP <- c(rep(c("N"), 3), rep(c("Y"), 12),rep(c("N"), 3), rep(c("Y"), 12), rep(c("N"), 30))
+SC <- rep(c(rep(c("Y","N"), each=3),rep(c("Y"), time=9)),time=4)
+AUC <- vector(length = 60)
+
+
+
+names1 <- c()
+CvTol = rep(c("MixC", "Tol"), each = 30)
+bac = c(rep(rep(c("SC", "PP", "PPSC_SC","PPSC_PP", "PPSC_tot"), each = 3), time = 2),rep(rep(c("SC", "PP", "PVSC_SC","PVSC_PP", "PVSC_tot"), each = 3), time = 2))
+n = rep(c(1,2,3), times = 20)
+for(i in 1:60){
+  names1[i] = paste(CvTol[i], paste(bac[i], n[i], sep = ""), sep = "_")
+}
+
+generallinmod <- data.frame(names1,SCweek,replicat,PV, PP,SC,AUC)
+
