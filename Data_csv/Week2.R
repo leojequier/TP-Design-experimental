@@ -361,6 +361,7 @@ plot(totpp$time, totpp$MixC_PPmoy,log="y",ylim=c(min(totpp$Tol_PPmoy), max(totpp
 #Plot des comptes de PP
 
 points(totpp$time,totpp$Tol_PPmoy, type="o", col="red")
+points(cell_count$time, cell_count$Tol_PVmean, type "o")
 points(totpp$time,totpp$MixC_PPSC_PPmoy, type="o", col="blue")
 points(totpp$time,totpp$Tol_PPSC_PPmoy, type="o", col="orange")
 points(totpp$time, cell_count$MixC_PPSCmoy, type="o", col="brown")
