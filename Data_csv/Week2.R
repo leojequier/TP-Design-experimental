@@ -355,12 +355,10 @@ legend("topleft",legend=c("SC in mixC","SC in Tol","SC in PV+SC in mixC","SC in 
 
 
 
-<<<<<<< HEAD
 #totPV <- data.frame(time, MixC_PVmoy, Tol_PVmoy, MixC_PVSC_PVmoy, Tol_PVSC_PVmoy)
 plot(cell_count$time, cell_count$MixC_PVmean,log="y",xlim=c(0,48),ylim=c(min(Tol_deadPVmoy), max(cell_count$Tol_PVmean)), type="o",main="PV growth",xlab= "Time [Hours]", ylab="log(PV count)")
 
-=======
->>>>>>> 02b64c12954ddeaf97b9b42c82824472c699c0c8
+
 
 #Plot des comptes de PV
 
