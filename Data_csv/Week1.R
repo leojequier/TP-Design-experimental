@@ -319,8 +319,8 @@ points(totsc$time, Tol_deadPPmoy, type="o", col="green")
 points(totpp$time, cell_count$MixC_PPSCmoy, type="o", col="brown")
 points(totpp$time, cell_count$Tol_PPSCmoy, type="o", col="gray")
 points(totpp$time, Tol_all_in_pp, type = "o", col = "pink")
-legend("bottomright",legend=c("SC in mixC","SC in Tol","SC in PP+SC in mixC","SC in PP+SC in Tol", "Syto-9 count in Tol PPalone", "PPSC total in mixC", "PPSC total in Tol", "total count in pp alone"),fill=c("black","red","blue","orange", "green", "brown", "gray", "pink"))
-
+legend("bottomright",legend = c( "Syt9 cnt in Tol PPalone", "PPSC total in mixC", "PPSC total in Tol", "total count in pp alone"),fill=c("green", "brown", "gray", "pink"))
+legend("bottom", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
       
   #SAME WITH PP
 
