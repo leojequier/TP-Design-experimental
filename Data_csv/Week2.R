@@ -348,8 +348,8 @@ points(cell_count$time, cell_count$MixC_PVSC_PVmean+cell_count$MixC_PVSC_SCmean,
 points(cell_count$time, cell_count$Tol_PVSC_PVmean+ cell_count$Tol_PVSC_SCmean,type = "o", col = "grey" )
 points(cell_count$time, Tol_all_in_pv, type = "o", col = "pink" )
 
-legend("topleft",legend=c("SC in mixC","SC in Tol","SC in PV+SC in mixC","SC in PV+SC in Tol", "Syto-9 count in Tol PValone", "PVSC total in mixC", "PVSC total in Tol", "total count in pv alone"),fill=c("black","red","blue","orange", "green", "brown", "gray", "pink"))
-
+legend("topleft",legend=c("SC in mixC","SC in Tol","SC in PV+SC in mixC","SC in PV+SC in Tol", "Syto-9 count in Tol PValone"),fill=c("black","red","blue","orange", "green"))
+legend("bottomright", legend=c("PVSC total in mixC","PVSC total in Tol","total count in pv alone"), fill=c("brown", "gray", "pink"))
 
 #SAME WITH PV
 
