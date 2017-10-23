@@ -362,7 +362,7 @@ plot(cell_count$time, cell_count$MixC_PVmean,log="y",xlim=c(0,48),ylim=c(min(Tol
 
 #Plot des comptes de PV
 
-plot(cell_count$time, cell_count$MixC_PVmean,log="y",ylim=c(min(cell_count$Tol_PVmean), max(cell_count$Tol_PVmean)), type="o",main="PV growth",xlab= "Time [Hours]", ylab="log(PV count)")
+
 points(cell_count$time,cell_count$Tol_PVmean, type="o", col="red")
 points(cell_count$time,cell_count$MixC_PVSC_PVmean, type="o", col="blue")
 points(cell_count$time,cell_count$Tol_PVSC_PVmean, type="o", col="orange")
