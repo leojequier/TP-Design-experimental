@@ -353,8 +353,7 @@ legend("bottomright",legend=c("PP in mixC","PP in Tol","PP in PP+SC in mixC","PP
 #---- INSTALL.PACKAGES("PRACMA") 
 
 
-AUC = trapz(cell_count$time,cell_count$MixC_SC1)
-AUC
+
 
 ##GENERAL LINAR MODEL TABLE
 
@@ -364,7 +363,6 @@ PV <- c(rep(c("N"), 30),rep(c("N"), 3), rep(c("Y"), 12),rep(c("N"), 3), rep(c("Y
 PP <- c(rep(c("N"), 3), rep(c("Y"), 12),rep(c("N"), 3), rep(c("Y"), 12), rep(c("N"), 30))
 SC <- rep(c(rep(c("Y","N"), each=3),rep(c("Y"), time=9)),time=4)
 AUC <- vector(length = 60)
-
 
 
 names1 <- c()
@@ -377,3 +375,30 @@ for(i in 1:60){
 
 generallinmod <- data.frame(names1,SCweek,replicat,PV, PP,SC,AUC)
 
+## Aire sous la courbe
+AUC = trapz(cell_count$time,cell_count$MixC_SC1)
+AUC
+for(i in 2:4){
+  for(j in 1:8){
+    count <- vector(length = 8)
+    count[j] <- cell_count[j,i]
+   
+    #if(length(cell_count==8){
+     # print(trapz(cell_count$time,cell_count))
+    #}
+    
+    #print(trapz(cell_count$time,cell_count[j,i]))
+    #generallinmod$AUC[i] <- paste(trapz(cell_count$time,cell_count$MixC_SC[[i]]))
+  
+  }}
+
+for(i in 1:3){
+generallinmod$AUC[i] <- trapz(cell_count$time,cell_count[,i+1])
+}
+for(i in 4:6){
+  generallinmod$AUC[i] <- trapz(cell_count$time,cell_count[,i+2])
+}                              
+
+for(i in 1:3){
+  generallinmod$AUC[i] <- trapz(cell_count$time,cell_count[,i+1])
+}
