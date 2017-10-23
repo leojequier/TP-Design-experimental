@@ -310,7 +310,7 @@ for(i in 1:8){
 
 #Plot des comptes de SC
 
-plot(totsc$time, totsc$MixC_SCmoy,log="y",ylim=c(min(Tol_deadPPmoy), max(cell_count$Tol_PPSCmoy)), type="o",main="SC growth",xlab= "Time [Hours]", ylab="log(SC count)")
+plot(totsc$time, totsc$MixC_SCmoy,log="y",xlim=c(0,48),ylim=c(min(Tol_deadPPmoy), max(cell_count$Tol_PPSCmoy)), type="o",main="SC growth",xlab= "Time [Hours]", ylab="log(SC count)")
 
 points(totsc$time,totsc$Tol_SCmoy, type="o", col="red")
 points(totsc$time,totsc$MixC_PPSC_SCmoy, type="o", col="blue")
@@ -327,7 +327,7 @@ legend("bottomright",legend=c("SC in mixC","SC in Tol","SC in PP+SC in mixC","SC
 
 
 totpp <- data.frame(time, MixC_PPmoy, Tol_PPmoy, MixC_PPSC_PPmoy, Tol_PPSC_PPmoy)
-plot(totpp$time, totpp$MixC_PPmoy,log="y",ylim=c(min(totpp$Tol_PPmoy), max(totpp$Tol_PPmoy)), type="o",main="PP growth",xlab= "Time [Hours]", ylab="log(PP count)")
+plot(totpp$time, totpp$MixC_PPmoy,log="y",xlim=c(0,48),ylim=c(min(Tol_deadPPmoy), max(cell_count$Tol_PPSCmoy)), type="o",main="PP growth",xlab= "Time [Hours]", ylab="log(PP count)")
 
 #Plot des comptes de PP
 

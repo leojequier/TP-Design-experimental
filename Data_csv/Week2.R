@@ -338,7 +338,7 @@ for(i in 1:9){
 }
 
 #Plot des comptes de SC
-plot(cell_count$time, cell_count$MixC_SCmean, log = "y", ylim = range(cell_count[,seq(from = 5, to = length(list_cell_count), by = 4)]), type = "o",main="SC growth",xlab= "Time [Hours]", ylab="log(SC count)")
+plot(cell_count$time, cell_count$MixC_SCmean, log = "y",xlim=c(0,48), ylim = c(min(Tol_deadPVmoy), max(Tol_all_in_pv)), type = "o",main="SC growth",xlab= "Time [Hours]", ylab="log(SC count)")
 
 points(cell_count$time,cell_count$Tol_SCmean,type="o", col="red")
 points(cell_count$time,cell_count$MixC_PVSC_SCmean, type="o", col="blue")
@@ -356,15 +356,17 @@ legend("topleft",legend=c("SC in mixC","SC in Tol","SC in PV+SC in mixC","SC in 
 
 
 #totPV <- data.frame(time, MixC_PVmoy, Tol_PVmoy, MixC_PVSC_PVmoy, Tol_PVSC_PVmoy)
-plot(cell_count$time, cell_count$MixC_PVmean,log="y",ylim=c(min(cell_count$Tol_PVmean), max(cell_count$Tol_PVmean)), type="o",main="PV growth",xlab= "Time [Hours]", ylab="log(PV count)")
+plot(cell_count$time, cell_count$MixC_PVmean,log="y",xlim=c(0,48),ylim=c(min(Tol_deadPVmoy), max(cell_count$Tol_PVmean)), type="o",main="PV growth",xlab= "Time [Hours]", ylab="log(PV count)")
+
 
 #Plot des comptes de PV
 
+plot(cell_count$time, cell_count$MixC_PVmean,log="y",ylim=c(min(cell_count$Tol_PVmean), max(cell_count$Tol_PVmean)), type="o",main="PV growth",xlab= "Time [Hours]", ylab="log(PV count)")
 points(cell_count$time,cell_count$Tol_PVmean, type="o", col="red")
 points(cell_count$time,cell_count$MixC_PVSC_PVmean, type="o", col="blue")
 points(cell_count$time,cell_count$Tol_PVSC_PVmean, type="o", col="orange")
-points(cell_count$time, cell_count$MixC_PVSCmean, type="o", col="brown")
-points(cell_count$time, cell_count$Tol_PVSCmean, type="o", col="gray")
+points(cell_count$time, cell_count$MixC_PVSC_SCmean + cell_count$MixC_PVSC_PVmean, type="o", col="brown")
+points(cell_count$time, cell_count$Tol_PVSC_SCmean + cell_count$Tol_PVSC_PVmean, type="o", col="gray")
 legend("bottomright",legend=c("PV in mixC","PV in Tol","PV in PV+SC in mixC","PV in PV+SC in Tol", "PVSC total in mixC", "PVSC total in Tol"),fill=c("black","red","blue","orange", "brown", "gray"))
 
 
