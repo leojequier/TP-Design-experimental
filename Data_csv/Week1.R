@@ -77,7 +77,7 @@ for(i in 1:18){
 }
 
 #vecteur contenant le temps en heure
-time = c(0, 12, 15, 18,24, 39,43 ,48 )
+time = c(0, 11, 15 + 1/6, 19.5,22.5,38.5 , 45+ 1/3 ,48 )
 
 #creer le dataframe a proprement parler
 syto2 = data.frame(time, MixCPP1)
@@ -116,8 +116,6 @@ for(i in 11:19){
 
 ###------------------------------------------------------------------m-che 
 #creer data frame pour acceuilir les données
-
-time = c(0, 12, 15, 18,24, 39,43 ,48 )
 
 cher = data.frame(time, List_treat)
 for(i in 1:18){

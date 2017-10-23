@@ -73,17 +73,17 @@ for(i in 1:18){
 List_treat_stained = vector(mode = "list", length = 18)
 for(i in 1:18){
   List_treat_stained[[i]] = names_stained[i]
-  assign(List_treat_stained[[i]], rep(NA, times = 8))
+  assign(List_treat_stained[[i]], rep(NA, times = 9))
 }
 
 List_treat_unstained = vector(mode = "list", length = 18)
 for(i in 1:18){
   List_treat_unstained[[i]] = names_unstained[i]
-  assign(List_treat_unstained[[i]], rep(NA, times = 8))
+  assign(List_treat_unstained[[i]], rep(NA, times = 9))
 }
 
 #vecteur contenant le temps en heure
-time = c(0, 14, 17, 20, 34, 39, 42 ,45 )
+time = c(0, 14.5, 18, 21, 23.5, 36.5, 42 ,44.5 , 47.5 )
 
 #création du data.frame stained
 syto_stained = data.frame(time, MixCPV_stained1)
@@ -117,7 +117,7 @@ for(i in 1:18){
 } 
 
 #remplir avec SYTO 9 pour tous les traitements stained
-for(i in 1:8){ 
+for(i in 1:9){ 
   for(j in 1:18){
     Data = get(List[[i]]) #stocke T[I]
     print(lech[j]) 
@@ -126,7 +126,7 @@ for(i in 1:8){
   }}
 
 #remplir avec SYTO 9 pour tous les traitements stained
-for(i in 1:8){ 
+for(i in 1:9){ 
   for(j in 1:18){
     Data = get(List[[i]]) #stocke T[I]
     print(lech_un[j]) 
@@ -137,12 +137,13 @@ for(i in 1:8){
 
 #graphiques SYTO-9
 par(mfrow = c(3,3))
+
 for(i in 2:10){
-  plot(syto_stained[,1],syto_stained[,i], log = "y", ylim = c(min(syto_unstained[,2:10]), max(syto_unstained[,2:10])),main = List_treat_stained[[i-1]], xlab = "time[h]", ylab = "SYTO-9 count")
+  plot(syto_stained[,1],syto_stained[,i], log = "y", ylim = range(syto_stained[,c(2:15,17:19)]) ,main = List_treat_stained[[i-1]], xlab = "time[h]", ylab = "SYTO-9 count")
 }
 
 for(i in 11:19){
-  plot(syto_stained[,1],syto_stained[,i], log = "y", ylim = c(min(syto_unstained[,2:10]), max(syto_unstained[,2:10])),main = List_treat_stained[[i-1]],xlab = "time[h]", ylab = "SYTO-9 count")
+  plot(syto_stained[,1],syto_stained[,i], log = "y",ylim = range(syto_stained[,c(2:15,17:19)]),main = List_treat_stained[[i-1]],xlab = "time[h]", ylab = "SYTO-9 count")
 }
 
 #-------------------------------mCHE_stained
@@ -155,7 +156,7 @@ for(i in 1:18){
 names(cher_stained) = c("time", List_treat_stained)
 
 #remplir le Data frame
-for(i in 1:8){
+for(i in 1:9){
   for(j in 1:18){
     Data = get(List[[i]])
     print(lech[j])
@@ -166,11 +167,11 @@ for(i in 1:8){
 
 par(mfrow = c(3,3))
 for(i in 2:10){
-  plot(cher_stained[,1],cher_stained[,i], log = "y", ylim = c(min(cher_stained[,2:10]), max(cher_stained[,2:10])),main = List_treat_stained[[i-1]], xlab = "time[h]", ylab = "mChe count")
+  plot(cher_stained[,1],cher_stained[,i], log = "y", ylim = range(cher_stained[2:19]),main = List_treat_stained[[i-1]], xlab = "time[h]", ylab = "mChe count")
 }
 
 for(i in 11:19){
-  plot(cher_stained[,1],cher_stained[,i], log = "y",ylim = c(min(cher_stained[,2:10]), max(cher_stained[,2:10])), main = List_treat_stained[[i-1]],xlab = "time[h]", ylab = "mChe count")
+  plot(cher_stained[,1],cher_stained[,i], log = "y",ylim = range(cher_stained[2:19]), main = List_treat_stained[[i-1]],xlab = "time[h]", ylab = "mChe count")
 }
 
 
@@ -185,7 +186,7 @@ for(i in 1:18){
 names(cher_unstained) = c("time", List_treat_unstained)
 
 #remplir le Data frame
-for(i in 1:8){
+for(i in 1:9){
   for(j in 1:18){
     Data = get(List[[i]])
     print(lech_un[j])
@@ -197,11 +198,11 @@ for(i in 1:8){
 
 par(mfrow = c(3,3))
 for(i in 2:10){
-  plot(cher_unstained[,1],cher_unstained[,i], log = "y",ylim = c(min(cher_unstained[,2:10]), max(cher_unstained[,2:10])), main = List_treat_unstained[[i-1]], xlab = "time[h]", ylab = "mChe count")
+  plot(cher_unstained[,1],cher_unstained[,i], log = "y",ylim = range(cher_unstained[,2:19]), main = List_treat_unstained[[i-1]], xlab = "time[h]", ylab = "mChe count")
 }
 
 for(i in 11:19){
-  plot(cher_unstained[,1],cher_unstained[,i], log = "y",ylim = c(min(cher_unstained[,2:10]), max(cher_unstained[,2:10])), main = List_treat_unstained[[i-1]],xlab = "time[h]", ylab = "mChe count")
+  plot(cher_unstained[,1],cher_unstained[,i], log = "y",ylim = range(cher_unstained[,2:19]), main = List_treat_unstained[[i-1]],xlab = "time[h]", ylab = "mChe count")
 }
 
 
@@ -215,7 +216,7 @@ for(i in 1:18){
 names(absol_stained) = c("time", List_treat_stained)
 
 #remplir
-for(i in 1:8){
+for(i in 1:9){
   for(j in 1:18){
     Data = get(List[[i]])
     print(lech[j])
@@ -227,11 +228,11 @@ for(i in 1:8){
 #graphiques
 par(mfrow = c(3,3))
 for(i in 2:10){
-  plot(absol_stained[,1],absol_stained[,i], ylim = c(min(absol_stained[,2:10]), max(absol_stained[,2:10])), log = "y", main = List_treat_stained[[i-1]], xlab = "time[h]", ylab = "Absolut count")
+  plot(absol_stained[,1],absol_stained[,i], ylim = range(absol_stained[,2:19]), log = "y", main = List_treat_stained[[i-1]], xlab = "time[h]", ylab = "Absolut count")
 }
 
 for(i in 11:19){
-  plot(absol_stained[,1],absol_stained[,i],  ylim = c(min(absol_stained[,2:19]), max(absol_stained[,2:19])),log = "y", main = List_treat_stained[[i-1]],xlab = "time[h]", ylab = "Absolut count")
+  plot(absol_stained[,1],absol_stained[,i],  ylim = range(absol_stained[,2:19]),log = "y", main = List_treat_stained[[i-1]],xlab = "time[h]", ylab = "Absolut count")
 }
 
 
@@ -245,7 +246,7 @@ for(i in 1:18){
 names(absol_unstained) = c("time", List_treat_unstained)
 
 #remplir
-for(i in 1:8){
+for(i in 1:9){
   for(j in 1:18){
     Data = get(List[[i]])
     print(lech[j])
@@ -256,32 +257,116 @@ for(i in 1:8){
 #graphiques
 par(mfrow = c(3,3))
 for(i in 2:10){
-  plot(absol_unstained[,1],absol_unstained[,i], ylim = c(min(absol_unstained[,2:10]), max(absol_unstained[,2:10])), log = "y", main = List_treat_unstained[[i-1]], xlab = "time[h]", ylab = "Absolut count")
+  plot(absol_unstained[,1],absol_unstained[,i], ylim = range(absol_unstained[,2:19]), log = "y", main = List_treat_unstained[[i-1]], xlab = "time[h]", ylab = "Absolut count")
 }
 
 for(i in 11:19){
-  plot(absol_unstained[,1],absol_unstained[,i],  ylim = c(min(absol_unstained[,2:19]), max(absol_unstained[,2:19])),log = "y", main = List_treat_unstained[[i-1]],xlab = "time[h]", ylab = "Absolut count")
+  plot(absol_unstained[,1],absol_unstained[,i],  ylim = range(absol_unstained[,2:19]),log = "y", main = List_treat_unstained[[i-1]],xlab = "time[h]", ylab = "Absolut count")
 }
 
 #cell count
-list_cell_count = vector(mode = "list", length = 25)
+list_cell_count = vector(mode = "list", length = 32)
 list_cell_count[1] = "time"
-CvTol = rep(c("MixC", "Tol"), each = 12)
-bac = rep(rep(c("SC", "PV", "PVSC_SC","PPSC_PV"), each = 3), time = 2)
-n = rep(c(1,2,3), times = 8)
-for(i in 1:24){
+CvTol = rep(c("MixC", "Tol"), each = 16)
+bac = rep(rep(c("SC", "PV", "PVSC_SC","PVSC_PV"), each = 4), time = 2)
+n = rep(c(1,2,3,"mean"), times = 8)
+for(i in 1:32){
   list_cell_count[i+1] = paste(CvTol[i], paste(bac[i], n[i], sep = ""), sep = "_")
 }
-cell_count = data.frame(time, syto_stained$MixCSC_stained1, syto_stained$MixCSC_stained2, syto_stained$MixCSC_stained3,
-                        cher_stained$MixCPV_stained1,cher_stained$MixCPV_stained2,cher_stained$MixCPV_stained3,
-                        syto_stained$MixCPVSC_stained1,syto_stained$MixCPVSC_stained2,syto_stained$MixCPVSC_stained3,
-                        cher_stained$MixCPVSC_stained1, cher_stained$MixCPVSC_stained2, cher_stained$MixCPVSC_stained3, 
-                        syto_stained$ToluSC_stained1,syto_stained$ToluSC_stained2,syto_stained$ToluSC_stained3,
-                        cher_stained$ToluPV_stained1,cher_stained$ToluPV_stained2,cher_stained$ToluPV_stained3, 
-                        syto_stained$ToluPVSC_stained1, syto_stained$ToluPVSC_stained2,syto_stained$ToluPVSC_stained3,
-                        cher_stained$ToluPVSC_stained1,cher_stained$ToluPVSC_stained2,cher_stained$ToluPVSC_stained3)
+
+## moyennes
+
+for(i in seq(from = 5, to = length(list_cell_count), by = 4)){
+  print(i)
+  print(list_cell_count[i])
+  assign(list_cell_count[[i]], rep(NA, times = 9))
+}
+
+cell_count = data.frame(time, syto_stained$MixCSC_stained1, syto_stained$MixCSC_stained2, syto_stained$MixCSC_stained3, get(list_cell_count[[5]])
+                        
+                        ,cher_stained$MixCPV_stained1,cher_stained$MixCPV_stained2,cher_stained$MixCPV_stained3, get(list_cell_count[[9]])
+                        
+                        ,syto_stained$MixCPVSC_stained1,syto_stained$MixCPVSC_stained2,syto_stained$MixCPVSC_stained3,get(list_cell_count[[13]])
+                        
+                        ,cher_stained$MixCPVSC_stained1, cher_stained$MixCPVSC_stained2, cher_stained$MixCPVSC_stained3, get(list_cell_count[[17]])
+                        
+                        ,syto_stained$ToluSC_stained1,syto_stained$ToluSC_stained2,syto_stained$ToluSC_stained3,get(list_cell_count[[21]])
+                        
+                        ,cher_stained$ToluPV_stained1,cher_stained$ToluPV_stained2,cher_stained$ToluPV_stained3, get(list_cell_count[[25]])
+                        
+                        ,syto_stained$ToluPVSC_stained1, syto_stained$ToluPVSC_stained2,syto_stained$ToluPVSC_stained3, get(list_cell_count[[29]])
+                        
+                        ,cher_stained$ToluPVSC_stained1,cher_stained$ToluPVSC_stained2,cher_stained$ToluPVSC_stained3, get(list_cell_count[[33]]))
+
+
 names(cell_count) = list_cell_count
 names(cell_count)
+
+##remplir les moyennes
+
+for(i in 1:9){cell_count[i,5] = sum(c(syto_stained$MixCSC_stained1[i], syto_stained$MixCSC_stained2[i], syto_stained$MixCSC_stained3[i]))/3}
+for(i in 1:9){cell_count[i,9] =mean(c(cher_stained$MixCPV_stained1[i],cher_stained$MixCPV_stained2[i],cher_stained$MixCPV_stained3[i]))}
+for(i in 1:9){cell_count[i,13] =mean(c(syto_stained$MixCPVSC_stained1[i],syto_stained$MixCPVSC_stained2[i],syto_stained$MixCPVSC_stained3[i]))}
+for(i in 1:9){cell_count[i,17] =mean(c(cher_stained$MixCPVSC_stained1[i], cher_stained$MixCPVSC_stained2[i], cher_stained$MixCPVSC_stained3[i]))}
+for(i in 1:9){cell_count[i,21] =mean(c(syto_stained$ToluSC_stained1[i],syto_stained$ToluSC_stained2[i],syto_stained$ToluSC_stained3[i]))}
+for(i in 1:9){cell_count[i,25] =mean(c(cher_stained$ToluPV_stained1[i],cher_stained$ToluPV_stained2[i],cher_stained$ToluPV_stained3[i]))}
+for(i in 1:9){cell_count[i,29] =mean(c(syto_stained$ToluPVSC_stained1[i], syto_stained$ToluPVSC_stained2[i],syto_stained$ToluPVSC_stained3[i]))}
+for(i in 1:9){cell_count[i,33] =mean(c(cher_stained$ToluPVSC_stained1[i],cher_stained$ToluPVSC_stained2[i],cher_stained$ToluPVSC_stained3[i]))}
+
+## graphiques finaux, copié collé W1
+#graphiques
+
+
+
+par(mfrow = c(1,1))
+
+totsc <- data.frame(time, MixC_SCmoy, Tol_SCmoy, MixC_PPSC_SCmoy, Tol_PPSC_SCmoy)
+
+#ppmortes dans ppseul
+Tol_deadPVmoy<- c()
+
+for(i in 1:9){
+  Tol_deadPVmoy[i] <- sum(syto_stained$ToluPV_stained1[time==time[i]],
+                          syto_stained$ToluPV_stained2[time==time[i]],
+                          syto_stained$ToluPV_stained3[time==time[i]])/3
+}
+
+#total dans ppseul
+Tol_all_in_pv = c()
+for(i in 1:9){
+  Tol_all_in_pv[i]  <- Tol_deadPVmoy[i] + cell_count$Tol_PVmean[i]
+}
+
+#Plot des comptes de SC
+plot(cell_count$time, cell_count$MixC_SCmean, log = "y", ylim = range(cell_count[,seq(from = 5, to = length(list_cell_count), by = 4)]), type = "o",main="SC growth",xlab= "Time [Hours]", ylab="log(SC count)")
+
+points(cell_count$time,cell_count$Tol_SCmean,type="o", col="red")
+points(cell_count$time,cell_count$MixC_PVSC_SCmean, type="o", col="blue")
+points(cell_count$time, cell_count$Tol_PVSC_SCmean, type = "o", col = "orange")
+points(cell_count$time, Tol_deadPVmoy, type = "o", col = "green")
+points(cell_count$time, cell_count$MixC_PVSC_PVmean+cell_count$MixC_PVSC_SCmean,type = "o", col = "brown")
+points(cell_count$time, cell_count$Tol_PVSC_PVmean+ cell_count$Tol_PVSC_SCmean,type = "o", col = "grey" )
+points(cell_count$time, Tol_all_in_pv, type = "o", col = "pink" )
+
+legend("topleft",legend=c("SC in mixC","SC in Tol","SC in PV+SC in mixC","SC in PV+SC in Tol", "Syto-9 count in Tol PValone", "PVSC total in mixC", "PVSC total in Tol", "total count in pv alone"),fill=c("black","red","blue","orange", "green", "brown", "gray", "pink"))
+
+
+#SAME WITH PP
+
+
+
+totpp <- data.frame(time, MixC_PPmoy, Tol_PPmoy, MixC_PPSC_PPmoy, Tol_PPSC_PPmoy)
+plot(totpp$time, totpp$MixC_PPmoy,log="y",ylim=c(min(totpp$Tol_PPmoy), max(totpp$Tol_PPmoy)), type="o",main="PP growth",xlab= "Time [Hours]", ylab="log(PP count)")
+
+#Plot des comptes de PP
+
+points(totpp$time,totpp$Tol_PPmoy, type="o", col="red")
+points(totpp$time,totpp$MixC_PPSC_PPmoy, type="o", col="blue")
+points(totpp$time,totpp$Tol_PPSC_PPmoy, type="o", col="orange")
+points(totpp$time, cell_count$MixC_PPSCmoy, type="o", col="brown")
+points(totpp$time, cell_count$Tol_PPSCmoy, type="o", col="gray")
+legend("bottomright",legend=c("PP in mixC","PP in Tol","PP in PP+SC in mixC","PP in PP+SC in Tol", "PPSC total in mixC", "PPSC total in Tol"),fill=c("black","red","blue","orange", "brown", "gray"))
+
 
 
 
