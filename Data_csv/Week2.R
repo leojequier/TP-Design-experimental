@@ -352,13 +352,17 @@ legend("topleft",legend=c("SC in mixC","SC in Tol","SC in PV+SC in mixC","SC in 
 
 
 #SAME WITH PP
+#SAME WITH PV
 
 
 
 totpp <- data.frame(time, MixC_PPmoy, Tol_PPmoy, MixC_PPSC_PPmoy, Tol_PPSC_PPmoy)
 plot(totpp$time, totpp$MixC_PPmoy,log="y",ylim=c(min(totpp$Tol_PPmoy), max(totpp$Tol_PPmoy)), type="o",main="PP growth",xlab= "Time [Hours]", ylab="log(PP count)")
+#totPV <- data.frame(time, MixC_PVmoy, Tol_PVmoy, MixC_PVSC_PVmoy, Tol_PVSC_PVmoy)
+plot(cell_count$time, cell_count$MixC_PVmean,log="y",ylim=c(min(cell_count$Tol_PVmean), max(cell_count$Tol_PVmean)), type="o",main="PV growth",xlab= "Time [Hours]", ylab="log(PV count)")
 
 #Plot des comptes de PP
+#Plot des comptes de PV
 
 points(totpp$time,totpp$Tol_PPmoy, type="o", col="red")
 points(cell_count$time, cell_count$Tol_PVmean, type "o")
@@ -367,6 +371,13 @@ points(totpp$time,totpp$Tol_PPSC_PPmoy, type="o", col="orange")
 points(totpp$time, cell_count$MixC_PPSCmoy, type="o", col="brown")
 points(totpp$time, cell_count$Tol_PPSCmoy, type="o", col="gray")
 legend("bottomright",legend=c("PP in mixC","PP in Tol","PP in PP+SC in mixC","PP in PP+SC in Tol", "PPSC total in mixC", "PPSC total in Tol"),fill=c("black","red","blue","orange", "brown", "gray"))
+points(cell_count$time,cell_count$Tol_PVmean, type="o", col="red")
+points(cell_count$time,cell_count$MixC_PVSC_PVmean, type="o", col="blue")
+points(cell_count$time,cell_count$Tol_PVSC_PVmean, type="o", col="orange")
+points(cell_count$time, cell_count$MixC_PVSCmean, type="o", col="brown")
+points(cell_count$time, cell_count$Tol_PVSCmean, type="o", col="gray")
+legend("bottomright",legend=c("PV in mixC","PV in Tol","PV in PV+SC in mixC","PV in PV+SC in Tol", "PVSC total in mixC", "PVSC total in Tol"),fill=c("black","red","blue","orange", "brown", "gray"))
+>>>>>>> 48b4056d850f825cc62713b50f4c7c1e9aec3dbc
 
 
 
