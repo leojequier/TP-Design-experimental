@@ -1,6 +1,6 @@
 
 rm(list=ls())
-install.packages("pracma")
+#install.packages("pracma")
 library("pracma")
 
 #charger les données, après avoir fait session, set working directory, to source file location
