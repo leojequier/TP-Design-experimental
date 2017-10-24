@@ -376,12 +376,18 @@ for(i in 1:60){
 week <- data.frame(names1,SCweek,replicat,PV, PP,SC,AUC)
 
 ## Table avec les mêmes noms dans le même ordre que week
+time_w2 = c(0, 14.5, 18, 21, 23.5, 36.5, 42 ,44.5 , 47.5 )
 
 ess <- read.table("ess.txt", sep="\t", header=T)
+ess2 <- read.table("ess2.txt", header = T)
 
 ## Aire sous la courbe
 for(i in 1:30){
   week$AUC[i] = trapz(time,ess[,i])
+}
+
+for(i in 31:60){
+  week$AUC[i] = trapz(time_w2, ess2[,1])
 }
 
 
