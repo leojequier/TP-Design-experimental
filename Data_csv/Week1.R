@@ -373,11 +373,11 @@ AUC <- vector(length = 60)
 names1 <- c()
 names2 <- c()
 CvTol = rep(c("MixC", "Tol"), each = 15, time=2)
-bac = c(rep(rep(c("SC", "PP", "PPSC_SC","PPSC_PP", "PPSC_tot"), each = 3), time = 2),rep(rep(c("SC", "PV", "PVSC_SC","PVSC_PP", "PVSC_tot"), each = 3), time = 2))
+bac2 = c(rep(rep(c("SC1", "PP", "PPSC_SC","PPSC_PP", "PPSC_tot"), each = 3), time = 2),rep(rep(c("SC2", "PV", "PVSC_SC","PVSC_PV", "PVSC_tot"), each = 3), time = 2))
 n = c(rep(c(1,2,3), times = 10), rep(c("1_1","2_1","3_1"), times=10))
 for(i in 1:60){
   names1[i] = paste(CvTol[i], paste(bac[i], n[i], sep = ""), sep = "_")
-  names2[i] = paste(CvTol[i], paste(bac[i], sep = ""), sep = "_")
+  names2[i] = bac[i]
 }
 
 
@@ -399,5 +399,24 @@ for(i in 31:60){
   week$AUC[i] = trapz(time_w2, ess2[,i-30])
 }
 
-summary(glm(log(week$AUC) ~ as.factor(week$names2)+ as.factor(week$SCweek1)+as.factor(week$SCweek2)+as.factor(week$Substrate)+as.factor(week$Replicat)+as.factor(week$PV)+as.factor(week$PP)+as.factor(week$SC)))
+summary(glm(log(week$AUC) ~ as.factor(week$SCweek1)+ as.factor(week$names2)+as.factor(week$Substrate)+as.factor(week$Replicat)))
+## que les réplicat ne sont pas important, n'ont pas d'influence, que il n'y a pas de différence entre le SC d'une semaine à l'autre.
 
+##Anova
+model = aov(log(week$AUC)~week$Substrate*as.factor(week$names2))
+anova(model)
+#le substrat a un effet significatif, les échantillons ayant poussé dans des substrats différents sont en moyenne différents.
+#au moins un traitement à un effet significatif, 
+bac2 = c(rep(rep(c("SC1", "PP", "PPSC_SC","PPSC_PP", "PPSC_tot"), each = 3), time = 2),rep(rep(c("SC2", "PV", "PVSC_SC","PVSC_PV", "PVSC_tot"), each = 3), time = 2))
+CvTol2 = rep(c("MixC", "Tol"), each = 15, time=2)
+eti = c()
+for(i in 1:60){
+  eti[i] = paste(CvTol2[i], bac2[i],sep = "_")
+}
+
+
+eti = as.factor(eti)
+
+
+plot(as.numeric(eti[1:30]), log(week$AUC[1:30]), xlab = "")
+axis(1, at = 1:20, labels = unique(eti)[1:10], las = 2)
