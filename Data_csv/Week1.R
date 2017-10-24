@@ -1,6 +1,7 @@
 
 rm(list=ls())
-
+install.packages("pracma")
+library("pracma")
 
 #charger les données, après avoir fait session, set working directory, to source file location
 path = "Data_W1_csv2/T"
