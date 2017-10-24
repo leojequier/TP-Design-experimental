@@ -366,39 +366,23 @@ AUC <- vector(length = 60)
 
 
 names1 <- c()
-CvTol = rep(c("MixC", "Tol"), each = 30)
-bac = c(rep(rep(c("SC", "PP", "PPSC_SC","PPSC_PP", "PPSC_tot"), each = 3), time = 2),rep(rep(c("SC", "PP", "PVSC_SC","PVSC_PP", "PVSC_tot"), each = 3), time = 2))
-n = rep(c(1,2,3), times = 20)
+CvTol = rep(c("MixC", "Tol"), each = 15, time=2)
+bac = c(rep(rep(c("SC", "PP", "PPSC_SC","PPSC_PP", "PPSC_tot"), each = 3), time = 2),rep(rep(c("SC", "PV", "PVSC_SC","PVSC_PP", "PVSC_tot"), each = 3), time = 2))
+n = c(rep(c(1,2,3), times = 10), rep(c("1_1","2_1","3_1"), times=10))
 for(i in 1:60){
   names1[i] = paste(CvTol[i], paste(bac[i], n[i], sep = ""), sep = "_")
 }
 
-generallinmod <- data.frame(names1,SCweek,replicat,PV, PP,SC,AUC)
+week <- data.frame(names1,SCweek,replicat,PV, PP,SC,AUC)
+
+## Table avec les mêmes noms dans le même ordre que week
+
+ess <- read.table("ess.txt", sep="\t", header=T)
 
 ## Aire sous la courbe
-AUC = trapz(cell_count$time,cell_count$MixC_SC1)
-AUC
-for(i in 2:4){
-  for(j in 1:8){
-    count <- vector(length = 8)
-    count[j] <- cell_count[j,i]
-   
-    #if(length(cell_count==8){
-     # print(trapz(cell_count$time,cell_count))
-    #}
-    
-    #print(trapz(cell_count$time,cell_count[j,i]))
-    #generallinmod$AUC[i] <- paste(trapz(cell_count$time,cell_count$MixC_SC[[i]]))
-  
-  }}
-
-for(i in 1:3){
-generallinmod$AUC[i] <- trapz(cell_count$time,cell_count[,i+1])
+for(i in 1:30){
+  week$AUC[i] = trapz(time,ess[,i])
 }
-for(i in 4:6){
-  generallinmod$AUC[i] <- trapz(cell_count$time,cell_count[,i+2])
-}                              
 
-for(i in 1:3){
-  generallinmod$AUC[i] <- trapz(cell_count$time,cell_count[,i+1])
-}
+
+
