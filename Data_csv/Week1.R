@@ -383,8 +383,7 @@ legend("bottomright",legend=c("PP in mixC","PP in Tol","PP in PP+SC in mixC","PP
 ##GENERAL LINAR MODEL TABLE
 
 Replicat <- rep(c("1", "2", "3"),20) 
-SCweek1 <- c(rep(c(rep(c("1"),time=3), rep(c("0"), time=12)),time=2), rep(c("0"),time=30))
-SCweek2 <- c(rep(c("0"),time=30),rep(c(rep(c("1"),time=3), rep(c("0"), time=12)),time=2))
+week_on_SC <- c(rep(c(rep(c("1"),time=3), rep(c("0"), time=12)),time=2),rep(c(rep(c("2"),time=3), rep("0", time=12)),time=2))
 Substrate<-rep(c("MixC", "Tol"), each=15, time=2)
 PV <- c(rep(c("0"), 30),rep(c("0"), 3), rep(c("1"), 12),rep(c("0"), 3), rep(c("1"), 12))
 PP <- c(rep(c("0"), 3), rep(c("1"), 12),rep(c("0"), 3), rep(c("1"), 12), rep(c("0"), 30))
@@ -397,7 +396,7 @@ AUC <- vector(length = 60)
 names1 <- c()
 names2 <- c()
 CvTol = rep(c("MixC", "Tol"), each = 15, time=2)
-bac2 = c(rep(rep(c("SC1", "PP", "PPSC_SC","PPSC_PP", "PPSC_tot"), each = 3), time = 2),rep(rep(c("SC2", "PV", "PVSC_SC","PVSC_PV", "PVSC_tot"), each = 3), time = 2))
+bac = c(rep(rep(c("SC", "PP", "PPSC_SC","PPSC_PP", "PPSC_tot"), each = 3), time = 2),rep(rep(c("SC", "PV", "PVSC_SC","PVSC_PV", "PVSC_tot"), each = 3), time = 2))
 n = c(rep(c(1,2,3), times = 10), rep(c("1_1","2_1","3_1"), times=10))
 for(i in 1:60){
   names1[i] = paste(CvTol[i], paste(bac[i], n[i], sep = ""), sep = "_")
@@ -405,7 +404,7 @@ for(i in 1:60){
 }
 
 
-week <- data.frame(names1, names2,Substrate,SCweek1,SCweek2,Replicat,PV, PP,SC,PPSC, PVSC,AUC)
+week <- data.frame(names1, names2,Substrate,week_on_SC,Replicat,PV, PP,SC,PPSC, PVSC,AUC)
 
 ## Table avec les mêmes noms dans le même ordre que week
 time_w1 = c(0, 11, 15 + 1/6, 19.5,22.5,38.5 , 45+ 1/3 ,48 )
@@ -423,14 +422,22 @@ for(i in 31:60){
   week$AUC[i] = trapz(time_w2, ess2[,i-30])
 }
 
-summary(glm(log(week$AUC) ~ as.factor(week$SCweek1)+ as.factor(week$names2)+as.factor(week$Substrate)+as.factor(week$Replicat)))
+summary(glm(log(week$AUC) ~ as.factor(week$week_on_SC)+ as.factor(week$names2)+as.factor(week$Substrate)+as.factor(week$Replicat)))
 ## que les réplicat ne sont pas important, n'ont pas d'influence, que il n'y a pas de différence entre le SC d'une semaine à l'autre.
+
+##test week 1
+model_week_1 = aov(log(week$AUC[week$names1 %in% week$names1[c(1:3, 7:9, 16:18, 22:24)]]))~ )
+                   
+                  
 
 ##Anova
 model = aov(log(week$AUC)~week$Substrate*as.factor(week$names2))
 anova(model)
 #le substrat a un effet significatif, les échantillons ayant poussé dans des substrats différents sont en moyenne différents.
-#au moins un traitement à un effet significatif, 
+#au moins un traitement à un effet significatif,
+#graphes
+par(mfrow = c(1,1))
+
 bac2 = c(rep(rep(c("SC1", "PP", "PPSC_SC","PPSC_PP", "PPSC_tot"), each = 3), time = 2),rep(rep(c("SC2", "PV", "PVSC_SC","PVSC_PV", "PVSC_tot"), each = 3), time = 2))
 CvTol2 = rep(c("MixC", "Tol"), each = 15, time=2)
 eti = c()
@@ -440,7 +447,9 @@ for(i in 1:60){
 
 
 eti = as.factor(eti)
+?as.numeric
 
+plot(rep(1:10, each = 3), log(week$AUC[1:30]), xlab = "")
 
-plot(as.numeric(eti[1:30]), log(week$AUC[1:30]), xlab = "")
-axis(1, at = 1:20, labels = unique(eti)[1:10], las = 2)
+?axis
+axis(1, at = 1:10, labels = unique(eti[1:30]), las = 2, hadj = T)
