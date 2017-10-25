@@ -175,50 +175,50 @@ for(i in 11:19){
 MixC_SCmoy_G<- c()
 
 for(i in 1:8){
-  MixC_SCmoy_G[i] <- sum(syto2$MixCSC1[time==time[i]],  syto2$MixCSC2[time==time[i]], syto2$MixCSC3[time==time[i]])/3
+  MixC_SCmoy_G[i] <- sum(syto2$MixCSC1[i],  syto2$MixCSC2[i], syto2$MixCSC3[i])/3
 }
 
 MixC_SCmoy_R<- c()
 
 for(i in 1:8){
-  MixC_SCmoy_R[i] <- sum(cher$MixCSC1[time==time[i]],  cher$MixCSC2[time==time[i]], cher$MixCSC3[time==time[i]])/3
+  MixC_SCmoy_R[i] <- sum(cher$MixCSC1[i],  cher$MixCSC2[i], cher$MixCSC3[i])/3
 }
 
 
 Tol_SCmoy_G<- c()
 
 for(i in 1:8){
-  Tol_SCmoy_G[i] <- sum(syto2$ToluSC1[time==time[i]],  syto2$ToluSC2[time==time[i]], syto2$ToluSC3[time==time[i]])/3
+  Tol_SCmoy_G[i] <- sum(syto2$ToluSC1[i],  syto2$ToluSC2[i], syto2$ToluSC3[i])/3
 }
 
 Tol_SCmoy_R<- c()
 
 for(i in 1:8){
-  Tol_SCmoy_R[i] <- sum(cher$ToluSC1[time==time[i]],  cher$ToluSC2[time==time[i]], cher$ToluSC3[time==time[i]])/3
+  Tol_SCmoy_R[i] <- sum(cher$ToluSC1[i],  cher$ToluSC2[i], cher$ToluSC3[i])/3
 }
 
 Tol_PPSCmoy_G <-c()
 
 for(i in 1:8){
-  Tol_PPSCmoy_G[i] <- sum(syto2$ToluPPSC1[time==time[i]],  syto2$ToluPPSC2[time==time[i]], syto2$ToluPPSC3[time==time[i]])/3
+  Tol_PPSCmoy_G[i] <- sum(syto2$ToluPPSC1[i],  syto2$ToluPPSC2[i], syto2$ToluPPSC3[i])/3
 }
 
 Tol_PPSCmoy_R <-c()
 
 for(i in 1:8){
-  Tol_PPSCmoy_R[i] <- sum(cher$ToluPPSC1[time==time[i]],  cher$ToluPPSC2[time==time[i]], cher$ToluPPSC3[time==time[i]])/3
+  Tol_PPSCmoy_R[i] <- sum(cher$ToluPPSC1[i],  cher$ToluPPSC2[i], cher$ToluPPSC3[i])/3
 }
 
 MixC_PPSCmoy_G <-c()
 
 for(i in 1:8){
-  MixC_PPSCmoy_G[i] <- sum(syto2$MixCPPSC1[time==time[i]],  syto2$MixCPPSC2[time==time[i]], syto2$MixCPPSC3[time==time[i]])/3
+  MixC_PPSCmoy_G[i] <- sum(syto2$MixCPPSC1[i],  syto2$MixCPPSC2[i], syto2$MixCPPSC3[i])/3
 }
 
 MixC_PPSCmoy_R <-c()
 
 for(i in 1:8){
-  MixC_PPSCmoy_R[i] <- sum(cher$MixCPPSC1[time==time[i]],  cher$MixCPPSC2[time==time[i]], cher$MixCPPSC3[time==time[i]])/3
+  MixC_PPSCmoy_R[i] <- sum(cher$MixCPPSC1[i],  cher$MixCPPSC2[i], cher$MixCPPSC3[i])/3
 }
 
 # means PP
@@ -226,23 +226,23 @@ for(i in 1:8){
 MixC_PPmoy_R<- c()
 
 for(i in 1:8){
-  MixC_PPmoy_R[i] <- sum(cher$MixCPP1[time==time[i]], cher$MixCPP2[time==time[i]],cher$MixCPP3[time==time[i]])/3
+  MixC_PPmoy_R[i] <- sum(cher$MixCPP1[i], cher$MixCPP2[i],cher$MixCPP3[i])/3
 }
 
 MixC_PPmoy_G<- c()
 
 for(i in 1:8){
-  MixC_PPmoy_G[i] <- sum(syto2$MixCPP1[time==time[i]],  syto2$MixCPP2[time==time[i]],syto2$MixCPP3[time==time[i]])/3
+  MixC_PPmoy_G[i] <- sum(syto2$MixCPP1[i],  syto2$MixCPP2[i],syto2$MixCPP3[i])/3
 }
 
 Tol_PPmoy_R <- c()
 for(i in 1:8){
-  Tol_PPmoy_R[i] <- sum(cher$ToluPP1[time==time[i]],  cher$ToluPP2[time==time[i]],cher$ToluPP3[time==time[i]])/3
+  Tol_PPmoy_R[i] <- sum(cher$ToluPP1[i],  cher$ToluPP2[i],cher$ToluPP3[i])/3
 }
 
 Tol_PPmoy_G <- c()
 for(i in 1:8){
-  Tol_PPmoy_G[i] <- sum(syto2$ToluPP1[time==time[i]],  syto2$ToluPP2[time==time[i]],syto2$ToluPP3[time==time[i]])/3
+  Tol_PPmoy_G[i] <- sum(syto2$ToluPP1[i],  syto2$ToluPP2[i],syto2$ToluPP3[i])/3
 }
 #cell count
 list_cell_count = vector(mode = "list", length = 49)
@@ -329,7 +329,7 @@ Tol_deadPPmoy<- c()
 #ppmortes dans ppseul
 
 for(i in 1:8){
-  Tol_deadPPmoy[i] <- sum(syto2$ToluPP1[time==time[i]],  syto2$ToluPP2[time==time[i]],syto2$ToluPP3[time==time[i]])/3
+  Tol_deadPPmoy[i] <- sum(syto2$ToluPP1[i],  syto2$ToluPP2[i],syto2$ToluPP3[i])/3
 }
 
 #total dans ppseul
@@ -340,15 +340,15 @@ for(i in 1:8){
 
 #Plot des comptes de SC (fluoresence verte)
 par(mfrow = c(1,1))
-plot(totsc$time, totsc$MixC_SCmoy_G,log="y",xlim=c(0,48),ylim=c(min(Tol_deadPPmoy), max(cell_count$Tol_PPSCmoy_G)), type="o",main="SC growth",xlab= "Time [Hours]", ylab="log(SC count)")
+plot(cell_count$time, cell_count$MixC_SCmoy_G,log="y",xlim=c(0,48),ylim=c(min(cell_count$Tol_PPmoy_G), max(cell_count$Tol_PPSCmoy_G + cell_count$Tol_PPSCmoy_R)), type="o",main="SC growth",xlab= "Time [Hours]", ylab="log(SC count)")
 
-points(totsc$time,totsc$Tol_SCmoy_G, type="o", col="red")
-points(totsc$time,totsc$MixC_PPSCmoy_G, type="o", col="blue")
-points(totsc$time,totsc$Tol_PPSCmoy_G, type="o", col="orange")
-points(totsc$time, Tol_deadPPmoy, type="o", col="green")
-points(totpp$time, (cell_count$MixC_PPSCmoy_G + cell_count$MixC_PPSCmoy_R), type="o", col="brown")
-points(totpp$time, (cell_count$Tol_PPSCmoy_G + cell_count$MixC_PPSCmoy_R), type="o", col="gray")
-points(totpp$time, (cell_count$MixC_PPmoy_G + cell_count$MixC_PPmoy_R), type = "o", col = "pink")
+points(cell_count$time,cell_count$Tol_SCmoy_G, type="o", col="red")
+points(cell_count$time,cell_count$MixC_PPSCmoy_G, type="o", col="blue")
+points(cell_count$time,cell_count$Tol_PPSCmoy_G, type="o", col="orange")
+points(cell_count$time, cell_count$MixC_PPSCmoy_G, type="o", col="green")
+points(cell_count$time, (cell_count$MixC_PPSCmoy_G + cell_count$MixC_PPSCmoy_R), type="o", col="brown")
+points(cell_count$time, (cell_count$Tol_PPSCmoy_G + cell_count$Tol_PPSCmoy_R), type="o", col="gray")
+points(cell_count$time, (cell_count$Tol_PPmoy_G + cell_count$Tol_PPmoy_R), type = "o", col = "pink")
 legend("bottomright",legend = c( "Syt9 cnt in Tol PPalone", "PPSC total in mixC", "PPSC total in Tol", "total count in pp alone"),fill=c("green", "brown", "gray", "pink"))
 legend("bottom", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
       
