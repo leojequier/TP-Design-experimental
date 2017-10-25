@@ -497,12 +497,24 @@ t.test(week$AUC[week$week_on_SC=="1"& week$names3=="MixC_SC"], week$AUC[week$wee
 
 #week1
 week1 <- week[1:30,]
+modelw1_SC <- aov(log(week1$AUC[week1$names2%in%c("SC","PPSC_SC")])~week1$Substrate[week1$names2%in%c("SC","PPSC_SC")]* week1$names2[week1$names2 %in%c("SC","PPSC_SC")])
+summary(modelw1_SC)
+
+t.test(week1$AUC[week1$names3=="Tol_PP"], week$AUC[week1$names3=="MixC_PP"])
+modelw1_PP <- aov(log(week1$AUC[week1$names2%in%c("PP","PPSC_PP")])~week1$Substrate[week1$names2%in%c("PP","PPSC_PP")]* week1$names2[week1$names2 %in%c("PP","PPSC_PP")])
+summary(modelw1_PP)
+
+#week2
 week2 <- week[31:60,]
+modelw2_SC <- aov(log(week2$AUC[week2$names2%in%c("SC","PVSC_SC")])~week2$Substrate[week2$names2%in%c("SC","PVSC_SC")]* week2$names2[week2$names2 %in%c("SC","PVSC_SC")])
+summary(modelw2)
 
 
-modelw1 <- aov(log(week1$AUC[week1$names2%in%c("SC","PPSC_SC")])~week1$Substrate[week1$names2%in%c("SC","PPSC_SC")]* week1$names2[week1$names2 %in%c("SC","PPSC_SC")])
+t.test(week$AUC[week$week_on_SC=="1"& week$names3=="Tol_PP"], week$AUC[week$week_on_SC=="2"& week$names3=="Tol_SC"])
 
-summary(modelw1)
+
+
+
 
 
 
