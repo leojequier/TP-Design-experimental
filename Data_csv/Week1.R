@@ -256,14 +256,14 @@ for(i in 1:48){
 }
 cell_count = data.frame(time, syto2$MixCSC1, syto2$MixCSC2, syto2$MixCSC3,MixC_SCmoy_G,
                         cher$MixCSC1, cher$MixCSC2, cher$MixCSC3, MixC_SCmoy_R,
-                        cher$MixCPP1, cher$MixCPP2, cher$MixCPP3,MixC_PPmoy_R,
-                        syto2$MixCPP1, syto2$MixCPP2, syto2$MixCPP3, MixC_PPmoy_G,
+                        syto2$MixCPP1, syto2$MixCPP2, syto2$MixCPP3,MixC_PPmoy_G,
+                        cher$MixCPP1, cher$MixCPP2, cher$MixCPP3, MixC_PPmoy_R,
                         syto2$MixCPPSC1, syto2$MixCPPSC2, syto2$MixCPPSC3, MixC_PPSCmoy_G,
                         cher$MixCPPSC1, cher$MixCPPSC2, cher$MixCPPSC3, MixC_PPSCmoy_R, 
                         syto2$ToluSC1, syto2$ToluSC2, syto2$ToluSC3, Tol_SCmoy_G,
                         cher$ToluSC1, cher$ToluSC2, cher$ToluSC3, Tol_SCmoy_R,
-                        cher$ToluPP1, cher$ToluPP2, cher$ToluPP3, Tol_PPmoy_R, 
-                        syto2$ToluPP1, syto2$ToluPP2, syto2$ToluPP3, Tol_PPmoy_G,
+                        syto2$ToluPP1, syto2$ToluPP2, syto2$ToluPP3, Tol_PPmoy_G, 
+                        cher$ToluPP1, cher$ToluPP2, cher$ToluPP3, Tol_PPmoy_R,
                         syto2$ToluPPSC1, syto2$ToluPPSC2,syto2$ToluPPSC3,Tol_PPSCmoy_G,
                         cher$ToluPPSC1,cher$ToluPPSC2,cher$ToluPPSC3, Tol_PPSCmoy_R)
 names(cell_count) = list_cell_count
@@ -381,15 +381,15 @@ legend("bottom", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in P
 
 
 totpp <- data.frame(time, MixC_PPmoy_R, Tol_PPmoy_R, MixC_PPSCmoy_R, Tol_PPSCmoy_R)
-plot(totpp$time, totpp$MixC_PPmoy,log="y",xlim=c(0,48),ylim=c(min(Tol_deadPPmoy), max(cell_count$Tol_PPSCmoy_R)), type="o",main="PP growth",xlab= "Time [Hours]", ylab="log(PP count)")
+plot(cell_count$time, cell_count$MixC_PPmoy_R,log="y",xlim=c(0,48),ylim=c(min(cell_count$MixC_PPmoy_R), max(cell_count$Tol_PPSCmoy_R)), type="o",main="PP growth",xlab= "Time [Hours]", ylab="log(PP count)")
 
 #Plot des comptes de PP
 
-points(totpp$time,totpp$Tol_PPmoy_R, type="o", col="red")
-points(totpp$time,totpp$MixC_PPSCmoy_R, type="o", col="blue")
-points(totpp$time,totpp$Tol_PPSCmoy_R, type="o", col="orange")
-points(totpp$time, cell_count$MixC_PPSCmoy_R, type="o", col="brown")
-points(totpp$time, cell_count$Tol_PPSCmoy_R, type="o", col="gray")
+points(cell_count$time,cell_count$Tol_PPmoy_R, type="o", col="red")
+points(cell_count$time,cell_count$MixC_PPSCmoy_R, type="o", col="blue")
+points(cell_count$time,cell_count$Tol_PPSCmoy_R, type="o", col="orange")
+points(cell_count$time, cell_count$MixC_PPSCmoy_R, type="o", col="brown")
+points(cell_count$time, cell_count$Tol_PPSCmoy_R, type="o", col="gray")
 legend("bottomright",legend=c("PP in mixC","PP in Tol","PP in PP+SC in mixC","PP in PP+SC in Tol", "PPSC total in mixC", "PPSC total in Tol"),fill=c("black","red","blue","orange", "brown", "gray"))
 
 #estimer l'erreur des réplicats technique 
