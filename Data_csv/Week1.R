@@ -283,41 +283,6 @@ Tol_PPSCmoy <- (Tol_PPSC1+ Tol_PPSC2+ Tol_PPSC3)/3
 cell_count <- cbind(cell_count, MixC_PPSC1, MixC_PPSC2,MixC_PPSC3, MixC_PPSCmoy, Tol_PPSC1, Tol_PPSC2, Tol_PPSC3, Tol_PPSCmoy)
 
 
-#puissance stat 
-SC_t6_mixC_syto9 = c(syto2$MixCSC1[syto2$time == 43],syto2$MixCSC2[syto2$time == 43],syto2$MixCSC3[syto2$time == 43] )
-
-PP_t6_mixC_mChe = c(cher$ToluPP1[cher$time == 43],cher$ToluPP2[cher$time == 43],cher$ToluPP3[cher$time == 43] )
-
-SC_t6_Tol_syto9 = c(syto2$ToluSC1[syto2$time == 43],syto2$ToluSC2[syto2$time == 43],syto2$ToluSC3[syto2$time == 43] )
-
-SC_t6_Tol_mChe = c(c(cher$ToluSC1[cher$time == 43],cher$ToluSC2[cher$time == 43],cher$ToluSC3[cher$time == 43]))
-
-PP_t6_Tol_mChe = c(cher$ToluPP1[cher$time == 43],cher$ToluPP2[cher$time == 43],cher$ToluPP3[cher$time == 43])
-
-PP_T6_Tol_syto9 = c(syto2$ToluPP1[syto2$time == 43],syto2$ToluPP2[syto2$time == 43],syto2$ToluPP3[syto2$time == 43])
-
-PPSC_T6_Tol_syto9 = c(syto2$ToluPPSC1[syto2$time == 43],syto2$ToluPPSC2[syto2$time == 43],syto2$ToluPPSC3[syto2$time == 43])
-
-PPSC_T6_Tol_mChe = c(cher$ToluPPSC1[cher$time == 43],cher$ToluPPSC2[cher$time == 43],cher$ToluPPSC3[cher$time == 43])
-
-t.test(PPSC_T6_Tol_syto9,SC_t6_Tol_syto9, var.equal = T)
-power.t.test(n = 3, delta = mean(PPSC_T6_Tol_syto9) - mean(SC_t6_Tol_syto9), sd = sd(c(SC_t6_Tol_syto9, PPSC_T6_Tol_syto9)))
-mean(PPSC_T6_Tol_syto9)
-
-mean(PP_T6_Tol_syto9)
-
-mean(PPSC_T6_Tol_mChe)
-
-mean(PP_T6_Tol_syto9)
-
-var(SC_t6_mixC_syto9)
-
-var(PP_t6_Tol_mChe)
-
-var(PP_t6_mixC_mChe)
-
-var(SC_t6_Tol_syto9)
-
 #graphiques
 
 
@@ -348,7 +313,7 @@ points(cell_count$time,cell_count$Tol_PPSCmoy_G, type="o", col="orange")
 points(cell_count$time, cell_count$MixC_PPmoy_G, type="o", col="green")
 points(cell_count$time, (cell_count$MixC_PPSCmoy_G + cell_count$MixC_PPSCmoy_R), type="o", col="brown")
 points(cell_count$time, (cell_count$Tol_PPSCmoy_G + cell_count$Tol_PPSCmoy_R), type="o", col="gray")
-#points(cell_count$time, (cell_count$Tol_PPmoy_G + cell_count$Tol_PPmoy_R), type = "o", col = "pink")
+points(cell_count$time, (cell_count$Tol_PPmoy_G + cell_count$Tol_PPmoy_R), type = "o", col = "pink")
 legend("bottomright",legend = c( "Syt9 cnt in Tol PPalone", "PPSC total in mixC", "PPSC total in Tol", "total count in pp alone"),fill=c("green", "brown", "gray", "pink"))
 legend("bottom", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
       
@@ -381,16 +346,17 @@ legend("bottom", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in P
 
 
 totpp <- data.frame(time, MixC_PPmoy_R, Tol_PPmoy_R, MixC_PPSCmoy_R, Tol_PPSCmoy_R)
-plot(cell_count$time, cell_count$MixC_PPmoy_R,log="y",xlim=c(0,48),ylim=c(min(cell_count$MixC_PPmoy_R), max(cell_count$Tol_PPSCmoy_R)), type="o",main="PP growth",xlab= "Time [Hours]", ylab="log(PP count)")
 
 #Plot des comptes de PP
-
+plot(cell_count$time, cell_count$MixC_PPmoy_R,log="y",xlim=c(0,48),ylim=c(min(cell_count$MixC_PPmoy_R), max(cell_count$Tol_PPSCmoy_R)), type="o",main="PP growth",xlab= "Time [Hours]", ylab="log(PP count)")
 points(cell_count$time,cell_count$Tol_PPmoy_R, type="o", col="red")
 points(cell_count$time,cell_count$MixC_PPSCmoy_R, type="o", col="blue")
-points(cell_count$time,cell_count$Tol_PPSCmoy_R, type="o", col="orange")
-points(cell_count$time, cell_count$MixC_PPSCmoy_R, type="o", col="brown")
+points(cell_count$time,cell_count$Tol_PPSCmoy_R + cell_count$Tol_PPSCmoy_G, type="o", col="orange")
+points(cell_count$time, cell_count$MixC_PPSCmoy_R + cell_count$MixC_PPSCmoy_G, type="o", col="brown")
 points(cell_count$time, cell_count$Tol_PPSCmoy_R, type="o", col="gray")
 legend("bottomright",legend=c("PP in mixC","PP in Tol","PP in PP+SC in mixC","PP in PP+SC in Tol", "PPSC total in mixC", "PPSC total in Tol"),fill=c("black","red","blue","orange", "brown", "gray"))
+
+
 
 #estimer l'erreur des réplicats technique 
 #mentionner les problèmes avec le 3èmes réplicats techniques
