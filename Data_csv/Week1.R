@@ -332,11 +332,6 @@ plot(totsc$time, absol$MixCSC1,log="y",xlim=c(0,48),ylim=c(min(Tol_deadPPmoy), m
 points(totsc$time,absol$ToluSC1, type="o", col="red")
 points(totsc$time,absol$MixCPPSC1, type="o", col="blue")
 points(totsc$time,absol$ToluPPSC1, type="o", col="orange")
-points(totsc$time, syto2$ToluPP1, type="o", col="green")
-points(totpp$time, cell_count$MixC_PPSC_SC1, type="o", col="brown")
-points(totpp$time, cell_count$Tol_PPSC_SC1, type="o", col="gray")
-points(totpp$time, absol$ToluPP1, type = "o", col = "pink")
-legend("bottomright",legend = c( "Syt9 cnt in Tol PPalone", "PPSC total in mixC", "PPSC total in Tol", "total count in pp alone"),fill=c("green", "brown", "gray", "pink"))
 legend("bottom", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
 #réplicat 2
 plot(totsc$time, absol$MixCSC2,log="y",xlim=c(0,48),ylim=c(min(Tol_deadPPmoy), max(cell_count$Tol_PPSCmoy)), type="o",main="SC growth (2)",xlab= "Time [Hours]", ylab="log(SC count)")
@@ -344,11 +339,6 @@ plot(totsc$time, absol$MixCSC2,log="y",xlim=c(0,48),ylim=c(min(Tol_deadPPmoy), m
 points(totsc$time,absol$ToluSC2, type="o", col="red")
 points(totsc$time,absol$MixCPPSC2, type="o", col="blue")
 points(totsc$time,absol$ToluPPSC2, type="o", col="orange")
-points(totsc$time, syto2$ToluPP2, type="o", col="green")
-points(totpp$time, cell_count$MixC_PPSC_SC2, type="o", col="brown")
-points(totpp$time, cell_count$Tol_PPSC_SC2, type="o", col="gray")
-points(totpp$time, absol$ToluPP2, type = "o", col = "pink")
-legend("bottomright",legend = c( "Syt9 cnt in Tol PPalone", "PPSC total in mixC", "PPSC total in Tol", "total count in pp alone"),fill=c("green", "brown", "gray", "pink"))
 legend("bottom", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
 
 #réplicat 3
@@ -357,11 +347,6 @@ plot(totsc$time, absol$MixCSC1,log="y",xlim=c(0,48),ylim=c(min(Tol_deadPPmoy), m
 points(totsc$time,absol$ToluSC3, type="o", col="red")
 points(totsc$time,absol$MixCPPSC3, type="o", col="blue")
 points(totsc$time,absol$ToluPPSC3, type="o", col="orange")
-points(totsc$time, syto2$ToluPP3, type="o", col="green")
-points(totpp$time, cell_count$MixC_PPSC_SC3, type="o", col="brown")
-points(totpp$time, cell_count$Tol_PPSC_SC3, type="o", col="gray")
-points(totpp$time, absol$ToluPP3, type = "o", col = "pink")
-legend("bottomright",legend = c( "Syt9 cnt in Tol PPalone", "PPSC total in mixC", "PPSC total in Tol", "total count in pp alone"),fill=c("green", "brown", "gray", "pink"))
 legend("bottom", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
 
 
