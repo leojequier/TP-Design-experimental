@@ -426,14 +426,14 @@ AUC <- vector(length = 60)
 
 
 names1 <- c()
-names2 <- c()
+Spieces <- c()
 names3 <- c()
 CvTol = rep(c("MixC", "Tol"), each = 15, time=2)
 bac = c(rep(rep(c("SC", "PP", "PPSC_SC","PPSC_PP", "PPSC_tot"), each = 3), time = 2),rep(rep(c("SC", "PV", "PVSC_SC","PVSC_PV", "PVSC_tot"), each = 3), time = 2))
 n = c(rep(c(1,2,3), times = 10), rep(c("1_1","2_1","3_1"), times=10))
 for(i in 1:60){
   names1[i] = paste(CvTol[i], paste(bac[i], n[i], sep = ""), sep = "_")
-  names2[i] = bac[i]
+  Spieces[i] = bac[i]
   names3[i] = paste(CvTol[i], paste(bac[i], sep = ""), sep = "_")
 }
 
@@ -444,7 +444,7 @@ time_w2 = c(0, 14.5, 18, 21, 23.5, 36.5, 42 ,44.5 , 47.5 )
 ess <- read.table("ess.txt", sep="\t", header=T)
 ess2 <- read.table("ess2.txt", header = T)
 
-week <- data.frame(names1, names2,names3,Substrate,week_on_SC,Replicat,PV, PP,SC,PPSC, PVSC,AUC)
+week <- data.frame(names1, Spieces,names3,Substrate,week_on_SC,Replicat,PV, PP,SC,PPSC, PVSC,AUC)
 
 ## Aire sous la courbe
 for(i in 1:30){
@@ -458,16 +458,14 @@ for(i in 31:60){
 
 
 
-summary(glm(log(week$AUC) ~ as.factor(week$week_on_SC)+ as.factor(week$names2)+as.factor(week$Substrate)+as.factor(week$Replicat)))
+summary(glm(log(week$AUC) ~ as.factor(week$week_on_SC)+ as.factor(week$Spieces)+as.factor(week$Substrate)+as.factor(week$Replicat)))
 ## que les réplicat ne sont pas important, n'ont pas d'influence, que il n'y a pas de différence entre le SC d'une semaine à l'autre.
 
-##test week 1
-model_week_1 = aov(log(week$AUC[week$names1 %in% week$names1[c(1:3, 7:9, 16:18, 22:24)]]))~ )
-                   
+
                   
 
 ##Anova
-model = aov(log(week$AUC)~week$Substrate*as.factor(week$names2))
+model = aov(log(week$AUC)~week$Substrate*as.factor(week$Spieces))
 anova(model)
 #le substrat a un effet significatif, les échantillons ayant poussé dans des substrats différents sont en moyenne différents.
 #au moins un traitement à un effet significatif,
@@ -483,11 +481,11 @@ for(i in 1:60){
 
 
 eti = as.factor(eti)
-?as.numeric
+
 
 plot(rep(1:10, each = 3), log(week$AUC[1:30]), xlab = "")
 
-?axis
+
 axis(1, at = 1:10, labels = unique(eti[1:30]), las = 2, hadj = T)
 
 
@@ -497,20 +495,22 @@ t.test(week$AUC[week$week_on_SC=="1"& week$names3=="MixC_SC"], week$AUC[week$wee
 
 #week1
 week1 <- week[1:30,]
-modelw1_SC <- aov(log(week1$AUC[week1$names2%in%c("SC","PPSC_SC")])~week1$Substrate[week1$names2%in%c("SC","PPSC_SC")]* week1$names2[week1$names2 %in%c("SC","PPSC_SC")])
+modelw1_SC <- aov(log(week1$AUC[week1$Spieces%in%c("SC","PPSC_SC")])~week1$Substrate[week1$Spieces%in%c("SC","PPSC_SC")]* week1$Spieces[week1$Spieces %in%c("SC","PPSC_SC")])
 summary(modelw1_SC)
 
 t.test(week1$AUC[week1$names3=="Tol_PP"], week$AUC[week1$names3=="MixC_PP"])
-modelw1_PP <- aov(log(week1$AUC[week1$names2%in%c("PP","PPSC_PP")])~week1$Substrate[week1$names2%in%c("PP","PPSC_PP")]* week1$names2[week1$names2 %in%c("PP","PPSC_PP")])
+modelw1_PP <- aov(log(week1$AUC[week1$Spieces%in%c("PP","PPSC_PP")])~week1$Substrate[week1$Spieces%in%c("PP","PPSC_PP")]* week1$Spieces[week1$Spieces %in%c("PP","PPSC_PP")])
 summary(modelw1_PP)
 
 #week2
 week2 <- week[31:60,]
-modelw2_SC <- aov(log(week2$AUC[week2$names2%in%c("SC","PVSC_SC")])~week2$Substrate[week2$names2%in%c("SC","PVSC_SC")]* week2$names2[week2$names2 %in%c("SC","PVSC_SC")])
-summary(modelw2)
+modelw2_SC <- aov(log(week2$AUC[week2$Spieces%in%c("SC","PVSC_SC")])~week2$Substrate[week2$Spieces%in%c("SC","PVSC_SC")]* week2$Spieces[week2$Spieces %in%c("SC","PVSC_SC")])
+summary(modelw2_SC)
 
+modelw2_PV <- aov(log(week2$AUC[week2$Spieces%in%c("PV","PVSC_PV")])~week2$Substrate[week2$Spieces%in%c("PV","PVSC_PV")]* week2$Spieces[week2$Spieces %in%c("PV","PVSC_PV")])
+summary(modelw2_PV)
 
-t.test(week$AUC[week$week_on_SC=="1"& week$names3=="Tol_PP"], week$AUC[week$week_on_SC=="2"& week$names3=="Tol_SC"])
+#t.test(week$AUC[week$week_on_SC=="1"& week$names3=="Tol_PP"], week$AUC[week$week_on_SC=="2"& week$names3=="Tol_SC"])
 
 
 
