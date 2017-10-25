@@ -388,8 +388,6 @@ legend("bottomright",legend=c("PP in mixC","PP in Tol","PP in PP+SC in mixC","PP
 
 Replicat <- rep(c("1", "2", "3"),20) 
 week_on_SC <- c(rep(c(rep(c("1"),time=3), rep(c("0"), time=12)),time=2),rep(c(rep(c("2"),time=3), rep("0", time=12)),time=2))
-SCweek1 = c(rep(c(rep(c("1"),time=3), rep(c("0"), time=12)),time=2), rep("0", times = 30))
-SCweek2 = c(rep("0", times = 30),rep(c(rep(c("1"),time=3), rep(c("0"), time=12)),time=2))
 Substrate<-rep(c("MixC", "Tol"), each=15, time=2)
 PV <- c(rep(c("0"), 30),rep(c("0"), 3), rep(c("1"), 12),rep(c("0"), 3), rep(c("1"), 12))
 PP <- c(rep(c("0"), 3), rep(c("1"), 12),rep(c("0"), 3), rep(c("1"), 12), rep(c("0"), 30))
@@ -410,7 +408,7 @@ for(i in 1:60){
 }
 
 
-week <- data.frame(names1, names2,Substrate,week_on_SC, SCweek1,Replicat,PV, PP,SC,PPSC, PVSC,AUC)
+week <- data.frame(names1, names2,Substrate,week_on_SC,Replicat,PV, PP,SC,PPSC, PVSC,AUC)
 
 ## Table avec les mêmes noms dans le même ordre que week
 time_w1 = c(0, 11, 15 + 1/6, 19.5,22.5,38.5 , 45+ 1/3 ,48 )
@@ -451,9 +449,11 @@ for(i in 1:60){
   eti[i] = paste(CvTol2[i], bac2[i],sep = "_")
 }
 
-plot(rep(1:10, each = 3), log(week$AUC[1:30]), xlab = "", xaxt = "n", ylab = "Log AUC", main = "Valeurs de AUC\n dans chaque traitement\nsemaine1", pch = c(1,2,3))
+
+eti = as.factor(eti)
+?as.numeric
+
+plot(rep(1:10, each = 3), log(week$AUC[1:30]), xlab = "")
+
+?axis
 axis(1, at = 1:10, labels = unique(eti[1:30]), las = 2, hadj = T)
-
-plot(rep(1:10, each = 3), log(week$AUC[31:60]), xlab = "",  xaxt = "n", ylab = "Log AUC", main = "Valeurs de AUC\n dans chaque traitement\nsemaine2", pch = c(1,2,3))
-axis(1, at = 1:10, labels = unique(eti[31:60]), las = 2, hadj = T)
-
