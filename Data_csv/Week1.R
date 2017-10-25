@@ -386,6 +386,7 @@ Replicat <- rep(c("1", "2", "3"),20)
 week_on_SC <- c(rep(c(rep(c("1"),time=3), rep(c("0"), time=12)),time=2),rep(c(rep(c("2"),time=3), rep("0", time=12)),time=2))
 SCweek1 = c(rep(c(rep(c("1"),time=3), rep(c("0"), time=12)),time=2), rep("0", times = 30))
 SCweek2 = c(rep("0", times = 30),rep(c(rep(c("1"),time=3), rep(c("0"), time=12)),time=2))
+
 Substrate<-rep(c("MixC", "Tol"), each=15, time=2)
 PV <- c(rep(c("0"), 30),rep(c("0"), 3), rep(c("1"), 12),rep(c("0"), 3), rep(c("1"), 12))
 PP <- c(rep(c("0"), 3), rep(c("1"), 12),rep(c("0"), 3), rep(c("1"), 12), rep(c("0"), 30))
@@ -452,4 +453,30 @@ axis(1, at = 1:10, labels = unique(eti[1:30]), las = 2, hadj = T)
 
 plot(rep(1:10, each = 3), log(week$AUC[31:60]), xlab = "",  xaxt = "n", ylab = "Log AUC", main = "Valeurs de AUC\n dans chaque traitement\nsemaine2", pch = c(1,2,3))
 axis(1, at = 1:10, labels = unique(eti[31:60]), las = 2, hadj = T)
+
+
+#t.test on SC week1 vs week2
+t.test(week$AUC[week$week_on_SC=="1"& week$names3=="Tol_SC"], week$AUC[week$week_on_SC=="2"& week$names3=="Tol_SC"])
+t.test(week$AUC[week$week_on_SC=="1"& week$names3=="MixC_SC"], week$AUC[week$week_on_SC=="2"& week$names3=="MixC_SC"])
+
+#week1
+week1 <- week[1:30,]
+week2 <- week[31:60,]
+
+
+modelw1 <- aov(log(week1$AUC[week1$names2%in%c("SC","PPSC_SC")])~week1$Substrate[week1$names2%in%c("SC","PPSC_SC")]* week1$names2[week1$names2 %in%c("SC","PPSC_SC")])
+
+summary(modelw1)
+
+
+
+
+
+
+
+
+
+
+
+
 
