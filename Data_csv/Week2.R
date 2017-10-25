@@ -338,6 +338,7 @@ for(i in 1:9){
 }
 
 #Plot des comptes de SC
+par(mfrow = c(1,1))
 plot(cell_count$time, cell_count$MixC_SCmean,lwd=1.3,log = "y",xlim=c(0,48), ylim = c(min(Tol_deadPVmoy), max(Tol_all_in_pv)), type = "o",main="SC growth",xlab= "Time [Hours]", ylab="log(SC count)")
 
 points(cell_count$time,cell_count$Tol_SCmean,type="o", col="red",lwd=1.3)
@@ -395,6 +396,11 @@ points(cell_count$time, cell_count$MixC_PVSC_SCmean + cell_count$MixC_PVSC_PVmea
 points(cell_count$time, cell_count$Tol_PVSC_SCmean + cell_count$Tol_PVSC_PVmean, type="o", col="gray",lwd=1.3)
 legend("bottomright",legend=c("PV in mixC","PV in Tol","PV in PV+SC in mixC","PV in PV+SC in Tol", "PVSC total in mixC", "PVSC total in Tol"),fill=c("black","red","blue","orange", "brown", "gray"))
 
-
-
+library(ggplot2)
+dens <- density(cell_count$time)#, cell_count$MixC_SC1)
+d <- data.frame(x = dens$cell_count$time, y = dens$cell_count$MixC_SC1)
+qplot(cell_count$time, cell_count$MixC_SC1,xlim=c(0,48),geom="line",main="SC growth (1)",
+                  xlab= "Time [Hours]", ylab="log(SC count)")+
+  geom_ribbon(data=cell_count$time,cell_count$MixC_SC1,
+              fill="red",colour=NA,alpha=0.5)
 

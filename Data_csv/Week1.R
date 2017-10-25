@@ -345,10 +345,14 @@ plot(cell_count$time, cell_count$MixC_SCmoy_G,log="y",xlim=c(0,48),ylim=c(min(ce
 points(cell_count$time,cell_count$Tol_SCmoy_G, type="o", col="red")
 points(cell_count$time,cell_count$MixC_PPSCmoy_G, type="o", col="blue")
 points(cell_count$time,cell_count$Tol_PPSCmoy_G, type="o", col="orange")
+<<<<<<< HEAD
 points(cell_count$time, cell_count$MixC_PPmoy_G, type="o", col="green")
+=======
+
+>>>>>>> ee29b194ae4d9317771842768a6707a01b595364
 points(cell_count$time, (cell_count$MixC_PPSCmoy_G + cell_count$MixC_PPSCmoy_R), type="o", col="brown")
 points(cell_count$time, (cell_count$Tol_PPSCmoy_G + cell_count$Tol_PPSCmoy_R), type="o", col="gray")
-points(cell_count$time, (cell_count$Tol_PPmoy_G + cell_count$Tol_PPmoy_R), type = "o", col = "pink")
+#points(cell_count$time, (cell_count$Tol_PPmoy_G + cell_count$Tol_PPmoy_R), type = "o", col = "pink")
 legend("bottomright",legend = c( "Syt9 cnt in Tol PPalone", "PPSC total in mixC", "PPSC total in Tol", "total count in pp alone"),fill=c("green", "brown", "gray", "pink"))
 legend("bottom", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
       
@@ -514,7 +518,7 @@ summary(modelw2_PV)
 t.test(week2$AUC[week2$names3=="Tol_PV"], week2$AUC[week2$names3=="Tol_PVSC_PV"])
 t.test(week2$AUC[week2$names3=="MixC_PV"], week2$AUC[week2$names3=="MixC_PVSC_PV"])
 
-
-
+week1$AUC[week1$names3=="MixC_SC"]- week1$AUC[week1$names3=="MixC_PPSC_SC"]
+week2$AUC[week2$names3=="MixC_PV"]- week2$AUC[week2$names3=="MixC_PVSC_PV"]
 
 
