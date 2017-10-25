@@ -324,7 +324,7 @@ var(SC_t6_Tol_syto9)
 
 par(mfrow = c(1,1))
 
-totsc <- data.frame(time, MixC_SCmoy, Tol_SCmoy, MixC_PPSC_SCmoy, Tol_PPSC_SCmoy)
+totsc <- data.frame(time, MixC_SCmoy_G, Tol_SCmoy_G, MixC_PPSCmoy_G, Tol_PPSCmoy_G)
 Tol_deadPPmoy<- c()
 #ppmortes dans ppseul
 
@@ -335,43 +335,43 @@ for(i in 1:8){
 #total dans ppseul
 Tol_all_in_pp = c()
 for(i in 1:8){
-  Tol_all_in_pp[i]  <- Tol_deadPPmoy[i] + Tol_PPmoy[i]
+  Tol_all_in_pp[i]  <- Tol_deadPPmoy[i] + Tol_PPmoy_R[i]
 }
 
-#Plot des comptes de SC
+#Plot des comptes de SC (fluoresence verte)
 par(mfrow = c(1,1))
-plot(totsc$time, totsc$MixC_SCmoy,log="y",xlim=c(0,48),ylim=c(min(Tol_deadPPmoy), max(cell_count$Tol_PPSCmoy)), type="o",main="SC growth",xlab= "Time [Hours]", ylab="log(SC count)")
+plot(totsc$time, totsc$MixC_SCmoy_G,log="y",xlim=c(0,48),ylim=c(min(Tol_deadPPmoy), max(cell_count$Tol_PPSCmoy_G)), type="o",main="SC growth",xlab= "Time [Hours]", ylab="log(SC count)")
 
-points(totsc$time,totsc$Tol_SCmoy, type="o", col="red")
-points(totsc$time,totsc$MixC_PPSC_SCmoy, type="o", col="blue")
-points(totsc$time,totsc$Tol_PPSC_SCmoy, type="o", col="orange")
+points(totsc$time,totsc$Tol_SCmoy_G, type="o", col="red")
+points(totsc$time,totsc$MixC_PPSCmoy_G, type="o", col="blue")
+points(totsc$time,totsc$Tol_PPSCmoy_G, type="o", col="orange")
 points(totsc$time, Tol_deadPPmoy, type="o", col="green")
-points(totpp$time, cell_count$MixC_PPSCmoy, type="o", col="brown")
-points(totpp$time, cell_count$Tol_PPSCmoy, type="o", col="gray")
-points(totpp$time, Tol_all_in_pp, type = "o", col = "pink")
+points(totpp$time, (cell_count$MixC_PPSCmoy_G + cell_count$MixC_PPSCmoy_R), type="o", col="brown")
+points(totpp$time, (cell_count$Tol_PPSCmoy_G + cell_count$MixC_PPSCmoy_R), type="o", col="gray")
+points(totpp$time, (cell_count$MixC_PPmoy_G + cell_count$MixC_PPmoy_R), type = "o", col = "pink")
 legend("bottomright",legend = c( "Syt9 cnt in Tol PPalone", "PPSC total in mixC", "PPSC total in Tol", "total count in pp alone"),fill=c("green", "brown", "gray", "pink"))
 legend("bottom", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
       
-  #SAME WITH PP
+  #SAME WITH PP (fluoresence rouge)
 
 #plot par réplicats ATTENTION jsuis pas du tout sûr si c'est les bonnes données :3
 par(mfrow = c(1,3))
-plot(totsc$time, absol$MixCSC1,log="y",xlim=c(0,48),ylim=c(min(Tol_deadPPmoy), max(cell_count$Tol_PPSCmoy)), type="o",main="SC growth (1)",xlab= "Time [Hours]", ylab="log(SC count)")
+plot(totsc$time, absol$MixCSC1,log="y",xlim=c(0,48),ylim=c(min(Tol_deadPPmoy), max(cell_count$Tol_PPSCmoy_R)), type="o",main="SC growth (1)",xlab= "Time [Hours]", ylab="log(SC count)")
 
 points(totsc$time,absol$ToluSC1, type="o", col="red")
 points(totsc$time,absol$MixCPPSC1, type="o", col="blue")
 points(totsc$time,absol$ToluPPSC1, type="o", col="orange")
 legend("bottom", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
-#réplicat 2
-plot(totsc$time, absol$MixCSC2,log="y",xlim=c(0,48),ylim=c(min(Tol_deadPPmoy), max(cell_count$Tol_PPSCmoy)), type="o",main="SC growth (2)",xlab= "Time [Hours]", ylab="log(SC count)")
+#réplicat 2 (vert)
+plot(totsc$time, absol$MixCSC2,log="y",xlim=c(0,48),ylim=c(min(Tol_deadPPmoy), max(cell_count$Tol_PPSCmoy_G)), type="o",main="SC growth (2)",xlab= "Time [Hours]", ylab="log(SC count)")
 
 points(totsc$time,absol$ToluSC2, type="o", col="red")
 points(totsc$time,absol$MixCPPSC2, type="o", col="blue")
 points(totsc$time,absol$ToluPPSC2, type="o", col="orange")
 legend("bottom", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
 
-#réplicat 3
-plot(totsc$time, absol$MixCSC1,log="y",xlim=c(0,48),ylim=c(min(Tol_deadPPmoy), max(cell_count$Tol_PPSCmoy)), type="o",main="SC growth (3)",xlab= "Time [Hours]", ylab="log(SC count)")
+#réplicat 3 (vert)
+plot(totsc$time, absol$MixCSC1,log="y",xlim=c(0,48),ylim=c(min(Tol_deadPPmoy), max(cell_count$Tol_PPSCmoy_G)), type="o",main="SC growth (3)",xlab= "Time [Hours]", ylab="log(SC count)")
 
 points(totsc$time,absol$ToluSC3, type="o", col="red")
 points(totsc$time,absol$MixCPPSC3, type="o", col="blue")
@@ -380,16 +380,16 @@ legend("bottom", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in P
 
 
 
-totpp <- data.frame(time, MixC_PPmoy, Tol_PPmoy, MixC_PPSC_PPmoy, Tol_PPSC_PPmoy)
-plot(totpp$time, totpp$MixC_PPmoy,log="y",xlim=c(0,48),ylim=c(min(Tol_deadPPmoy), max(cell_count$Tol_PPSCmoy)), type="o",main="PP growth",xlab= "Time [Hours]", ylab="log(PP count)")
+totpp <- data.frame(time, MixC_PPmoy_R, Tol_PPmoy_R, MixC_PPSCmoy_R, Tol_PPSCmoy_R)
+plot(totpp$time, totpp$MixC_PPmoy,log="y",xlim=c(0,48),ylim=c(min(Tol_deadPPmoy), max(cell_count$Tol_PPSCmoy_R)), type="o",main="PP growth",xlab= "Time [Hours]", ylab="log(PP count)")
 
 #Plot des comptes de PP
 
-points(totpp$time,totpp$Tol_PPmoy, type="o", col="red")
-points(totpp$time,totpp$MixC_PPSC_PPmoy, type="o", col="blue")
-points(totpp$time,totpp$Tol_PPSC_PPmoy, type="o", col="orange")
-points(totpp$time, cell_count$MixC_PPSCmoy, type="o", col="brown")
-points(totpp$time, cell_count$Tol_PPSCmoy, type="o", col="gray")
+points(totpp$time,totpp$Tol_PPmoy_R, type="o", col="red")
+points(totpp$time,totpp$MixC_PPSCmoy_R, type="o", col="blue")
+points(totpp$time,totpp$Tol_PPSCmoy_R, type="o", col="orange")
+points(totpp$time, cell_count$MixC_PPSCmoy_R, type="o", col="brown")
+points(totpp$time, cell_count$Tol_PPSCmoy_R, type="o", col="gray")
 legend("bottomright",legend=c("PP in mixC","PP in Tol","PP in PP+SC in mixC","PP in PP+SC in Tol", "PPSC total in mixC", "PPSC total in Tol"),fill=c("black","red","blue","orange", "brown", "gray"))
 
 #estimer l'erreur des réplicats technique 
