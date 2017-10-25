@@ -352,6 +352,30 @@ points(cell_count$time, Tol_all_in_pv, type = "o", col = "pink" ,lwd=1.5)
 legend("topleft",legend=c("SC in mixC","SC in Tol","SC in PV+SC in mixC","SC in PV+SC in Tol", "Syto-9 count in Tol PValone"),fill=c("black","red","blue","orange", "green"))
 legend("bottomright", legend=c("PVSC total in mixC","PVSC total in Tol","total count in pv alone"), fill=c("brown", "gray", "pink"))
 
+#plots SC des 3 réplicats
+
+par(mfrow = c(1,3))
+plot(cell_count$time, cell_count$MixC_SC1,log="y",xlim=c(0,48),ylim=c(min(Tol_deadPVmoy), max(Tol_all_in_pv)), type="o",main="SC growth (1)",xlab= "Time [Hours]", ylab="log(SC count)")
+
+points(cell_count$time,cell_count$Tol_SC1, type="o", col="red")
+points(cell_count$time,cell_count$MixC_PVSC_SC1, type="o", col="blue")
+points(cell_count$time,cell_count$Tol_PVSC_SC1, type="o", col="orange")
+legend("bottom", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
+#réplicat 2
+plot(cell_count$time, cell_count$MixC_SC2,log="y",xlim=c(0,48),ylim=c(min(Tol_deadPVmoy), max(Tol_all_in_pv)), type="o",main="SC growth (2)",xlab= "Time [Hours]", ylab="log(SC count)")
+
+points(cell_count$time,cell_count$Tol_SC2, type="o", col="red")
+points(cell_count$time,cell_count$MixC_PVSC_SC2, type="o", col="blue")
+points(cell_count$time,cell_count$Tol_PVSC_SC2, type="o", col="orange")
+legend("bottom", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
+#réplicat 3
+plot(cell_count$time, cell_count$MixC_SC3,log="y",xlim=c(0,48),ylim=c(min(Tol_deadPVmoy), max(Tol_all_in_pv)), type="o",main="SC growth (3)",xlab= "Time [Hours]", ylab="log(SC count)")
+
+points(cell_count$time,cell_count$Tol_SC3, type="o", col="red")
+points(cell_count$time,cell_count$MixC_PVSC_SC3, type="o", col="blue")
+points(cell_count$time,cell_count$Tol_PVSC_SC3, type="o", col="orange")
+legend("bottom", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
+
 #SAME WITH PV
 
 
