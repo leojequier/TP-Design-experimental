@@ -414,12 +414,9 @@ legend("bottomright",legend=c("PP in mixC","PP in Tol","PP in PP+SC in mixC","PP
 
 Replicat <- rep(c("1", "2", "3"),20) 
 week_on_SC <- c(rep(c(rep(c("1"),time=3), rep(c("0"), time=12)),time=2),rep(c(rep(c("2"),time=3), rep("0", time=12)),time=2))
-<<<<<<< HEAD
-=======
 SCweek1 = c(rep(c(rep(c("1"),time=3), rep(c("0"), time=12)),time=2), rep("0", times = 30))
 SCweek2 = c(rep("0", times = 30),rep(c(rep(c("1"),time=3), rep(c("0"), time=12)),time=2))
 
->>>>>>> d8f977775886ca7d984712034689b433067055bc
 Substrate<-rep(c("MixC", "Tol"), each=15, time=2)
 PV <- c(rep(c("0"), 30),rep(c("0"), 3), rep(c("1"), 12),rep(c("0"), 3), rep(c("1"), 12))
 PP <- c(rep(c("0"), 3), rep(c("1"), 12),rep(c("0"), 3), rep(c("1"), 12), rep(c("0"), 30))
@@ -431,16 +428,15 @@ AUC <- vector(length = 60)
 
 names1 <- c()
 names2 <- c()
+names3 <- c()
 CvTol = rep(c("MixC", "Tol"), each = 15, time=2)
 bac = c(rep(rep(c("SC", "PP", "PPSC_SC","PPSC_PP", "PPSC_tot"), each = 3), time = 2),rep(rep(c("SC", "PV", "PVSC_SC","PVSC_PV", "PVSC_tot"), each = 3), time = 2))
 n = c(rep(c(1,2,3), times = 10), rep(c("1_1","2_1","3_1"), times=10))
 for(i in 1:60){
   names1[i] = paste(CvTol[i], paste(bac[i], n[i], sep = ""), sep = "_")
   names2[i] = bac[i]
+  names3[i] = paste(CvTol[i], paste(bac[i], sep = ""), sep = "_")
 }
-
-
-week <- data.frame(names1, names2,Substrate,week_on_SC,Replicat,PV, PP,SC,PPSC, PVSC,AUC)
 
 ## Table avec les mêmes noms dans le même ordre que week
 time_w1 = c(0, 11, 15 + 1/6, 19.5,22.5,38.5 , 45+ 1/3 ,48 )
@@ -448,6 +444,8 @@ time_w2 = c(0, 14.5, 18, 21, 23.5, 36.5, 42 ,44.5 , 47.5 )
 
 ess <- read.table("ess.txt", sep="\t", header=T)
 ess2 <- read.table("ess2.txt", header = T)
+
+week <- data.frame(names1, names2,names3,Substrate,week_on_SC,Replicat,PV, PP,SC,PPSC, PVSC,AUC)
 
 ## Aire sous la courbe
 for(i in 1:30){
@@ -457,6 +455,9 @@ for(i in 1:30){
 for(i in 31:60){
   week$AUC[i] = trapz(time_w2, ess2[,i-30])
 }
+
+
+
 
 summary(glm(log(week$AUC) ~ as.factor(week$week_on_SC)+ as.factor(week$names2)+as.factor(week$Substrate)+as.factor(week$Replicat)))
 ## que les réplicat ne sont pas important, n'ont pas d'influence, que il n'y a pas de différence entre le SC d'une semaine à l'autre.
@@ -487,10 +488,9 @@ eti = as.factor(eti)
 
 plot(rep(1:10, each = 3), log(week$AUC[1:30]), xlab = "")
 
-<<<<<<< HEAD
 ?axis
 axis(1, at = 1:10, labels = unique(eti[1:30]), las = 2, hadj = T)
-=======
+
 
 #t.test on SC week1 vs week2
 t.test(week$AUC[week$week_on_SC=="1"& week$names3=="Tol_SC"], week$AUC[week$week_on_SC=="2"& week$names3=="Tol_SC"])
@@ -517,4 +517,3 @@ summary(modelw1)
 
 
 
->>>>>>> d8f977775886ca7d984712034689b433067055bc
