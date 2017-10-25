@@ -402,6 +402,11 @@ for(i in 31:60){
 summary(glm(log(week$AUC) ~ as.factor(week$SCweek1)+ as.factor(week$names2)+as.factor(week$Substrate)+as.factor(week$Replicat)))
 ## que les réplicat ne sont pas important, n'ont pas d'influence, que il n'y a pas de différence entre le SC d'une semaine à l'autre.
 
+##test week 1
+model_week_1 = aov(log(week$AUC[week$names1 %in% week$names1[c(1:3, 7:9, 16:18, 22:24)]]))~ )
+                   
+                  
+
 ##Anova
 model = aov(log(week$AUC)~week$Substrate*as.factor(week$names2))
 anova(model)
@@ -416,7 +421,9 @@ for(i in 1:60){
 
 
 eti = as.factor(eti)
+?as.numeric
 
+plot(rep(1:10, each = 3), log(week$AUC[1:30]), xlab = "")
 
-plot(as.numeric(eti[1:30]), log(week$AUC[1:30]), xlab = "")
-axis(1, at = 1:20, labels = unique(eti)[1:10], las = 2)
+?axis
+axis(1, at = 1:10, labels = unique(eti[1:30]), las = 2, hadj = T)
