@@ -345,7 +345,7 @@ plot(cell_count$time, cell_count$MixC_SCmoy_G,log="y",xlim=c(0,48),ylim=c(min(ce
 points(cell_count$time,cell_count$Tol_SCmoy_G, type="o", col="red")
 points(cell_count$time,cell_count$MixC_PPSCmoy_G, type="o", col="blue")
 points(cell_count$time,cell_count$Tol_PPSCmoy_G, type="o", col="orange")
-points(cell_count$time, cell_count$MixC_PPSCmoy_G, type="o", col="green")
+points(cell_count$time, cell_count$MixC_PPmoy_G, type="o", col="green")
 points(cell_count$time, (cell_count$MixC_PPSCmoy_G + cell_count$MixC_PPSCmoy_R), type="o", col="brown")
 points(cell_count$time, (cell_count$Tol_PPSCmoy_G + cell_count$Tol_PPSCmoy_R), type="o", col="gray")
 points(cell_count$time, (cell_count$Tol_PPmoy_G + cell_count$Tol_PPmoy_R), type = "o", col = "pink")
