@@ -422,7 +422,7 @@ for(i in 31:60){
   week$AUC[i] = trapz(time_w2, ess2[,i-30])
 }
 
-summary(glm(log(week$AUC) ~ as.factor(week$SCweek1)+ as.factor(week$names2)+as.factor(week$Substrate)+as.factor(week$Replicat)))
+summary(glm(log(week$AUC) ~ as.factor(week$week_on_SC)+ as.factor(week$names2)+as.factor(week$Substrate)+as.factor(week$Replicat)))
 ## que les réplicat ne sont pas important, n'ont pas d'influence, que il n'y a pas de différence entre le SC d'une semaine à l'autre.
 
 ##test week 1
