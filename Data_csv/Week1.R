@@ -510,19 +510,9 @@ summary(modelw2_SC)
 modelw2_PV <- aov(log(week2$AUC[week2$Species%in%c("PV","PVSC_PV")])~week2$Substrate[week2$Species%in%c("PV","PVSC_PV")]* week2$Species[week2$Species %in%c("PV","PVSC_PV")])
 summary(modelw2_PV)
 
-#t.test(week$AUC[week$week_on_SC=="1"& week$names3=="Tol_PP"], week$AUC[week$week_on_SC=="2"& week$names3=="Tol_SC"])
 
-
-
-
-
-
-
-
-
-
-
-
+t.test(week2$AUC[week2$names3=="Tol_PV"], week2$AUC[week2$names3=="Tol_PVSC_PV"])
+t.test(week2$AUC[week2$names3=="MixC_PV"], week2$AUC[week2$names3=="MixC_PVSC_PV"])
 
 
 
