@@ -229,11 +229,15 @@ for(i in 1:32){
   list_cell_count[i+1] = paste(CvTol[i], paste(bac[i], n[i], sep = ""), sep = "_")
 }
 cell_count = data.frame(time, syto2$MixCSC1, syto2$MixCSC2, syto2$MixCSC3,MixC_SCmoy,
-                        cher$MixCPP1,cher$MixCPP2,cher$MixCPP3,MixC_PPmoy,
-                        syto2$MixCPPSC1,syto2$MixCPPSC2,syto2$MixCPPSC3,MixC_PPSC_SCmoy,
-                        cher$MixCPPSC1, cher$MixCPPSC2, cher$MixCPPSC3,Tol_PPSC_SCmoy, 
-                        syto2$ToluSC1,syto2$ToluSC2,syto2$ToluSC3, Tol_SCmoy,
-                        cher$ToluPP1,cher$ToluPP2,cher$ToluPP3, Tol_PPmoy, 
+                        cher$MixCSC1, cher$MixCSC2, cher$MixCSC3, MixC_SCmoy,
+                        cher$MixCPP1, cher$MixCPP2, cher$MixCPP3,MixC_PPmoy,
+                        syto2$MixCPP1, syto2$MixCPP2, syto2$MixCPP3, MixC_PPmoy,
+                        syto2$MixCPPSC1, syto2$MixCPPSC2, syto2$MixCPPSC3, MixC_PPSC_SCmoy,
+                        cher$MixCPPSC1, cher$MixCPPSC2, cher$MixCPPSC3, Tol_PPSC_SCmoy, 
+                        syto2$ToluSC1, syto2$ToluSC2, syto2$ToluSC3, Tol_SCmoy,
+                        cher$ToluSC1, cher$ToluSC2, cher$ToluSC3, Tol_SCmoy,
+                        cher$ToluPP1, cher$ToluPP2, cher$ToluPP3, Tol_PPmoy, 
+                        syto2$ToluPP1, syto2$ToluPP2, syto2$ToluPP3, Tol_PPmoy,
                         syto2$ToluPPSC1, syto2$ToluPPSC2,syto2$ToluPPSC3,Tol_PPSC_SCmoy,
                         cher$ToluPPSC1,cher$ToluPPSC2,cher$ToluPPSC3, Tol_PPSC_PPmoy)
 names(cell_count) = list_cell_count
