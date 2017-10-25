@@ -226,23 +226,23 @@ for(i in 1:8){
 MixC_PPmoy_R<- c()
 
 for(i in 1:8){
-  MixC_PPmoy[i] <- sum(cher$MixCPP1[time==time[i]],  cher$MixCPP2[time==time[i]],cher$MixCPP3[time==time[i]])/3
+  MixC_PPmoy_R[i] <- sum(cher$MixCPP1[time==time[i]], cher$MixCPP2[time==time[i]],cher$MixCPP3[time==time[i]])/3
 }
 
 MixC_PPmoy_G<- c()
 
 for(i in 1:8){
-  MixC_PPmoy[i] <- sum(syto2$MixCPP1[time==time[i]],  syto2$MixCPP2[time==time[i]],syto2$MixCPP3[time==time[i]])/3
+  MixC_PPmoy_G[i] <- sum(syto2$MixCPP1[time==time[i]],  syto2$MixCPP2[time==time[i]],syto2$MixCPP3[time==time[i]])/3
 }
 
 Tol_PPmoy_R <- c()
 for(i in 1:8){
-  Tol_PPmoy[i] <- sum(cher$ToluPP1[time==time[i]],  cher$ToluPP2[time==time[i]],cher$ToluPP3[time==time[i]])/3
+  Tol_PPmoy_R[i] <- sum(cher$ToluPP1[time==time[i]],  cher$ToluPP2[time==time[i]],cher$ToluPP3[time==time[i]])/3
 }
 
 Tol_PPmoy_G <- c()
 for(i in 1:8){
-  Tol_PPmoy[i] <- sum(syto2$ToluPP1[time==time[i]],  syto2$ToluPP2[time==time[i]],syto2$ToluPP3[time==time[i]])/3
+  Tol_PPmoy_G[i] <- sum(syto2$ToluPP1[time==time[i]],  syto2$ToluPP2[time==time[i]],syto2$ToluPP3[time==time[i]])/3
 }
 #cell count
 list_cell_count = vector(mode = "list", length = 49)
@@ -268,7 +268,6 @@ cell_count = data.frame(time, syto2$MixCSC1, syto2$MixCSC2, syto2$MixCSC3,MixC_S
                         cher$ToluPPSC1,cher$ToluPPSC2,cher$ToluPPSC3, Tol_PPSCmoy_R)
 names(cell_count) = list_cell_count
 names(cell_count)
-
 
 
 MixC_PPSC1 <- cell_count$MixC_PPSC_SC1 + cell_count$MixC_PPSC_PP1
