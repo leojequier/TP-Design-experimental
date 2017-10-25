@@ -171,75 +171,101 @@ for(i in 2:10){
 for(i in 11:19){
   plot(absol[,1],absol[,i],  ylim = c(min(absol[,2:19]), max(absol[,2:19])),log = "y", main = List_treat[[i-1]],xlab = "time[h]", ylab = "Absolut count")
 }
-#means sc
-MixC_SCmoy<- c()
+#means sc fluo vert(G) et rouge(R)
+MixC_SCmoy_G<- c()
 
 for(i in 1:8){
-  MixC_SCmoy[i] <- sum(syto2$MixCSC1[time==time[i]],  syto2$MixCSC2[time==time[i]], syto2$MixCSC3[time==time[i]])/3
+  MixC_SCmoy_G[i] <- sum(syto2$MixCSC1[time==time[i]],  syto2$MixCSC2[time==time[i]], syto2$MixCSC3[time==time[i]])/3
 }
 
-Tol_SCmoy<- c()
+MixC_SCmoy_R<- c()
 
 for(i in 1:8){
-  Tol_SCmoy[i] <- sum(syto2$ToluSC1[time==time[i]],  syto2$ToluSC2[time==time[i]], syto2$ToluSC3[time==time[i]])/3
+  MixC_SCmoy_R[i] <- sum(cher$MixCSC1[time==time[i]],  cher$MixCSC2[time==time[i]], cher$MixCSC3[time==time[i]])/3
 }
 
-Tol_PPSC_SCmoy <-c()
+
+Tol_SCmoy_G<- c()
 
 for(i in 1:8){
-  Tol_PPSC_SCmoy[i] <- sum(syto2$ToluPPSC1[time==time[i]],  syto2$ToluPPSC2[time==time[i]], syto2$ToluPPSC3[time==time[i]])/3
+  Tol_SCmoy_G[i] <- sum(syto2$ToluSC1[time==time[i]],  syto2$ToluSC2[time==time[i]], syto2$ToluSC3[time==time[i]])/3
 }
 
-MixC_PPSC_SCmoy <-c()
+Tol_SCmoy_R<- c()
 
 for(i in 1:8){
-  MixC_PPSC_SCmoy[i] <- sum(syto2$MixCPPSC1[time==time[i]],  syto2$MixCPPSC2[time==time[i]], syto2$MixCPPSC3[time==time[i]])/3
+  Tol_SCmoy_R[i] <- sum(cher$ToluSC1[time==time[i]],  cher$ToluSC2[time==time[i]], cher$ToluSC3[time==time[i]])/3
 }
 
+Tol_PPSCmoy_G <-c()
+
+for(i in 1:8){
+  Tol_PPSCmoy_G[i] <- sum(syto2$ToluPPSC1[time==time[i]],  syto2$ToluPPSC2[time==time[i]], syto2$ToluPPSC3[time==time[i]])/3
+}
+
+Tol_PPSCmoy_R <-c()
+
+for(i in 1:8){
+  Tol_PPSCmoy_R[i] <- sum(cher$ToluPPSC1[time==time[i]],  cher$ToluPPSC2[time==time[i]], cher$ToluPPSC3[time==time[i]])/3
+}
+
+MixC_PPSCmoy_G <-c()
+
+for(i in 1:8){
+  MixC_PPSCmoy_G[i] <- sum(syto2$MixCPPSC1[time==time[i]],  syto2$MixCPPSC2[time==time[i]], syto2$MixCPPSC3[time==time[i]])/3
+}
+
+MixC_PPSCmoy_R <-c()
+
+for(i in 1:8){
+  MixC_PPSCmoy_R[i] <- sum(cher$MixCPPSC1[time==time[i]],  cher$MixCPPSC2[time==time[i]], cher$MixCPPSC3[time==time[i]])/3
+}
 
 # means PP
 
-MixC_PPmoy<- c()
+MixC_PPmoy_R<- c()
 
 for(i in 1:8){
   MixC_PPmoy[i] <- sum(cher$MixCPP1[time==time[i]],  cher$MixCPP2[time==time[i]],cher$MixCPP3[time==time[i]])/3
 }
 
-Tol_PPmoy <- c()
+MixC_PPmoy_G<- c()
+
+for(i in 1:8){
+  MixC_PPmoy[i] <- sum(syto2$MixCPP1[time==time[i]],  syto2$MixCPP2[time==time[i]],syto2$MixCPP3[time==time[i]])/3
+}
+
+Tol_PPmoy_R <- c()
 for(i in 1:8){
   Tol_PPmoy[i] <- sum(cher$ToluPP1[time==time[i]],  cher$ToluPP2[time==time[i]],cher$ToluPP3[time==time[i]])/3
 }
 
-Tol_PPSC_PPmoy <- c()
+Tol_PPmoy_G <- c()
 for(i in 1:8){
-  Tol_PPSC_PPmoy[i] <- sum(cher$ToluPPSC1[time==time[i]],  cher$ToluPPSC2[time==time[i]],cher$ToluPP3[time==time[i]])/3
+  Tol_PPmoy[i] <- sum(syto2$ToluPP1[time==time[i]],  syto2$ToluPP2[time==time[i]],syto2$ToluPP3[time==time[i]])/3
 }
-MixC_PPSC_PPmoy <- c()
-for(i in 1:8){
-  MixC_PPSC_PPmoy[i] <- sum(cher$MixCPPSC1[time==time[i]],  cher$MixCPPSC2[time==time[i]],cher$MixCPP3[time==time[i]])/3
-}
-
 #cell count
-list_cell_count = vector(mode = "list", length = 33)
+list_cell_count = vector(mode = "list", length = 49)
 list_cell_count[1] = "time"
-CvTol = rep(c("MixC", "Tol"), each = 16)
-bac = rep(rep(c("SC", "PP", "PPSC_SC","PPSC_PP"), each = 4), time = 2)
-n = rep(c(1,2,3,"moy"), times = 8)
-for(i in 1:32){
-  list_cell_count[i+1] = paste(CvTol[i], paste(bac[i], n[i], sep = ""), sep = "_")
+CvTol = rep(c("MixC", "Tol"), each = 24)
+bac = rep(rep(c("SC", "PP","PPSC"), each = 8), time = 2)
+Fluo = rep(rep(c("G", "R"), each = 4), time = 6)
+n = rep(c(1,2,3,"moy"), times = 12)
+for(i in 1:48){
+  list_cell_count[i+1] = paste(CvTol[i], paste(bac[i], n[i], sep = ""),Fluo[i], sep = "_")
 }
-cell_count = data.frame(time, syto2$MixCSC1, syto2$MixCSC2, syto2$MixCSC3,MixC_SCmoy,
-                        cher$MixCSC1, cher$MixCSC2, cher$MixCSC3, MixC_SCmoy,
-                        cher$MixCPP1, cher$MixCPP2, cher$MixCPP3,MixC_PPmoy,
-                        syto2$MixCPP1, syto2$MixCPP2, syto2$MixCPP3, MixC_PPmoy,
-                        syto2$MixCPPSC1, syto2$MixCPPSC2, syto2$MixCPPSC3, MixC_PPSC_SCmoy,
-                        cher$MixCPPSC1, cher$MixCPPSC2, cher$MixCPPSC3, Tol_PPSC_SCmoy, 
-                        syto2$ToluSC1, syto2$ToluSC2, syto2$ToluSC3, Tol_SCmoy,
-                        cher$ToluSC1, cher$ToluSC2, cher$ToluSC3, Tol_SCmoy,
-                        cher$ToluPP1, cher$ToluPP2, cher$ToluPP3, Tol_PPmoy, 
-                        syto2$ToluPP1, syto2$ToluPP2, syto2$ToluPP3, Tol_PPmoy,
-                        syto2$ToluPPSC1, syto2$ToluPPSC2,syto2$ToluPPSC3,Tol_PPSC_SCmoy,
-                        cher$ToluPPSC1,cher$ToluPPSC2,cher$ToluPPSC3, Tol_PPSC_PPmoy)
+cell_count = data.frame(time, syto2$MixCSC1, syto2$MixCSC2, syto2$MixCSC3,MixC_SCmoy_G,
+                        cher$MixCSC1, cher$MixCSC2, cher$MixCSC3, MixC_SCmoy_R,
+                        cher$MixCPP1, cher$MixCPP2, cher$MixCPP3,MixC_PPmoy_R,
+                        syto2$MixCPP1, syto2$MixCPP2, syto2$MixCPP3, MixC_PPmoy_G,
+                        syto2$MixCPPSC1, syto2$MixCPPSC2, syto2$MixCPPSC3, MixC_PPSCmoy_G,
+                        cher$MixCPPSC1, cher$MixCPPSC2, cher$MixCPPSC3, MixC_PPSCmoy_R, 
+                        syto2$ToluSC1, syto2$ToluSC2, syto2$ToluSC3, Tol_SCmoy_G,
+                        cher$ToluSC1, cher$ToluSC2, cher$ToluSC3, Tol_SCmoy_R,
+                        cher$ToluPP1, cher$ToluPP2, cher$ToluPP3, Tol_PPmoy_R, 
+                        syto2$ToluPP1, syto2$ToluPP2, syto2$ToluPP3, Tol_PPmoy_G,
+                        syto2$ToluPPSC1, syto2$ToluPPSC2,syto2$ToluPPSC3,Tol_PPSCmoy_G,
+                        cher$ToluPPSC1,cher$ToluPPSC2,cher$ToluPPSC3, Tol_PPSCmoy_R)
 names(cell_count) = list_cell_count
 names(cell_count)
 
