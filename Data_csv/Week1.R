@@ -453,7 +453,7 @@ par(mai = c(2,1,1,1))
 plot(rep(1:10, each = 3), log(week$AUC[1:30]),
      main = "Aire sous la courbe\nselon traitement",
      xlab = "", xaxt = "n", ylab = "log (AUC)", col = AUC_col)
-axis(1, at = 1:10, labels = unique(eti[1:30]), las = 2, hadj = T, font = 2, outer = F)
+axis(1, at = 1:10, labels = unique(eti[1:30]), las = 2, hadj = T, font = 2, outer = F,pch = c(1,3,4))
 AUC_col = rep(c("red", "black", "blue","black", "black", "green", "black", "orange","black","black", "black", "black"), each = 3)
 
 
@@ -477,7 +477,7 @@ summary(modelw1_PP)
 #week2
 plot(rep(1:10, each = 3), log(week$AUC[31:60]),
      main = "Aire sous la courbe\nselon traitement\nWeek2",
-     xlab = "", xaxt = "n", ylab = "log (AUC)", col = AUC_col)
+     xlab = "", xaxt = "n", ylab = "log (AUC)", col = AUC_col, pch = c(1,3,4))
 axis(1, at = 1:10, labels = unique(eti[31:60]), las = 2, hadj = T, font = 2, outer = F)
 AUC_col = rep(c("red", "black", "blue","black", "black", "green", "black", "orange","black","black", "black", "black"), each = 3)
 
@@ -491,7 +491,7 @@ TukeyHSD(modelw2_SC)
 
 plot(rep(1:10, each = 3), log(week$AUC[31:60]),
      main = "Aire sous la courbe\nselon traitement\nWeek2",
-     xlab = "", xaxt = "n", ylab = "log (AUC)", col = AUC_col_pseudo)
+     xlab = "", xaxt = "n", ylab = "log (AUC)", col = AUC_col_pseudo, pch = c(1,3,4))
 axis(1, at = 1:10, labels = unique(eti[31:60]), las = 2, hadj = T, font = 2, outer = F)
 AUC_col_pseudo = rep(c( "black","red", "black", "blue", "black", "black", "green", "black", "orange","black"), each = 3)
 
