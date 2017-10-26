@@ -448,12 +448,14 @@ for(i in 1:60){
 
 eti = as.factor(eti)
 
-
-plot(rep(1:10, each = 3), log(week$AUC[1:30]), xlab = "")
-
-
-axis(1, at = 1:10, labels = unique(eti[1:30]), las = 2, hadj = T)
-
+par(mfrow = c(1,1))
+par(mai = c(2,1,1,1))
+plot(rep(1:10, each = 3), log(week$AUC[1:30]),
+     main = "Aire sous la courbe\nselon traitement",
+     xlab = "", xaxt = "n", ylab = "log (AUC)")
+axis(1, at = 1:10, labels = unique(eti[1:30]), las = 2, hadj = T, font = 2, outer = F)
+?plot()
+?axis()
 
 #t.test on SC week1 vs week2
 t.test(week$AUC[week$week_on_SC=="1"& week$names3=="Tol_SC"], week$AUC[week$week_on_SC=="2"& week$names3=="Tol_SC"])
