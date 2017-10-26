@@ -484,6 +484,7 @@ axis(1, at = 1:10, labels = unique(eti[1:30]), las = 2, hadj = T, font = 2, oute
 t.test(week1$AUC[week1$names3=="Tol_PP"], week$AUC[week1$names3=="MixC_PP"])
 modelw1_PP <- aov(log(week1$AUC[week1$Species%in%c("PP","PPSC_PP")])~week1$Substrate[week1$Species%in%c("PP","PPSC_PP")]* week1$Species[week1$Species %in%c("PP","PPSC_PP")])
 summary(modelw1_PP)
+TukeyHSD(modelw1_PP)
   #croissance SC sur MixC week1
 t.test(week1$AUC[week1$names3=="MixC_SC"], week1$AUC[week1$names3=="MixC_PPSC_SC"])
   #croissance de PP sur MixC week1
