@@ -339,68 +339,34 @@ for(i in 1:9){
 
 #Plot des comptes de SC
 par(mfrow = c(1,1))
-plot(cell_count$time, cell_count$MixC_SCmean,lwd=1.3,log = "y",xlim=c(0,48), ylim = c(min(Tol_deadPVmoy), max(Tol_all_in_pv)), type = "o",main="SC growth",xlab= "Time [Hours]", ylab="log(SC count)")
+plot(cell_count$time, cell_count$MixC_SCmean,lwd=1.3,log = "y",xlim=c(0,48), ylim = c(min(Tol_deadPVmoy), max(Tol_all_in_pv)), type = "o",main="SC growth\nWeek2 ",xlab= "Time [Hours]", ylab="log(SC count)")
 
 points(cell_count$time,cell_count$Tol_SCmean,type="o", col="red",lwd=1.3)
 points(cell_count$time,cell_count$MixC_PVSC_SCmean, type="o", col="blue",lwd=1.3)
 points(cell_count$time, cell_count$Tol_PVSC_SCmean, type = "o", col = "orange",lwd=1.3)
-points(cell_count$time, Tol_deadPVmoy, type = "o", col = "green",lwd=1.3)
-points(cell_count$time, cell_count$MixC_PVSC_PVmean+cell_count$MixC_PVSC_SCmean,type = "o", col = "brown",lwd=1.3)
-points(cell_count$time, cell_count$Tol_PVSC_PVmean+ cell_count$Tol_PVSC_SCmean,type = "o", col = "grey" ,lwd=1.3)
-points(cell_count$time, Tol_all_in_pv, type = "o", col = "pink" ,lwd=1.5)
+#points(cell_count$time, Tol_deadPVmoy, type = "o", col = "green",lwd=1.3)
+#points(cell_count$time, cell_count$MixC_PVSC_PVmean+cell_count$MixC_PVSC_SCmean,type = "o", col = "brown",lwd=1.3)
+#points(cell_count$time, cell_count$Tol_PVSC_PVmean+ cell_count$Tol_PVSC_SCmean,type = "o", col = "grey" ,lwd=1.3)
+#points(cell_count$time, Tol_all_in_pv, type = "o", col = "pink" ,lwd=1.5)#
 
+#
+legend("topleft",legend=c("SC in mixC","SC in Tol","SC in PV+SC in mixC","SC in PV+SC in Tol"),fill=c("black","red","blue","orange"))
+#legend("bottomright", legend=c("PVSC total in mixC","PVSC total in Tol","total count in pv alone"), fill=c("brown", "gray", "pink"))
 
-legend("topleft",legend=c("SC in mixC","SC in Tol","SC in PV+SC in mixC","SC in PV+SC in Tol", "Syto-9 count in Tol PValone"),fill=c("black","red","blue","orange", "green"))
-legend("bottomright", legend=c("PVSC total in mixC","PVSC total in Tol","total count in pv alone"), fill=c("brown", "gray", "pink"))
-
-#plots SC des 3 réplicats
-
-par(mfrow = c(1,3))
-plot(cell_count$time, cell_count$MixC_SC1,log="y",xlim=c(0,48),ylim=c(min(Tol_deadPVmoy), max(Tol_all_in_pv)), type="o",main="SC growth (1)",xlab= "Time [Hours]", ylab="log(SC count)")
-
-points(cell_count$time,cell_count$Tol_SC1, type="o", col="red")
-points(cell_count$time,cell_count$MixC_PVSC_SC1, type="o", col="blue")
-points(cell_count$time,cell_count$Tol_PVSC_SC1, type="o", col="orange")
-legend("bottom", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
-#réplicat 2
-plot(cell_count$time, cell_count$MixC_SC2,log="y",xlim=c(0,48),ylim=c(min(Tol_deadPVmoy), max(Tol_all_in_pv)), type="o",main="SC growth (2)",xlab= "Time [Hours]", ylab="log(SC count)")
-
-points(cell_count$time,cell_count$Tol_SC2, type="o", col="red")
-points(cell_count$time,cell_count$MixC_PVSC_SC2, type="o", col="blue")
-points(cell_count$time,cell_count$Tol_PVSC_SC2, type="o", col="orange")
-legend("bottom", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
-#réplicat 3
-plot(cell_count$time, cell_count$MixC_SC3,log="y",xlim=c(0,48),ylim=c(min(Tol_deadPVmoy), max(Tol_all_in_pv)), type="o",main="SC growth (3)",xlab= "Time [Hours]", ylab="log(SC count)")
-
-points(cell_count$time,cell_count$Tol_SC3, type="o", col="red")
-points(cell_count$time,cell_count$MixC_PVSC_SC3, type="o", col="blue")
-points(cell_count$time,cell_count$Tol_PVSC_SC3, type="o", col="orange")
-legend("bottom", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
 
 #SAME WITH PV
 
 
 
 #totPV <- data.frame(time, MixC_PVmoy, Tol_PVmoy, MixC_PVSC_PVmoy, Tol_PVSC_PVmoy)
-plot(cell_count$time, cell_count$MixC_PVmean,log="y",lwd=1.3,xlim=c(0,48),ylim=c(min(Tol_deadPVmoy), max(cell_count$Tol_PVmean)), type="o",main="PV growth",xlab= "Time [Hours]", ylab="log(PV count)")
-
-
+plot(cell_count$time, cell_count$MixC_PVmean,log="y",lwd=1.3,xlim=c(0,48),ylim=c(min(Tol_deadPVmoy), max(cell_count$Tol_PVmean)), type="o",main="PV growth\nWeek2",xlab= "Time [Hours]", ylab="log(PV count)")
 
 #Plot des comptes de PV
-
-
 points(cell_count$time,cell_count$Tol_PVmean, type="o", col="red",lwd=1.3)
 points(cell_count$time,cell_count$MixC_PVSC_PVmean, type="o", col="blue",lwd=1.3)
 points(cell_count$time,cell_count$Tol_PVSC_PVmean, type="o", col="orange",lwd=1.3)
-points(cell_count$time, cell_count$MixC_PVSC_SCmean + cell_count$MixC_PVSC_PVmean, type="o", col="brown",lwd=1.3)
-points(cell_count$time, cell_count$Tol_PVSC_SCmean + cell_count$Tol_PVSC_PVmean, type="o", col="gray",lwd=1.3)
-legend("bottomright",legend=c("PV in mixC","PV in Tol","PV in PV+SC in mixC","PV in PV+SC in Tol", "PVSC total in mixC", "PVSC total in Tol"),fill=c("black","red","blue","orange", "brown", "gray"))
+#points(cell_count$time, cell_count$MixC_PVSC_SCmean + cell_count$MixC_PVSC_PVmean, type="o", col="brown",lwd=1.3)
+#points(cell_count$time, cell_count$Tol_PVSC_SCmean + cell_count$Tol_PVSC_PVmean, type="o", col="gray",lwd=1.3)
+legend("topleft",legend=c("PV in mixC","PV in Tol","PV in PV+SC in mixC","PV in PV+SC in Tol"),fill=c("black","red","blue","orange"))
 
-library(ggplot2)
-dens <- density(cell_count$time)#, cell_count$MixC_SC1)
-d <- data.frame(x = dens$cell_count$time, y = dens$cell_count$MixC_SC1)
-qplot(cell_count$time, cell_count$MixC_SC1,xlim=c(0,48),geom="line",main="SC growth (1)",
-                  xlab= "Time [Hours]", ylab="log(SC count)")+
-  geom_ribbon(data=cell_count$time,cell_count$MixC_SC1,
-              fill="red",colour=NA,alpha=0.5)
 

@@ -304,57 +304,61 @@ for(i in 1:8){
 }
 
 #Plot des comptes de SC (fluoresence verte)
-par(mfrow = c(1,1))
-plot(cell_count$time, cell_count$MixC_SCmoy_G,log="y",xlim=c(0,48),ylim=c(min(cell_count$Tol_PPmoy_G), max(cell_count$Tol_PPSCmoy_G + cell_count$Tol_PPSCmoy_R)), type="o",main="SC growth",xlab= "Time [Hours]", ylab="log(SC count)")
 
+
+
+
+par(mfrow = c(1,1))
+        #AIRE COLOREES
+x<-c(0,cell_count$time)
+y <- c(0,cell_count$MixC_SCmoy_G)
+
+xleo = c(0, cell_count$time,48)
+
+plot(x,y,log="y",xlim=c(0,48),ylim=c(min(cell_count$Tol_PPmoy_G), max(cell_count$Tol_PPSCmoy_G + cell_count$Tol_PPSCmoy_R)), type="o",main="SC growth\nWeek1",xlab= "Time [Hours]", ylab="log(SC count)")
+yleo = c(100,cell_count$MixC_SCmoy_G,100)
+polygon(xleo, yleo, col=rgb(0.1,0.1,0.1,0.5))
+
+points(cell_count$time,cell_count$Tol_SCmoy_G, type="o", col="red")
+yol<- c(100,cell_count$Tol_SCmoy_G,100)
+polygon(xleo, yol, col=rgb(0.9,0,0,0.4))
+
+points(cell_count$time,cell_count$MixC_PPSCmoy_G, type="o", col="blue")
+yol2 <- c(100,cell_count$MixC_PPSCmoy_G,100)
+polygon(xleo, yol2, col=rgb(0,0,1,0.4))
+
+points(cell_count$time,cell_count$Tol_PPSCmoy_G, type="o", col="orange")
+yol3 <- c(100,cell_count$Tol_PPSCmoy_G,100)
+polygon(xleo, yol3, col=rgb(0.8,0.3,0.1,0.4))
+legend("topleft", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
+      #Normal
+
+plot(x,y,log="y",xlim=c(0,48),ylim=c(min(cell_count$Tol_PPmoy_G), max(cell_count$Tol_PPSCmoy_G + cell_count$Tol_PPSCmoy_R)), type="o",main="SC growth\nWeek1",xlab= "Time [Hours]", ylab="log(SC count)")
 points(cell_count$time,cell_count$Tol_SCmoy_G, type="o", col="red")
 points(cell_count$time,cell_count$MixC_PPSCmoy_G, type="o", col="blue")
 points(cell_count$time,cell_count$Tol_PPSCmoy_G, type="o", col="orange")
-points(cell_count$time, cell_count$MixC_PPmoy_G, type="o", col="green")
-points(cell_count$time, (cell_count$MixC_PPSCmoy_G + cell_count$MixC_PPSCmoy_R), type="o", col="brown")
-points(cell_count$time, (cell_count$Tol_PPSCmoy_G + cell_count$Tol_PPSCmoy_R), type="o", col="gray")
-points(cell_count$time, (cell_count$Tol_PPmoy_G + cell_count$Tol_PPmoy_R), type = "o", col = "pink")
-legend("bottomright",legend = c( "Syt9 cnt in Tol PPalone", "PPSC total in mixC", "PPSC total in Tol", "total count in pp alone"),fill=c("green", "brown", "gray", "pink"))
-legend("bottom", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
-      
+legend("topleft", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
+
+
+#plot(cell_count$time, cell_count$MixC_PPmoy_G, log="y",xlim=c(0,48),ylim=c(min(cell_count$Tol_PPmoy_G), max(cell_count$Tol_PPSCmoy_G + cell_count$Tol_PPSCmoy_R)),type="o", col="green")
+#points(cell_count$time, (cell_count$MixC_PPSCmoy_G + cell_count$MixC_PPSCmoy_R), type="o", col="brown")
+#points(cell_count$time, (cell_count$Tol_PPSCmoy_G + cell_count$Tol_PPSCmoy_R), type="o", col="gray")
+#points(cell_count$time, (cell_count$Tol_PPmoy_G + cell_count$Tol_PPmoy_R), type = "o", col = "pink")
+#legend("bottomright",legend = c( "Syt9 cnt in Tol PPalone", "PPSC total in mixC", "PPSC total in Tol", "total count in pp alone"),fill=c("green", "brown", "gray", "pink"))
+
+
+
   #SAME WITH PP (fluoresence rouge)
 
-#plot par réplicats ATTENTION jsuis pas du tout sûr si c'est les bonnes données :3
-par(mfrow = c(1,3))
-plot(totsc$time, absol$MixCSC1,log="y",xlim=c(0,48),ylim=c(min(Tol_deadPPmoy), max(cell_count$Tol_PPSCmoy_R)), type="o",main="SC growth (1)",xlab= "Time [Hours]", ylab="log(SC count)")
 
-points(totsc$time,absol$ToluSC1, type="o", col="red")
-points(totsc$time,absol$MixCPPSC1, type="o", col="blue")
-points(totsc$time,absol$ToluPPSC1, type="o", col="orange")
-legend("bottom", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
-#réplicat 2 (vert)
-plot(totsc$time, absol$MixCSC2,log="y",xlim=c(0,48),ylim=c(min(Tol_deadPPmoy), max(cell_count$Tol_PPSCmoy_G)), type="o",main="SC growth (2)",xlab= "Time [Hours]", ylab="log(SC count)")
-
-points(totsc$time,absol$ToluSC2, type="o", col="red")
-points(totsc$time,absol$MixCPPSC2, type="o", col="blue")
-points(totsc$time,absol$ToluPPSC2, type="o", col="orange")
-legend("bottom", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
-
-#réplicat 3 (vert)
-plot(totsc$time, absol$MixCSC1,log="y",xlim=c(0,48),ylim=c(min(Tol_deadPPmoy), max(cell_count$Tol_PPSCmoy_G)), type="o",main="SC growth (3)",xlab= "Time [Hours]", ylab="log(SC count)")
-
-points(totsc$time,absol$ToluSC3, type="o", col="red")
-points(totsc$time,absol$MixCPPSC3, type="o", col="blue")
-points(totsc$time,absol$ToluPPSC3, type="o", col="orange")
-legend("bottom", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
-
-
-
-totpp <- data.frame(time, MixC_PPmoy_R, Tol_PPmoy_R, MixC_PPSCmoy_R, Tol_PPSCmoy_R)
-
-#Plot des comptes de PP
-plot(cell_count$time, cell_count$MixC_PPmoy_R,log="y",xlim=c(0,48),ylim=c(min(cell_count$MixC_PPmoy_R), max(cell_count$Tol_PPSCmoy_R)), type="o",main="PP growth",xlab= "Time [Hours]", ylab="log(PP count)")
+##Plot des comptes de PP
+plot(cell_count$time, cell_count$MixC_PPmoy_R,log="y",xlim=c(0,48),ylim=c(min(cell_count$MixC_PPmoy_R), max(cell_count$Tol_PPSCmoy_R)), type="o",main="PP growth\nWeek1",xlab= "Time [Hours]", ylab="log(PP count)")
 points(cell_count$time,cell_count$Tol_PPmoy_R, type="o", col="red")
 points(cell_count$time,cell_count$MixC_PPSCmoy_R, type="o", col="blue")
 points(cell_count$time,cell_count$Tol_PPSCmoy_R + cell_count$Tol_PPSCmoy_G, type="o", col="orange")
-points(cell_count$time, cell_count$MixC_PPSCmoy_R + cell_count$MixC_PPSCmoy_G, type="o", col="brown")
-points(cell_count$time, cell_count$Tol_PPSCmoy_R, type="o", col="gray")
-legend("bottomright",legend=c("PP in mixC","PP in Tol","PP in PP+SC in mixC","PP in PP+SC in Tol", "PPSC total in mixC", "PPSC total in Tol"),fill=c("black","red","blue","orange", "brown", "gray"))
+#points(cell_count$time, cell_count$MixC_PPSCmoy_R + cell_count$MixC_PPSCmoy_G, type="o", col="brown")
+#points(cell_count$time, cell_count$Tol_PPSCmoy_R, type="o", col="gray")
+legend("topleft",legend=c("PP in mixC","PP in Tol","PP in PP+SC in mixC","PP in PP+SC in Tol"),fill=c("black","red","blue","orange"))
 
 
 
@@ -438,7 +442,7 @@ anova(model)
 #graphes
 par(mfrow = c(1,1))
 
-bac2 = c(rep(rep(c("SC1", "PP", "PPSC_SC","PPSC_PP", "PPSC_tot"), each = 3), time = 2),rep(rep(c("SC2", "PV", "PVSC_SC","PVSC_PV", "PVSC_tot"), each = 3), time = 2))
+bac2 = c(rep(rep(c("SCw1", "PP", "PPSC_SC","PPSC_PP", "PPSC_tot"), each = 3), time = 2),rep(rep(c("SCw2", "PV", "PVSC_SC","PVSC_PV", "PVSC_tot"), each = 3), time = 2))
 CvTol2 = rep(c("MixC", "Tol"), each = 15, time=2)
 eti = c()
 for(i in 1:60){
@@ -451,11 +455,10 @@ eti = as.factor(eti)
 par(mfrow = c(1,1))
 par(mai = c(2,1,1,1))
 plot(rep(1:10, each = 3), log(week$AUC[1:30]),
-     main = "Aire sous la courbe\nselon traitement",
-     xlab = "", xaxt = "n", ylab = "log (AUC)")
+     main = "Area under the curve according to the treatment",
+     xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,2,3))
 axis(1, at = 1:10, labels = unique(eti[1:30]), las = 2, hadj = T, font = 2, outer = F)
-?plot()
-?axis()
+
 
 #t.test on SC week1 vs week2
 t.test(week$AUC[week$week_on_SC=="1"& week$names3=="Tol_SC"], week$AUC[week$week_on_SC=="2"& week$names3=="Tol_SC"])
@@ -469,6 +472,16 @@ summary(modelw1_SC)
 t.test(week1$AUC[week1$names3=="Tol_PP"], week$AUC[week1$names3=="MixC_PP"])
 modelw1_PP <- aov(log(week1$AUC[week1$Species%in%c("PP","PPSC_PP")])~week1$Substrate[week1$Species%in%c("PP","PPSC_PP")]* week1$Species[week1$Species %in%c("PP","PPSC_PP")])
 summary(modelw1_PP)
+  #croissance SC sur MixC week1
+t.test(week1$AUC[week1$names3=="MixC_SC"], week1$AUC[week1$names3=="MixC_PPSC_SC"])
+  #croissance de PP sur MixC week1
+t.test(week1$AUC[week1$names3=="MixC_PP"], week1$AUC[week1$names3=="MixC_PPSC_PP"])
+  #croissance SC sur tol week1
+t.test(week1$AUC[week1$names3=="Tol_SC"], week1$AUC[week1$names3=="Tol_PPSC_SC"])
+  #croissance PP sur tol week1
+t.test(week1$AUC[week1$names3=="Tol_PP"], week1$AUC[week1$names3=="Tol_PPSC_PP"])
+  
+
 
 #week2
 week2 <- week[31:60,]
@@ -478,6 +491,23 @@ summary(modelw2_SC)
 modelw2_PV <- aov(log(week2$AUC[week2$Species%in%c("PV","PVSC_PV")])~week2$Substrate[week2$Species%in%c("PV","PVSC_PV")]* week2$Species[week2$Species %in%c("PV","PVSC_PV")])
 summary(modelw2_PV)
 
+#croissance SC sur MixC week1
+t.test(week2$AUC[week2$names3=="MixC_SC"], week2$AUC[week2$names3=="MixC_PVSC_SC"])
+#croissance de PV sur MixC week2
+t.test(week2$AUC[week2$names3=="MixC_PV"], week2$AUC[week2$names3=="MixC_PVSC_PV"])
+#croissance SC sur tol week2
+t.test(week2$AUC[week2$names3=="Tol_SC"], week2$AUC[week2$names3=="Tol_PVSC_SC"])
+#croissance PV sur tol week2
+t.test(week2$AUC[week2$names3=="Tol_PV"], week2$AUC[week2$names3=="Tol_PVSC_PV"])
+
+
+
+t.test(week1$AUC[week1$names3=="Tol_SC"], week1$AUC[week1$names3=="Tol_PPSC_SC"])
+t.test(week1$AUC[week1$names3=="MixC_PP"], week1$AUC[week1$names3=="MixC_PPSC_PP"])
+
+
+t.test(week1$AUC[week1$names3=="Tol_PP"], week1$AUC[week1$names3=="Tol_PPSC_PP"])
+t.test(week1$AUC[week1$names3=="MixC_PP"], week1$AUC[week1$names3=="MixC_PPSC_PP"])
 
 t.test(week2$AUC[week2$names3=="Tol_PV"], week2$AUC[week2$names3=="Tol_PVSC_PV"])
 t.test(week2$AUC[week2$names3=="MixC_PV"], week2$AUC[week2$names3=="MixC_PVSC_PV"])
