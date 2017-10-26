@@ -309,13 +309,13 @@ for(i in 1:8){
 
 
 par(mfrow = c(1,1))
-        #AIRE COLOREES
+#AIRE COLOREES
 x<-c(0,cell_count$time)
 y <- c(0,cell_count$MixC_SCmoy_G)
 
 xleo = c(0, cell_count$time,48)
 
-plot(x,y,log="y",xlim=c(0,48),ylim=c(min(cell_count$Tol_PPmoy_G), max(cell_count$Tol_PPSCmoy_G + cell_count$Tol_PPSCmoy_R)), type="o",main="SC growth\nWeek1",xlab= "Time [Hours]", ylab="log(SC count)")
+plot(x,y,log="y",xlim=c(0,48),ylim=c(2950,4028683330), type="o",main="SC growth\nWeek1",xlab= "Time [Hours]", ylab="log(SC count)")
 yleo = c(100,cell_count$MixC_SCmoy_G,100)
 polygon(xleo, yleo, col=rgb(0.1,0.1,0.1,0.5))
 
@@ -331,14 +331,13 @@ points(cell_count$time,cell_count$Tol_PPSCmoy_G, type="o", col="orange")
 yol3 <- c(100,cell_count$Tol_PPSCmoy_G,100)
 polygon(xleo, yol3, col=rgb(0.8,0.3,0.1,0.4))
 legend("topleft", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
-      #Normal
+#Normal
 
-plot(x,y,log="y",xlim=c(0,48),ylim=c(min(cell_count$Tol_PPmoy_G), max(cell_count$Tol_PPSCmoy_G + cell_count$Tol_PPSCmoy_R)), type="o",main="SC growth\nWeek1",xlab= "Time [Hours]", ylab="log(SC count)")
+plot(x,y,log="y",xlim=c(0,48),ylim=c(2950,4028683330), type="o",main="SC growth\nWeek1",xlab= "Time [Hours]", ylab="log(SC count)")
 points(cell_count$time,cell_count$Tol_SCmoy_G, type="o", col="red")
 points(cell_count$time,cell_count$MixC_PPSCmoy_G, type="o", col="blue")
 points(cell_count$time,cell_count$Tol_PPSCmoy_G, type="o", col="orange")
 legend("topleft", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
-
 
 #plot(cell_count$time, cell_count$MixC_PPmoy_G, log="y",xlim=c(0,48),ylim=c(min(cell_count$Tol_PPmoy_G), max(cell_count$Tol_PPSCmoy_G + cell_count$Tol_PPSCmoy_R)),type="o", col="green")
 #points(cell_count$time, (cell_count$MixC_PPSCmoy_G + cell_count$MixC_PPSCmoy_R), type="o", col="brown")
@@ -348,18 +347,17 @@ legend("topleft", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in 
 
 
 
-  #SAME WITH PP (fluoresence rouge)
+#SAME WITH PP (fluoresence rouge)
 
 
 ##Plot des comptes de PP
-plot(cell_count$time, cell_count$MixC_PPmoy_R,log="y",xlim=c(0,48),ylim=c(min(cell_count$MixC_PPmoy_R), max(cell_count$Tol_PPSCmoy_R)), type="o",main="PP growth\nWeek1",xlab= "Time [Hours]", ylab="log(PP count)")
+plot(cell_count$time, cell_count$MixC_PPmoy_R,log="y",xlim=c(0,48),ylim=c(2950,4028683330), type="o",main="PP growth\nWeek1",xlab= "Time [Hours]", ylab="log(PP count)")
 points(cell_count$time,cell_count$Tol_PPmoy_R, type="o", col="red")
 points(cell_count$time,cell_count$MixC_PPSCmoy_R, type="o", col="blue")
 points(cell_count$time,cell_count$Tol_PPSCmoy_R + cell_count$Tol_PPSCmoy_G, type="o", col="orange")
 #points(cell_count$time, cell_count$MixC_PPSCmoy_R + cell_count$MixC_PPSCmoy_G, type="o", col="brown")
 #points(cell_count$time, cell_count$Tol_PPSCmoy_R, type="o", col="gray")
 legend("topleft",legend=c("PP in mixC","PP in Tol","PP in PP+SC in mixC","PP in PP+SC in Tol"),fill=c("black","red","blue","orange"))
-
 
 
 #estimer l'erreur des réplicats technique 
@@ -440,6 +438,12 @@ anova(model)
 #le substrat a un effet significatif, les échantillons ayant poussé dans des substrats différents sont en moyenne différents.
 #au moins un traitement à un effet significatif,
 
+
+
+
+
+#----------------------------------graphes et anova
+## etiquettes de l'axe X
 bac2 = c(rep(rep(c("SCw1", "PP", "PPSC_SC","PPSC_PP", "PPSC_tot"), each = 3), time = 2),rep(rep(c("SCw2", "PV", "PVSC_SC","PVSC_PV", "PVSC_tot"), each = 3), time = 2))
 CvTol2 = rep(c("MixC", "Tol"), each = 15, time=2)
 eti = c()
@@ -458,13 +462,10 @@ par(mfrow = c(1,1))
 par(mai = c(2,1,1,1))
 AUC_col = rep(c("red", "black", "blue","black", "black", "green", "black", "orange","black","black", "black", "black"), each = 3)
 plot(rep(1:10, each = 3), log(week$AUC[1:30]),
-     main = "Area under the curve according to the treatment",
-     xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,2,3))
+     main = "Area under the curve according to the treatment\nWeek1",
+     xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4), col=AUC_col)
 axis(1, at = 1:10, labels = unique(eti[1:30]), las = 2, hadj = T, font = 2, outer = F)
 
-     main = "Aire sous la courbe\nselon traitement",
-     xlab = "", xaxt = "n", ylab = "log (AUC)", col = AUC_col)
-axis(1, at = 1:10, labels = unique(eti[1:30]), las = 2, hadj = T, font = 2, outer = F,pch = c(1,3,4))
 
 ## tests Week 1 SC
 week1 <- week[1:30,]
@@ -472,14 +473,14 @@ modelw1_SC <- aov(log(week1$AUC[week1$Species%in%c("SC","PPSC_SC")])~week1$Subst
 summary(modelw1_SC)
 TukeyHSD(modelw1_SC)
 
-## graphes week 1 PV
+## graphes week 1 PP
 AUC_col_pseudo = rep(c( "black","red", "black", "blue", "black", "black", "green", "black", "orange","black"), each = 3)
 plot(rep(1:10, each = 3), log(week$AUC[1:30]),
-     main = "Aire sous la courbe\nselon traitement",
-     xlab = "", xaxt = "n", ylab = "log (AUC)", col = AUC_col_pseudo)
+     main = "Area under the curve according to the treatment\nWeek1",
+     xlab = "", xaxt = "n", ylab = "log (AUC)", col = AUC_col_pseudo, pch=c(1,3,4))
 axis(1, at = 1:10, labels = unique(eti[1:30]), las = 2, hadj = T, font = 2, outer = F,pch = c(1,3,4))
 
-## test week 1 PV 
+## test week 1 PP 
 t.test(week1$AUC[week1$names3=="Tol_PP"], week$AUC[week1$names3=="MixC_PP"])
 modelw1_PP <- aov(log(week1$AUC[week1$Species%in%c("PP","PPSC_PP")])~week1$Substrate[week1$Species%in%c("PP","PPSC_PP")]* week1$Species[week1$Species %in%c("PP","PPSC_PP")])
 summary(modelw1_PP)
@@ -497,7 +498,7 @@ t.test(week1$AUC[week1$names3=="Tol_PP"], week1$AUC[week1$names3=="Tol_PPSC_PP"]
 #----------------week2
 #graphes week 2 SC
 plot(rep(1:10, each = 3), log(week$AUC[31:60]),
-     main = "Aire sous la courbe\nselon traitement\nWeek2",
+     main = "Area under the curve according to the treatment\nWeek2",
      xlab = "", xaxt = "n", ylab = "log (AUC)", col = AUC_col, pch = c(1,3,4))
 axis(1, at = 1:10, labels = unique(eti[31:60]), las = 2, hadj = T, font = 2, outer = F)
 
@@ -510,7 +511,7 @@ TukeyHSD(modelw2_SC)
 ## plot week2 PV
 AUC_col_pseudo = rep(c( "black","red", "black", "blue", "black", "black", "green", "black", "orange","black"), each = 3)
 plot(rep(1:10, each = 3), log(week$AUC[31:60]),
-     main = "Aire sous la courbe\nselon traitement\nWeek2",
+     main = "Area under the curve according to the treatment\nWeek2",
      xlab = "", xaxt = "n", ylab = "log (AUC)", col = AUC_col_pseudo, pch = c(1,3,4))
 axis(1, at = 1:10, labels = unique(eti[31:60]), las = 2, hadj = T, font = 2, outer = F)
 
