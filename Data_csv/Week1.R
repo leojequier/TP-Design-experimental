@@ -435,66 +435,71 @@ model = aov(log(week$AUC)~week$Substrate*as.factor(week$Species))
 anova(model)
 #le substrat a un effet significatif, les échantillons ayant poussé dans des substrats différents sont en moyenne différents.
 #au moins un traitement à un effet significatif,
-#graphes
-par(mfrow = c(1,1))
 
+
+#----------------------------------graphes et anova
+## etiquettes de l'axe X
 bac2 = c(rep(rep(c("SC1", "PP", "PPSC_SC","PPSC_PP", "PPSC_tot"), each = 3), time = 2),rep(rep(c("SC2", "PV", "PVSC_SC","PVSC_PV", "PVSC_tot"), each = 3), time = 2))
 CvTol2 = rep(c("MixC", "Tol"), each = 15, time=2)
 eti = c()
 for(i in 1:60){
   eti[i] = paste(CvTol2[i], bac2[i],sep = "_")
 }
-
-
 eti = as.factor(eti)
-
-par(mfrow = c(1,1))
-par(mai = c(2,1,1,1))
-plot(rep(1:10, each = 3), log(week$AUC[1:30]),
-     main = "Aire sous la courbe\nselon traitement",
-     xlab = "", xaxt = "n", ylab = "log (AUC)", col = AUC_col)
-axis(1, at = 1:10, labels = unique(eti[1:30]), las = 2, hadj = T, font = 2, outer = F,pch = c(1,3,4))
-AUC_col = rep(c("red", "black", "blue","black", "black", "green", "black", "orange","black","black", "black", "black"), each = 3)
-
-
-?plot()
-?axis()
 
 #t.test on SC week1 vs week2
 t.test(week$AUC[week$week_on_SC=="1"& week$names3=="Tol_SC"], week$AUC[week$week_on_SC=="2"& week$names3=="Tol_SC"])
 t.test(week$AUC[week$week_on_SC=="1"& week$names3=="MixC_SC"], week$AUC[week$week_on_SC=="2"& week$names3=="MixC_SC"])
 
-#week1
+#-----------------week1
+## graphes de l'anova SC semaine 1
+par(mfrow = c(1,1))
+par(mai = c(2,1,1,1))
+AUC_col = rep(c("red", "black", "blue","black", "black", "green", "black", "orange","black","black", "black", "black"), each = 3)
+plot(rep(1:10, each = 3), log(week$AUC[1:30]),
+     main = "Aire sous la courbe\nselon traitement",
+     xlab = "", xaxt = "n", ylab = "log (AUC)", col = AUC_col)
+axis(1, at = 1:10, labels = unique(eti[1:30]), las = 2, hadj = T, font = 2, outer = F,pch = c(1,3,4))
+
+## tests Week 1 SC
 week1 <- week[1:30,]
 modelw1_SC <- aov(log(week1$AUC[week1$Species%in%c("SC","PPSC_SC")])~week1$Substrate[week1$Species%in%c("SC","PPSC_SC")]* week1$Species[week1$Species %in%c("SC","PPSC_SC")])
 summary(modelw1_SC)
 TukeyHSD(modelw1_SC)
 
+## graphes week 1 PV
+AUC_col_pseudo = rep(c( "black","red", "black", "blue", "black", "black", "green", "black", "orange","black"), each = 3)
+plot(rep(1:10, each = 3), log(week$AUC[1:30]),
+     main = "Aire sous la courbe\nselon traitement",
+     xlab = "", xaxt = "n", ylab = "log (AUC)", col = AUC_col_pseudo)
+axis(1, at = 1:10, labels = unique(eti[1:30]), las = 2, hadj = T, font = 2, outer = F,pch = c(1,3,4))
+
+## test week 1 PV 
 t.test(week1$AUC[week1$names3=="Tol_PP"], week$AUC[week1$names3=="MixC_PP"])
 modelw1_PP <- aov(log(week1$AUC[week1$Species%in%c("PP","PPSC_PP")])~week1$Substrate[week1$Species%in%c("PP","PPSC_PP")]* week1$Species[week1$Species %in%c("PP","PPSC_PP")])
 summary(modelw1_PP)
 
-#week2
+#----------------week2
+#graphes week 2 SC
 plot(rep(1:10, each = 3), log(week$AUC[31:60]),
      main = "Aire sous la courbe\nselon traitement\nWeek2",
      xlab = "", xaxt = "n", ylab = "log (AUC)", col = AUC_col, pch = c(1,3,4))
 axis(1, at = 1:10, labels = unique(eti[31:60]), las = 2, hadj = T, font = 2, outer = F)
-AUC_col = rep(c("red", "black", "blue","black", "black", "green", "black", "orange","black","black", "black", "black"), each = 3)
 
-
-
+##test week 2 SC
 week2 <- week[31:60,]
 modelw2_SC <- aov(log(week2$AUC[week2$Species%in%c("SC","PVSC_SC")])~week2$Substrate[week2$Species%in%c("SC","PVSC_SC")]* week2$Species[week2$Species %in%c("SC","PVSC_SC")])
 summary(modelw2_SC)
 TukeyHSD(modelw2_SC)
 
-
+## plot week2 PV
+AUC_col_pseudo = rep(c( "black","red", "black", "blue", "black", "black", "green", "black", "orange","black"), each = 3)
 plot(rep(1:10, each = 3), log(week$AUC[31:60]),
      main = "Aire sous la courbe\nselon traitement\nWeek2",
      xlab = "", xaxt = "n", ylab = "log (AUC)", col = AUC_col_pseudo, pch = c(1,3,4))
 axis(1, at = 1:10, labels = unique(eti[31:60]), las = 2, hadj = T, font = 2, outer = F)
-AUC_col_pseudo = rep(c( "black","red", "black", "blue", "black", "black", "green", "black", "orange","black"), each = 3)
 
+## test week 2 PV
 modelw2_PV <- aov(log(week2$AUC[week2$Species%in%c("PV","PVSC_PV")])~week2$Substrate[week2$Species%in%c("PV","PVSC_PV")]* week2$Species[week2$Species %in%c("PV","PVSC_PV")])
 summary(modelw2_PV)
 TukeyHSD(modelw2_PV)
