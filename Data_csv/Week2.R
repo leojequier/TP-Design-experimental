@@ -339,7 +339,7 @@ for(i in 1:9){
 
 #Plot des comptes de SC
 par(mfrow = c(1,1))
-plot(cell_count$time, cell_count$MixC_SCmean,lwd=1.3,log = "y",xlim=c(0,48), ylim = c(min(Tol_deadPVmoy), max(Tol_all_in_pv)), type = "o",main="SC growth\nWeek2 ",xlab= "Time [Hours]", ylab="log(SC count)")
+plot(cell_count$time, cell_count$MixC_SCmean,lwd=1.3,log = "y",xlim=c(0,48),ylim=c(2950,4028683330), type = "o",main="SC growth\nWeek2 ",xlab= "Time [Hours]", ylab="log(SC count)")
 
 points(cell_count$time,cell_count$Tol_SCmean,type="o", col="red",lwd=1.3)
 points(cell_count$time,cell_count$MixC_PVSC_SCmean, type="o", col="blue",lwd=1.3)
@@ -359,7 +359,7 @@ legend("topleft",legend=c("SC in mixC","SC in Tol","SC in PV+SC in mixC","SC in 
 
 
 #totPV <- data.frame(time, MixC_PVmoy, Tol_PVmoy, MixC_PVSC_PVmoy, Tol_PVSC_PVmoy)
-plot(cell_count$time, cell_count$MixC_PVmean,log="y",lwd=1.3,xlim=c(0,48),ylim=c(min(Tol_deadPVmoy), max(cell_count$Tol_PVmean)), type="o",main="PV growth\nWeek2",xlab= "Time [Hours]", ylab="log(PV count)")
+plot(cell_count$time, cell_count$MixC_PVmean,log="y",lwd=1.3,xlim=c(0,48),ylim=c(2950,4028683330), type="o",main="PV growth\nWeek2",xlab= "Time [Hours]", ylab="log(PV count)")
 
 #Plot des comptes de PV
 points(cell_count$time,cell_count$Tol_PVmean, type="o", col="red",lwd=1.3)
