@@ -491,7 +491,6 @@ modelw1_PP <- aov(log(week1$AUC[week1$Species%in%c("PP","PPSC_PP")])~week1$Subst
 summary(modelw1_PP)
 leveneTest(modelw1_PP)
 
-=======
 TukeyHSD(modelw1_PP)
   #croissance SC sur MixC week1
 t.test(week1$AUC[week1$names3=="MixC_SC"], week1$AUC[week1$names3=="MixC_PPSC_SC"])
