@@ -1,6 +1,8 @@
 
 rm(list=ls())
 #install.packages("pracma")
+#install.packages("car")
+#library("car")
 library("pracma")
 
 #charger les données, après avoir fait session, set working directory, to source file location
@@ -472,6 +474,8 @@ week1 <- week[1:30,]
 modelw1_SC <- aov(log(week1$AUC[week1$Species%in%c("SC","PPSC_SC")])~week1$Substrate[week1$Species%in%c("SC","PPSC_SC")]* week1$Species[week1$Species %in%c("SC","PPSC_SC")])
 summary(modelw1_SC)
 TukeyHSD(modelw1_SC)
+leveneTest(modelw1_SC)
+plot(as.factor(rep((1:4), each = 3)),residuals(modelw1_SC))
 
 ## graphes week 1 PP
 AUC_col_pseudo = rep(c( "black","red", "black", "blue", "black", "black", "green", "black", "orange","black"), each = 3)
@@ -480,10 +484,13 @@ plot(rep(1:10, each = 3), log(week$AUC[1:30]),
      xlab = "", xaxt = "n", ylab = "log (AUC)", col = AUC_col_pseudo, pch=c(1,3,4))
 axis(1, at = 1:10, labels = unique(eti[1:30]), las = 2, hadj = T, font = 2, outer = F,pch = c(1,3,4))
 
+
 ## test week 1 PP 
 t.test(week1$AUC[week1$names3=="Tol_PP"], week$AUC[week1$names3=="MixC_PP"])
 modelw1_PP <- aov(log(week1$AUC[week1$Species%in%c("PP","PPSC_PP")])~week1$Substrate[week1$Species%in%c("PP","PPSC_PP")]* week1$Species[week1$Species %in%c("PP","PPSC_PP")])
 summary(modelw1_PP)
+leveneTest(modelw1_PP)
+
   #croissance SC sur MixC week1
 t.test(week1$AUC[week1$names3=="MixC_SC"], week1$AUC[week1$names3=="MixC_PPSC_SC"])
   #croissance de PP sur MixC week1
@@ -507,6 +514,7 @@ week2 <- week[31:60,]
 modelw2_SC <- aov(log(week2$AUC[week2$Species%in%c("SC","PVSC_SC")])~week2$Substrate[week2$Species%in%c("SC","PVSC_SC")]* week2$Species[week2$Species %in%c("SC","PVSC_SC")])
 summary(modelw2_SC)
 TukeyHSD(modelw2_SC)
+leveneTest(modelw2_SC)
 
 ## plot week2 PV
 AUC_col_pseudo = rep(c( "black","red", "black", "blue", "black", "black", "green", "black", "orange","black"), each = 3)
@@ -518,7 +526,9 @@ axis(1, at = 1:10, labels = unique(eti[31:60]), las = 2, hadj = T, font = 2, out
 ## test week 2 PV
 modelw2_PV <- aov(log(week2$AUC[week2$Species%in%c("PV","PVSC_PV")])~week2$Substrate[week2$Species%in%c("PV","PVSC_PV")]* week2$Species[week2$Species %in%c("PV","PVSC_PV")])
 summary(modelw2_PV)
-TukeyHSD(modelw2_PV)
+TukeyHSD
+leveneTest(modelw2_PV)
+
 
 #croissance SC sur MixC week1
 t.test(week2$AUC[week2$names3=="MixC_SC"], week2$AUC[week2$names3=="MixC_PVSC_SC"])
@@ -543,5 +553,13 @@ t.test(week2$AUC[week2$names3=="MixC_PV"], week2$AUC[week2$names3=="MixC_PVSC_PV
 
 week1$AUC[week1$names3=="MixC_SC"]- week1$AUC[week1$names3=="MixC_PPSC_SC"]
 week2$AUC[week2$names3=="MixC_PV"]- week2$AUC[week2$names3=="MixC_PVSC_PV"]
+
+
+## graphique problèmes
+plot(cell_count$time, cell_count$Tol_PPmoy_G, type = "o",
+     log = "y", main = "Comparaison with\nPP alone control",
+     ylab = "Number of green fluorescent cells", xlab = "Time[hours]", col = "green" )
+points(cell_count$time, cell_count$Tol_PPSCmoy_G, type = "o", col = "orange")
+legend(x = "bottomright",legend = c("PP alone", "PPSC"), fill = c("green", "yellow"))
 
 
