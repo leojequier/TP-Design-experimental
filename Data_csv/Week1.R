@@ -468,14 +468,32 @@ plot(rep(1:10, each = 3), log(week$AUC[1:30]),
      xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4), col=AUC_col)
 axis(1, at = 1:10, labels = unique(eti[1:30]), las = 2, hadj = T, font = 2, outer = F)
 
-
+## on avait prévu 8 test, 4 anova, et test si différences dans tol.
+## Alpha ajd = 1 - (0.95 ^ 1/8) = 0.0063
 ## tests Week 1 SC
 week1 <- week[1:30,]
 modelw1_SC <- aov(log(week1$AUC[week1$Species%in%c("SC","PPSC_SC")])~week1$Substrate[week1$Species%in%c("SC","PPSC_SC")]* week1$Species[week1$Species %in%c("SC","PPSC_SC")])
-summary(modelw1_SC)
-TukeyHSD(modelw1_SC)
-leveneTest(modelw1_SC)
 plot(as.factor(rep((1:4), each = 3)),residuals(modelw1_SC))
+leveneTest(modelw1_SC)
+anova(modelw1_SC) 
+## F corigés car modèle mixte, substrat effet fixe et species effet aléatoire
+## F species = 9.87/ 0.5 = 17.94
+1 - pf(17.94, 1, 8)
+## F substrate = 4.11 / 14.62 = 0.28
+1 - pf(0.28, 1, 1)
+#sctol vs PPSC_G tol 
+week_1_cpl_1 = week1$Species%in%c("SC","PPSC_SC") & week1$Substrate == "Tol"
+week_1_cpl_1_mdl = aov(log(week1$AUC[week_1_cpl_1])~ week1$Species[week_1_cpl_1])
+anova(week_1_cpl_1_mdl)
+## on extrait le carré moyen sp = 24.25
+## F = MSsp/MSe première anova = 44.09
+1- pf(44.09, 1, 8) # < 0.00639 
+## on rejette l'hypothèse nulle, les moyennes de tol_SC_G et tol_PPSC_G 
+## sont identiques. à l'aide du graphe, sc<ppsc
+
+## ou bien
+TukeyHSD(modelw1_SC)
+
 
 ## graphes week 1 PP
 AUC_col_pseudo = rep(c( "black","red", "black", "blue", "black", "black", "green", "black", "orange","black"), each = 3)
@@ -486,21 +504,29 @@ axis(1, at = 1:10, labels = unique(eti[1:30]), las = 2, hadj = T, font = 2, oute
 
 
 ## test week 1 PP 
-t.test(week1$AUC[week1$names3=="Tol_PP"], week$AUC[week1$names3=="MixC_PP"])
-modelw1_PP <- aov(log(week1$AUC[week1$Species%in%c("PP","PPSC_PP")])~week1$Substrate[week1$Species%in%c("PP","PPSC_PP")]* week1$Species[week1$Species %in%c("PP","PPSC_PP")])
-summary(modelw1_PP)
+#t.test(week1$AUC[week1$names3=="Tol_PP"], week$AUC[week1$names3=="MixC_PP"])
+modelw1_PP <- aov(log(week1$AUC[week1$Species%in%c("PP","PPSC_PP")])~week1$Substrate[week1$Species%in%c("PP","PPSC_PP")]* 
+                    week1$Species[week1$Species %in%c("PP","PPSC_PP")])
+plot(as.factor(rep((1:4), each = 3)),residuals(modelw1_PP))
 leveneTest(modelw1_PP)
+anova(modelw1_PP)[["Mean Sq"]]
+## Fcorigés car modèle mixte
+## F species = MSsp / MSe = 0.5
+1-pf(0.5, 1, 8) # > 0.006
+## F sub = MSsub/MSx = 92289.37
+1-pf(92289.37, 1, 1) # < 0.006
 
 TukeyHSD(modelw1_PP)
-  #croissance SC sur MixC week1
-t.test(week1$AUC[week1$names3=="MixC_SC"], week1$AUC[week1$names3=="MixC_PPSC_SC"])
-  #croissance de PP sur MixC week1
-t.test(week1$AUC[week1$names3=="MixC_PP"], week1$AUC[week1$names3=="MixC_PPSC_PP"])
-  #croissance SC sur tol week1
-t.test(week1$AUC[week1$names3=="Tol_SC"], week1$AUC[week1$names3=="Tol_PPSC_SC"])
-  #croissance PP sur tol week1
-t.test(week1$AUC[week1$names3=="Tol_PP"], week1$AUC[week1$names3=="Tol_PPSC_PP"])
-  
+
+#   #croissance SC sur MixC week1
+# t.test(week1$AUC[week1$names3=="MixC_SC"], week1$AUC[week1$names3=="MixC_PPSC_SC"])
+#   #croissance de PP sur MixC week1
+# t.test(week1$AUC[week1$names3=="MixC_PP"], week1$AUC[week1$names3=="MixC_PPSC_PP"])
+#   #croissance SC sur tol week1
+# t.test(week1$AUC[week1$names3=="Tol_SC"], week1$AUC[week1$names3=="Tol_PPSC_SC"])
+#   #croissance PP sur tol week1
+# t.test(week1$AUC[week1$names3=="Tol_PP"], week1$AUC[week1$names3=="Tol_PPSC_PP"])
+#   
 
 
 #----------------week2
@@ -513,9 +539,16 @@ axis(1, at = 1:10, labels = unique(eti[31:60]), las = 2, hadj = T, font = 2, out
 ##test week 2 SC
 week2 <- week[31:60,]
 modelw2_SC <- aov(log(week2$AUC[week2$Species%in%c("SC","PVSC_SC")])~week2$Substrate[week2$Species%in%c("SC","PVSC_SC")]* week2$Species[week2$Species %in%c("SC","PVSC_SC")])
-summary(modelw2_SC)
-TukeyHSD(modelw2_SC)
+plot(as.factor(rep((1:4), each = 3)),residuals(modelw2_SC))
 leveneTest(modelw2_SC)
+summary(modelw2_SC)
+# f corrigé car modèle mixte
+# Fsp = MSsp/MSe = 0.6152/0.7526 = 0.8137
+pf(0.8137,1,8, lower.tail = F) # > alpha = 0.006
+#Fsub = MSsub/MSx = 0.5693/0.2383 = 2.389
+pf(0.8137,1,1, lower.tail = F) #> alpha = 0.006
+
+TukeyHSD(modelw2_SC)
 
 ## plot week2 PV
 AUC_col_pseudo = rep(c( "black","red", "black", "blue", "black", "black", "green", "black", "orange","black"), each = 3)
@@ -526,35 +559,51 @@ axis(1, at = 1:10, labels = unique(eti[31:60]), las = 2, hadj = T, font = 2, out
 
 ## test week 2 PV
 modelw2_PV <- aov(log(week2$AUC[week2$Species%in%c("PV","PVSC_PV")])~week2$Substrate[week2$Species%in%c("PV","PVSC_PV")]* week2$Species[week2$Species %in%c("PV","PVSC_PV")])
-summary(modelw2_PV)
-TukeyHSD
+plot(as.factor(rep((1:4), each = 3)),residuals(modelw2_PV))
 leveneTest(modelw2_PV)
+anova(modelw2_PV)[["Mean Sq"]]
+# corriger F 
+# Fsp = MSsp /MSe = 0.4779/0.02907 = 16.44
+pf(16.44, 1, 8, lower.tail = F) #<0.006
+#Fsub = MSsub/MSx = 25.95 /0.1309 = 198.2
+pf(198.2,1,1, lower.tail = F)# > 0.006
+# test complémentaire pour savoir quels niveaux diffèrent
+week_2_cpl_1 = week2$Species%in%c("PV","PVSC_PV") & week1$Substrate == "Tol"
+week_2_cpl_1_mdl = aov(log(week2$AUC[week_2_cpl_1])~ week2$Species[week_2_cpl_1])
+anova(week_2_cpl_1_mdl)
+## on extrait le carré moyen sp = 0.5546
+## F = MSsp/MSe première anova = 0.5546/0.02907 = 19.08 
+1- pf(19.08, 1, 8) # < 0.00639 
+## on rejette l'hypothèse nulle, les moyennes de tol_PV_R et tol_PVSC_R 
+## sont identiques. à l'aide du graphe, PVSC < PV
 
+TukeyHSD
 
-#croissance SC sur MixC week1
-t.test(week2$AUC[week2$names3=="MixC_SC"], week2$AUC[week2$names3=="MixC_PVSC_SC"])
-#croissance de PV sur MixC week2
-t.test(week2$AUC[week2$names3=="MixC_PV"], week2$AUC[week2$names3=="MixC_PVSC_PV"])
-#croissance SC sur tol week2
-t.test(week2$AUC[week2$names3=="Tol_SC"], week2$AUC[week2$names3=="Tol_PVSC_SC"])
-#croissance PV sur tol week2
-t.test(week2$AUC[week2$names3=="Tol_PV"], week2$AUC[week2$names3=="Tol_PVSC_PV"])
+# 
+# #croissance SC sur MixC week1
+# t.test(week2$AUC[week2$names3=="MixC_SC"], week2$AUC[week2$names3=="MixC_PVSC_SC"])
+# #croissance de PV sur MixC week2
+# t.test(week2$AUC[week2$names3=="MixC_PV"], week2$AUC[week2$names3=="MixC_PVSC_PV"])
+# #croissance SC sur tol week2
+# t.test(week2$AUC[week2$names3=="Tol_SC"], week2$AUC[week2$names3=="Tol_PVSC_SC"])
+# #croissance PV sur tol week2
+# t.test(week2$AUC[week2$names3=="Tol_PV"], week2$AUC[week2$names3=="Tol_PVSC_PV"])
+# 
 
-
-
-t.test(week1$AUC[week1$names3=="Tol_SC"], week1$AUC[week1$names3=="Tol_PPSC_SC"])
-t.test(week1$AUC[week1$names3=="MixC_PP"], week1$AUC[week1$names3=="MixC_PPSC_PP"])
-
-
-t.test(week1$AUC[week1$names3=="Tol_PP"], week1$AUC[week1$names3=="Tol_PPSC_PP"])
-t.test(week1$AUC[week1$names3=="MixC_PP"], week1$AUC[week1$names3=="MixC_PPSC_PP"])
-
-t.test(week2$AUC[week2$names3=="Tol_PV"], week2$AUC[week2$names3=="Tol_PVSC_PV"])
-t.test(week2$AUC[week2$names3=="MixC_PV"], week2$AUC[week2$names3=="MixC_PVSC_PV"])
-
-week1$AUC[week1$names3=="MixC_SC"]- week1$AUC[week1$names3=="MixC_PPSC_SC"]
-week2$AUC[week2$names3=="MixC_PV"]- week2$AUC[week2$names3=="MixC_PVSC_PV"]
-
+# 
+# t.test(week1$AUC[week1$names3=="Tol_SC"], week1$AUC[week1$names3=="Tol_PPSC_SC"])
+# t.test(week1$AUC[week1$names3=="MixC_PP"], week1$AUC[week1$names3=="MixC_PPSC_PP"])
+# 
+# 
+# t.test(week1$AUC[week1$names3=="Tol_PP"], week1$AUC[week1$names3=="Tol_PPSC_PP"])
+# t.test(week1$AUC[week1$names3=="MixC_PP"], week1$AUC[week1$names3=="MixC_PPSC_PP"])
+# 
+# t.test(week2$AUC[week2$names3=="Tol_PV"], week2$AUC[week2$names3=="Tol_PVSC_PV"])
+# t.test(week2$AUC[week2$names3=="MixC_PV"], week2$AUC[week2$names3=="MixC_PVSC_PV"])
+# 
+# week1$AUC[week1$names3=="MixC_SC"]- week1$AUC[week1$names3=="MixC_PPSC_SC"]
+# week2$AUC[week2$names3=="MixC_PV"]- week2$AUC[week2$names3=="MixC_PVSC_PV"]
+# 
 
 ## graphique problèmes
 plot(cell_count$time, cell_count$Tol_PPmoy_G, type = "o",
