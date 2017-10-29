@@ -350,7 +350,7 @@ points(cell_count$time, cell_count$Tol_PVSC_SCmean, type = "o", col = "orange",l
 #points(cell_count$time, Tol_all_in_pv, type = "o", col = "pink" ,lwd=1.5)#
 
 #
-legend("topleft",legend=c("SC in mixC","SC in Tol","SC in PV+SC in mixC","SC in PV+SC in Tol"),fill=c("black","red","blue","orange"))
+legend("topleft",legend=c("SC alone in mixC","SC alone in Tol","SC in PV+SC in mixC","SC in PV+SC in Tol"),fill=c("black","red","blue","orange"))
 #legend("bottomright", legend=c("PVSC total in mixC","PVSC total in Tol","total count in pv alone"), fill=c("brown", "gray", "pink"))
 
 
@@ -367,6 +367,6 @@ points(cell_count$time,cell_count$MixC_PVSC_PVmean, type="o", col="blue",lwd=1.3
 points(cell_count$time,cell_count$Tol_PVSC_PVmean, type="o", col="orange",lwd=1.3)
 #points(cell_count$time, cell_count$MixC_PVSC_SCmean + cell_count$MixC_PVSC_PVmean, type="o", col="brown",lwd=1.3)
 #points(cell_count$time, cell_count$Tol_PVSC_SCmean + cell_count$Tol_PVSC_PVmean, type="o", col="gray",lwd=1.3)
-legend("topleft",legend=c("PV in mixC","PV in Tol","PV in PV+SC in mixC","PV in PV+SC in Tol"),fill=c("black","red","blue","orange"))
+legend("topleft",legend=c("PV alone in mixC","PV alone in Tol","PV in PV+SC in mixC","PV in PV+SC in Tol"),fill=c("black","red","blue","orange"))
 
 

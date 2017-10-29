@@ -332,14 +332,14 @@ polygon(xleo, yol2, col=rgb(0,0,1,0.4))
 points(cell_count$time,cell_count$Tol_PPSCmoy_G, type="o", col="orange")
 yol3 <- c(100,cell_count$Tol_PPSCmoy_G,100)
 polygon(xleo, yol3, col=rgb(0.8,0.3,0.1,0.4))
-legend("topleft", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
+legend("topleft", legend=c("SC alone in mixC","SC alone in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
 #Normal
 
 plot(x,y,log="y",xlim=c(0,48),ylim=c(2950,4028683330), type="o",main="SC growth\nWeek1",xlab= "Time [Hours]", ylab="log(SC count)")
 points(cell_count$time,cell_count$Tol_SCmoy_G, type="o", col="red")
 points(cell_count$time,cell_count$MixC_PPSCmoy_G, type="o", col="blue")
 points(cell_count$time,cell_count$Tol_PPSCmoy_G, type="o", col="orange")
-legend("topleft", legend=c("SC in mixC","SC in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
+legend("topleft", legend=c("SC alone in mixC","SC alone in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
 
 #plot(cell_count$time, cell_count$MixC_PPmoy_G, log="y",xlim=c(0,48),ylim=c(min(cell_count$Tol_PPmoy_G), max(cell_count$Tol_PPSCmoy_G + cell_count$Tol_PPSCmoy_R)),type="o", col="green")
 #points(cell_count$time, (cell_count$MixC_PPSCmoy_G + cell_count$MixC_PPSCmoy_R), type="o", col="brown")
@@ -359,7 +359,7 @@ points(cell_count$time,cell_count$MixC_PPSCmoy_R, type="o", col="blue")
 points(cell_count$time,cell_count$Tol_PPSCmoy_R + cell_count$Tol_PPSCmoy_G, type="o", col="orange")
 #points(cell_count$time, cell_count$MixC_PPSCmoy_R + cell_count$MixC_PPSCmoy_G, type="o", col="brown")
 #points(cell_count$time, cell_count$Tol_PPSCmoy_R, type="o", col="gray")
-legend("topleft",legend=c("PP in mixC","PP in Tol","PP in PP+SC in mixC","PP in PP+SC in Tol"),fill=c("black","red","blue","orange"))
+legend("topleft",legend=c("PP alone in mixC","PP alone in Tol","PP in PP+SC in mixC","PP in PP+SC in Tol"),fill=c("black","red","blue","orange"))
 
 
 #estimer l'erreur des réplicats technique 
