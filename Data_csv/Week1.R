@@ -546,7 +546,7 @@ summary(modelw2_SC)
 # Fsp = MSsp/MSe = 0.6152/0.7526 = 0.8137
 pf(0.8137,1,8, lower.tail = F) # > alpha = 0.006
 #Fsub = MSsub/MSx = 0.5693/0.2383 = 2.389
-pf(0.8137,1,1, lower.tail = F) #> alpha = 0.006
+pf(2.389,1,1, lower.tail = F) #> alpha = 0.006
 
 TukeyHSD(modelw2_SC)
 
@@ -613,3 +613,13 @@ points(cell_count$time, cell_count$Tol_PPSCmoy_G, type = "o", col = "orange")
 legend(x = "bottomright",legend = c("PP alone", "PPSC"), fill = c("green", "yellow"))
 
 
+plot(cell_count$time, cell_count$Tol_PPmoy_G+cell_count$Tol_PPmoy_R,type = "o",
+     log = "y", main = "Total count in MixC and Tol \n Week 1",
+     ylab = "Number of cells", xlab = "Time[hours]", col = "green" )
+points(cell_count$time, cell_count$Tol_PPSCmoy_G+cell_count$Tol_PPSCmoy_R, type = "o", col = "orange")
+points(cell_count$time, cell_count$Tol_SCmoy_G+cell_count$Tol_SCmoy_R, type = "o", col = "red")
+points(cell_count$time, cell_count$MixC_PPSCmoy_G+cell_count$MixC_PPSCmoy_R, type = "o", col = "Blue")
+points(cell_count$time, cell_count$MixC_PPmoy_G+cell_count$MixC_PPmoy_R, type = "o", col = "black")
+points(cell_count$time, cell_count$MixC_SCmoy_G+cell_count$MixC_SCmoy_R, type = "o", col = "purple")
+legend(x="topleft", legend = c("Tol SC alone", "Tol PP alone", "Tol PPSC", "MixC SC alone", "MixC PP alone", "MixC PPSC"), fill=c("red", "green", "orange", "purple", "black", "blue"))
+       
