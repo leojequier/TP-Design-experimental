@@ -484,16 +484,18 @@ legend("topleft",legend=c("PV alone in mixC","PV alone in Tol","PV in PV+SC in m
 
 par(mfrow=c(1,1))
 
-plot(cell_count$time, Tol_PVmoy_G+Tol_PVmoy_R,,type = "o",
-     log = "y", main = "Total count in MixC and Tol \n Week 2",
+plot(cell_count$time, Tol_PVmoy_G+Tol_PVmoy_R,type = "o",
+     log = "y", main = "Total count in Toluene \n Week 2",
      ylab = "Number of cells", xlab = "Time[hours]", col = "green",ylim=c(2950,4028683330))
 points(cell_count$time, Tol_PVSCmoy_G+Tol_PVSCmoy_R, type = "o", col = "orange")
 points(cell_count$time,  Tol_SCmoy_G+ Tol_SCmoy_R, type = "o", col = "red")
-points(cell_count$time,  MixC_PVSCmoy_G+ MixC_PVSCmoy_R, type = "o", col = "Blue")
+legend(x="topleft", legend = c("Tol SC alone", "Tol PV alone", "Tol PVSC"), fill=c("red", "green", "orange"))
+
+
+plot(cell_count$time, MixC_PVSCmoy_G+ MixC_PVSCmoy_R,type = "o",
+     log = "y", main = "Total count in Mixed Carbon \n Week 2",
+     ylab = "Number of cells", xlab = "Time[hours]", col = "blue",ylim=c(2950,4028683330))
 points(cell_count$time,  MixC_PVmoy_G+ MixC_PVmoy_R, type = "o", col = "black")
 points(cell_count$time,  MixC_SCmoy_G+ MixC_SCmoy_R, type = "o", col = "purple")
-legend(x="topleft", legend = c("Tol SC alone", "Tol PV alone", "Tol PVSC", "MixC SC alone", "MixC PV alone", "MixC PVSC"), fill=c("red", "green", "orange", "purple", "black", "blue"))
-
-
-
+legend(x="topleft",legend=C("MixC SC alone", "MixC PV alone", "MixC PVSC"), fill=c( "purple", "black", "blue"))
 
