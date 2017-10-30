@@ -497,5 +497,5 @@ plot(cell_count$time, MixC_PVSCmoy_G+ MixC_PVSCmoy_R,type = "o",
      ylab = "Number of cells", xlab = "Time[hours]", col = "blue",ylim=c(2950,4028683330))
 points(cell_count$time,  MixC_PVmoy_G+ MixC_PVmoy_R, type = "o", col = "black")
 points(cell_count$time,  MixC_SCmoy_G+ MixC_SCmoy_R, type = "o", col = "purple")
-legend(x="topleft",legend=C("MixC SC alone", "MixC PV alone", "MixC PVSC"), fill=c( "purple", "black", "blue"))
+legend(x="topleft",legend=c("MixC SC alone", "MixC PV alone", "MixC PVSC"), fill=c( "purple", "black", "blue"))
 
