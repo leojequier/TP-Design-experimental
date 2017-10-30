@@ -302,6 +302,119 @@ cell_count = data.frame(time, syto_stained$MixCSC_stained1, syto_stained$MixCSC_
 names(cell_count) = list_cell_count
 names(cell_count)
 
+###CELL_COUNT2
+MixC_SCmoy_G<- c()
+
+for(i in 1:9){
+  MixC_SCmoy_G[i] <- sum(syto_stained$MixCSC_stained1[i],  syto_stained$MixCSC_stained2[i], syto_stained$MixCSC_stained3[i])/3
+}
+
+MixC_SCmoy_R<- c()
+
+for(i in 1:9){
+  MixC_SCmoy_R[i] <- sum(cher_stained$MixCSC_stained1[i],  cher_stained$MixCSC_stained2[i], cher_stained$MixCSC_stained3[i])/3
+}
+
+
+Tol_SCmoy_G<- c()
+
+for(i in 1:9){
+  Tol_SCmoy_G[i] <- sum(syto_stained$ToluSC_stained1[i],  syto_stained$ToluSC_stained2[i], syto_stained$ToluSC_stained3[i])/3
+}
+
+Tol_SCmoy_R<- c()
+
+for(i in 1:9){
+  Tol_SCmoy_R[i] <- sum(cher_stained$ToluSC_stained1[i],  cher_stained$ToluSC_stained2[i], cher_stained$ToluSC_stained3[i])/3
+}
+
+Tol_PVSCmoy_G <-c()
+
+for(i in 1:9){
+  Tol_PVSCmoy_G[i] <- sum(syto_stained$ToluPVSC_stained1[i],  syto_stained$ToluPVSC_stained2[i], syto_stained$ToluPVSC_stained3[i])/3
+}
+
+Tol_PVSCmoy_R <-c()
+
+for(i in 1:9){
+  Tol_PVSCmoy_R[i] <- sum(cher_stained$ToluPVSC_stained1[i],  cher_stained$ToluPVSC_stained2[i], cher_stained$ToluPVSC_stained3[i])/3
+}
+
+MixC_PVSCmoy_G <-c()
+
+for(i in 1:9){
+  MixC_PVSCmoy_G[i] <- sum(syto_stained$MixCPVSC_stained1[i],  syto_stained$MixCPVSC_stained2[i], syto_stained$MixCPVSC_stained3[i])/3
+}
+
+MixC_PVSCmoy_R <-c()
+
+for(i in 1:9){
+  MixC_PVSCmoy_R[i] <- sum(cher_stained$MixCPVSC_stained1[i],  cher_stained$MixCPVSC_stained2[i], cher_stained$MixCPVSC_stained3[i])/3
+}
+
+# means PV
+
+MixC_PVmoy_R<- c()
+
+for(i in 1:9){
+  MixC_PVmoy_R[i] <- sum(cher_stained$MixCPV_stained1[i], cher_stained$MixCPV_stained2[i],cher_stained$MixCPV_stained3[i])/3
+}
+
+MixC_PVmoy_G<- c()
+
+for(i in 1:9){
+  MixC_PVmoy_G[i] <- sum(syto_stained$MixCPV_stained1[i],  syto_stained$MixCPV_stained2[i],syto_stained$MixCPV_stained3[i])/3
+}
+
+Tol_PVmoy_R <- c()
+for(i in 1:9){
+  Tol_PVmoy_R[i] <- sum(cher_stained$ToluPV_stained1[i],  cher_stained$ToluPV_stained2[i],cher_stained$ToluPV_stained3[i])/3
+}
+
+Tol_PVmoy_G <- c()
+for(i in 1:9){
+  Tol_PVmoy_G[i] <- sum(syto_stained$ToluPV_stained1[i],  syto_stained$ToluPV_stained2[i],syto_stained$ToluPV_stained3[i])/3
+}
+#cell count
+list_cell_count2 = vector(mode = "list", length = 49)
+list_cell_count2[1] = "time"
+CvTol = rep(c("MixC", "Tol"), each = 24)
+bac = rep(rep(c("SC", "PV","PVSC"), each = 9), time = 2)
+Fluo = rep(rep(c("G", "R"), each = 4), time = 6)
+n = rep(c(1,2,3,"moy"), times = 12)
+for(i in 1:48){
+  list_cell_count2[i+1] = paste(CvTol[i], paste(bac[i], n[i], sep = ""),Fluo[i], sep = "_")
+}
+cell_count2 = data.frame(time, syto_stained$MixCSC_stained1, syto_stained$MixCSC_stained2, syto_stained$MixCSC_stained3,MixC_SCmoy_G,
+                        cher_stained$MixCSC_stained1, cher_stained$MixCSC_stained2, cher_stained$MixCSC_stained3, MixC_SCmoy_R,
+                        syto_stained$MixCPV_stained1, syto_stained$MixCPV_stained2, syto_stained$MixCPV_stained3,MixC_PVmoy_G,
+                        cher_stained$MixCPV_stained1, cher_stained$MixCPV_stained2, cher_stained$MixCPV_stained3, MixC_PVmoy_R,
+                        syto_stained$MixCPVSC_stained1, syto_stained$MixCPVSC_stained2, syto_stained$MixCPVSC_stained3, MixC_PVSCmoy_G,
+                        cher_stained$MixCPVSC_stained1, cher_stained$MixCPVSC_stained2, cher_stained$MixCPVSC_stained3, MixC_PVSCmoy_R, 
+                        syto_stained$ToluSC_stained1, syto_stained$ToluSC_stained2, syto_stained$ToluSC_stained3, Tol_SCmoy_G,
+                        cher_stained$ToluSC_stained1, cher_stained$ToluSC_stained2, cher_stained$ToluSC_stained3, Tol_SCmoy_R,
+                        syto_stained$ToluPV_stained1, syto_stained$ToluPV_stained2, syto_stained$ToluPV_stained3, Tol_PVmoy_G, 
+                        cher_stained$ToluPV_stained1, cher_stained$ToluPV_stained2, cher_stained$ToluPV_stained3, Tol_PVmoy_R,
+                        syto_stained$ToluPVSC_stained1, syto_stained$ToluPVSC_stained2,syto_stained$ToluPVSC_stained3,Tol_PVSCmoy_G,
+                        cher_stained$ToluPVSC_stained1,cher_stained$ToluPVSC_stained2,cher_stained$ToluPVSC_stained3, Tol_PVSCmoy_R)
+names(cell_count2) = list_cell_count2
+names(cell_count2)
+
+
+MixC_PVSC1 <- cell_count$MixC_PVSC_SC1 + cell_count$MixC_PVSC_PV1
+MixC_PVSC2 <- cell_count$MixC_PVSC_SC2 + cell_count$MixC_PVSC_PV2
+MixC_PVSC3 <- cell_count$MixC_PVSC_SC3 + cell_count$MixC_PVSC_PV3
+MixC_PVSCmoy <- (MixC_PVSC1+ MixC_PVSC2+ MixC_PVSC3)/3
+
+Tol_PVSC1 <- cell_count$Tol_PVSC_SC1 + cell_count$Tol_PVSC_PV1
+Tol_PVSC2 <- cell_count$Tol_PVSC_SC2 + cell_count$Tol_PVSC_PV2
+Tol_PVSC3 <- cell_count$Tol_PVSC_SC3 + cell_count$Tol_PVSC_PV3
+Tol_PVSCmoy <- (Tol_PVSC1+ Tol_PVSC2+ Tol_PVSC3)/3
+
+cell_count2 <- cbind(cell_count, MixC_PVSC1, MixC_PVSC2,MixC_PVSC3, MixC_PVSCmoy, Tol_PVSC1, Tol_PVSC2, Tol_PVSC3, Tol_PVSCmoy)
+
+
+
 ##remplir les moyennes
 
 for(i in 1:9){cell_count[i,5] = sum(c(syto_stained$MixCSC_stained1[i], syto_stained$MixCSC_stained2[i], syto_stained$MixCSC_stained3[i]))/3}
@@ -368,5 +481,19 @@ points(cell_count$time,cell_count$Tol_PVSC_PVmean, type="o", col="orange",lwd=1.
 #points(cell_count$time, cell_count$MixC_PVSC_SCmean + cell_count$MixC_PVSC_PVmean, type="o", col="brown",lwd=1.3)
 #points(cell_count$time, cell_count$Tol_PVSC_SCmean + cell_count$Tol_PVSC_PVmean, type="o", col="gray",lwd=1.3)
 legend("topleft",legend=c("PV alone in mixC","PV alone in Tol","PV in PV+SC in mixC","PV in PV+SC in Tol"),fill=c("black","red","blue","orange"))
+
+par(mfrow=c(1,1))
+
+plot(cell_count$time, Tol_PVmoy_G+Tol_PVmoy_R,,type = "o",
+     log = "y", main = "Total count in MixC and Tol \n Week 2",
+     ylab = "Number of cells", xlab = "Time[hours]", col = "green",ylim=c(2950,4028683330))
+points(cell_count$time, Tol_PVSCmoy_G+Tol_PVSCmoy_R, type = "o", col = "orange")
+points(cell_count$time,  Tol_SCmoy_G+ Tol_SCmoy_R, type = "o", col = "red")
+points(cell_count$time,  MixC_PVSCmoy_G+ MixC_PVSCmoy_R, type = "o", col = "Blue")
+points(cell_count$time,  MixC_PVmoy_G+ MixC_PVmoy_R, type = "o", col = "black")
+points(cell_count$time,  MixC_SCmoy_G+ MixC_SCmoy_R, type = "o", col = "purple")
+legend(x="topleft", legend = c("Tol SC alone", "Tol PV alone", "Tol PVSC", "MixC SC alone", "MixC PV alone", "MixC PVSC"), fill=c("red", "green", "orange", "purple", "black", "blue"))
+
+
 
 

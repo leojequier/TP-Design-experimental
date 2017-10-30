@@ -615,7 +615,7 @@ legend(x = "bottomright",legend = c("PP alone", "PPSC"), fill = c("green", "yell
 
 plot(cell_count$time, cell_count$Tol_PPmoy_G+cell_count$Tol_PPmoy_R,type = "o",
      log = "y", main = "Total count in MixC and Tol \n Week 1",
-     ylab = "Number of cells", xlab = "Time[hours]", col = "green" )
+     ylab = "Number of cells", xlab = "Time[hours]", col = "green", ylim=c(2950,4028683330))
 points(cell_count$time, cell_count$Tol_PPSCmoy_G+cell_count$Tol_PPSCmoy_R, type = "o", col = "orange")
 points(cell_count$time, cell_count$Tol_SCmoy_G+cell_count$Tol_SCmoy_R, type = "o", col = "red")
 points(cell_count$time, cell_count$MixC_PPSCmoy_G+cell_count$MixC_PPSCmoy_R, type = "o", col = "Blue")
