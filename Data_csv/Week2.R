@@ -452,7 +452,8 @@ for(i in 1:9){
 
 #Plot des comptes de SC
 par(mfrow = c(1,1))
-plot(cell_count$time, cell_count$MixC_SCmean,lwd=1.3,log = "y",xlim=c(0,48),ylim=c(2950,4028683330), type = "o",main="SC growth\nWeek2 ",xlab= "Time [Hours]", ylab="log(SC count)")
+plot(cell_count$time, cell_count$MixC_SCmean,cex.main=1.2,
+     cex.lab=1.2,lwd=1.3,log = "y",xlim=c(0,48),ylim=c(2950,4028683330), type = "o",main="SC growth\nWeek2 ",xlab= "Time [Hours]", ylab="log(SC count)")
 
 points(cell_count$time,cell_count$Tol_SCmean,type="o", col="red",lwd=1.3)
 points(cell_count$time,cell_count$MixC_PVSC_SCmean, type="o", col="blue",lwd=1.3)
@@ -460,10 +461,10 @@ points(cell_count$time, cell_count$Tol_PVSC_SCmean, type = "o", col = "orange",l
 #points(cell_count$time, Tol_deadPVmoy, type = "o", col = "green",lwd=1.3)
 #points(cell_count$time, cell_count$MixC_PVSC_PVmean+cell_count$MixC_PVSC_SCmean,type = "o", col = "brown",lwd=1.3)
 #points(cell_count$time, cell_count$Tol_PVSC_PVmean+ cell_count$Tol_PVSC_SCmean,type = "o", col = "grey" ,lwd=1.3)
-#points(cell_count$time, Tol_all_in_pv, type = "o", col = "pink" ,lwd=1.5)#
+#points(cell_count$time, Tol_all_in_pv, type = "o", col = "pink" ,lwd=1.2)#
 
 #
-legend("topleft",legend=c("SC alone in mixC","SC alone in Tol","SC in PV+SC in mixC","SC in PV+SC in Tol"),fill=c("black","red","blue","orange"))
+legend("topleft",legend=c("SC alone in mixC","SC alone in Tol","SC in PV+SC in mixC","SC in PV+SC in Tol"),fill=c("black","red","blue","orange"),cex=1.2)
 #legend("bottomright", legend=c("PVSC total in mixC","PVSC total in Tol","total count in pv alone"), fill=c("brown", "gray", "pink"))
 
 
@@ -472,7 +473,8 @@ legend("topleft",legend=c("SC alone in mixC","SC alone in Tol","SC in PV+SC in m
 
 
 #totPV <- data.frame(time, MixC_PVmoy, Tol_PVmoy, MixC_PVSC_PVmoy, Tol_PVSC_PVmoy)
-plot(cell_count$time, cell_count$MixC_PVmean,log="y",lwd=1.3,xlim=c(0,48),ylim=c(2950,4028683330), type="o",main="PV growth\nWeek2",xlab= "Time [Hours]", ylab="log(PV count)")
+plot(cell_count$time, cell_count$MixC_PVmean,log="y",lwd=1.3,xlim=c(0,48),ylim=c(2950,4028683330), type="o",main="PV growth\nWeek2",xlab= "Time [Hours]", ylab="log(PV count)", cex.main=1.2,
+     cex.lab=1.2)
 
 #Plot des comptes de PV
 points(cell_count$time,cell_count$Tol_PVmean, type="o", col="red",lwd=1.3)
@@ -480,22 +482,23 @@ points(cell_count$time,cell_count$MixC_PVSC_PVmean, type="o", col="blue",lwd=1.3
 points(cell_count$time,cell_count$Tol_PVSC_PVmean, type="o", col="orange",lwd=1.3)
 #points(cell_count$time, cell_count$MixC_PVSC_SCmean + cell_count$MixC_PVSC_PVmean, type="o", col="brown",lwd=1.3)
 #points(cell_count$time, cell_count$Tol_PVSC_SCmean + cell_count$Tol_PVSC_PVmean, type="o", col="gray",lwd=1.3)
-legend("topleft",legend=c("PV alone in mixC","PV alone in Tol","PV in PV+SC in mixC","PV in PV+SC in Tol"),fill=c("black","red","blue","orange"))
+legend("topleft",legend=c("PV alone in mixC","PV alone in Tol","PV in PV+SC in mixC","PV in PV+SC in Tol"),fill=c("black","red","blue","orange"),cex=1.2)
 
 par(mfrow=c(1,1))
 
-plot(cell_count$time, Tol_PVmoy_G+Tol_PVmoy_R,type = "o",
-     log = "y", main = "Total count in Toluene \n Week 2",
-     ylab = "Number of cells", xlab = "Time[hours]", col = "green",ylim=c(2950,4028683330))
+plot(cell_count$time, Tol_PVmoy_G+Tol_PVmoy_R,type = "o", cex.main=1.2,
+     cex.lab=1.2,log = "y", main = "Total count in Toluene \n Week 2",
+     ylab = "log(cell count)", xlab = "Time[hours]", col = "green",ylim=c(2950,4028683330))
 points(cell_count$time, Tol_PVSCmoy_G+Tol_PVSCmoy_R, type = "o", col = "orange")
 points(cell_count$time,  Tol_SCmoy_G+ Tol_SCmoy_R, type = "o", col = "red")
-legend(x="topleft", legend = c("Tol SC alone", "Tol PV alone", "Tol PVSC"), fill=c("red", "green", "orange"))
+legend(x="topleft", legend = c("Tol SC alone", "Tol PV alone", "Tol PVSC"), fill=c("red", "green", "orange"), cex=1.2)
 
 
-plot(cell_count$time, MixC_PVSCmoy_G+ MixC_PVSCmoy_R,type = "o",
+plot(cell_count$time, MixC_PVSCmoy_G+ MixC_PVSCmoy_R,type = "o",cex.main=1.2,
+     cex.lab=1.2,
      log = "y", main = "Total count in Mixed Carbon \n Week 2",
-     ylab = "Number of cells", xlab = "Time[hours]", col = "blue",ylim=c(2950,4028683330))
+     ylab = "log(cell count)", xlab = "Time[hours]", col = "blue",ylim=c(2950,4028683330))
 points(cell_count$time,  MixC_PVmoy_G+ MixC_PVmoy_R, type = "o", col = "black")
 points(cell_count$time,  MixC_SCmoy_G+ MixC_SCmoy_R, type = "o", col = "purple")
-legend(x="topleft",legend=c("MixC SC alone", "MixC PV alone", "MixC PVSC"), fill=c( "purple", "black", "blue"))
+legend(x="topleft",legend=c("MixC SC alone", "MixC PV alone", "MixC PVSC"), fill=c( "purple", "black", "blue"), cex=1.2)
 
