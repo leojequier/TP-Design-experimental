@@ -173,6 +173,8 @@ for(i in 2:10){
 for(i in 11:19){
   plot(absol[,1],absol[,i],  ylim = c(min(absol[,2:19]), max(absol[,2:19])),log = "y", main = List_treat[[i-1]],xlab = "time[h]", ylab = "Absolut count")
 }
+
+
 #means sc fluo vert(G) et rouge(R)
 MixC_SCmoy_G<- c()
 
@@ -246,6 +248,7 @@ Tol_PPmoy_G <- c()
 for(i in 1:8){
   Tol_PPmoy_G[i] <- sum(syto2$ToluPP1[i],  syto2$ToluPP2[i],syto2$ToluPP3[i])/3
 }
+
 #cell count
 list_cell_count = vector(mode = "list", length = 49)
 list_cell_count[1] = "time"
@@ -307,10 +310,35 @@ for(i in 1:8){
 
 #Plot des comptes de SC (fluoresence verte)
 
-
-
-
+#Normal
 par(mfrow = c(1,1))
+plot(cell_count$time,cell_count$MixC_SCmoy_G,log="y",xlim=c(0,48),ylim=c(2950,4028683330), cex.main=1.2,
+     cex.lab=1.2,type="o",main="SC growth\nWeek1",xlab= "Time [Hours]", ylab="log(SC count)")
+#replicats
+points(cell_count$time,cell_count$MixC_SC1_G,type = "p")
+points(cell_count$time,cell_count$MixC_SC2_G,type = "p")
+points(cell_count$time,cell_count$MixC_SC3_G,type = "p")
+#lines sc tol
+points(cell_count$time,cell_count$Tol_SCmoy_G, type="o", col="red")
+#replicats
+points(cell_count$time,cell_count$Tol_SC1_G, type="p", col="red")
+points(cell_count$time,cell_count$Tol_SC2_G, type="p", col="red")
+points(cell_count$time,cell_count$Tol_SC3_G, type="p", col="red")
+#lines ppsc mixc
+points(cell_count$time,cell_count$MixC_PPSCmoy_G, type="l", col="blue")
+#rep 
+points(cell_count$time,cell_count$MixC_PPSC1_G, type="p", col="blue")
+points(cell_count$time,cell_count$MixC_PPSC2_G, type="p", col="blue")
+points(cell_count$time,cell_count$MixC_PPSC3_G, type="p", col="blue")
+#line ppsc tol
+points(cell_count$time,cell_count$Tol_PPSCmoy_G, type="l", col="orange")
+#rep
+points(cell_count$time,cell_count$Tol_PPSC1_G, type="p", col="orange")
+points(cell_count$time,cell_count$Tol_PPSC2_G, type="p", col="orange")
+points(cell_count$time,cell_count$Tol_PPSC3_G, type="p", col="orange")
+
+legend("topleft", cex=1.2,legend=c("SC alone in mixC","SC alone in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
+
 #AIRE COLOREES
 x<-c(0,cell_count$time)
 y <- c(0,cell_count$MixC_SCmoy_G)
@@ -334,14 +362,6 @@ points(cell_count$time,cell_count$Tol_PPSCmoy_G, type="o", col="orange")
 yol3 <- c(100,cell_count$Tol_PPSCmoy_G,100)
 polygon(xleo, yol3, col=rgb(0.8,0.3,0.1,0.4))
 legend("topleft", cex=1.2,legend=c("SC alone in mixC","SC alone in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
-#Normal
-
-plot(x,y,log="y",xlim=c(0,48),ylim=c(2950,4028683330), cex.main=1.2,
-     cex.lab=1.2,type="o",main="SC growth\nWeek1",xlab= "Time [Hours]", ylab="log(SC count)")
-points(cell_count$time,cell_count$Tol_SCmoy_G, type="o", col="red")
-points(cell_count$time,cell_count$MixC_PPSCmoy_G, type="o", col="blue")
-points(cell_count$time,cell_count$Tol_PPSCmoy_G, type="o", col="orange")
-legend("topleft", cex=1.2,legend=c("SC alone in mixC","SC alone in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
 
 #plot(cell_count$time, cell_count$MixC_PPmoy_G, log="y",xlim=c(0,48),ylim=c(min(cell_count$Tol_PPmoy_G), max(cell_count$Tol_PPSCmoy_G + cell_count$Tol_PPSCmoy_R)),type="o", col="green")
 #points(cell_count$time, (cell_count$MixC_PPSCmoy_G + cell_count$MixC_PPSCmoy_R), type="o", col="brown")
@@ -349,20 +369,39 @@ legend("topleft", cex=1.2,legend=c("SC alone in mixC","SC alone in Tol","SC in P
 #points(cell_count$time, (cell_count$Tol_PPmoy_G + cell_count$Tol_PPmoy_R), type = "o", col = "pink")
 #legend("bottomright",legend = c( "Syt9 cnt in Tol PPalone", "PPSC total in mixC", "PPSC total in Tol", "total count in pp alone"),fill=c("green", "brown", "gray", "pink"))
 
-
-
 #SAME WITH PP (fluoresence rouge)
 
-
 ##Plot des comptes de PP
-plot(cell_count$time, cell_count$MixC_PPmoy_R,cex.main=1.2,
-     cex.lab=1.2,log="y",xlim=c(0,48),ylim=c(2950,4028683330), type="o",main="PP growth\nWeek1",xlab= "Time [Hours]", ylab="log(PP count)")
-points(cell_count$time,cell_count$Tol_PPmoy_R, type="o", col="red")
-points(cell_count$time,cell_count$MixC_PPSCmoy_R, type="o", col="blue")
-points(cell_count$time,cell_count$Tol_PPSCmoy_R + cell_count$Tol_PPSCmoy_G, type="o", col="orange")
+plot(cell_count$time, cell_count$Tol_PPmoy_R,cex.main=1.2,
+     cex.lab=1.2,log="y",xlim=c(0,48),ylim=c(2950,4028683330), type="l", col = "red"
+     ,main="PP growth\nWeek1",xlab= "Time [Hours]", ylab="log(PP count)")
+## replicats
+points(cell_count$time,cell_count$Tol_PP1_R, type="p", col="red")
+points(cell_count$time,cell_count$Tol_PP2_R, type="p", col="red")
+points(cell_count$time,cell_count$Tol_PP3_R, type="p", col="red")
+#lignes ppsc
+points(cell_count$time,cell_count$Tol_PPSCmoy_R, type="l", col="blue")
+# replicats
+points(cell_count$time,cell_count$Tol_PPSC1_R, type="p", col="blue")
+points(cell_count$time,cell_count$Tol_PPSC2_R, type="p", col="blue")
+points(cell_count$time,cell_count$Tol_PPSC3_R, type="p", col="blue")
+#lignes pppsc
+points(cell_count$time,cell_count$MixC_PPmoy_R, type="l", col="orange")
+#replicats
+points(cell_count$time,cell_count$MixC_PP1_R, type="p", col="orange")
+points(cell_count$time,cell_count$MixC_PP2_R, type="p", col="orange")
+points(cell_count$time,cell_count$MixC_PP3_R, type="p", col="orange")
+
+#lignes pppsc
+points(cell_count$time,cell_count$MixC_PPSCmoy_R, type="l", col="black")
+#replicats
+points(cell_count$time,cell_count$MixC_PPSC1_R, type="p", col="black")
+points(cell_count$time,cell_count$MixC_PPSC2_R, type="p", col="black")
+points(cell_count$time,cell_count$MixC_PPSC3_R, type="p", col="black")
+
 #points(cell_count$time, cell_count$MixC_PPSCmoy_R + cell_count$MixC_PPSCmoy_G, type="o", col="brown")
 #points(cell_count$time, cell_count$Tol_PPSCmoy_R, type="o", col="gray")
-legend("topleft",cex=1.2,legend=c("PP alone in mixC","PP alone in Tol","PP in PP+SC in mixC","PP in PP+SC in Tol"),fill=c("black","red","blue","orange"))
+legend("topleft",cex=1,legend=c("PP alone in mixC","PP alone in Tol","PP in PP+SC in mixC","PP in PP+SC in Tol"),fill=c("orange","red","black","blue"))
 
 
 #estimer l'erreur des réplicats technique 
@@ -620,21 +659,67 @@ plot(cell_count$time, cell_count$Tol_PPmoy_G, type = "o",cex.main=1.2,
 points(cell_count$time, cell_count$Tol_PPSCmoy_G, type = "o", col = "orange")
 legend(x = "bottomright",legend = c("PP alone in Tol", "PPSC in Tol"), fill = c("green", "yellow"), cex=1.2)
 
-
-plot(cell_count$time, cell_count$Tol_PPmoy_G+cell_count$Tol_PPmoy_R,type = "o",
-     cex.main=1.2,
-     cex.lab=1.2,log = "y", main = "Total count in Toluene \n Week 1",
-     ylab = "log(cell count)", xlab = "Time[hours]", col = "green", ylim=c(2950,4028683330))
-points(cell_count$time, cell_count$Tol_PPSCmoy_G+cell_count$Tol_PPSCmoy_R, type = "o", col = "orange")
-points(cell_count$time, cell_count$Tol_SCmoy_G+cell_count$Tol_SCmoy_R, type = "o", col = "red")
-legend(x="topleft", legend = c("Tol SC alone", "Tol PP alone", "Tol PPSC"), fill=c("red", "green", "orange"),cex=1.2)
-
-plot(cell_count$time, cell_count$MixC_PPSCmoy_G+cell_count$MixC_PPSCmoy_R,type = "o",
+###------------------------------------------------Comptes totaux
+## MIx carbon PPsc moyenne
+plot(cell_count$time, cell_count$MixC_PPSCmoy_G+cell_count$MixC_PPSCmoy_R,type = "l",
      cex.main=1.2,
      cex.lab=1.2,log = "y", main = "Total count in Mixed Carbon \n Week 1",
-     ylab = "log(cell count)", xlab = "Time[hours]", col = "blue", ylim=c(2950,4028683330))
-points(cell_count$time, cell_count$MixC_PPmoy_G+cell_count$MixC_PPmoy_R, type = "o", col = "black")
-points(cell_count$time, cell_count$MixC_SCmoy_G+cell_count$MixC_SCmoy_R, type = "o", col = "purple")
-legend(x="topleft", legend = c("MixC SC alone", "MixC PP alone", "MixC PPSC"), fill=c( "purple", "black", "blue"),cex=1.2)
+     ylab = "log(cell count)", xlab = "Time[hours]", col = "orange", ylim=c(2950,4028683330))
+##points pour ppsc
+points(cell_count$time, cell_count$MixC_PPSC1_G+cell_count$MixC_PPSC1_R,type = "p", col = "orange")
+points(cell_count$time, cell_count$MixC_PPSC2_G+cell_count$MixC_PPSC2_R,type = "p", col = "orange")
+points(cell_count$time, cell_count$MixC_PPSC3_G+cell_count$MixC_PPSC3_R,type = "p", col = "orange")
+# PP seul moyenne
+points(cell_count$time, cell_count$MixC_PPmoy_G+cell_count$MixC_PPmoy_R, type = "l", col = "red")
+# pp seul points
+points(cell_count$time, cell_count$MixC_PP1_G+cell_count$MixC_PP1_R, type = "p", col = "red")
+points(cell_count$time, cell_count$MixC_PP2_G+cell_count$MixC_PP2_R, type = "p", col = "red")
+points(cell_count$time, cell_count$MixC_PP3_G+cell_count$MixC_PP3_R, type = "p", col = "red")
+## sc seul moy
+points(cell_count$time, cell_count$MixC_SCmoy_G+cell_count$MixC_SCmoy_R, type = "l", col = "green")
+## sc seul points
+points(cell_count$time, cell_count$MixC_SC1_G+cell_count$MixC_SC1_R, type = "p", col = "green")
+points(cell_count$time, cell_count$MixC_SC2_G+cell_count$MixC_SC2_R, type = "p", col = "green")
+points(cell_count$time, cell_count$MixC_SC3_G+cell_count$MixC_SC3_R, type = "p", col = "green")
 
-       
+legend(x="topleft", legend = c("MixC SC alone", "MixC PP alone", "MixC PPSC"), fill=c( "green", "red", "orange"),cex=1.2)
+
+##stat
+#AUC pour comptes totaux
+tot_sc_w1_MixC = data.frame(cell_count$MixC_SC1_G+cell_count$MixC_SC1_R,
+                           cell_count$MixC_SC2_G+cell_count$MixC_SC2_R,
+                           cell_count$MixC_SC3_G+cell_count$MixC_SC3_R)
+names(tot_sc_w1_MixC) = c("SC1", "SC2", "SC3")
+tot_sc_w1_MixC_auc = rep(NA, times = 3)
+for(i in 1:3){
+  tot_sc_w1_MixC_auc[i] = trapz(time_w1, tot_sc_w1_MixC[,i])
+}
+tot_sc_w1_MixC_auc
+
+model_w1_tot = aov()
+
+
+## dans le toluène
+plot(cell_count$time, cell_count$Tol_PPmoy_G+cell_count$Tol_PPmoy_R,type = "l",
+     cex.main=1.2,
+     cex.lab=1.2,log = "y", main = "Total count in Toluene \n Week 1",
+     ylab = "log(cell count)", xlab = "Time[hours]", col = "red", ylim=c(2950,4028683330))
+## points pour les relicats pp
+points(cell_count$time, cell_count$Tol_PP1_G+cell_count$Tol_PP1_R,type = "p", col = "red")
+points(cell_count$time, cell_count$Tol_PP2_G+cell_count$Tol_PP2_R,type = "p", col = "red")
+points(cell_count$time, cell_count$Tol_PP3_G+cell_count$Tol_PP3_R,type = "p", col = "red")
+## les ligne pour les moyennes ppsc
+points(cell_count$time, cell_count$Tol_PPSCmoy_G+cell_count$Tol_PPSCmoy_R, type = "l", col = "orange")
+## les points pour les réplicats ppsc
+points(cell_count$time, cell_count$Tol_PPSC1_G+cell_count$Tol_PPSC1_R, type = "p", col = "orange")
+points(cell_count$time, cell_count$Tol_PPSC2_G+cell_count$Tol_PPSC2_R, type = "p", col = "orange")
+points(cell_count$time, cell_count$Tol_PPSC2_G+cell_count$Tol_PPSC2_R, type = "p", col = "orange")
+## lignes pour la moyenne sc
+points(cell_count$time, cell_count$Tol_SCmoy_G+cell_count$Tol_SCmoy_R, type = "l", col = "green")
+# points pour les réplicats sc
+points(cell_count$time, cell_count$Tol_SC1_G+cell_count$Tol_SC1_R, type = "p", col = "green")
+points(cell_count$time, cell_count$Tol_SC2_G+cell_count$Tol_SC2_R, type = "p", col = "green")
+points(cell_count$time, cell_count$Tol_SC3_G+cell_count$Tol_SC3_R, type = "p", col = "green")
+# légende
+legend(x="topleft", legend = c("Tol SC alone", "Tol PP alone", "Tol PPSC"), fill=c("green", "red", "orange"),cex=1.2)
+
