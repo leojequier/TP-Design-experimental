@@ -511,11 +511,24 @@ plot(rep(1:10, each = 3), log(week$AUC[1:30]),
      xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4), col=AUC_col)
 axis(1, cex=1.2,at = 1:10, labels = unique(eti[1:30]), las = 2, hadj = T, font = 2, outer = F)
 
+## graphes de l'anova SC semaine 1 seulement 4 valeurs
+par(mfrow = c(1,1))
+par(mai = c(2,1,1,1))
+AUC_col = rep(c("black", "blue", "red","yellow"), each = 3)
+plot(rep(1:4, each = 3), log(week$AUC[c(1:3,7:9,16:18, 22:24)]),
+     cex.main=1.2,
+     cex.lab=1.2,main = "Area under the curve according to the treatment\nSC week 1",
+     xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4), col=AUC_col, ylim = range(log(week$AUC)))
+axis(1, cex=1.2,at = 1:4, labels = c("SC in MixC", "SC in MixC\n in presence of PP ","SC in Tol", "SC in tol\nin presence of PP" ), las = 2, hadj = T, font = 2, outer = F)
+
 ## on avait prévu 8 test, 4 anova, et test si différences dans tol.
 ## Alpha ajd = 1 - (0.95 ^ 1/8) = 0.0063
 ## tests Week 1 SC
 week1 <- week[1:30,]
-modelw1_SC <- aov(log(week1$AUC[week1$Species%in%c("SC","PPSC_SC")])~week1$Substrate[week1$Species%in%c("SC","PPSC_SC")]* week1$Species[week1$Species %in%c("SC","PPSC_SC")])
+AUC_w1_sc = log(week1$AUC[week1$Species%in%c("SC","PPSC_SC")])
+Sub_w1_sc = week1$Substrate[week1$Species%in%c("SC","PPSC_SC")]
+Species_w1_sc = week1$Species[week1$Species %in%c("SC","PPSC_SC")]
+modelw1_SC <- aov(AUC_w1_sc~Sub_w1_sc* Species_w1_sc)
 plot(as.factor(rep((1:4), each = 3)),residuals(modelw1_SC))
 leveneTest(modelw1_SC)
 anova(modelw1_SC) 
@@ -546,14 +559,28 @@ plot(rep(1:10, each = 3), log(week$AUC[1:30]),
      xlab = "", xaxt = "n", ylab = "log (AUC)", col = AUC_col_pseudo, pch=c(1,3,4))
 axis(1, cex=1.2,at = 1:10, labels = unique(eti[1:30]), las = 2, hadj = T, font = 2, outer = F,pch = c(1,3,4))
 
+## graphes seulement 4 valeurs
+par(mai = c(2,1,1,1))
+AUC_col = rep(c("black", "blue", "red","yellow"), each = 3)
+plot(rep(1:4, each = 3), log(week$AUC[c(4:6,10:12,19:21, 25:27)]),
+     cex.main=1.2,
+     cex.lab=1.2,main = "Area under the curve according to the treatment\nPP week 1",
+     xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4), col=AUC_col, ylim = range(log(week$AUC)))
+axis(1, cex=1.2,at = 1:4, labels = c("PP in MixC", "PP in MixC\n in presence of SC ","PP in Tol", "PP in tol\nin presence of SC" ), las = 2, hadj = T, font = 2, outer = F)
+
 
 ## test week 1 PP 
 #t.test(week1$AUC[week1$names3=="Tol_PP"], week$AUC[week1$names3=="MixC_PP"])
-modelw1_PP <- aov(log(week1$AUC[week1$Species%in%c("PP","PPSC_PP")])~week1$Substrate[week1$Species%in%c("PP","PPSC_PP")]* 
-                    week1$Species[week1$Species %in%c("PP","PPSC_PP")])
+AUC_w1_pp = log(week1$AUC[week1$Species%in%c("PP","PPSC_PP")])
+Sub_w1_pp = week1$Substrate[week1$Species%in%c("PP","PPSC_PP")]
+Species_w1_pp = week1$Species[week1$Species %in%c("PP","PPSC_PP")]
+modelw1_PP <- aov(AUC_w1_pp~Sub_w1_pp* Species_w1_pp)
 plot(as.factor(rep((1:4), each = 3)),residuals(modelw1_PP))
 leveneTest(modelw1_PP)
-anova(modelw1_PP)[["Mean Sq"]]
+anova(modelw1_PP)
+#pas d'interaction
+modelw1_PP2 <- aov(AUC_w1_pp~Sub_w1_pp+ Species_w1_pp)
+anova(modelw1_PP2)
 ## Fcorigés car modèle mixte
 ## F species = MSsp / MSe = 0.5
 1-pf(0.5, 1, 8) # > 0.006
@@ -581,9 +608,24 @@ plot(rep(1:10, each = 3), log(week$AUC[31:60]),
      cex.lab=1.2, xlab = "", xaxt = "n", ylab = "log (AUC)", col = AUC_col, pch = c(1,3,4))
 axis(1, cex=1.2,at = 1:10, labels = unique(eti[31:60]), las = 2, hadj = T, font = 2, outer = F)
 
+## graphes de l'anova SC semaine 2 seulement 4 valeurs
+par(mfrow = c(1,1))
+par(mai = c(2,1,1,1))
+AUC_col = rep(c("black", "blue", "red","yellow"), each = 3)
+plot(rep(1:4, each = 3), log(week$AUC[c(1:3,7:9,16:18, 22:24)+30]),
+     cex.main=1.2,
+     cex.lab=1.2,main = "Area under the curve according to the treatment\nSC week 2",
+     xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4), col=AUC_col, ylim = range(log(week$AUC)))
+axis(1, cex=1.2,at = 1:4, labels = c("SC in MixC", "SC in MixC\n in presence of PV ","SC in Tol", "SC in tol\nin presence of PV" ), las = 2, hadj = T, font = 2, outer = F)
+
+
+
 ##test week 2 SC
 week2 <- week[31:60,]
-modelw2_SC <- aov(log(week2$AUC[week2$Species%in%c("SC","PVSC_SC")])~week2$Substrate[week2$Species%in%c("SC","PVSC_SC")]* week2$Species[week2$Species %in%c("SC","PVSC_SC")])
+AOV_w2_SC = log(week2$AUC[week2$Species%in%c("SC","PVSC_SC")])
+Sub_w2_sc = week2$Substrate[week2$Species%in%c("SC","PVSC_SC")]
+Species_w2_SC = week2$Species[week2$Species %in%c("SC","PVSC_SC")]
+modelw2_SC <- aov(AOV_w2_SC~Sub_w2_sc* Species_w2_SC)
 plot(as.factor(rep((1:4), each = 3)),residuals(modelw2_SC))
 leveneTest(modelw2_SC)
 summary(modelw2_SC)
@@ -595,6 +637,8 @@ pf(2.389,1,1, lower.tail = F) #> alpha = 0.006
 
 TukeyHSD(modelw2_SC)
 par(mfrow=c(1,1))
+
+
 ## plot week2 PV
 AUC_col_pseudo = rep(c( "black","red", "black", "blue", "black", "black", "green", "black", "orange","black"), each = 3)
 plot(rep(1:10, each = 3), log(week$AUC[31:60]),
@@ -602,6 +646,17 @@ plot(rep(1:10, each = 3), log(week$AUC[31:60]),
      cex.main=1.2,
      cex.lab=1.2,xlab = "", xaxt = "n", ylab = "log (AUC)", col = AUC_col_pseudo, pch = c(1,3,4))
 axis(1,cex=1.2, at = 1:10, labels = unique(eti[31:60]), las = 2, hadj = T, font = 2, outer = F)
+
+
+## graphes seulement 4 valeurs
+par(mai = c(2,1,1,1))
+AUC_col = rep(c("black", "blue", "red","yellow"), each = 3)
+plot(rep(1:4, each = 3), log(week$AUC[c(4:6,10:12,19:21, 25:27)+30]),
+     cex.main=1.2,
+     cex.lab=1.2,main = "Area under the curve according to the treatment\nPV week 2",
+     xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4), col=AUC_col, ylim = range(log(week$AUC)))
+axis(1, cex=1.2,at = 1:4, labels = c("PV in MixC", "PV in MixC\n in presence of SC ","PV in Tol", "PV in tol\nin presence of SC" ), las = 2, hadj = T, font = 2, outer = F)
+
 
 ## test week 2 PV
 modelw2_PV <- aov(log(week2$AUC[week2$Species%in%c("PV","PVSC_PV")])~week2$Substrate[week2$Species%in%c("PV","PVSC_PV")]* week2$Species[week2$Species %in%c("PV","PVSC_PV")])
@@ -684,19 +739,6 @@ points(cell_count$time, cell_count$MixC_SC3_G+cell_count$MixC_SC3_R, type = "p",
 
 legend(x="topleft", legend = c("MixC SC alone", "MixC PP alone", "MixC PPSC"), fill=c( "green", "red", "orange"),cex=1.2)
 
-##stat
-#AUC pour comptes totaux
-tot_sc_w1_MixC = data.frame(cell_count$MixC_SC1_G+cell_count$MixC_SC1_R,
-                           cell_count$MixC_SC2_G+cell_count$MixC_SC2_R,
-                           cell_count$MixC_SC3_G+cell_count$MixC_SC3_R)
-names(tot_sc_w1_MixC) = c("SC1", "SC2", "SC3")
-tot_sc_w1_MixC_auc = rep(NA, times = 3)
-for(i in 1:3){
-  tot_sc_w1_MixC_auc[i] = trapz(time_w1, tot_sc_w1_MixC[,i])
-}
-tot_sc_w1_MixC_auc
-
-model_w1_tot = aov()
 
 
 ## dans le toluène
@@ -723,3 +765,16 @@ points(cell_count$time, cell_count$Tol_SC3_G+cell_count$Tol_SC3_R, type = "p", c
 # légende
 legend(x="topleft", legend = c("Tol SC alone", "Tol PP alone", "Tol PPSC"), fill=c("green", "red", "orange"),cex=1.2)
 
+##stat
+#AUC pour comptes totaux
+tot_sc_w1_MixC = data.frame(cell_count$MixC_SC1_G+cell_count$MixC_SC1_R,
+                            cell_count$MixC_SC2_G+cell_count$MixC_SC2_R,
+                            cell_count$MixC_SC3_G+cell_count$MixC_SC3_R)
+names(tot_sc_w1_MixC) = c("SC1", "SC2", "SC3")
+tot_sc_w1_MixC_auc = rep(NA, times = 3)
+for(i in 1:3){
+  tot_sc_w1_MixC_auc[i] = trapz(time_w1, tot_sc_w1_MixC[,i])
+}
+tot_sc_w1_MixC_auc
+
+model_w1_tot = aov()
