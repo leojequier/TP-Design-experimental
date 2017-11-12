@@ -454,7 +454,8 @@ time_w1 = c(0, 11, 15 + 1/6, 19.5,22.5,38.5 , 45+ 1/3 ,48 )
 time_w2 = c(0, 14.5, 18, 21, 23.5, 36.5, 42 ,44.5 , 47.5 )
 
 ess <- read.table("ess.txt", sep="\t", header=T)
-ess2 <- read.table("ess2.txt", header = T)
+ess2 <- read.table("ess2bis.csv", header = T, sep = ",")
+
 
 week <- data.frame(names1, Species,names3,Substrate,week_on_SC,Replicat,PV, PP,SC,PPSC, PVSC,AUC)
 
@@ -659,10 +660,13 @@ axis(1, cex=1.2,at = 1:4, labels = c("PV in MixC", "PV in MixC\n in presence of 
 
 
 ## test week 2 PV
-modelw2_PV <- aov(log(week2$AUC[week2$Species%in%c("PV","PVSC_PV")])~week2$Substrate[week2$Species%in%c("PV","PVSC_PV")]* week2$Species[week2$Species %in%c("PV","PVSC_PV")])
+AUC_w2_pv = log(week2$AUC[week2$Species%in%c("PV","PVSC_PV")])
+Sub_w2_pv = week2$Substrate[week2$Species%in%c("PV","PVSC_PV")]
+Species_w2_pv = week2$Species[week2$Species %in%c("PV","PVSC_PV")]
+modelw2_PV <- aov(AUC_w2_pv~Sub_w2_pv*Species_w2_pv )
 plot(as.factor(rep((1:4), each = 3)),residuals(modelw2_PV))
 leveneTest(modelw2_PV)
-anova(modelw2_PV)[["Mean Sq"]]
+anova(modelw2_PV)
 # corriger F 
 # Fsp = MSsp /MSe = 0.4779/0.02907 = 16.44
 pf(16.44, 1, 8, lower.tail = F) #<0.006

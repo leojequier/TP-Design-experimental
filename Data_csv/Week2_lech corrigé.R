@@ -124,8 +124,8 @@ for(i in 1:9){
     syto_stained[i,j+1] = mean(Data$SYTO.9.Abs..Count[Data$Well.ID== lech[j]][1:2])
     #parcours syto 2 en ligne, prend les comptes absolu syto9 de T[i] qui ont le nom lech[j] (deux replicat tech) et fait une moyenne 
   }}
-syto_stained
-#remplir avec SYTO 9 pour tous les traitements stained
+
+#remplir avec SYTO 9 pour tous les traitements unstained
 for(i in 1:9){ 
   for(j in 1:18){
     Data = get(List[[i]]) #stocke T[I]
@@ -455,6 +455,17 @@ for(i in 1:9){
   Tol_all_in_pv[i]  <- Tol_deadPVmoy[i] + cell_count$Tol_PVmean[i]
 }
 
+
+## refaire ess2
+names(cell_count2)[]
+ess2 = cell_count2[,c(2:4, 14:16, 18:20, 22:24) ]
+names(ess2)
+ess2 =cbind(ess2, cell_count2[,18:20] + cell_count2[,22:24])
+ess2 = cbind(ess2, cell_count2[,c(2:4, 14:16, 18:20, 22:24) + 24 ])
+names(ess2)
+ess2 = cbind(ess2, cell_count2[,42:44] + cell_count2[,46:48])
+
+write.table(ess2, file = "ess2bis.csv", sep = ",")
 #Plot des comptes de SC
 par(mfrow = c(1,1))
 plot(cell_count2$time, cell_count2$MixC_SCmoy_G ,cex.main=1.2,
