@@ -1,8 +1,8 @@
 
 rm(list=ls())
-#install.packages("pracma")
-#install.packages("car")
-#library("car")
+install.packages("pracma")
+install.packages("car")
+library("car")
 library("pracma")
 
 #charger les données, après avoir fait session, set working directory, to source file location
@@ -478,7 +478,7 @@ summary(glm(log(week$AUC) ~ as.factor(week$week_on_SC)+ as.factor(week$Species)+
                   
 
 ##Anova
-model = aov(log(week$AUC)~week$Substrate*as.factor(week$Species))
+model = aov(log(AUC)~Substrate*as.factor(Species), data=week)
 anova(model)
 #le substrat a un effet significatif, les échantillons ayant poussé dans des substrats différents sont en moyenne différents.
 #au moins un traitement à un effet significatif,
@@ -711,11 +711,19 @@ TukeyHSD
 # 
 
 ## graphique problèmes
-plot(cell_count$time, cell_count$Tol_PPmoy_G, type = "o",cex.main=1.2,
+plot(cell_count$time, cell_count$Tol_PPmoy_G,ylim= c(2033.5,113678333), type = "o",cex.main=1.2,
      cex.lab=1.2,
-     log = "y", main = "Comparaison with\nPP alone control",
+     log = "y", main = "SYTO-9 fluorescence \n Week 1",
      ylab = "Count of SYTO-9 stained cells", xlab = "Time[hours]", col = "green" )
 points(cell_count$time, cell_count$Tol_PPSCmoy_G, type = "o", col = "orange")
+points(cell_count$time, cell_count$Tol_PPSC1_G,type = "p", col = "orange")
+points(cell_count$time, cell_count$Tol_PPSC2_G,type = "p", col = "orange")
+points(cell_count$time, cell_count$Tol_PPSC3_G,type = "p", col = "orange")
+
+points(cell_count$time, cell_count$Tol_PP1_G,type = "p", col = "green")
+points(cell_count$time, cell_count$Tol_PP2_G,type = "p", col = "green")
+points(cell_count$time, cell_count$Tol_PP3_G,type = "p", col = "green")
+
 legend(x = "bottomright",legend = c("PP alone in Tol", "PPSC in Tol"), fill = c("green", "yellow"), cex=1.2)
 
 ###------------------------------------------------Comptes totaux

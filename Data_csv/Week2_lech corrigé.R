@@ -406,6 +406,7 @@ names(cell_count2) = list_cell_count2
 names(cell_count2)[2:49]
 
 
+
 # MixC_PVSC1 <- cell_count$MixC_PVSC_SC1 + cell_count$MixC_PVSC_PV1
 # MixC_PVSC2 <- cell_count$MixC_PVSC_SC2 + cell_count$MixC_PVSC_PV2
 # MixC_PVSC3 <- cell_count$MixC_PVSC_SC3 + cell_count$MixC_PVSC_PV3
@@ -557,3 +558,21 @@ points(cell_count2$time,  cell_count2$MixC_SC2_G+ cell_count2$MixC_SC2_R, type =
 points(cell_count2$time,  cell_count2$MixC_SC3_G+ cell_count2$MixC_SC3_R, type = "p", col = "purple")
 legend(x="topleft",legend=c("MixC SC alone", "MixC PV alone", "MixC PVSC"), fill=c( "purple", "black", "blue"), cex=1.2)
 
+
+
+#syto9 problem plot
+
+plot(cell_count2$time, cell_count2$Tol_PVmoy_G,ylim= c(2033.5,113678333),type = "o",cex.main=1.2,
+     cex.lab=1.2,
+     log = "y", main = "SYTO-9 fluorescence \n Week2",
+     ylab = "count of SYTO-9 stained cells", xlab = "Time[hours]", col = "green" )
+points(cell_count2$time, cell_count2$Tol_PVSCmoy_G, type = "o", col = "orange")
+points(cell_count2$time, cell_count2$Tol_PVSC1_G,type = "p", col = "orange")
+points(cell_count2$time, cell_count2$Tol_PVSC2_G,type = "p", col = "orange")
+points(cell_count2$time, cell_count2$Tol_PVSC3_G,type = "p", col = "orange")
+
+points(cell_count2$time, cell_count2$Tol_PV1_G,type = "p", col = "green")
+points(cell_count2$time, cell_count2$Tol_PV2_G,type = "p", col = "green")
+points(cell_count2$time, cell_count2$Tol_PV3_G,type = "p", col = "green")
+
+legend(x = "bottomright",legend = c("PV alone in Tol", "PVSC in Tol"), fill = c("green", "yellow"), cex=1.2)
