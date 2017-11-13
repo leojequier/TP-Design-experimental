@@ -564,7 +564,7 @@ legend(x="topleft",legend=c("MixC SC alone", "MixC PV alone", "MixC PVSC"), fill
 
 plot(cell_count2$time, cell_count2$Tol_PVmoy_G,ylim= c(2033.5,113678333),type = "o",cex.main=1.2,
      cex.lab=1.2,
-     log = "y", main = "SYTO-9 fluorescence \n Week2",
+     log = "y", main = "SYTO-9 fluorescence \n Week 2",
      ylab = "count of SYTO-9 stained cells", xlab = "Time[hours]", col = "green" )
 points(cell_count2$time, cell_count2$Tol_PVSCmoy_G, type = "o", col = "orange")
 points(cell_count2$time, cell_count2$Tol_PVSC1_G,type = "p", col = "orange")
