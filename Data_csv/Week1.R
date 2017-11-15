@@ -1,7 +1,7 @@
 
 rm(list=ls())
-install.packages("pracma")
-install.packages("car")
+#install.packages("pracma")
+#install.packages("car")
 library("car")
 library("pracma")
 
@@ -711,20 +711,22 @@ TukeyHSD
 # 
 
 ## graphique problèmes
-plot(cell_count$time, cell_count$Tol_PPmoy_G,ylim= c(2033.5,113678333), type = "o",cex.main=1.2,
+plot(cell_count$time, cell_count$Tol_PPmoy_G,ylim= c(2033.5,113678333), type = "l",cex.main=1.2,
      cex.lab=1.2,
      log = "y", main = "SYTO-9 fluorescence \n Week 1",
-     ylab = "Count of SYTO-9 stained cells", xlab = "Time[hours]", col = "green" )
-points(cell_count$time, cell_count$Tol_PPSCmoy_G, type = "o", col = "orange")
-points(cell_count$time, cell_count$Tol_PPSC1_G,type = "p", col = "orange")
-points(cell_count$time, cell_count$Tol_PPSC2_G,type = "p", col = "orange")
-points(cell_count$time, cell_count$Tol_PPSC3_G,type = "p", col = "orange")
+     ylab = "log(Count of SYTO-9 stained cells)", xlab = "Time[hours]", col = "red" )
+points(cell_count$time, cell_count$Tol_PPSCmoy_G, type = "l", col = "blue")
+points(cell_count$time, cell_count$Tol_PPSC1_G,type = "p", col = "blue")
+points(cell_count$time, cell_count$Tol_PPSC2_G,type = "p", col = "blue")
+points(cell_count$time, cell_count$Tol_PPSC3_G,type = "p", col = "blue")
 
-points(cell_count$time, cell_count$Tol_PP1_G,type = "p", col = "green")
-points(cell_count$time, cell_count$Tol_PP2_G,type = "p", col = "green")
-points(cell_count$time, cell_count$Tol_PP3_G,type = "p", col = "green")
+test1 <- (cell_count$Tol_PPSC1_G+cell_count$Tol_PPSC2_G+cell_count$Tol_PPSC3_G)/3
 
-legend(x = "bottomright",legend = c("PP alone in Tol", "PPSC in Tol"), fill = c("green", "yellow"), cex=1.2)
+points(cell_count$time, cell_count$Tol_PP1_G,type = "p", col = "red")
+points(cell_count$time, cell_count$Tol_PP2_G,type = "p", col = "red")
+points(cell_count$time, cell_count$Tol_PP3_G,type = "p", col = "red")
+
+legend(x = "bottomright",legend = c("PP alone in Tol", "PPSC in Tol"), fill = c("red", "blue"), cex=1.2)
 
 ###------------------------------------------------Comptes totaux
 ## MIx carbon PPsc moyenne

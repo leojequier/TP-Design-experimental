@@ -562,17 +562,17 @@ legend(x="topleft",legend=c("MixC SC alone", "MixC PV alone", "MixC PVSC"), fill
 
 #syto9 problem plot
 
-plot(cell_count2$time, cell_count2$Tol_PVmoy_G,ylim= c(2033.5,113678333),type = "o",cex.main=1.2,
+plot(cell_count2$time, cell_count2$Tol_PVmoy_G,ylim= c(2033.5,113678333),type = "l",cex.main=1.2,
      cex.lab=1.2,
      log = "y", main = "SYTO-9 fluorescence \n Week 2",
-     ylab = "count of SYTO-9 stained cells", xlab = "Time[hours]", col = "green" )
-points(cell_count2$time, cell_count2$Tol_PVSCmoy_G, type = "o", col = "orange")
-points(cell_count2$time, cell_count2$Tol_PVSC1_G,type = "p", col = "orange")
-points(cell_count2$time, cell_count2$Tol_PVSC2_G,type = "p", col = "orange")
-points(cell_count2$time, cell_count2$Tol_PVSC3_G,type = "p", col = "orange")
+     ylab = "log(Count of SYTO-9 stained cells)", xlab = "Time[hours]", col = "red" )
+points(cell_count2$time, cell_count2$Tol_PVSCmoy_G, type = "l", col = "blue")
+points(cell_count2$time, cell_count2$Tol_PVSC1_G,type = "p", col = "blue")
+points(cell_count2$time, cell_count2$Tol_PVSC2_G,type = "p", col = "blue")
+points(cell_count2$time, cell_count2$Tol_PVSC3_G,type = "p", col = "blue")
 
-points(cell_count2$time, cell_count2$Tol_PV1_G,type = "p", col = "green")
-points(cell_count2$time, cell_count2$Tol_PV2_G,type = "p", col = "green")
-points(cell_count2$time, cell_count2$Tol_PV3_G,type = "p", col = "green")
+points(cell_count2$time, cell_count2$Tol_PV1_G,type = "p", col = "red")
+points(cell_count2$time, cell_count2$Tol_PV2_G,type = "p", col = "red")
+points(cell_count2$time, cell_count2$Tol_PV3_G,type = "p", col = "red")
 
-legend(x = "bottomright",legend = c("PV alone in Tol", "PVSC in Tol"), fill = c("green", "yellow"), cex=1.2)
+legend(x = "bottomright",legend = c("PV alone in Tol", "PVSC in Tol"), fill = c("red", "blue"), cex=1.2)
