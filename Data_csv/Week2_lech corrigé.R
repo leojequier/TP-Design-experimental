@@ -472,7 +472,7 @@ write.table(ess2, file = "ess2bis.csv", sep = ",")
 par(mfrow = c(1,1))
 plot(cell_count2$time, cell_count2$MixC_SCmoy_G ,cex.main=1.2,
      cex.lab=1.2,lwd=1.3,log = "y",xlim=c(0,48), ylim=c(2950,4028683330),
-     type = "l",main="SC growth\nWeek2 ",xlab= "Time [Hours]", ylab="log(SC count)")
+     type = "l",main="SC growth\n Experiment 2 ",xlab= "Time [Hours]", ylab="log(SC count)")
 points(rep(cell_count2$time, times = 3), c(cell_count2$MixC_SC1_G, cell_count2$MixC_SC2_G,
                                            cell_count2$MixC_SC3_G), type = "p" )
 points(cell_count2$time,cell_count2$Tol_SCmoy_G,type="l", col="red",lwd=1.3)
@@ -503,7 +503,7 @@ legend("topleft",legend=c("SC alone in mixC","SC alone in Tol","SC in PV+SC in m
 
 #Plot des comptes de PV
 plot(cell_count2$time, cell_count2$MixC_PVmoy_R ,log="y",lwd=1.3,
-     xlim=c(0,48),ylim=c(2950,4028683330), type="l",main="PV growth\nWeek2",xlab= "Time [Hours]", ylab="log(PV count)", cex.main=1.2,
+     xlim=c(0,48),ylim=c(2950,4028683330), type="l",main="PV growth\n Experiment 2",xlab= "Time [Hours]", ylab="log(PV count)", cex.main=1.2,
      cex.lab=1.2)
 
 
@@ -524,7 +524,7 @@ par(mfrow=c(1,1))
 
 ## -------------comptes totaux 
 plot(cell_count2$time, cell_count2$Tol_PVmoy_G+cell_count2$Tol_PVmoy_R,type = "l", cex.main=1.2,
-     cex.lab=1.2,log = "y", main = "Total count in Toluene \n Week 2",
+     cex.lab=1.2,log = "y", main = "Total count in Toluene \n Experiment 2",
      ylab = "log(cell count)", xlab = "Time[hours]", col = "green",ylim=c(2950,4028683330))
 points(cell_count2$time,cell_count2$Tol_PV1_G+cell_count2$Tol_PV1_R, type = "p", col = "green")
 points(cell_count2$time,cell_count2$Tol_PV2_G+cell_count2$Tol_PV2_R, type = "p", col = "green")
@@ -544,7 +544,7 @@ legend(x="topleft", legend = c("Tol SC alone", "Tol PV alone", "Tol PVSC"), fill
 
 plot(cell_count2$time, cell_count2$MixC_PVSCmoy_G+ cell_count2$MixC_PVSCmoy_R,type = "l",cex.main=1.2,
      cex.lab=1.2,
-     log = "y", main = "Total count in Mixed Carbon \n Week 2",
+     log = "y", main = "Total count in Mixed Carbon \n Experiment 2",
      ylab = "log(cell count)", xlab = "Time[hours]", col = "blue",ylim=c(2950,4028683330))
 points(cell_count2$time, cell_count2$MixC_PVSC1_G+ cell_count2$MixC_PVSC1_R,type = "p", col = "blue")
 points(cell_count2$time, cell_count2$MixC_PVSC2_G+ cell_count2$MixC_PVSC2_R,type = "p", col = "blue")
@@ -563,9 +563,9 @@ legend(x="topleft",legend=c("MixC SC alone", "MixC PV alone", "MixC PVSC"), fill
 
 #syto9 problem plot
 
-plot(cell_count2$time, cell_count2$Tol_PVmoy_G,ylim= c(2033.5,113678333),type = "l",cex.main=1.2,
+plot(cell_count2$time, cell_count2$Tol_PVmoy_G,ylim= c(2033.5,1136783330),type = "l",cex.main=1.2,
      cex.lab=1.2,
-     log = "y", main = "SYTO-9 fluorescence \n Week 2",
+     log = "y", main = "SYTO-9 fluorescence \n Experiment 2",
      ylab = "log(Count of SYTO-9 stained cells)", xlab = "Time[hours]", col = "red" )
 points(cell_count2$time, cell_count2$Tol_PVSCmoy_G, type = "l", col = "blue")
 points(cell_count2$time, cell_count2$Tol_PVSC1_G,type = "p", col = "blue")
