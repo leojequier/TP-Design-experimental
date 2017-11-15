@@ -370,7 +370,7 @@ legend("topleft", cex=1.2,legend=c("SC alone in mixC","SC alone in Tol","SC in P
 #legend("bottomright",legend = c( "Syt9 cnt in Tol PPalone", "PPSC total in mixC", "PPSC total in Tol", "total count in pp alone"),fill=c("green", "brown", "gray", "pink"))
 
 #SAME WITH PP (fluoresence rouge)
-
+par(mai= c(1,1,1,1))
 ##Plot des comptes de PP
 plot(cell_count$time, cell_count$Tol_PPmoy_R,cex.main=1.2,
      cex.lab=1.2,log="y",xlim=c(0,48),ylim=c(2950,4028683330), type="l", col = "red"
@@ -488,6 +488,7 @@ anova(model)
 
 
 #----------------------------------graphes et anova
+library(car)
 ## etiquettes de l'axe X
 bac2 = c(rep(rep(c("SCw1", "PP", "PPSC_SC","PPSC_PP", "PPSC_tot"), each = 3), time = 2),rep(rep(c("SCw2", "PV", "PVSC_SC","PVSC_PV", "PVSC_tot"), each = 3), time = 2))
 CvTol2 = rep(c("MixC", "Tol"), each = 15, time=2)
@@ -518,10 +519,17 @@ par(mai = c(2,1,1,1))
 AUC_col = rep(c("black", "blue", "red","yellow"), each = 3)
 plot(rep(1:4, each = 3), log(week$AUC[c(1:3,7:9,16:18, 22:24)]),
      cex.main=1.2,
-     cex.lab=1.2,main = "Area under the curve according to the treatment\nSC week 1",
+     cex.lab=1.2,main = "Area under the curve according to the treatment\nSC Experiment 1",
      xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4), col=AUC_col, ylim = range(log(week$AUC)))
 axis(1, cex=1.2,at = 1:4, labels = c("SC in MixC", "SC in MixC\n in presence of PP ","SC in Tol", "SC in tol\nin presence of PP" ), las = 2, hadj = T, font = 2, outer = F)
+#effect de pp in tol
+abline(h = mean(log(week$AUC[c(22:24)])))
+abline(h = mean(log(week$AUC[c(16:18)])))
+exp(20) - exp(16) 
 
+#effet du media
+abline(h = mean(log(week$AUC[c(16:18, 22:24)])), col = "red")
+abline(h = mean(log(week$AUC[c(1:3,7:9)])), col = "brown")
 ## on avait prévu 8 test, 4 anova, et test si différences dans tol.
 ## Alpha ajd = 1 - (0.95 ^ 1/8) = 0.0063
 ## tests Week 1 SC
@@ -565,7 +573,7 @@ par(mai = c(2,1,1,1))
 AUC_col = rep(c("black", "blue", "red","yellow"), each = 3)
 plot(rep(1:4, each = 3), log(week$AUC[c(4:6,10:12,19:21, 25:27)]),
      cex.main=1.2,
-     cex.lab=1.2,main = "Area under the curve according to the treatment\nPP week 1",
+     cex.lab=1.2,main = "Area under the curve according to the treatment\nPP",
      xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4), col=AUC_col, ylim = range(log(week$AUC)))
 axis(1, cex=1.2,at = 1:4, labels = c("PP in MixC", "PP in MixC\n in presence of SC ","PP in Tol", "PP in tol\nin presence of SC" ), las = 2, hadj = T, font = 2, outer = F)
 
@@ -615,10 +623,10 @@ par(mai = c(2,1,1,1))
 AUC_col = rep(c("black", "blue", "red","yellow"), each = 3)
 plot(rep(1:4, each = 3), log(week$AUC[c(1:3,7:9,16:18, 22:24)+30]),
      cex.main=1.2,
-     cex.lab=1.2,main = "Area under the curve according to the treatment\nSC week 2",
+     cex.lab=1.2,main = "Area under the curve according to the treatment\nSC Experiment 2",
      xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4), col=AUC_col, ylim = range(log(week$AUC)))
 axis(1, cex=1.2,at = 1:4, labels = c("SC in MixC", "SC in MixC\n in presence of PV ","SC in Tol", "SC in tol\nin presence of PV" ), las = 2, hadj = T, font = 2, outer = F)
-
+abline(h = mean(log(week$AUC[c(16:18, 22:24)])))
 
 
 ##test week 2 SC
@@ -654,7 +662,7 @@ par(mai = c(2,1,1,1))
 AUC_col = rep(c("black", "blue", "red","yellow"), each = 3)
 plot(rep(1:4, each = 3), log(week$AUC[c(4:6,10:12,19:21, 25:27)+30]),
      cex.main=1.2,
-     cex.lab=1.2,main = "Area under the curve according to the treatment\nPV week 2",
+     cex.lab=1.2,main = "Area under the curve according to the treatment\nPV",
      xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4), col=AUC_col, ylim = range(log(week$AUC)))
 axis(1, cex=1.2,at = 1:4, labels = c("PV in MixC", "PV in MixC\n in presence of SC ","PV in Tol", "PV in tol\nin presence of SC" ), las = 2, hadj = T, font = 2, outer = F)
 

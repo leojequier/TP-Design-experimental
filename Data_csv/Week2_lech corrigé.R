@@ -467,6 +467,7 @@ names(ess2)
 ess2 = cbind(ess2, cell_count2[,42:44] + cell_count2[,46:48])
 
 write.table(ess2, file = "ess2bis.csv", sep = ",")
+
 #Plot des comptes de SC
 par(mfrow = c(1,1))
 plot(cell_count2$time, cell_count2$MixC_SCmoy_G ,cex.main=1.2,
