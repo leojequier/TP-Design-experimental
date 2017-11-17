@@ -303,7 +303,7 @@ for(i in 11:19){
 # names(cell_count)
 #cell_count
 
-###cell_count2
+###celllog2
 MixC_SCmoy_G<- c()
 
 for(i in 1:9){
@@ -377,7 +377,7 @@ for(i in 1:9){
   Tol_PVmoy_G[i] <- sum(syto_stained$ToluPV_stained1[i],  syto_stained$ToluPV_stained2[i],syto_stained$ToluPV_stained3[i])/3
 }
 #cell count
-list_cell_count2 = vector(mode = "list", length = 49)
+list_celllog2 = vector(mode = "list", length = 49)
 list_cell_count2[1] = "time"
 CvTol = rep(c("MixC", "Tol"), each = 24)
 bac = rep(rep(c("SC", "PV","PVSC"), each = 8), time = 6)
@@ -404,8 +404,6 @@ cell_count2 = data.frame(time, syto_stained$MixCSC_stained1, syto_stained$MixCSC
 length(names(cell_count2))
 names(cell_count2) = list_cell_count2
 names(cell_count2)[2:49]
-
-
 
 celllog2 <- cbind(cell_count2$time, log(cell_count2[,2:49]))
 colnames(celllog2)[1] <-"time"
@@ -475,7 +473,7 @@ write.table(ess2, file = "ess2bis.csv", sep = ",")
 par(mfrow = c(1,1))
 plot(cell_count2$time, cell_count2$MixC_SCmoy_G ,cex.main=1.2,
      cex.lab=1.2,lwd=1.3,log = "y",xlim=c(0,48), ylim=c(2950,4028683330),
-     type = "l",main="SC growth\n Experiment 2 ",xlab= "Time [Hours]", ylab="SC count")
+     type = "l",main="SC growth\n Experiment 2 ",xlab= "Time [Hours]", ylab="log(SC count)")
 points(rep(cell_count2$time, times = 3), c(cell_count2$MixC_SC1_G, cell_count2$MixC_SC2_G,
                                            cell_count2$MixC_SC3_G), type = "p" )
 points(cell_count2$time,cell_count2$Tol_SCmoy_G,type="l", col="red",lwd=1.3)
@@ -505,15 +503,15 @@ legend("topleft",legend=c("SC alone in mixC","SC alone in Tol","SC in PV+SC in m
 #totPV <- data.frame(time, MixC_PVmoy, Tol_PVmoy, MixC_PVSC_PVmoy, Tol_PVSC_PVmoy)
 
 #Plot des comptes de PV
-plot(cell_count2$time, cell_count2$MixC_PVmoy_R ,log="y",lwd=1.3,
-     xlim=c(0,48),ylim=c(2950,4028683330), type="l",main="PV growth\n Experiment 2",xlab= "Time [Hours]", ylab="PV count", cex.main=1.2,
+plot(celllog2$time, celllog2$MixC_PVmoy_R ,log="y",lwd=1.3,
+     xlim=c(0,48),ylim=c(2950,4028683330), type="l",main="PV growth\n Experiment 2",xlab= "Time [Hours]", ylab="log(PV count)", cex.main=1.2,
      cex.lab=1.2)
 
 
-points(rep(cell_count2$time,times = 3),c(cell_count2$MixC_PV1_R,cell_count2$MixC_PV2_R,cell_count2$MixC_PV3_R), col = "black")
-points(cell_count2$time, cell_count2$Tol_PVmoy_R, type="l", col="red",lwd=1.3)
-points(rep(cell_count2$time,times = 3),c(cell_count2$Tol_PV1_R,cell_count2$Tol_PV2_R,cell_count2$Tol_PV3_R), col = "red")
-points(cell_count2$time,cell_count2$MixC_PVSCmoy_R, type="l", col="blue",lwd=1.3)
+points(rep(celllog2$time,times = 3),c(celllog2$MixC_PV1_R,celllog2$MixC_PV2_R,celllog2$MixC_PV3_R), col = "black")
+points(celllog2$time, celllog2$Tol_PVmoy_R, type="l", col="red",lwd=1.3)
+points(rep(celllog2$time,times = 3),c(celllog2$Tol_PV1_R,celllog2$Tol_PV2_R,celllog2$Tol_PV3_R), col = "red")
+points(celllog2$time,celllog2$MixC_PVSCmoy_R, type="l", col="blue",lwd=1.3)
 points(rep(cell_count2$time,times = 3),c(cell_count2$MixC_PVSC1_R,cell_count2$MixC_PVSC2_R,cell_count2$MixC_PVSC3_R), col = "blue")
 points(cell_count2$time,cell_count2$Tol_PVSCmoy_R, type="l", col="orange",lwd=1.3)
 points(rep(cell_count2$time,times = 3),c(cell_count2$Tol_PVSC1_R,cell_count2$Tol_PVSC2_R,cell_count2$Tol_PVSC3_R), col = "orange")
@@ -528,7 +526,7 @@ par(mfrow=c(1,1))
 ## -------------comptes totaux 
 plot(cell_count2$time, cell_count2$Tol_PVmoy_G+cell_count2$Tol_PVmoy_R,type = "l", cex.main=1.2,
      cex.lab=1.2,log = "y", main = "Total count in Toluene \n Experiment 2",
-     ylab = "Cell count", xlab = "Time[hours]", col = "green",ylim=c(2950,4028683330))
+     ylab = "log(cell count)", xlab = "Time[hours]", col = "green",ylim=c(2950,4028683330))
 points(cell_count2$time,cell_count2$Tol_PV1_G+cell_count2$Tol_PV1_R, type = "p", col = "green")
 points(cell_count2$time,cell_count2$Tol_PV2_G+cell_count2$Tol_PV2_R, type = "p", col = "green")
 points(cell_count2$time,cell_count2$Tol_PV3_G+cell_count2$Tol_PV3_R, type = "p", col = "green")
@@ -548,7 +546,7 @@ legend(x="topleft", legend = c("Tol SC alone", "Tol PV alone", "Tol PVSC"), fill
 plot(cell_count2$time, cell_count2$MixC_PVSCmoy_G+ cell_count2$MixC_PVSCmoy_R,type = "l",cex.main=1.2,
      cex.lab=1.2,
      log = "y", main = "Total count in Mixed Carbon \n Experiment 2",
-     ylab = "Cell count", xlab = "Time[hours]", col = "orange",ylim=c(2950,4028683330))
+     ylab = "log(cell count)", xlab = "Time[hours]", col = "orange",ylim=c(2950,4028683330))
 points(cell_count2$time, cell_count2$MixC_PVSC1_G+ cell_count2$MixC_PVSC1_R,type = "p", col = "orange")
 points(cell_count2$time, cell_count2$MixC_PVSC2_G+ cell_count2$MixC_PVSC2_R,type = "p", col = "orange")
 points(cell_count2$time, cell_count2$MixC_PVSC3_G+ cell_count2$MixC_PVSC3_R,type = "p", col = "orange")
@@ -569,7 +567,7 @@ legend(x="topleft",legend=c("MixC SC alone", "MixC PV alone", "MixC PVSC"), fill
 plot(cell_count2$time, cell_count2$Tol_PVmoy_G,ylim= c(2033.5,1136783330),type = "l",cex.main=1.2,
      cex.lab=1.2,
      log = "y", main = "SYTO-9 fluorescence \n Experiment 2",
-     ylab = "Count of SYTO-9 stained cells", xlab = "Time[hours]", col = "red" )
+     ylab = "log(Count of SYTO-9 stained cells)", xlab = "Time[hours]", col = "red" )
 points(cell_count2$time, cell_count2$Tol_PVSCmoy_G, type = "l", col = "blue")
 points(cell_count2$time, cell_count2$Tol_PVSC1_G,type = "p", col = "blue")
 points(cell_count2$time, cell_count2$Tol_PVSC2_G,type = "p", col = "blue")
