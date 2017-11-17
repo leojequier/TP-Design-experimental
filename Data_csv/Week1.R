@@ -720,9 +720,9 @@ TukeyHSD
 # 
 
 ## graphique problèmes
-plot(cell_count$time,  cell_count$Tol_PPmoy_G,ylim= c( 2033.5, 1136783330), type = "l",cex.main=1.2,
-     cex.lab=1.2, log="y",main = "SYTO-9 fluorescence \n Experiment 1",
-     ylab = " Count of SYTO-9 stained cells", xlab = "Time[hours]", col = "red" )
+plot(cell_count$time,  cell_count$Tol_PPmoy_G,ylim= c( 2033.5, 1136783330), type = "l",cex.main=2,
+     cex.lab=1.5, log="y",main = "SYTO-9 fluorescence \n Week 1",
+     ylab = "Total count", xlab = "Time[hours]", col = "red" )
 points(cell_count$time,  cell_count$Tol_PPSCmoy_G, type = "l", col = "blue")
 points(cell_count$time,  cell_count$Tol_PPSC1_G,type = "p", col = "blue")
 points(cell_count$time,  cell_count$Tol_PPSC2_G,type = "p", col = "blue")
@@ -735,6 +735,8 @@ points(cell_count$time,  cell_count$Tol_PP2_G,type = "p", col = "red")
 points(cell_count$time,  cell_count$Tol_PP3_G,type = "p", col = "red")
 
 legend(x = "bottomright",legend = c("PP alone in Tol", "PPSC in Tol"), fill = c("red", "blue"), cex=1.2)
+
+t.test(cell_count$Tol_PPmoy_G, cell_count$Tol_PPSCmoy_G) #p = 0.6916
 
 ###------------------------------------------------Comptes totaux
 ## MIx carbon PPsc moyenne
