@@ -1,0 +1,467 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%2345678901234567890123456789012345678901234567890123456789012345678901234567890
+%    1     2     3     4     5     6     7     8
+
+%\documentclass[letterpaper, 10 pt, conference]{ieeeconf} % Comment this line out if you need a4paper
+
+\documentclass[a4paper, 10pt, conference]{ieeeconf}   % Use this line for a4 paper
+
+\IEEEoverridecommandlockouts               % This command is only needed if 
+                             % you want to use the \thanks command
+
+\overrideIEEEmargins                   % Needed to meet printer requirements.
+
+% See the \addtolength command later in the file to balance the column lengths
+% on the last page of the document
+
+% The following packages can be found on http:\\www.ctan.org
+%\usepackage{graphics} % for pdf, bitmapped graphics files
+%\usepackage{epsfig} % for postscript graphics files
+%\usepackage{mathptmx} % assumes new font selection scheme installed
+%\usepackage{times} % assumes new font selection scheme installed
+%\usepackage{amsmath} % assumes amsmath package installed
+%\usepackage{amssymb} % assumes amsmath package installed
+\usepackage{graphicx, wrapfig, framed, lipsum}
+\usepackage[font={small,it}]{caption}
+\usepackage{subcaption}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{gensymb}
+\usepackage{float}
+\usepackage{hyperref}
+\pagenumbering{roman}
+\usepackage{pdflscape}
+\usepackage{rotating}
+
+\usepackage{xltxtra}
+\setmainfont{Cambria}
+
+\usepackage{filecontents}
+\begin{filecontents*}{\jobname.bib}
+
+
+@ARTICLE{Bioremediation, 
+	author = { Bing Zhao, Chit Laa Poh}, 
+	title  = {“Insights into environmental bioremediation by microorganisms through functional genomics and proteomics”}, 
+	year  = {2008}, 
+	journal = {Proteomics}, 
+	volume = {8}, 
+	number = {1}, 
+	pages  = {874–881}
+}
+@ARTICLE{pseudomonas_putida, 
+	author = {Rüegg and al., I.}, 
+	title  = {Dynamics of Benzene and Toluene Degradation in Pseudomonas putida F1 in the Presence of the Alternative Substrate Succinate
+	}, 
+	year  = {2007}, 
+	journal = {Eng. Life Sci}, 
+	volume = {No. 4}, 
+	number = {7}, 
+	pages  = {331-342}
+}
+@ARTICLE{Pseudomonas_Veronii, 
+	author = {Morales and al., Marian}, 
+	title  = {The Genome of the Toluene-Degrading Pseudomonas veronii Strain 1YdBTEX2 and Its Differential Gene Expression in Contaminated Sand.
+	}, 
+	year  = {2016}, 
+	journal = {PLOS ONE}, 
+	volume = {November 3}, 
+	number = {DOI:10.1371/journal.pone.0165850}, 
+	pages  = {1-21}
+}
+
+@online{toluene, 
+	author = {Scottish Environment Protection Agency}, 
+	title = {Pollutant fact sheet : Toluene}, 
+	date  = {2017-11	}, 
+	url  = {http://apps.sepa.org.uk/spripa/Pages/SubstanceInformation.aspx?pid=89}
+}	
+\end{filecontents*}
+
+\usepackage[
+%backend=biber, 
+natbib=true, 
+style=numeric, 
+sorting=none
+]{biblatex}
+\addbibresource{\jobname.bib}
+\vspace{-2cm}
+\title{\LARGE \bf
+The Effect of Bacterial Interactions on Fitness
+}
+
+
+\author{Léonard Jequier, Olivier Bützberger, Evan Bexkens and Victor Amstutz% 
+}
+
+\begin{document}
+
+
+\vspace{-2cm}
+\maketitle
+\thispagestyle{plain}
+\pagestyle{plain}
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+
+	
+%	One of the crucial objectives after an environmental pollution is to recolonise the area. The first to do that are usually microorganisms, therefore helping them and understand this procedure is one of the important challenges of our time. Using bioaugmentation to help a community regrow is a recent method that can be used to fight against pollution. The two microorganism we chose for our experiment are \textit{Pseudomonas putida} and \textit{Pseudomonas veronii}, as they are able to degrade a widely used hydrocarbonate, toluene. We wanted to know if the addition of one of these strain to a bacterial community extracted from sand would have an effect on the growth of this community. In this experiment we worked with toluene and a sand community extracted from St-Sulpice. Our results are encouraging and would deserve some further experimentations. In the experiment conditions, the final amount of \textit{Pseudomonas} cells was way higher than the Sand Community cells, which means that the overall community was quite different from the starting Sand Community.
+
+In the case of an environmental pollution, the microbial community of the soil will have an important role in the degradation of the pollutant. However, adaptation to the sudden change in the soil composition is difficult for most bacterial communities. Bioaugmentation is a method that could be used to help them overcome the effect of pollution. It's the addition of bacteria able to degrade the pollutant into the contaminated environment. In our experiment, we chose to add \textit{Pseudomonas veronii} and \textit{Pseudomonas putida} to a bacterial community extracted from sand and to grow them either with toluene only or with mixed carbon\textsuperscript{1} substrate. As the two \textit{Pseudomonas} strains we added are able to degrade toluene, we wanted to know if the addition of one of these strain to this bacterial community would have an effect on the growth of this community.
+Our results are encouraging and would deserve some further experimentations. However, in the experiment conditions, the final amount of \textit{Pseudomonas} cells was way higher than the Sand Community cells, which means that the overall community was quite different from the starting Sand Community.
+
+\end{abstract}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{INTRODUCTION}
+%alternative beginning
+
+%Every surface, soil or liquid in our environment is colonised by multiple microorganisms, interacting with each other and forming communities. However, the whole complexity of the interactions are still today not always fully understood.
+%One of the most important part of these communities is that they not only interact with one another but are able to interact with other organisms. These communities can be perturbed by the effects of pollution as spillage of oil or solvent. We decided to 
+
+Every surface, soil or liquid in our environment is colonized by multiple microorganisms, interacting with each other and forming communities. However, the whole complexity of the interactions is still today not always fully understood.
+In addition, these communities also interact with other organisms and can be perturbed by the effects of pollution as spillage of oil or solvent. We decided to use toluene as a pollutant for this experiment.
+
+Toluene is a solvent widely used in industry nowadays, as a paint solvent or as extraction solvent in the cosmetic industry. Toluene is a monoaromatic volatile molecule which is toxic and ecotoxic\cite{toluene}. 
+When such event happens, one way to treat those is the use of bioremediation. There are several different techniques of bioremediation but they all have the same purpose: helping the native community to overcome the effect of pollution and promoting its regrowth. The technique that interested us in this experiment was bioaugmentation, the addition of a microorganism able to degrade the targeted pollutant to a native community, allowing it to grow back \cite{Bioremediation}.
+
+The microorganisms we chose for our experiment were \textit{Pseudomonas putida} (PP) and \textit{Pseudomonas veronii} (PV), both able to metabolize toluene \cite{pseudomonas_putida} \cite{Pseudomonas_Veronii}. The bacterial community on which we tested this procedure was extracted from sand (sand community (SC)collected at St-Sulpice beach, Switzerland).
+
+To measure the number of cells in our culture we used flow cytometry\footnote{Flow cytometer, Novocyte : https://www.aceabio.com/products/nov-ocyte-flow-cytometer/, Nov. 2017}. This technique consists of passing cells one by one through a capillary and hit each cell with a laser. It also allows us to differentiate cells by their fluorescent markers.
+
+%ALTERNATIVE 1
+
+%In our experiment we wanted to know if this ability to metabolize toluene could not only have a positive effect on a native community, for example by lowering the toluene concentration or by producing metabolites that the bacteria from SC could use as carbon source. Our hypothesis for this experiment was that the addition of \textit{Pseudomonas putida} or \textit{Pseudomonas veronii} will have an effect on SC growth, especially in a toluene-only media. 
+%ALTERNATIVE 2 
+
+%Our hypothesis for this experiment was that the addition of Pseudomonas putida or Pseudomonas veronii will have an effect on SC growth, especially in a toluene-only media.
+%Ideed, we think that these Pseudomonas bacteria could produce metabolites the SC bacteria could use as carbon source or reduce the toluene concentration and thus it's toxic effect. This would lead to a better growth of the sand community in presence of one of these pseudomonas strains.
+
+Our hypothesis for this experiment was that the addition of \textit{Pseudomonas putida} or \textit{Pseudomonas veronii} will have an effect on SC growth, especially in a toluene-only media, because we think that these strains might produce metabolites the SC could use as carbon source or reduce the toluene concentration and thus its toxic effect. This would lead to a better growth of the sand community in presence of one of these \textit{Pseudomonas} strains.
+
+
+\section{MATERIAL AND METHOD}
+
+\subsection{Experimental design}
+Apart from SC, we used two bacterial strains : \textit{Pseudomonas veronii} 1YdBTEX2 (tagged with mCherry) and \textit{Pseudomonas putida F1}(also tagged with mCherry).
+
+However, keep in mind that SC isn't a single species of bacteria, but rather a community containing potentially many different species.
+%There were 3 bacterial cultures used for this experiment: \textit{Pseudomonas veronii} 1YdBTEX2 (tagged with mCherry, called PV), \textit{Pseudomonas putida F1}(tagged with mCherry, called PP) and a Sand Community, extracted from the beach of St-Sulpice. 
+We experimented with two media: a mixed carbon medium\footnote{Mixed Carbon media composition : L-Arginine, D-Xylose, Aspartic acid potassium salt, 2-Hydroxybenzoic acid, L-Phenylalanine, L-Serine, Gamma Hydroxy butyric acid, D-cellobiose, alpha-D-Lactose, Putrescine, Itaconic acid, alpha-D-Glucose-1-phosphate, D-Glucosaminic acid, N-acetyl-D-glucosamine, 4-Hydroxy benzoic acid, D-Mannitol, meso-erytritol, Galacturonic acid, Methyl pyruvate, Tween 20.} and a Minimal Media 1x (MM) with only toluene as carbon source.
+
+
+We separated the work into two weeks, and tested a different \textit{Pseudomonas} strain each time. In each experiment, we tested 2 species and their interaction in mixed carbon and toluene.
+
+\begin{figure}[H]
+
+	  
+		\includegraphics[width=9cm]{erlenmeyer.PNG}
+	\caption{Experimental design. Experiments was separated into 2 weeks, with triplicates for each bacterial culture. The number of cells was measured at multiple timepoints.}
+	\label{design_weeks}
+
+
+\end{figure}
+
+As controls, we used SC alone in both media, to prove that the medium has an effect and compare with the interaction of species. PP(or PV) alone in both media are used to show that the medium has no effect.
+We therefore had 6 unique conditions, and used 3 replicates for each. In the end, we had 18 cultures per experiment. These cultures were then sampled and counted regularly with a flow cytometer at different timepoints. The timespan between two timepoints had to vary to fit our personal schedule.
+
+
+\subsection{Extraction of Sand Community (SC)}
+The sand came from St-Sulpice. We took 200g of it and mixed it with 400 ml of 1x Minimal Media (MM) in a flask. We blocked the neck, shaked it at 25°C, 115rpm for one hour, the time needed to extract the cells from the sand. The supernatant was collected in 50 ml falcon tubes, then centrifuged at 800rpm for 10 minutes. All the supernatant was then sieved through 40 µm, and centrifuged at 4’000rpm for 30 minutes. The supernatant was discarded, the pellets re-suspended in 5 ml 1x MM. Then centrifuged at 800rpm for 10 minutes. We collected the supernatant, and repeated this step until there was no more visible pellet.
+
+
+
+\subsection{Pseudomonas veronii and Pseudomonas putida}
+The laboratory's samples were kept at -80°C, taken and streaked on LB plates with antibiotics (Gentamicin GM10). Incubated at 30°C, then streaked one colony on MM 1x plates without added carbon. All the plates were put in a closed chamber containing 200 µl 100\% toluene. The plates were incubated at 30°C. Then took one colony, put on liquid MM with 5 mM succinate, and incubated at 30°C.
+
+\subsection{Inoculation}
+We put 20 ml of mixed carbon media in nine flasks, and 20 ml of MM 1x in the other nine, where we added 200 µl toluene 100\% in a tip sealed at the bottom. Toluene being volatile, it will then evaporate and dissolve in the liquid media, it will then be the only source of carbon. We quantified the cells by using the flow cytometer, then calculated to put $10^{6}$ cells/ml in PV/PP alone flasks, SC flasks, and added twice $10^{6}$ cells in PV (or PP) + SC flasks. The flasks containing toluene were sealed to avoid toluene leaks (fig. \ref{flasks}).
+They were incubated at 25°C and constantly shaken at 110rpm during 48 hours.
+
+\subsection{Sampling and count of cells}
+Every few hours (see fig. \ref{design_weeks} for precise times), we sampled the cells. We took 200 µl from each, and plated it on a 96-well plate. We took 3 samples from each flask, to make technical replicates, and stained them with 4 µl SYTO-9 (50 µM), a  green fluorescent nucleic acid stain\footnote{ref. https://www.thermofisher.com/order/catalog/product/S34854, Nov. 2017}. 
+
+To measure the growth of our cells we used a flow cytometer. 
+Since the \textit{Pseudomonas} strains were tagged with mCherry (a red fluorescent protein encoded by mcherry gene, inserted downstream of the constitutive promoter of PP strain), and all the cells (both Gram positive and Gram negative cells) were stained with SYTO-9, we could differentiate PP/PV from SC. Also, we had to dilute our samples when the concentration of cell became too high. Otherwise we risked to clog the capillaries.
+In the first experiment, we diluted our sample 10 fold at timepoint 1 and 100 fold from timepoint 2. In the second experiment, we diluted our sample 10 fold at timepoints 1 to 4 and 100 fold from timepoint 5.
+We then adjusted the results to the original concentration during the analysis. The water in the last 2 rows is used to clean the capillary between samples.
+%\begin{figure} 
+%	\centering
+%	 \raggedright
+%	\includegraphics[width=8cm]{96wellplate.jpg}
+%	\caption{96 well plate map used in our experiments. The numbers (1, 2, 3) represent the replicates\textsuperscript{*}.}
+%	\small\textsuperscript{*} http://www.cellsignet.com/media/plates/96.jpg, Nov. 2017
+%	\label{96wellplate}
+%  
+%\vspace{-0.5cm}	
+%\end{figure}
+
+\begin{figure} [H]
+	\centering
+	 
+		\includegraphics[width=8.2cm]{scatterplot.PNG}
+		\caption{On the left, the data of unstained sample. On the right, stained samples. Horizontal axis : intensity of red fluorescence. Vertical axis : intensity of green fluorescence.}
+		\label{scatterplot}
+	  
+\end{figure}
+
+We can see on figure \ref{scatterplot} that the \textit{Pseudomonas} cells form a distinct, compact cluster (in red). The limitation between SC (in green) and remaining particles (in black) however, is a bit more subtle to determine. During the second experiment, we had the idea of using an unstained measurement to determine a threshold of green fluorescence value from which we consider the particles to be cells (reminder: as SYTO-9 binds DNA and will stain only cells). We applied these gates to every sample
+of both experiments.
+
+
+\subsection{Statistical method}
+Finally, our data was composed of red and green fluorescent cell counts for each treatment, at 4 timepoints every day for two days.\\
+We represented graphically the logarithm of these counts over time for each replica and calculated the area under the curve. It allowed to summarize the data to one value per replica of each treatment.
+We performed four two-way crossed Anova to test the difference in growth of each Species separately between the substrate. For example, to test the difference in growth of SC in the first experiment, we used: \\
+Explicative variables:
+\begin{itemize}
+	\item Species in culture: SC or SC + PP
+	\item Media: Toluene or mixed Carbon
+\end{itemize}
+Response variable:
+\begin{itemize}
+	\item Log of the area under the curve
+\end{itemize}
+
+\section{RESULTS}
+\subsection{Week 1 $\textendash$ SC, PP, PP+SC}
+\subsubsection{Total cell count comparison}
+
+
+First, we were interested in the total cell count of each treatment. We looked at the sum of both fluorescence counts.
+In mixed carbon (figure \ref{totcountmixC1}), PP and PPSC curves look very similar. SC seems to grow slower but catch up with the other culture after 40 hours.
+In toluene (figure \ref{totcounttol1}), PP and PPSC look again very similar. This time however, 
+we don’t observe any growth in the SC culture.
+This experiment shows no signs that growing PP and SC together influences the growth of the overall population or the total cell count after 48 hours, in a mixed carbon or toluene media(compared to the PP alone control).
+Since the species are marked with different fluorescence, we can also compare the growth of each population separately in each treatment.\newline
+
+\subsubsection{Sand Community}
+The growth of the sand community in each treatment for the first experiment is represented in figure \ref{SCgrowth1}.
+There is an important interaction between the explicative variables (F = 26.62, df = 1, $p = 8.64\cdot 10 ^{-4}$).
+In mixed carbon, SC grows similarly in presence or absence of PP (black and blue curve).
+In toluene however, the presence of PP allows for a 1000-fold difference on average (red and yellow curves).
+We conclude that the presence of PP affects SC differently depending on the media. In toluene, it allows for a better growth but has no effect in the mix carbon media. In addition, the effect of the media on SC is important in absence of PP. SC alone grows less in toluene than in mixed carbon.\newline
+%There is an important difference between the media (F =907.30, df = 1, $p = 2.36 \cdot 10^{-6}$). It is clearly shown on the figure \ref{PPgrowth1} (red and yellow curves vs black and blue curves).
+%In contrast, our data shows no significant difference due to the presence or absence of the sand community and no interaction.
+%We conclude that SC has no effect on the growth of PP and that PP grows better in toluene only than in mixed carbon. It is certainly due the greater amount of carbon in the toluene media.
+
+\subsubsection{Pseudomonas putida}
+There is an important difference between the media (F =907.30, df = 1, $p = 2.36 \cdot 10^{-6}$). It is clearly shown on the figure \ref{PPgrowth1} (red and yellow curves vs black and blue curves).
+In contrast, our data shows no significant difference due to the presence or absence of the sand community and no interaction.
+We conclude that SC has no effect on the growth of PP and that PP grows better in the Toluene medium than in the mix carbon medium. It is certainly due the greater amount of carbon in the toluene media.
+
+
+
+\subsection{Week 2 $\textendash$ SC, PV, PV+SC}
+
+\subsubsection{Total cell count comparison}
+The total cell count over time is represented on figure \ref{totcountmixC2} and \ref{totcounttol2}, the conclusion is the same as in the first experiment. It shows no signs that growing PV and SC together influences the growth of the overall population nor the total cell count after 48 hours, in a mixed carbon or toluene media.\newline
+\subsubsection{Sand Community}
+The growth of the sand community in each treatment for the second experiment is represented in figure \ref{SCgrowth2}.
+In contrast with the first experiment, SC was able to grow in toluene. It is not surprising, as a community extracted from sand is typically composed of many kinds of bacteria. It is likely that at least one of them can degrade a given carbon source. But it shows that the sand community we extracted behaved differently from one experiment to another and thus cannot be considered similar. Therefore, we won't be able to compare the results from the two experiments. 
+The anova on the area under the curve shows no significant effect of any explicative variables, but we believe the results could be different if we continued the culture for a day because we can see on the growth graph that SC alone is still in exponential growth at 48 hours in toluene. It is plausible that with a few more timepoints, SC would grow higher alone than in presence of PV.\newline
+
+\subsubsection{Pseudomonas veronii}
+The growth of the PV in each treatment is represented in figure \ref{PVgrowth2}.
+As in the first experiment, there is an important difference of growth between the media (F = 784.71, df = 1, $p = 2.85 \cdot 10^{-9}$). PP grew about a hundred-fold greater in toluene (red and orange) than in mixed carbon (black and blue curves).
+One can also notice that PP grew slightly less in presence of SC, in both media (blue and yellow compared to black and red curves). The difference in area under the curve is significant (F = 5.56, df = 1, $p = 0.046$).While not being as significant as our other results, it seems to indicate some competition between them in this type of culture. It seem plausible, knowing from previous experiments that PV grows a bit slower than PP and in this experiment some bacteria from the sand community were able to grow on toluene.
+\newline
+
+\section{DISCUSSION}
+While these results are promising, further analysis and plotting were carried out to ensure reliability of our results. 
+The first drawback of the design we noticed is the proportion of SC cells compared to PP or PV  (fig. \ref{barplot}). We see that the proportion of SC is low compared to the overall population ($\cong 5\%$). This would be a problem in a bioremediation context because the original community was almost completely replaced.
+
+
+\begin{figure}
+	\centering
+	 
+	\includegraphics[width=8cm]{problem_barplot.PNG}
+	\caption{Proportion of red and green fluorescence in the PV + SC and PP + SC cultures in toluene.}
+	\label{barplot}
+	  
+\end{figure}
+To solve this problem, we would like to analyse this further by trying different culture conditions. Firstly, we would try to have a mixed carbon with toluene substrate. Secondly, it would be great to vary toluene and carbon concentration. Third and final, we would like our conditions to be as close to reality as possible. For example growing the cells in sand would certainly affect their growth and fitness.
+
+We noticed the second drawback when we plotted the count of SYTO-9 stained cells over time, for PP alone and PP with SC in toluene in figure \ref {problemsyto}. 
+
+\begin{figure}
+	 
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=8cm]{problemw1.PNG}
+		
+		\label{problemw1}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=8cm]{problemw2.PNG}
+		
+		\label{problemw2}
+	\end{subfigure}
+\caption{Top figure : Total count of green stained cells in toluene for PP alone and PP with SC during week 1. it showed no significant differences. Bottom figure : Total count of green stained cells in toluene for PV alone and PV with SC during week 2. it showed no significant differences.}
+\label{problemsyto}
+  
+
+\end{figure}
+The green cells count in PP alone is surprising, knowing that SYTO-9 was used to identify SC cells, while \textit{Pseudomonas putida} was tagged with mCherry, which emits a red fluorescence.  
+
+Our hypothesis is that some \textit{Pseudomonas putida} cells died and it stopped their metabolic activities, disabling the mCherry fluorescence. However, if the cells do not lyse, their DNA is still nicely protected and can be stained by SYTO-9. 
+The similarity between the two lines hints us that what we considered as SC cells in PP + SC represented in reality mostly dead \textit{Pseudomonas putida} cells and not SC cells. 
+
+\subsection{Improvements}
+
+To circumvent this problem, another tagging method unchanged by cell death could be used. For example, a highly specific antibody to \textit{Pseudomonas putida} could be engineered. A secondary antibody, this time linked to a fluorescent protein would bind the first one and therefore mark all \textit{Pseudomonas putida} cells. This would allow a better differentiation of our communities.
+\begin{figure}[H]
+	\centering
+	
+	\includegraphics[width=8.5cm]{antibodytag.jpg}
+	\caption{Fluorescent antibody tagging, as an alternative to mCherry in this experiment}
+	\label{antibody}
+	
+\end{figure}
+Another point that could be interesting to change is the initial concentration of PP and PV. Indeed we used $10^{6}$ cells of SC and $10^{6}$ cells of PP or PV. Maybe by reducing the initial concentration of PP/PV we could reduce their competition with SC over resources, and therefore observing a better growth for SC in toluene media. 
+
+In addition, we inoculated the media with the same number of PP or PV with SC and haven't considered the fact that SC community is composed of different bacterial species.
+The high quantity of a single strain may have made it easier for them  to outgrow SC over time. 
+
+%Finally, as often in the lab, our results seem to unveil more questions than answers. We would have liked, if time allowed it, to perform additional experiments proposed above. Because in the present state, we got interesting results, but due to some unforeseeable events, we cannot be certain that they are not artefacts due to the issue differentiating the cells we mentioned before. 
+
+Finally, the results of our study open new questions for which we need to perform additional experiments, such as those described above. The issue with this staining technique might carry some artefacts that should be considered in data interpretation.
+
+In conclusion, in the present state, our study shows interesting results. However, the issue with this staining technique might carry some artefacts that should be considered in data interpretation. If time had allowed it, we would have liked to perform the additional experiments proposed above to solve this issue.
+ 
+
+%\addtolength{\textheight}{-12cm}  % This command serves to balance the column lengths
+                 % on the last page of the document manually. It shortens
+                 % the textheight of the last page by a suitable amount.
+                 % This command does not take effect until the next page
+                 % so it should come on the page before the last. Make
+                 % sure that you do not shorten the textheight too much.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\section*{Acknowledgments}
+Many thanks to Manupriyam Dubey and Andrea Vucicevic for their help in the lab and the design, their presence and support throughout this experiment. We also wish to thank Sara Mitri and Frédéric Schütz for their precious advices.
+
+
+
+\printbibliography
+\vspace*{\fill}
+\textit{APPENDIX A on next page}
+\clearpage
+APPENDIX A
+
+\begin{figure}[H]
+
+
+	\includegraphics[width=8.5cm]{flasks.jpg}
+	\caption{Flasks of week 1. The ones with the aluminum foil caps contain the mixed carbon medium and are not sealed. The ones with the red cap contain the toluene (see the sealed tip inside) and are sealed to avoid toluene leaks and loss of pollutant.}
+	\label{flasks}
+\end{figure}
+\vspace*{\fill}
+\textit{APPENDIX B on next page}
+\clearpage
+
+\begin{landscape}
+	
+	
+	\begin{figure}
+		APPENDIX B
+		
+		\flushleft
+		\begin{subfigure}{.35\textheight}
+			\centering
+			
+			\includegraphics[width=6.5cm]{totcount_mixC1.png}
+			%	\phantomsubcaption
+			\caption{}
+			%	\caption{Growth curves of total count in Mixed Carbon, Experiment 1 }
+			
+			\label{totcountmixC1}
+		\end{subfigure}%
+		\begin{subfigure}{.35\textheight}
+			\centering
+			
+			\includegraphics[width=6.5cm]{totcount_tol1.png}
+			%		\phantomsubcaption
+			\caption{}
+			%		\caption{Growth curves of total count in toluene, Experiment 1 }
+			\label{totcounttol1}
+		\end{subfigure}%	
+		\begin{subfigure}{.35\textheight}
+			\centering
+			
+			\vspace{-0.1cm}
+			\includegraphics[width=6.5cm]{SCgrowth1.png}
+			%		\phantomsubcaption
+			\caption{}
+			%		\caption{SC Growth curves, Experiment 1}
+			\label{SCgrowth1}
+		\end{subfigure}%
+		\begin{subfigure}{.35\textheight}
+			\centering
+			\vspace{0cm}
+			\includegraphics[width=6.5cm, height=4.3cm]{PPgrowth1.png}
+			%			\phantomsubcaption
+			\caption{}
+			%		\caption{PP Growth curves, Experiment 1}
+			\label{PPgrowth1}
+		\end{subfigure}	
+		\begin{subfigure}{.35\textheight}
+			\centering
+			
+			\includegraphics[width=6.5cm, height=4.65cm]{totcount_mixC2.png}
+			%		\phantomsubcaption
+			\caption{}
+			%		\caption{Growth curves of total count in Mixed Carbon, Experiment 2}
+			\label{totcountmixC2}
+		\end{subfigure}%
+		\begin{subfigure}{.35\textheight}
+			\centering
+			
+			\includegraphics[width=6.5cm]{totcount_tol2.png}
+			%		\phantomsubcaption
+			\caption{}
+			%		\caption{Growth curves of total count in toluene, Experiment 2}
+			\label{totcounttol2}
+		\end{subfigure}%	
+		\begin{subfigure}{.35\textheight}
+			\centering
+			\vspace{-0cm}	
+			\includegraphics[width=6.5cm]{SCgrowth2.png}
+			%		\phantomsubcaption
+			\caption{}
+			%		\caption{SC Growth curves, Experiment 2}
+			\label{SCgrowth2}
+		\end{subfigure}%
+		\begin{subfigure}{.35\textheight}
+			\centering
+			\vspace{-0cm}
+			\includegraphics[width=6.5cm]{PVgrowth2.png}
+			%		\phantomsubcaption
+			\caption{}
+			%		\caption{PP Growth curves, Experiment 2}
+			\label{PVgrowth2}
+		\end{subfigure}
+		
+		\caption{ Growth curves of: \ref{totcountmixC1}, Total count in Mixed Carbon, Experiment 1; \ref{totcounttol1}, Total count of cells in toluene, Experiment 2; \ref{SCgrowth1}, SC growth in different substrates, Experiment 1; \ref{PPgrowth1}, SC growth in different substrates, Experiment 1;\ref{totcountmixC2}, Total count in Mixed Carbon, Experiment 2; \ref{totcounttol2}, Total count of cells in toluene, Experiment 2; \ref{SCgrowth2}, SC growth in different substrates, Experiment 2; \ref{PVgrowth2}, SC growth in different substrates, Experiment 2.}
+		
+		
+	\end{figure}
+\end{landscape}
+
+\end{document}
