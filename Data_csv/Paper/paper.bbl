@@ -1,0 +1,127 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.8 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist[entry]{none/global/}
+    \entry{toluene}{online}{}
+      \name{author}{1}{}{%
+        {{hash=7089f5c87655462a974b8083f431d0d7}{%
+           family={Agency},
+           familyi={A\bibinitperiod},
+           given={Scottish\bibnamedelimb Environment\bibnamedelima Protection},
+           giveni={S\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{7089f5c87655462a974b8083f431d0d7}
+      \strng{fullhash}{7089f5c87655462a974b8083f431d0d7}
+      \strng{authornamehash}{7089f5c87655462a974b8083f431d0d7}
+      \strng{authorfullhash}{7089f5c87655462a974b8083f431d0d7}
+      \field{sortinit}{1}
+      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{11}
+      \field{title}{Pollutant fact sheet : Toluene}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \verb{url}
+      \verb http://apps.sepa.org.uk/spripa/Pages/SubstanceInformation.aspx?pid=89
+      \endverb
+    \endentry
+    \entry{Bioremediation}{article}{}
+      \name{author}{1}{}{%
+        {{hash=c5ae583bcbd6437df384343e8b2d4bc6}{%
+           family={Bing\bibnamedelima Zhao},
+           familyi={B\bibinitperiod\bibinitdelim Z\bibinitperiod},
+           given={Chit\bibnamedelimb Laa\bibnamedelima Poh},
+           giveni={C\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{c5ae583bcbd6437df384343e8b2d4bc6}
+      \strng{fullhash}{c5ae583bcbd6437df384343e8b2d4bc6}
+      \strng{authornamehash}{c5ae583bcbd6437df384343e8b2d4bc6}
+      \strng{authorfullhash}{c5ae583bcbd6437df384343e8b2d4bc6}
+      \field{sortinit}{2}
+      \field{sortinithash}{0aa614ace9f3a40ef5a67e7f7a184048}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proteomics}
+      \field{number}{1}
+      \field{title}{“Insights into environmental bioremediation by microorganisms through functional genomics and proteomics”}
+      \field{volume}{8}
+      \field{year}{2008}
+      \field{pages}{874\bibrangedash 881}
+      \range{pages}{8}
+    \endentry
+    \entry{pseudomonas_putida}{article}{}
+      \name{author}{2}{}{%
+        {{hash=eb005801bde091b53af0c0587436472e}{%
+           family={Rüegg},
+           familyi={R\bibinitperiod}}}%
+        {{hash=0a0ec3a9e4016a4a521b7ab7e2a9c1dc}{%
+           family={al.},
+           familyi={a\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{a152eea4244b9e45a0a9b0d867ad1921}
+      \strng{fullhash}{a152eea4244b9e45a0a9b0d867ad1921}
+      \strng{authornamehash}{a152eea4244b9e45a0a9b0d867ad1921}
+      \strng{authorfullhash}{a152eea4244b9e45a0a9b0d867ad1921}
+      \field{sortinit}{3}
+      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Eng. Life Sci}
+      \field{number}{7}
+      \field{title}{Dynamics of Benzene and Toluene Degradation in Pseudomonas putida F1 in the Presence of the Alternative Substrate Succinate}
+      \field{volume}{No. 4}
+      \field{year}{2007}
+      \field{pages}{331\bibrangedash 342}
+      \range{pages}{12}
+    \endentry
+    \entry{Pseudomonas_Veronii}{article}{}
+      \name{author}{2}{}{%
+        {{hash=b360036d10555ad6f2099d089ecf0bd8}{%
+           family={Morales},
+           familyi={M\bibinitperiod}}}%
+        {{hash=5cfac0c1ed68adb8e029a5fafde88f79}{%
+           family={al.},
+           familyi={a\bibinitperiod},
+           given={Marian},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{a9b894e3474efa1d91e07dc22ae66122}
+      \strng{fullhash}{a9b894e3474efa1d91e07dc22ae66122}
+      \strng{authornamehash}{a9b894e3474efa1d91e07dc22ae66122}
+      \strng{authorfullhash}{a9b894e3474efa1d91e07dc22ae66122}
+      \field{sortinit}{4}
+      \field{sortinithash}{d221becdd544034cf9082056cd6e6d2d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{PLOS ONE}
+      \field{number}{DOI:10.1371/journal.pone.0165850}
+      \field{title}{The Genome of the Toluene-Degrading Pseudomonas veronii Strain 1YdBTEX2 and Its Differential Gene Expression in Contaminated Sand.}
+      \field{volume}{November 3}
+      \field{year}{2016}
+      \field{pages}{1\bibrangedash 21}
+      \range{pages}{21}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+
