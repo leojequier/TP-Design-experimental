@@ -33,6 +33,8 @@
 \pagenumbering{roman}
 \usepackage{pdflscape}
 \usepackage{rotating}
+\usepackage{color}
+\usepackage{geometry}
 
 \usepackage{xltxtra}
 \setmainfont{Cambria}
@@ -88,7 +90,7 @@ sorting=none
 \addbibresource{\jobname.bib}
 \vspace{-2cm}
 \title{\LARGE \bf
-The Effect of Bacterial Interactions on Fitness
+Can a toluene-degrading bacteria improve the growth of a bacterial community in case of toluene pollution ?
 }
 
 
@@ -110,8 +112,10 @@ The Effect of Bacterial Interactions on Fitness
 	
 %	One of the crucial objectives after an environmental pollution is to recolonise the area. The first to do that are usually microorganisms, therefore helping them and understand this procedure is one of the important challenges of our time. Using bioaugmentation to help a community regrow is a recent method that can be used to fight against pollution. The two microorganism we chose for our experiment are \textit{Pseudomonas putida} and \textit{Pseudomonas veronii}, as they are able to degrade a widely used hydrocarbonate, toluene. We wanted to know if the addition of one of these strain to a bacterial community extracted from sand would have an effect on the growth of this community. In this experiment we worked with toluene and a sand community extracted from St-Sulpice. Our results are encouraging and would deserve some further experimentations. In the experiment conditions, the final amount of \textit{Pseudomonas} cells was way higher than the Sand Community cells, which means that the overall community was quite different from the starting Sand Community.
 
-In the case of an environmental pollution, the microbial community of the soil will have an important role in the degradation of the pollutant. However, adaptation to the sudden change in the soil composition is difficult for most bacterial communities. Bioaugmentation is a method that could be used to help them overcome the effect of pollution. It's the addition of bacteria able to degrade the pollutant into the contaminated environment. In our experiment, we chose to add \textit{Pseudomonas veronii} and \textit{Pseudomonas putida} to a bacterial community extracted from sand and to grow them either with toluene only or with mixed carbon\textsuperscript{1} substrate. As the two \textit{Pseudomonas} strains we added are able to degrade toluene, we wanted to know if the addition of one of these strain to this bacterial community would have an effect on the growth of this community.
-Our results are encouraging and would deserve some further experimentations. However, in the experiment conditions, the final amount of \textit{Pseudomonas} cells was way higher than the Sand Community cells, which means that the overall community was quite different from the starting Sand Community.
+In the case of an environmental pollution, the microbial community of the soil will have an important role in the degradation of the pollutant. However, adaptation to the sudden change in the soil composition is difficult for most bacterial communities. Bioaugmentation is a method that could be used to help them overcome the effect of pollution. It's the addition of bacteria able to degrade the pollutant into the contaminated environment. In our experiment, we chose to add \textit{Pseudomonas veronii} 1YdBTEX2 and \textit{Pseudomonas putida F1} (both tagged with fluorescent mCherry protein) to a bacterial community extracted from sand and to grow them either with toluene only or with mixed carbon\textsuperscript{1} substrate. As the two \textit{Pseudomonas} strains we added are able to degrade toluene, we wanted to know if the addition of one of these strain to this bacterial community would have an effect on the growth of this community.
+Our results are encouraging and would deserve some further experimentations. However, our results indicate that the Sand Community was almost entirely replaced by \textit{Pseudomonas veronii} or \textit{putida}.
+
+%However, in the experiment conditions, the final amount of \textit{Pseudomonas} cells was way higher than the Sand Community cells, which means that the overall community was quite different from the starting Sand Community.
 
 \end{abstract}
 
@@ -127,7 +131,7 @@ Every surface, soil or liquid in our environment is colonized by multiple microo
 In addition, these communities also interact with other organisms and can be perturbed by the effects of pollution as spillage of oil or solvent. We decided to use toluene as a pollutant for this experiment.
 
 Toluene is a solvent widely used in industry nowadays, as a paint solvent or as extraction solvent in the cosmetic industry. Toluene is a monoaromatic volatile molecule which is toxic and ecotoxic\cite{toluene}. 
-When such event happens, one way to treat those is the use of bioremediation. There are several different techniques of bioremediation but they all have the same purpose: helping the native community to overcome the effect of pollution and promoting its regrowth. The technique that interested us in this experiment was bioaugmentation, the addition of a microorganism able to degrade the targeted pollutant to a native community, allowing it to grow back \cite{Bioremediation}.
+When such event happens, one way to treat those is the use of bioremediation. There are several different techniques of bioremediation but they all have the same purpose: to use live organisms to get rid of pollutants. The technique that interested us in this experiment was bioaugmentation, the addition of a microorganism able to degrade the targeted pollutant to a native community, allowing it to grow back \cite{Bioremediation}.
 
 The microorganisms we chose for our experiment were \textit{Pseudomonas putida} (PP) and \textit{Pseudomonas veronii} (PV), both able to metabolize toluene \cite{pseudomonas_putida} \cite{Pseudomonas_Veronii}. The bacterial community on which we tested this procedure was extracted from sand (sand community (SC)collected at St-Sulpice beach, Switzerland).
 
@@ -186,9 +190,7 @@ They were incubated at 25°C and constantly shaken at 110rpm during 48 hours.
 Every few hours (see fig. \ref{design_weeks} for precise times), we sampled the cells. We took 200 µl from each, and plated it on a 96-well plate. We took 3 samples from each flask, to make technical replicates, and stained them with 4 µl SYTO-9 (50 µM), a  green fluorescent nucleic acid stain\footnote{ref. https://www.thermofisher.com/order/catalog/product/S34854, Nov. 2017}. 
 
 To measure the growth of our cells we used a flow cytometer. 
-Since the \textit{Pseudomonas} strains were tagged with mCherry (a red fluorescent protein encoded by mcherry gene, inserted downstream of the constitutive promoter of PP strain), and all the cells (both Gram positive and Gram negative cells) were stained with SYTO-9, we could differentiate PP/PV from SC. Also, we had to dilute our samples when the concentration of cell became too high. Otherwise we risked to clog the capillaries.
-In the first experiment, we diluted our sample 10 fold at timepoint 1 and 100 fold from timepoint 2. In the second experiment, we diluted our sample 10 fold at timepoints 1 to 4 and 100 fold from timepoint 5.
-We then adjusted the results to the original concentration during the analysis. The water in the last 2 rows is used to clean the capillary between samples.
+Since \textit{Pseudomonas putida F1} and \textit{Pseudomonas veronii} 1YdBTEX2 were tagged with mCherry (a red fluorescent protein encoded by mcherry gene, inserted downstream of the constitutive promoter of PP strain), and all the cells (both Gram positive and Gram negative cells) were stained with SYTO-9, we could differentiate PP/PV from SC. 
 %\begin{figure} 
 %	\centering
 %	 \raggedright
@@ -209,8 +211,16 @@ We then adjusted the results to the original concentration during the analysis. 
 	  
 \end{figure}
 
-We can see on figure \ref{scatterplot} that the \textit{Pseudomonas} cells form a distinct, compact cluster (in red). The limitation between SC (in green) and remaining particles (in black) however, is a bit more subtle to determine. During the second experiment, we had the idea of using an unstained measurement to determine a threshold of green fluorescence value from which we consider the particles to be cells (reminder: as SYTO-9 binds DNA and will stain only cells). We applied these gates to every sample
-of both experiments.
+On the left side of figure \ref{scatterplot} is a scatter plot of an unstained sample of PPSC. On the vertical axis is represented red fluorescence. The horizontal axis shows green fluorescence. A big black cluster and a red one above it can be observed. The black cluster is composed of SC cells and remaining particles. They show  low red and green fluorescence values. The PP cells express mCherry and therefore show red fluorescence, which causes an upwards shift on the plot, forming the red cluster above.
+
+On the right side of figure \ref{scatterplot} is a scatterplot of a sample from the same culture at the same timepoint but stained with SYTO-9. The SYTO-9 binds DNA and stains all the cells (\textit{Pseudomonas} and Sand Community alike) with a green fluorescence, which causes them to shift to the right side. However, the red fluorescence value still allows for a distinction between PP/PV and SC. The various residual particles (black cluster) are not affected by the SYTO-9. 
+
+From the unstained sample, we were able to determine gates (the red and green frames on the scatterplots) to differentiate what we will consider as SC, PP/PV or simply residual sand particles. These gates could then be applied to each sample.
+
+Also, we had to dilute our samples when the concentration of cell became too high. Otherwise we risked to clog the capillaries.
+In the first experiment, we diluted our sample 10 fold at timepoint 1 and 100 fold from timepoint 2. In the second experiment, we diluted our sample 10 fold at timepoints 1 to 4 and 100 fold from timepoint 5.
+We then adjusted the results to the original concentration during the analysis. The water in the last 2 rows is used to clean the capillary between samples.
+%We can see on figure \ref{scatterplot} that the \textit{Pseudomonas} cells form a distinct, compact cluster (in red). The limitation between SC (in green) and remaining particles (in black) however, is a bit more subtle to determine. During the second experiment, we used an unstained measurement to determine a threshold of green fluorescence value from which we consider the particles to be cells (reminder: as SYTO-9 binds DNA and will stain only cells). We applied these gates to every sample of both experiments.
 
 
 \subsection{Statistical method}
@@ -375,7 +385,7 @@ APPENDIX A
 \vspace*{\fill}
 \textit{APPENDIX B on next page}
 \clearpage
-
+\newgeometry{bottom=1.5cm,top=1.5cm}
 \begin{landscape}
 	
 	
@@ -383,75 +393,75 @@ APPENDIX A
 		APPENDIX B
 		
 		\flushleft
-		\begin{subfigure}{.35\textheight}
+		\begin{subfigure}{.47\textheight}
 			\centering
 			
-			\includegraphics[width=6.5cm]{totcount_mixC1.png}
+			\includegraphics[width=7.71cm]{totcount_mixC1.png}
 			%	\phantomsubcaption
 			\caption{}
 			%	\caption{Growth curves of total count in Mixed Carbon, Experiment 1 }
 			
 			\label{totcountmixC1}
 		\end{subfigure}%
-		\begin{subfigure}{.35\textheight}
+		\begin{subfigure}{.47\textheight}
 			\centering
 			
-			\includegraphics[width=6.5cm]{totcount_tol1.png}
+			\includegraphics[width=7.71cm]{totcount_tol1.png}
 			%		\phantomsubcaption
 			\caption{}
 			%		\caption{Growth curves of total count in toluene, Experiment 1 }
 			\label{totcounttol1}
 		\end{subfigure}%	
-		\begin{subfigure}{.35\textheight}
+		\begin{subfigure}{.47\textheight}
 			\centering
 			
-			\vspace{-0.1cm}
-			\includegraphics[width=6.5cm]{SCgrowth1.png}
+			%\vspace{-0.1cm}
+			\includegraphics[width=7.71cm]{SCgrowth1.png}
 			%		\phantomsubcaption
 			\caption{}
 			%		\caption{SC Growth curves, Experiment 1}
 			\label{SCgrowth1}
 		\end{subfigure}%
-		\begin{subfigure}{.35\textheight}
+		\begin{subfigure}{.47\textheight}
 			\centering
 			\vspace{0cm}
-			\includegraphics[width=6.5cm, height=4.3cm]{PPgrowth1.png}
+			\includegraphics[width=7.71cm]{PPgrowth1.png}
 			%			\phantomsubcaption
 			\caption{}
 			%		\caption{PP Growth curves, Experiment 1}
 			\label{PPgrowth1}
 		\end{subfigure}	
-		\begin{subfigure}{.35\textheight}
+		\begin{subfigure}{.47\textheight}
 			\centering
 			
-			\includegraphics[width=6.5cm, height=4.65cm]{totcount_mixC2.png}
+			\includegraphics[width=7.71cm]{totcount_mixC2.png}
 			%		\phantomsubcaption
 			\caption{}
 			%		\caption{Growth curves of total count in Mixed Carbon, Experiment 2}
 			\label{totcountmixC2}
 		\end{subfigure}%
-		\begin{subfigure}{.35\textheight}
+		\begin{subfigure}{.47\textheight}
 			\centering
 			
-			\includegraphics[width=6.5cm]{totcount_tol2.png}
+			\includegraphics[width=7.71cm]{totcount_tol2.png}
 			%		\phantomsubcaption
 			\caption{}
 			%		\caption{Growth curves of total count in toluene, Experiment 2}
 			\label{totcounttol2}
 		\end{subfigure}%	
-		\begin{subfigure}{.35\textheight}
+		\begin{subfigure}{.47\textheight}
 			\centering
 			\vspace{-0cm}	
-			\includegraphics[width=6.5cm]{SCgrowth2.png}
+			\includegraphics[width=7.71cm]{SCgrowth2.png}
 			%		\phantomsubcaption
 			\caption{}
 			%		\caption{SC Growth curves, Experiment 2}
 			\label{SCgrowth2}
 		\end{subfigure}%
-		\begin{subfigure}{.35\textheight}
+		\begin{subfigure}{.47\textheight}
 			\centering
 			\vspace{-0cm}
-			\includegraphics[width=6.5cm]{PVgrowth2.png}
+			\includegraphics[width=7.71cm]{PVgrowth2.png}
 			%		\phantomsubcaption
 			\caption{}
 			%		\caption{PP Growth curves, Experiment 2}
