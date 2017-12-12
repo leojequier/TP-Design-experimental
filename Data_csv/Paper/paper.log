@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.8.8)  12 DEC 2017 16:27
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.8.8)  12 DEC 2017 17:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1086,43 +1086,43 @@ File: english.lbx 2016/12/05 v3.7 biblatex localization (PK/JW/AB)
  (./paper.aux)
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \celsius on input line 100.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 100
+LaTeX Info: Redefining \celsius on input line 133.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 133
 .
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 100.
-Package gensymb Info: Using \Omega for \ohm on input line 100.
+LaTeX Info: Redefining \ohm on input line 133.
+Package gensymb Info: Using \Omega for \ohm on input line 133.
 
 Package gensymb Warning: Not defining \micro.
 
 \AtBeginShipoutBox=\box55
-Package hyperref Info: Link coloring OFF on input line 100.
+Package hyperref Info: Link coloring OFF on input line 133.
 (c:/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -1131,9 +1131,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count407
 )
-LaTeX Info: Redefining \ref on input line 100.
-LaTeX Info: Redefining \pageref on input line 100.
-LaTeX Info: Redefining \nameref on input line 100.
+LaTeX Info: Redefining \ref on input line 133.
+LaTeX Info: Redefining \pageref on input line 133.
+LaTeX Info: Redefining \nameref on input line 133.
 
 (./paper.out) (./paper.out)
 \@outlinefile=\write5
@@ -1181,60 +1181,60 @@ LaTeX Info: Redefining \nameref on input line 100.
 .................................................
 \symlegacymaths=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 100.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 100.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 100.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 100.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 100.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 100.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 100.
-LaTeX Font Info:    Redeclaring math accent \check on input line 100.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 100.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 100.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 100.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 100.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 100.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 100.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 100.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 100.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 100.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 100.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 100.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 100.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 100.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 100.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 100.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 100.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 133.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 133.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 133.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 133.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 133.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 133.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 133.
+LaTeX Font Info:    Redeclaring math accent \check on input line 133.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 133.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 133.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 133.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 133.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 133.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 133.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 133.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 133.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 133.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 133.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 133.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 133.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 133.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 133.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 133.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 133.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 100.
+(Font)              `operators' in the math version `normal' on input line 133.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/Cambria(0)/m/n on input line 100.
+(Font)                  OT1/cmr/m/n --> TU/Cambria(0)/m/n on input line 133.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 100.
+(Font)              `operators' in the math version `bold' on input line 133.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/Cambria(0)/m/n on input line 100.
+(Font)                  OT1/cmr/bx/n --> TU/Cambria(0)/m/n on input line 133.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  TU/Cambria(0)/m/n --> TU/Cambria(0)/m/n on input line 1
-00.
+33.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/Cambria(0)/m/it on input line 100.
+(Font)                  OT1/cmr/m/it --> TU/Cambria(0)/m/it on input line 133.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/Cambria(0)/bx/n on input line 100.
+(Font)                  OT1/cmr/bx/n --> TU/Cambria(0)/bx/n on input line 133.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 100.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 133.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 100.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 133.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  TU/Cambria(0)/m/n --> TU/Cambria(0)/bx/n on input line 
-100.
+133.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/Cambria(0)/bx/it on input line 100
+(Font)                  OT1/cmr/bx/it --> TU/Cambria(0)/bx/it on input line 133
 .
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 100.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 133.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 100.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 133.
 Package biblatex Info: XeTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
 Package biblatex Info: Automatic encoding selection.
@@ -1244,8 +1244,40 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'paper.bbl' found.
 (./paper.bbl)
-Package biblatex Info: Reference section=0 on input line 100.
-Package biblatex Info: Reference segment=0 on input line 100.
+Package biblatex Info: Reference section=0 on input line 133.
+Package biblatex Info: Reference segment=0 on input line 133.
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: xetex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(48.36958pt, 500.7687pt, 48.36958pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=500.7687pt
+* \textheight=731.23584pt
+* \oddsidemargin=-23.9004pt
+* \evensidemargin=-23.9004pt
+* \topmargin=-15.36449pt
+* \headheight=0.0pt
+* \headsep=0.0pt
+* \topskip=12.0pt
+* \footskip=28.90755pt
+* \marginparwidth=20.0pt
+* \marginparsep=10.0pt
+* \columnsep=14.45377pt
+* \skip\footins=10.79993pt plus 4.79993pt minus 2.39996pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumntrue
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1276,205 +1308,188 @@ Package biblatex Info: Reference segment=0 on input line 100.
 File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 138--138
-[][][][]\TU/Cambria(0)/m/n/8 Flow cytometer, Novocyte :
+Overfull \hbox (4.8274pt too wide) in paragraph at lines 171--171
+[][][][]\TU/Cambria(0)/m/n/8 Flow cytometer, Novocyte : https://www.aceabio.com
+/products/nov-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--138
-\TU/Cambria(0)/m/n/8 https://www.aceabio.com/products/nov-ocyte-flow-
+Underfull \hbox (badness 1701) in paragraph at lines 191--191
+\TU/Cambria(0)/m/n/8 Gamma Hydroxy butyric acid, D-cellobiose, alpha-D-Lactose,
+ Pu-
  []
 
+File: erlenmeyer.PNG Graphic file (type bmp)
+<erlenmeyer.PNG>
 
-Underfull \hbox (badness 1400) in paragraph at lines 154--155
-\TU/Cambria(0)/m/n/10 mCherry) and \TU/Cambria(0)/m/it/10 Pseudomonas putida F1
-\TU/Cambria(0)/m/n/10 (also
- []
-
-
-Underfull \hbox (badness 3000) in paragraph at lines 158--158
-\TU/Cambria(0)/m/n/8 acid, L-Phenylalanine, L-Serine, Gamma Hydroxy bu-
+Overfull \hbox (12.91733pt too wide) in paragraph at lines 199--200
+[][] 
  []
 
 [1
 
 
+
 ]
-File: erlenmeyer.PNG Graphic file (type bmp)
-<erlenmeyer.PNG>
-
-Overfull \hbox (54.17485pt too wide) in paragraph at lines 166--167
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 182--182
- \TU/Cambria(0)/m/it/10 C. Pseudomonas veronii and Pseudomonas
- []
-
-LaTeX Font Info:    Try loading font information for U+msa on input line 186.
-(c:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
+LaTeX Font Info:    Try loading font information for U+msa on input line 219.
+ (c:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 186.
+LaTeX Font Info:    Try loading font information for U+msb on input line 219.
 
 (c:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (43.81892pt too wide) in paragraph at lines 190--190
+Overfull \hbox (2.5614pt too wide) in paragraph at lines 223--223
 [][][][]\TU/Cambria(0)/m/n/8 ref. https://www.thermofisher.com/order/catalog/pr
 oduct/S34854,
  []
 
-[2]
 File: t8_unstained_ppsc11.PNG Graphic file (type bmp)
 <t8_unstained_ppsc11.PNG>
 
-Overfull \hbox (54.17485pt too wide) in paragraph at lines 208--209
+Overfull \hbox (4.38141pt too wide) in paragraph at lines 241--242
  [][] 
  []
 
 
-LaTeX Warning: Command \textendash invalid in math mode on input line 241.
+Underfull \hbox (badness 1603) in paragraph at lines 260--265
+\TU/Cambria(0)/m/n/10 We represented graphically the logarithm of these
+ []
+
+[2]
+
+LaTeX Warning: Command \textendash invalid in math mode on input line 274.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 241.
+(hyperref)                removing `math shift' on input line 274.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 241.
+(hyperref)                removing `math shift' on input line 274.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--251
+Underfull \hbox (badness 3679) in paragraph at lines 278--284
+ \TU/Cambria(0)/m/it/10 1) Total cell count comparison: [][][] \TU/Cambria(0)/m
+/n/10 First, we were
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 278--284
 
  []
 
-[3]
-Underfull \hbox (badness 1448) in paragraph at lines 253--261
+
+Underfull \hbox (badness 6252) in paragraph at lines 286--294
  \TU/Cambria(0)/m/it/10 2) Sand Community: [][][] \TU/Cambria(0)/m/n/10 The gro
-wth of the
+wth of the sand
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--261
+Underfull \hbox (badness 2310) in paragraph at lines 286--294
+\TU/Cambria(0)/m/n/10 interaction between the explicative variables (F =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 286--294
 
  []
 
 
-LaTeX Warning: Command \textendash invalid in math mode on input line 269.
+LaTeX Warning: Command \textendash invalid in math mode on input line 302.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 269.
+(hyperref)                removing `math shift' on input line 302.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 269.
+(hyperref)                removing `math shift' on input line 302.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 272--273
+Underfull \hbox (badness 10000) in paragraph at lines 305--306
 
  []
 
 
-Underfull \hbox (badness 1448) in paragraph at lines 274--277
+Underfull \hbox (badness 6252) in paragraph at lines 307--310
  \TU/Cambria(0)/m/it/10 2) Sand Community: [][][] \TU/Cambria(0)/m/n/10 The gro
-wth of the
+wth of the sand
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 274--277
+Underfull \hbox (badness 10000) in paragraph at lines 307--310
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 279--283
+Underfull \hbox (badness 10000) in paragraph at lines 312--316
 
  []
 
-[4]
 File: problem_barplot.PNG Graphic file (type bmp)
 <problem_barplot.PNG>
-
-Overfull \hbox (25.72209pt too wide) in paragraph at lines 292--293
- [][] 
- []
-
 File: problemw1.PNG Graphic file (type bmp)
 <problemw1.PNG>
-
-Overfull \hbox (18.49521pt too wide) in paragraph at lines 305--306
- [][] 
- []
-
 File: problemw2.PNG Graphic file (type bmp)
 <problemw2.PNG>
 
-Overfull \hbox (18.49521pt too wide) in paragraph at lines 311--312
- [][] 
- []
-
-
-Overfull \hbox (7.22688pt too wide) in paragraph at lines 303--315
+Overfull \hbox (7.22688pt too wide) in paragraph at lines 336--348
 []$[]$
  []
 
 
-Overfull \hbox (7.22688pt too wide) in paragraph at lines 303--315
+Overfull \hbox (7.22688pt too wide) in paragraph at lines 336--348
 []$ 
  []
 
+[3]
 File: antibodytag.jpg Graphic file (type bmp)
 <antibodytag.jpg>
 
-Overfull \hbox (39.94847pt too wide) in paragraph at lines 331--332
- [][] 
+Underfull \hbox (badness 1655) in paragraph at lines 406--406
+[]\TU/Cambria(0)/m/n/10 Scottish Environment Protection Agency. \TU/Cambria(0)/
+m/it/10 Pollu-
  []
 
 
-Underfull \vbox (badness 2310) has occurred while \output is active []
-
- [5]
-Underfull \hbox (badness 5802) in paragraph at lines 373--373
-[]\TU/Cambria(0)/m/n/10 Chit Laa Poh Bing Zhao. ““Insights
+Underfull \hbox (badness 1430) in paragraph at lines 406--406
+[] [] [][][][] [] [][][][] [] [][][] [] [][] [] [][][][][][] [] [][][][][] []
  []
 
 
-Underfull \hbox (badness 2368) in paragraph at lines 373--373
-\TU/Cambria(0)/m/n/10 into environmental bioremediation by
+Underfull \hbox (badness 1997) in paragraph at lines 406--406
+\TU/Cambria(0)/m/n/10 vironmental bioremediation by microorganisms
+ []
+
+[4]
+Underfull \hbox (badness 4120) in paragraph at lines 406--406
+[]\TU/Cambria(0)/m/n/10 Marian Morales et al. “The Genome of the
  []
 
 
-Underfull \hbox (badness 2744) in paragraph at lines 373--373
-[]\TU/Cambria(0)/m/n/10 Rüegg and I. al. “Dynamics of Ben-
+Underfull \hbox (badness 2644) in paragraph at lines 406--406
+\TU/Cambria(0)/m/n/10 Toluene-Degrading Pseudomonas veronii Strain
  []
 
 
-Underfull \hbox (badness 1521) in paragraph at lines 373--373
-\TU/Cambria(0)/m/n/10 veronii Strain 1YdBTEX2 and Its Dif-
+Underfull \hbox (badness 5667) in paragraph at lines 406--406
+\TU/Cambria(0)/m/n/10 1YdBTEX2 and Its Differential Gene Expres-
  []
 
 
-Underfull \hbox (badness 1845) in paragraph at lines 373--373
-\TU/Cambria(0)/m/n/10 ferential Gene Expression in Contam-
+Underfull \hbox (badness 6110) in paragraph at lines 406--406
+\TU/Cambria(0)/m/n/10 sion in Contaminated Sand.” In: \TU/Cambria(0)/m/it/10 PL
+OS ONE
  []
 
+[5
 
-Underfull \hbox (badness 3078) in paragraph at lines 373--373
-\TU/Cambria(0)/m/n/10 inated Sand.” In: \TU/Cambria(0)/m/it/10 PLOS ONE \TU/Cam
-bria(0)/m/n/10 Novem-
- []
-
-[6]
+]
 File: flasks.jpg Graphic file (type bmp)
 <flasks.jpg>
-
-Overfull \hbox (39.94847pt too wide) in paragraph at lines 381--382
-[][] 
- []
-
-[7
+ [6
 
 
 ]
@@ -1513,66 +1528,66 @@ Overfull \hbox (39.94847pt too wide) in paragraph at lines 381--382
 File: totcount_mixC1.png Graphic file (type bmp)
 <totcount_mixC1.png>
 
-Overfull \hbox (22.7912pt too wide) in paragraph at lines 399--401
+Overfull \hbox (22.7912pt too wide) in paragraph at lines 432--434
  [][] 
  []
 
 File: totcount_tol1.png Graphic file (type bmp)
 <totcount_tol1.png>
 
-Overfull \hbox (22.7912pt too wide) in paragraph at lines 409--411
+Overfull \hbox (22.7912pt too wide) in paragraph at lines 442--444
  [][] 
  []
 
 File: SCgrowth1.png Graphic file (type bmp)
 <SCgrowth1.png>
 
-Overfull \hbox (22.7912pt too wide) in paragraph at lines 419--421
+Overfull \hbox (22.7912pt too wide) in paragraph at lines 452--454
  [][] 
  []
 
 File: PPgrowth1.png Graphic file (type bmp)
 <PPgrowth1.png>
 
-Overfull \hbox (22.7912pt too wide) in paragraph at lines 428--430
+Overfull \hbox (22.7912pt too wide) in paragraph at lines 461--463
  [][] 
  []
 
 File: totcount_mixC2.png Graphic file (type bmp)
 <totcount_mixC2.png>
 
-Overfull \hbox (22.7912pt too wide) in paragraph at lines 437--439
+Overfull \hbox (22.7912pt too wide) in paragraph at lines 470--472
  [][] 
  []
 
 File: totcount_tol2.png Graphic file (type bmp)
 <totcount_tol2.png>
 
-Overfull \hbox (22.7912pt too wide) in paragraph at lines 446--448
+Overfull \hbox (22.7912pt too wide) in paragraph at lines 479--481
  [][] 
  []
 
 File: SCgrowth2.png Graphic file (type bmp)
 <SCgrowth2.png>
 
-Overfull \hbox (22.7912pt too wide) in paragraph at lines 455--457
+Overfull \hbox (22.7912pt too wide) in paragraph at lines 488--490
  [][] 
  []
 
 File: PVgrowth2.png Graphic file (type bmp)
 <PVgrowth2.png>
 
-Overfull \hbox (22.7912pt too wide) in paragraph at lines 464--466
+Overfull \hbox (22.7912pt too wide) in paragraph at lines 497--499
  [][] 
  []
 
 
-Overfull \hbox (26.63031pt too wide) in paragraph at lines 396--470
+Overfull \hbox (26.63031pt too wide) in paragraph at lines 429--503
 []$$[]$$[]$$[]$ 
  []
 
 
-Overfull \hbox (26.63031pt too wide) in paragraph at lines 396--470
+Overfull \hbox (26.63031pt too wide) in paragraph at lines 429--503
 []$$[]$$[]$$[]$  
  []
 
@@ -1581,7 +1596,7 @@ Overfull \hbox (1101.12352pt too wide) has occurred while \output is active
 [] []|[] []
  []
 
-[8
+[7
 
 
 
@@ -1598,11 +1613,11 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 477.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 477.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 510.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 510.
 (./paper.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 477.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 477.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 510.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 510.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1610,15 +1625,15 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package logreq Info: Writing requests to 'paper.run.xml'.
 \openout1 = `paper.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 477.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 510.
  ) 
 Here is how much of TeX's memory you used:
  27878 strings out of 492998
  521586 string characters out of 6137852
- 1085740 words of memory out of 5000000
+ 1089740 words of memory out of 5000000
  31567 multiletter control sequences out of 15000+600000
  532907 words of font info for 103 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 45i,9n,67p,10397b,4480s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 45i,9n,67p,10397b,4483s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on paper.pdf (8 pages).
+Output written on paper.pdf (7 pages).
