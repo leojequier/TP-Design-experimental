@@ -313,8 +313,9 @@ for(i in 1:8){
 
 #Normal
 par(mfrow = c(1,1))
-plot( cell_count$time, cell_count$MixC_SCmoy_G,log="y",xlim=c(0,48),ylim=c(2950,4028683330), cex.main=1.2,
-     cex.lab=1.2,type="o",main="SC growth\n Experiment 1",xlab= "Time [Hours]", ylab="SC count")
+par(mai = rep(1,4), pin = c(10, 6))
+plot( cell_count$time, cell_count$MixC_SCmoy_G,log="y",xlim=c(0,48),ylim=c(2950,4028683330), cex.main=2.5,cex.axis=1.3,
+     cex.lab=1.7,type="o",main="SC growth\n Experiment 1",xlab= "Time [Hours]", ylab="SC count")
 #replicats
 points( cell_count$time, cell_count$MixC_SC1_G,type = "p")
 points( cell_count$time, cell_count$MixC_SC2_G,type = "p")
@@ -338,7 +339,7 @@ points(cell_count$time,cell_count$Tol_PPSC1_G, type="p", col="orange")
 points(cell_count$time,cell_count$Tol_PPSC2_G, type="p", col="orange")
 points(cell_count$time,cell_count$Tol_PPSC3_G, type="p", col="orange")
 
-legend("topleft", cex=1.2,legend=c("SC alone in mixC","SC alone in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
+legend("topleft", cex.2,legend=c("SC alone in mixC","SC alone in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
 
 #AIRE COLOREES
 x<-c(0,cell_count$time)
@@ -346,8 +347,8 @@ y <- c(0,cell_count$MixC_SCmoy_G)
 
 xleo = c(0, cell_count$time,48)
 
-plot(x,y,log="y",xlim=c(0,48),cex.main=1.2,
-     cex.lab=1.2,ylim=c(2950,4028683330), type="o",main="SC growth\nWeek1",xlab= "Time [Hours]", ylab="log(SC count)")
+plot(x,y,log="y",xlim=c(0,48),cex.main=2.5,cex.axis=1.3,
+     cex.lab=1.7,ylim=c(2950,4028683330), type="o",main="SC growth\nWeek1",xlab= "Time [Hours]", ylab="log(SC count)")
 yleo = c(100,cell_count$MixC_SCmoy_G,100)
 polygon(xleo, yleo, col=rgb(0.1,0.1,0.1,0.5))
 
@@ -362,7 +363,7 @@ polygon(xleo, yol2, col=rgb(0,0,1,0.4))
 points(cell_count$time,cell_count$Tol_PPSCmoy_G, type="o", col="orange")
 yol3 <- c(100,cell_count$Tol_PPSCmoy_G,100)
 polygon(xleo, yol3, col=rgb(0.8,0.3,0.1,0.4))
-legend("topleft", cex=1.2,legend=c("SC alone in mixC","SC alone in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
+legend("topleft", cex.2,legend=c("SC alone in mixC","SC alone in Tol","SC in PPSC in mixC","SC in PPSC in Tol"),fill=c("black","red","blue","orange"))
 
 #plot(cell_count$time, cell_count$MixC_PPmoy_G, log="y",xlim=c(0,48),ylim=c(min(cell_count$Tol_PPmoy_G), max(cell_count$Tol_PPSCmoy_G + cell_count$Tol_PPSCmoy_R)),type="o", col="green")
 #points(cell_count$time, (cell_count$MixC_PPSCmoy_G + cell_count$MixC_PPSCmoy_R), type="o", col="brown")
@@ -373,8 +374,8 @@ legend("topleft", cex=1.2,legend=c("SC alone in mixC","SC alone in Tol","SC in P
 #SAME WITH PP (fluoresence rouge)
 par(mai= c(1,1,1,1))
 ##Plot des comptes de PP
-plot(cell_count$time, cell_count$Tol_PPmoy_R,cex.main=1.2,log="y",
-     cex.lab=1.2,xlim=c(0,48),ylim=c(2950,4028683330), type="l", col = "red"
+plot(cell_count$time, cell_count$Tol_PPmoy_R,cex.main=2.5,cex.axis=1.3,log="y",
+     cex.lab=1.7,xlim=c(0,48),ylim=c(2950,4028683330), type="l", col = "red"
      ,main="PP growth\n Experiment 1",xlab= "Time [Hours]", ylab="PP count")
 ## replicats
 points(cell_count$time,cell_count$Tol_PP1_R, type="p", col="red")
@@ -509,20 +510,20 @@ par(mfrow = c(1,1))
 par(mai = c(2,1,1,1))
 AUC_col = rep(c("red", "black", "blue","black", "black", "green", "black", "orange","black","black", "black", "black"), each = 3)
 plot(rep(1:10, each = 3), log(week$AUC[1:30]),
-     cex.main=1.2,
-     cex.lab=1.2,main = "Area under the curve according to the treatment\nWeek1",
-     xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4), col=AUC_col)
-axis(1, cex=1.2,at = 1:10, labels = unique(eti[1:30]), las = 2, hadj = T, font = 2, outer = F)
+     cex.main=2.5,cex.axis=1.3,
+     cex.lab=1.7,main = "Area under the curve according to the treatment\n Week 1",
+     xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4))
+axis(1, cex=2,at = 1:10, labels = unique(eti[1:30]), las = 2, hadj = T, font = 2, outer = F)
 
 ## graphes de l'anova SC semaine 1 seulement 4 valeurs
 par(mfrow = c(1,1))
 par(mai = c(2,1,1,1))
 AUC_col = rep(c("black", "blue", "red","orange"), each = 3)
 plot(rep(1:4, each = 3), log(week$AUC[c(1:3,7:9,16:18, 22:24)]),
-     cex.main=1.2,
-     cex.lab=1.2,main = "Area under the curve according to the treatment\nSC Experiment 1",
+     cex.main=2.5,cex.axis=1.3,
+     cex.lab=1.7,main = "Area under the curve according to the treatment\nSC Experiment 1",
      xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4), col=AUC_col, ylim = range(log(week$AUC)))
-axis(1, cex=1.2,at = 1:4, labels = c("SC in MixC", "SC in MixC\n in presence of PP ","SC in Tol", "SC in tol\nin presence of PP" ), las = 2, hadj = T, font = 2, outer = F)
+axis(1, cex.2,at = 1:4, labels = c("SC in MixC", "SC in MixC\n in presence of PP ","SC in Tol", "SC in tol\nin presence of PP" ), las = 2, hadj = T, font = 2, outer = F)
 #effect de pp in tol
 abline(h = mean(log(week$AUC[c(22:24)])))
 abline(h = mean(log(week$AUC[c(16:18)])))
@@ -564,19 +565,19 @@ TukeyHSD(modelw1_SC)
 ## graphes week 1 PP
 AUC_col_pseudo = rep(c( "black","red", "black", "blue", "black", "black", "green", "black", "orange","black"), each = 3)
 plot(rep(1:10, each = 3), log(week$AUC[1:30]),
-     cex.main=1.2,
-     cex.lab=1.2, main = "Area under the curve according to the treatment\nWeek1",
+     cex.main=2.5,cex.axis=1.3,
+     cex.lab=1.7, main = "Area under the curve according to the treatment\nWeek1",
      xlab = "", xaxt = "n", ylab = "log (AUC)", col = AUC_col_pseudo, pch=c(1,3,4))
-axis(1, cex=1.2,at = 1:10, labels = unique(eti[1:30]), las = 2, hadj = T, font = 2, outer = F,pch = c(1,3,4))
+axis(1, cex.2,at = 1:10, labels = unique(eti[1:30]), las = 2, hadj = T, font = 2, outer = F,pch = c(1,3,4))
 
 ## graphes seulement 4 valeurs
 par(mai = c(2,1,1,1))
 AUC_col = rep(c("black", "blue", "red","orange"), each = 3)
 plot(rep(1:4, each = 3), log(week$AUC[c(4:6,10:12,19:21, 25:27)]),
-     cex.main=1.2,
-     cex.lab=1.2,main = "Area under the curve according to the treatment\n PP Experiment 1",
+     cex.main=2.5,cex.axis=1.3,
+     cex.lab=1.7,main = "Area under the curve according to the treatment\n PP Experiment 1",
      xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4), col=AUC_col, ylim = range(log(week$AUC)))
-axis(1, cex=1.2,at = 1:4, labels = c("PP in MixC", "PP in MixC\n in presence of SC ","PP in Tol", "PP in tol\nin presence of SC" ), las = 2, hadj = T, font = 2, outer = F)
+axis(1, cex.2,at = 1:4, labels = c("PP in MixC", "PP in MixC\n in presence of SC ","PP in Tol", "PP in tol\nin presence of SC" ), las = 2, hadj = T, font = 2, outer = F)
 
 
 ## test week 1 PP 
@@ -613,20 +614,20 @@ TukeyHSD(modelw1_PP)
 #----------------week2
 #graphes week 2 SC
 plot(rep(1:10, each = 3), log(week$AUC[31:60]),
-     main = "Area under the curve according to the treatment\nWeek2",
-     cex.main=1.2,
-     cex.lab=1.2, xlab = "", xaxt = "n", ylab = "log (AUC)", col = AUC_col, pch = c(1,3,4))
-axis(1, cex=1.2,at = 1:10, labels = unique(eti[31:60]), las = 2, hadj = T, font = 2, outer = F)
+     main = "Area under the curve according to the treatment\n Week 2",
+     cex.main=2.5,cex.axis=1.3,
+     cex.lab=1.7, xlab = "", xaxt = "n", ylab = "log (AUC)", pch = c(1,3,4))
+axis(1, cex.axis=1.4,at = 1:10, labels = unique(eti[31:60]), las = 2, hadj = T, font = 2, outer = F)
 
 ## graphes de l'anova SC semaine 2 seulement 4 valeurs
 par(mfrow = c(1,1))
 par(mai = c(2,1,1,1))
 AUC_col = rep(c("black", "blue", "red","yellow"), each = 3)
 plot(rep(1:4, each = 3), log(week$AUC[c(1:3,7:9,16:18, 22:24)+30]),
-     cex.main=1.2,
-     cex.lab=1.2,main = "Area under the curve according to the treatment\nSC Experiment 2",
+     cex.main=2.5,cex.axis=1.3,
+     cex.lab=1.7,main = "Area under the curve according to the treatment\nSC Experiment 2",
      xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4), col=AUC_col, ylim = range(log(week$AUC)))
-axis(1, cex=1.2,at = 1:4, labels = c("SC in MixC", "SC in MixC\n in presence of PV ","SC in Tol", "SC in tol\nin presence of PV" ), las = 2, hadj = T, font = 2, outer = F)
+axis(1, cex.2,at = 1:4, labels = c("SC in MixC", "SC in MixC\n in presence of PV ","SC in Tol", "SC in tol\nin presence of PV" ), las = 2, hadj = T, font = 2, outer = F)
 abline(h = mean(log(week$AUC[c(16:18, 22:24)])))
 
 
@@ -653,19 +654,19 @@ par(mfrow=c(1,1))
 AUC_col_pseudo = rep(c( "black","red", "black", "blue", "black", "black", "green", "black", "orange","black"), each = 3)
 plot(rep(1:10, each = 3), log(week$AUC[31:60]),
      main = "Area under the curve according to the treatment\nWeek2",
-     cex.main=1.2,
-     cex.lab=1.2,xlab = "", xaxt = "n", ylab = "log (AUC)", col = AUC_col_pseudo, pch = c(1,3,4))
-axis(1,cex=1.2, at = 1:10, labels = unique(eti[31:60]), las = 2, hadj = T, font = 2, outer = F)
+     cex.main=2.5,cex.axis=1.3,
+     cex.lab=1.7,xlab = "", xaxt = "n", ylab = "log (AUC)", col = AUC_col_pseudo, pch = c(1,3,4))
+axis(1,cex.2, at = 1:10, labels = unique(eti[31:60]), las = 2, hadj = T, font = 2, outer = F)
 
 
 ## graphes seulement 4 valeurs
 par(mai = c(2,1,1,1))
 AUC_col = rep(c("black", "blue", "red","yellow"), each = 3)
 plot(rep(1:4, each = 3), log(week$AUC[c(4:6,10:12,19:21, 25:27)+30]),
-     cex.main=1.2,
-     cex.lab=1.2,main = "Area under the curve according to the treatment\n PV Experiment 2",
+     cex.main=2.5,cex.axis=1.3,
+     cex.lab=1.7,main = "Area under the curve according to the treatment\n PV Experiment 2",
      xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4), col=AUC_col, ylim = range(log(week$AUC)))
-axis(1, cex=1.2,at = 1:4, labels = c("PV in MixC", "PV in MixC\n in presence of SC ","PV in Tol", "PV in tol\nin presence of SC" ), las = 2, hadj = T, font = 2, outer = F)
+axis(1, cex.2,at = 1:4, labels = c("PV in MixC", "PV in MixC\n in presence of SC ","PV in Tol", "PV in tol\nin presence of SC" ), las = 2, hadj = T, font = 2, outer = F)
 
 
 ## test week 2 PV
@@ -734,15 +735,16 @@ points(cell_count$time,  cell_count$Tol_PP1_G,type = "p", col = "red")
 points(cell_count$time,  cell_count$Tol_PP2_G,type = "p", col = "red")
 points(cell_count$time,  cell_count$Tol_PP3_G,type = "p", col = "red")
 
-legend(x = "bottomright",legend = c("PP alone in Tol", "PPSC in Tol"), fill = c("red", "blue"), cex=1.2)
+legend(x = "bottomright",legend = c("PP alone in Tol", "PPSC in Tol"), fill = c("red", "blue"), cex.2)
 
 t.test(cell_count$Tol_PPmoy_G, cell_count$Tol_PPSCmoy_G) #p = 0.6916
 
 ###------------------------------------------------Comptes totaux
 ## MIx carbon PPsc moyenne
+
 plot(cell_count$time,  cell_count$MixC_PPSCmoy_G+cell_count$MixC_PPSCmoy_R,type = "l",
-     cex.main=1.2,log="y",
-     cex.lab=1.2, main = "Total count in Mixed Carbon \n Experiment 1",
+     cex.main=2.5,cex.axis=1.3,log="y",
+     cex.lab=1.7, main = "Total count in Mixed Carbon \n Experiment 1",
      ylab = "Cell count", xlab = "Time[hours]", col = "orange", ylim=c( 2950, 4028683330))
 ##points pour ppsc
 points(cell_count$time,  cell_count$MixC_PPSC1_G+cell_count$MixC_PPSC1_R,type = "p", col = "orange")
@@ -761,14 +763,15 @@ points(cell_count$time,  cell_count$MixC_SC1_G+cell_count$MixC_SC1_R, type = "p"
 points(cell_count$time,  cell_count$MixC_SC2_G+cell_count$MixC_SC2_R, type = "p", col = "green")
 points(cell_count$time,  cell_count$MixC_SC3_G+cell_count$MixC_SC3_R, type = "p", col = "green")
 
-legend(x="topleft", legend = c("MixC SC alone", "MixC PP alone", "MixC PPSC"), fill=c( "green", "red", "orange"),cex=1.2)
+legend(x="topleft", legend = c("MixC SC alone", "MixC PP alone", "MixC PPSC"), fill=c( "green", "red", "orange"),cex.2)
 
 
 
 ## dans le toluène
+par(mai = rep(1,4), pin = c(10, 6))
 plot(cell_count$time,  cell_count$Tol_PPmoy_G+cell_count$Tol_PPmoy_R,type = "l",
-     cex.main=1.2,log="y",
-     cex.lab=1.2, main = "Total count in Toluene \n Experiment 1",
+     cex.main=2.5,cex.axis=1.3,cex.axis=1.3,log="y",
+     cex.lab=1.7, main = "Total count in Toluene \n Experiment 1",
      ylab = "Cell count", xlab = "Time[hours]", col = "red", ylim=c( 2950, 4028683330))
 ## points pour les relicats pp
 points(cell_count$time,  cell_count$Tol_PP1_G+cell_count$Tol_PP1_R,type = "p", col = "red")
@@ -787,7 +790,7 @@ points(cell_count$time,  cell_count$Tol_SC1_G+cell_count$Tol_SC1_R, type = "p", 
 points(cell_count$time,  cell_count$Tol_SC2_G+cell_count$Tol_SC2_R, type = "p", col = "green")
 points(cell_count$time,  cell_count$Tol_SC3_G+cell_count$Tol_SC3_R, type = "p", col = "green")
 # légende
-legend(x="topleft", legend = c("Tol SC alone", "Tol PP alone", "Tol PPSC"), fill=c("green", "red", "orange"),cex=1.2)
+legend(x="topleft", legend = c("Tol SC alone", "Tol PP alone", "Tol PPSC"), fill=c("green", "red", "orange"),cex=2)
 
 ##stat
 #AUC pour comptes totaux
