@@ -403,7 +403,7 @@ points(cell_count$time,cell_count$MixC_PPSC3_R, type="p", col="blue")
 
 #points(cell_count$time, cell_count$MixC_PPSCmoy_R + cell_count$MixC_PPSCmoy_G, type="o", col="brown")
 #points(cell_count$time, cell_count$Tol_PPSCmoy_R, type="o", col="gray")
-legend("topleft",cex=1,legend=c("PP alone in mixC","PP alone in Tol","PP in PP+SC in mixC","PP in PP+SC in Tol"),fill=c("black","red","blue","orange"))
+legend("topleft",cex=1,legend=c("PP alone in mixC","PP alone in Tol","PP in PPSC in mixC","PP in PPSC in Tol"),fill=c("black","red","blue","orange"))
 
 
 #estimer l'erreur des réplicats technique 
