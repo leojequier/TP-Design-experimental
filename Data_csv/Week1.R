@@ -810,3 +810,43 @@ tot_sc_w1_MixC_auc
 
 model_w1_tot = aov()
 
+#graphes AUC paper
+## graphes de l'anova SC semaine 1 seulement 4 valeurs
+par(mfrow = c(1,1))
+par(mai = c(2,1,1,1))
+AUC_col = rep(c("black", "blue", "red","orange"), each = 3)
+plot(rep(1:4, each = 3), log(week$AUC[c(1:3,7:9,16:18, 22:24)]),
+     cex.main=2.5,cex.axis=1.3, 
+     cex.lab=1.7,main = "AUC for each treatment of SC\nWeek 1",
+     xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4), col=AUC_col, ylim = range(log(week$AUC)))
+axis(1, cex=1.7,at = 1:4, labels = c("SC in MixC", "SC in MixC\n in presence of PP ","SC in Tol", "SC in tol\nin presence of PP" ), las = 2, hadj = T, font = 2, outer = F)
+
+plot(rep(1:4, each = 3), log(week$AUC[c(4:6,10:12,19:21, 25:27)]),
+     cex.main=2.5,cex.axis=1.3,
+     cex.lab=1.7,main = "AUC for each treatment of PP\nWeek 1",
+     xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4), col=AUC_col, ylim = range(log(week$AUC)))
+axis(1, cex=1.7,at = 1:4, labels = c("PP in MixC", "PP in MixC\n in presence of SC ","PP in Tol", "PP in tol\nin presence of SC" ), las = 2, hadj = T, font = 2, outer = F)
+
+plot(rep(1:4, each = 3), log(week$AUC[c(1:3,7:9,16:18, 22:24)+30]),
+     cex.main=2.5,cex.axis=1.3,
+     cex.lab=1.7,main = "AUC for each treatment of SC\nWeek 2",
+     xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4), col=AUC_col, ylim = range(log(week$AUC)))
+axis(1, cex=1.7,at = 1:4, labels = c("SC in MixC", "SC in MixC\n in presence of PV ","SC in Tol", "SC in tol\nin presence of PV" ), las = 2, hadj = T, font = 2, outer = F)
+
+plot(rep(1:4, each = 3), log(week$AUC[c(4:6,10:12,19:21, 25:27)+30]),
+     cex.main=2.5,cex.axis=1.3,
+     cex.lab=1.7,main = "AUC for each treatment of PV\nWeek 2",
+     xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4), col=AUC_col, ylim = range(log(week$AUC)))
+axis(1, cex=1.7,at = 1:4, labels = c("PV in MixC", "PV in MixC\n in presence of SC ","PV in Tol", "PV in tol\nin presence of SC" ), las = 2, hadj = T, font = 2, outer = F)
+
+
+
+
+#concentration de tol
+mvol = 0.8670 #g/cm cube
+vol = 100 #centimetre cube
+masse = mvol * vol
+masse
+MM = 92.1384
+nmol = MM/masse
+nmol
