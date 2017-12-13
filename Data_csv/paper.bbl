@@ -1,0 +1,414 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.8 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist[entry]{none/global/}
+    \entry{toluene}{online}{}
+      \name{author}{1}{}{%
+        {{hash=7089f5c87655462a974b8083f431d0d7}{%
+           family={Agency},
+           familyi={A\bibinitperiod},
+           given={Scottish\bibnamedelimb Environment\bibnamedelima Protection},
+           giveni={S\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{7089f5c87655462a974b8083f431d0d7}
+      \strng{fullhash}{7089f5c87655462a974b8083f431d0d7}
+      \strng{authornamehash}{7089f5c87655462a974b8083f431d0d7}
+      \strng{authorfullhash}{7089f5c87655462a974b8083f431d0d7}
+      \field{sortinit}{1}
+      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{11}
+      \field{title}{Pollutant fact sheet : Toluene}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \verb{url}
+      \verb http://apps.sepa.org.uk/spripa/Pages/SubstanceInformation.aspx?pid=89
+      \endverb
+    \endentry
+    \entry{Bioremediation}{article}{}
+      \name{author}{2}{}{%
+        {{hash=678b9d720afaef15b04125d480ab56de}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Bing},
+           giveni={B\bibinitperiod}}}%
+        {{hash=71c5495f27da5dadf79234f1d1e30a11}{%
+           family={Poh},
+           familyi={P\bibinitperiod},
+           given={Chit\bibnamedelima Laa},
+           giveni={C\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{6eac1a786c3344abed73b046990e364d}
+      \strng{fullhash}{6eac1a786c3344abed73b046990e364d}
+      \strng{authornamehash}{6eac1a786c3344abed73b046990e364d}
+      \strng{authorfullhash}{6eac1a786c3344abed73b046990e364d}
+      \field{sortinit}{2}
+      \field{sortinithash}{0aa614ace9f3a40ef5a67e7f7a184048}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proteomics}
+      \field{number}{1}
+      \field{title}{Insights into environmental bioremediation by microorganisms through functional genomics and proteomics}
+      \field{volume}{8}
+      \field{year}{2008}
+      \field{pages}{874\bibrangedash 881}
+      \range{pages}{8}
+    \endentry
+    \entry{pseudomonas_putida}{article}{}
+      \name{author}{4}{}{%
+        {{hash=9c41da0e98bd3db9687f35b08e1bb29c}{%
+           family={I.Rüegg},
+           familyi={I\bibinitperiod}}}%
+        {{hash=a6d6511d27d3211fd78cfcf3499c938b}{%
+           family={Hafner},
+           familyi={H\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=b1e51e6bd21877ca9eb0952edf95a55a}{%
+           family={Bucheli-Witschel},
+           familyi={B\bibinithyphendelim W\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=b231c1cd4f43d22692b0e39322f7808e}{%
+           family={Egli},
+           familyi={E\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{ddf61a993d31c9be4665f1f72149f515}
+      \strng{fullhash}{8f65c0dd196a55c62bfd9ecf02486f90}
+      \strng{authornamehash}{ddf61a993d31c9be4665f1f72149f515}
+      \strng{authorfullhash}{8f65c0dd196a55c62bfd9ecf02486f90}
+      \field{sortinit}{3}
+      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Eng. Life Sci}
+      \field{number}{7}
+      \field{title}{Dynamics of Benzene and Toluene Degradation in Pseudomonas putida F1 in the Presence of the Alternative Substrate Succinate}
+      \field{volume}{No. 4}
+      \field{year}{2007}
+      \field{pages}{331\bibrangedash 342}
+      \range{pages}{12}
+    \endentry
+    \entry{Pseudomonas_Veronii}{article}{}
+      \name{author}{35}{}{%
+        {{hash=de6bcf27073f2b908745261bb8481ad1}{%
+           family={Morales},
+           familyi={M\bibinitperiod},
+           given={Marian},
+           giveni={M\bibinitperiod}}}%
+        {{hash=7b76ae041d8057d9a490e60e5288840f}{%
+           family={Sentchilo},
+           familyi={S\bibinitperiod},
+           given={Vladimir},
+           giveni={V\bibinitperiod}}}%
+        {{hash=7d699c8a268f1b92a1792cb86d759277}{%
+           family={Bertelli},
+           familyi={B\bibinitperiod},
+           given={Claire},
+           giveni={C\bibinitperiod}}}%
+        {{hash=01d006cf462c322920f93eb17d42c883}{%
+           family={Komljenovic},
+           familyi={K\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b29aad2917f7907164ee6333d6145224}{%
+           family={Kryuchkova-Mostacci},
+           familyi={K\bibinithyphendelim M\bibinitperiod},
+           given={Nadezda},
+           giveni={N\bibinitperiod}}}%
+        {{hash=ff2844585fe8310f4d796194e7c3e14a}{%
+           family={Bourdilloud},
+           familyi={B\bibinitperiod},
+           given={Audrey},
+           giveni={A\bibinitperiod}}}%
+        {{hash=af6750fd6e23cb8f6c6a1213a21b6980}{%
+           family={Linke},
+           familyi={L\bibinitperiod},
+           given={Burkhard},
+           giveni={B\bibinitperiod}}}%
+        {{hash=554aae352cc018e150580c4e2dcfbf5d}{%
+           family={Goesmann},
+           familyi={G\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+        {{hash=4f2d67ce9feff65eeb9f210f7c1b7794}{%
+           family={Harshman},
+           familyi={H\bibinitperiod},
+           given={Keith},
+           giveni={K\bibinitperiod}}}%
+        {{hash=e0ece35d4d04dcb90cbdb5b57979c1fc}{%
+           family={Segers},
+           familyi={S\bibinitperiod},
+           given={Francisca},
+           giveni={F\bibinitperiod}}}%
+        {{hash=98338b4268e5d20a8ae4529ce16d2571}{%
+           family={Delapierre},
+           familyi={D\bibinitperiod},
+           given={Fabien},
+           giveni={F\bibinitperiod}}}%
+        {{hash=e4dc1f32e17986392a07bdd3e73ccef1}{%
+           family={Fiorucci},
+           familyi={F\bibinitperiod},
+           given={Damien},
+           giveni={D\bibinitperiod}}}%
+        {{hash=40f80ff87ed277eaca9a813b3e3c8d80}{%
+           family={Seppey},
+           familyi={S\bibinitperiod},
+           given={Mathieu},
+           giveni={M\bibinitperiod}}}%
+        {{hash=b22a935e3e3cc20615beaf8b3e71cdbe}{%
+           family={Trofimenco},
+           familyi={T\bibinitperiod},
+           given={Evgeniya},
+           giveni={E\bibinitperiod}}}%
+        {{hash=65a795bd939fa174905bd95deaf5dc42}{%
+           family={Berra},
+           familyi={B\bibinitperiod},
+           given={Pauline},
+           giveni={P\bibinitperiod}}}%
+        {{hash=be3c443fadef9c5ba96ddf95f14f7782}{%
+           family={Taher},
+           familyi={T\bibinitperiod},
+           given={Athimed\bibnamedelima El},
+           giveni={A\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=d0f4c56b07b82ea7ae84728905982fd5}{%
+           family={Loiseau},
+           familyi={L\bibinitperiod},
+           given={Chloé},
+           giveni={C\bibinitperiod}}}%
+        {{hash=5648065bbc9166dbdf5f9877d22ddbcc}{%
+           family={Roggero},
+           familyi={R\bibinitperiod},
+           given={Dejan},
+           giveni={D\bibinitperiod}}}%
+        {{hash=ab8dd7362f4df03a7013cb7375c199b5}{%
+           family={Sulfiotti},
+           familyi={S\bibinitperiod},
+           given={Madeleine},
+           giveni={M\bibinitperiod}}}%
+        {{hash=af0e2c40a02f564afb5a267282ec2d8c}{%
+           family={Etienne},
+           familyi={E\bibinitperiod},
+           given={Angela},
+           giveni={A\bibinitperiod}}}%
+        {{hash=2ebaf433226a6b540a2b2fb32428e536}{%
+           family={Buendia},
+           familyi={B\bibinitperiod},
+           given={Gustavo\bibnamedelima Ruiz},
+           giveni={G\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=3c5e4d2fa74acb45826ebcb88c762b4b}{%
+           family={Pillard},
+           familyi={P\bibinitperiod},
+           given={Loïc},
+           giveni={L\bibinitperiod}}}%
+        {{hash=bf383cabcfd4d7a084156310b579a97a}{%
+           family={Escoriza},
+           familyi={E\bibinitperiod},
+           given={Angelique},
+           giveni={A\bibinitperiod}}}%
+        {{hash=94ab1a5b7e3c3bd6bab75ab1234b9f8f}{%
+           family={Moritz},
+           familyi={M\bibinitperiod},
+           given={Roxane},
+           giveni={R\bibinitperiod}}}%
+        {{hash=fc31ec02403d30dee4607745470ea106}{%
+           family={Schneider},
+           familyi={S\bibinitperiod},
+           given={Cedric},
+           giveni={C\bibinitperiod}}}%
+        {{hash=0935a7c361163b58d75823e6eaffa321}{%
+           family={Alfonso},
+           familyi={A\bibinitperiod},
+           given={Esteban},
+           giveni={E\bibinitperiod}}}%
+        {{hash=190c15d545b0f55ca8f4a9d9de4efde7}{%
+           family={Jeddou},
+           familyi={J\bibinitperiod},
+           given={Fatma\bibnamedelima Ben},
+           giveni={F\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=d959f9f72d1837a5117590080b53d79f}{%
+           family={Selmoni},
+           familyi={S\bibinitperiod},
+           given={Oliver},
+           giveni={O\bibinitperiod}}}%
+        {{hash=01bea6430fee9d3b2d724503676086cf}{%
+           family={Resch},
+           familyi={R\bibinitperiod},
+           given={Gregory},
+           giveni={G\bibinitperiod}}}%
+        {{hash=0b40e28045e84f5ed082bb37cd4fc457}{%
+           family={Greub},
+           familyi={G\bibinitperiod},
+           given={Gilbert},
+           giveni={G\bibinitperiod}}}%
+        {{hash=df98af065f7b37da0c498f804f366fcf}{%
+           family={Emery},
+           familyi={E\bibinitperiod},
+           given={Olivier},
+           giveni={O\bibinitperiod}}}%
+        {{hash=1bf98fc167ae66d1f0e00cdfadb642e4}{%
+           family={Dubey},
+           familyi={D\bibinitperiod},
+           given={Manupriyam},
+           giveni={M\bibinitperiod}}}%
+        {{hash=802ca15634ac5889ab1fc60e88a3c341}{%
+           family={Pillonel},
+           familyi={P\bibinitperiod},
+           given={Trestan},
+           giveni={T\bibinitperiod}}}%
+        {{hash=750b861b4357e760ac86fa0267d5d498}{%
+           family={Robinson-Rechavi},
+           familyi={R\bibinithyphendelim R\bibinitperiod},
+           given={Marc},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a5db5e50881e0d543169037ff0794511}{%
+           family={Meer},
+           familyi={M\bibinitperiod},
+           given={Jan\bibnamedelima Roelof},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod},
+           prefix={van\bibnamedelima der},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+      }
+      \strng{namehash}{db129fb858a2471a0813f7cc7d0a7b72}
+      \strng{fullhash}{22374cedb6425b344874191de8aa835e}
+      \strng{authornamehash}{db129fb858a2471a0813f7cc7d0a7b72}
+      \strng{authorfullhash}{22374cedb6425b344874191de8aa835e}
+      \field{sortinit}{4}
+      \field{sortinithash}{d221becdd544034cf9082056cd6e6d2d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{PLOS ONE}
+      \field{number}{DOI:10.1371/journal.pone.0165850}
+      \field{title}{The Genome of the Toluene-Degrading Pseudomonas veronii Strain 1YdBTEX2 and Its Differential Gene Expression in Contaminated Sand.}
+      \field{year}{2016}
+      \field{pages}{1\bibrangedash 21}
+      \range{pages}{21}
+    \endentry
+    \entry{R}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=a902f7a1275f47f57554b7ea75ccd0bc}{%
+           family={{R Core Team}},
+           familyi={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Vienna, Austria}%
+      }
+      \list{organization}{1}{%
+        {R Foundation for Statistical Computing}%
+      }
+      \strng{namehash}{a902f7a1275f47f57554b7ea75ccd0bc}
+      \strng{fullhash}{a902f7a1275f47f57554b7ea75ccd0bc}
+      \strng{authornamehash}{a902f7a1275f47f57554b7ea75ccd0bc}
+      \strng{authorfullhash}{a902f7a1275f47f57554b7ea75ccd0bc}
+      \field{sortinit}{5}
+      \field{sortinithash}{c9df3c9fb8f555dd9201cedc5e343021}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{R: A Language and Environment for Statistical Computing}
+      \field{year}{2017}
+      \verb{url}
+      \verb https://www.R-project.org/
+      \endverb
+    \endentry
+    \entry{bouchez}{article}{}
+      \name{author}{2}{}{%
+        {{hash=d8f77576dbedbc41ef7174be3664a72b}{%
+           family={Bouchez},
+           familyi={B\bibinitperiod}}}%
+        {{hash=8c5b963ed4dc5d901f7a7ced7f41bf6a}{%
+           family={al.},
+           familyi={a\bibinitperiod}}}%
+      }
+      \strng{namehash}{5822bb2a0607787b4957ac5826ab4255}
+      \strng{fullhash}{5822bb2a0607787b4957ac5826ab4255}
+      \strng{authornamehash}{5822bb2a0607787b4957ac5826ab4255}
+      \strng{authorfullhash}{5822bb2a0607787b4957ac5826ab4255}
+      \field{sortinit}{6}
+      \field{sortinithash}{02bbed3ed82f61ae046619460488516d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{environmental biology}
+      \field{number}{2}
+      \field{title}{Ecological study of a bioaugmentation failure}
+      \field{volume}{2}
+      \field{year}{2000}
+      \field{pages}{179\bibrangedash 190}
+      \range{pages}{12}
+    \endentry
+    \entry{oldarticle}{article}{}
+      \name{author}{3}{}{%
+        {{hash=06a3bdcb80b3ff956142438922a2efc3}{%
+           family={R.M.Goldstein},
+           familyi={R\bibinitperiod}}}%
+        {{hash=35ce49dcf1b6290c15f6bfb705a3143a}{%
+           family={L.M.Mallory},
+           familyi={L\bibinitperiod}}}%
+        {{hash=67d1a935c81a8f4b29706b029ada073f}{%
+           family={M.Alexander},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{1aa6b7a1c9a962d2bbf95c9c2fd7405b}
+      \strng{fullhash}{1aa6b7a1c9a962d2bbf95c9c2fd7405b}
+      \strng{authornamehash}{1aa6b7a1c9a962d2bbf95c9c2fd7405b}
+      \strng{authorfullhash}{1aa6b7a1c9a962d2bbf95c9c2fd7405b}
+      \field{sortinit}{7}
+      \field{sortinithash}{6ac7fe70cdec8cba8f65694411ce2532}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Applied and Environmental Biology}
+      \field{number}{4}
+      \field{title}{Reasons for possible failure of inoculation to enhance biodegradation.}
+      \field{volume}{50}
+      \field{year}{1985}
+      \field{pages}{997\bibrangedash 983}
+      \range{pages}{-13}
+    \endentry
+    \entry{nodrawback}{article}{}
+      \name{author}{2}{}{%
+        {{hash=3ab6dd947e8d84bcc59a4377e7232a5b}{%
+           family={M.Cunliffe},
+           familyi={M\bibinitperiod}}}%
+        {{hash=8fc0c3dcec5a38f698fea24d3c465426}{%
+           family={M.A.Kertesz},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{d0509526fc886f4dcbd5a515c5016f76}
+      \strng{fullhash}{d0509526fc886f4dcbd5a515c5016f76}
+      \strng{authornamehash}{d0509526fc886f4dcbd5a515c5016f76}
+      \strng{authorfullhash}{d0509526fc886f4dcbd5a515c5016f76}
+      \field{sortinit}{8}
+      \field{sortinithash}{2f1b0e69e7617f99664f1cd00bb9603c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Environmental Pollution}
+      \field{number}{1}
+      \field{title}{Effect of Sphingobium yanoikuyae B1 inoculation on bacterial community dynamics and polycyclic aromatic hydrocarbon degradation in aged and freshly PAH-contaminated soils}
+      \field{volume}{144}
+      \field{year}{2006}
+      \field{pages}{228\bibrangedash 237}
+      \range{pages}{10}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+
