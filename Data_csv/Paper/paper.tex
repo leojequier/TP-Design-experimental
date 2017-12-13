@@ -242,28 +242,34 @@ Since \textit{Pseudomonas putida F1} and \textit{Pseudomonas veronii} 1YdBTEX2 w
 %\vspace{-0.5cm}	
 %\end{figure}
 
-
 \begin{figure}
-	\hspace{-0.3cm}
-	\begin{subfigure}{.25\textwidth}
-		\centering
+
+	\begin{minipage}{.48\linewidth}
+	%	\hspace{-0.3cm}
+	%	\begin{subfigure}{.25\textwidth}
+			\centering
+			
+			\includegraphics[width=1\linewidth]{t8_unstained_ppsc1.png}
+			\captionof{figure}{Data of unstained sample (unstained PPSC, replicate 1, timepoint 8). Horizontal axis : intensity of red fluorescence. Vertical axis : intensity of green fluorescence.}
+			\label{scatter1}
+			
+	%	\end{subfigure}%
+	%	\begin{subfigure}{.22\textwidth}
+	\end{minipage}\hspace{.2cm}
+	\begin{minipage}{.48\linewidth}
 		
-		\includegraphics[width=4.3cm]{t8_unstained_ppsc1.png}
-		\caption{}
-		\label{scatter1}
-		
-	\end{subfigure}%
-	\begin{subfigure}{.22\textwidth}
-		\centering
-		
-		\includegraphics[width=4.3cm]{t8_stained_ppsc1.png}
-		\caption{}
-		\label{scatter2}
-		
-	\end{subfigure}
-	\caption{Fig. \ref{scatter1}: Data of unstained sample (unstained PPSC, replicate 1, timepoint 8). Fig. \ref{scatter2}: Data of stained sample (stained PPSC, replicate 1, timepoint 8). Horizontal axis : intensity of red fluorescence. Vertical axis : intensity of green fluorescence.}
-	\label{scatterplot}
-\end{figure}	
+			\centering
+			
+			\includegraphics[width=1\linewidth]{t8_stained_ppsc1.png}
+			\captionof{figure}{Data of stained sample (stained PPSC, replicate 1, timepoint 8). Horizontal axis : intensity of red fluorescence. Vertical axis : intensity of green fluorescence.}
+			\label{scatter2}
+			
+	%	\end{subfigure}
+	%	\caption{Fig. \ref{scatter1}: Data of unstained sample (unstained PPSC, replicate 1, timepoint 8). Fig. \ref{scatter2}: Data of stained sample (stained PPSC, replicate 1, timepoint 8). Horizontal axis : intensity of red fluorescence. Vertical axis : intensity of green fluorescence.}
+	%	\label{scatterplot}
+	\end{minipage}
+	
+\end{figure}
 
 On Fig. \ref{scatter1} is a scatter plot of an unstained sample of PPSC. On the vertical axis is represented red fluorescence. The horizontal axis shows green fluorescence. A big black cluster and a red one above it can be observed. The black cluster is composed of SC cells and remaining particles. They show  low red and green fluorescence values. The PP cells express mCherry and therefore show red fluorescence, which causes an upwards shift on the plot, forming the red cluster above.
 
@@ -508,6 +514,7 @@ Our hypothesis is that some PP/PV cells died, but weren’t lysed. Their DNA bei
 \caption{Scatterplot of a stained PP sample(Fig. \ref{problemflow1}) besides a stained PPSC sample (Fig. \ref{problemflow2}). They look very similar. A lot of PP seem to have lost mCherry (red) fluorescence and have shifted downwards (Fig. \ref{problemflow1}) and look like the supposed SC cells in Fig. \ref{problemflow2}.  }
 \label{problemflow}
 \end{figure}	
+
 
 \subsection{Improvements}
 
