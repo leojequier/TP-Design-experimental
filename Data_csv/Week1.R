@@ -571,7 +571,8 @@ plot(rep(1:10, each = 3), log(week$AUC[1:30]),
      xlab = "", xaxt = "n", ylab = "log (AUC)", col = AUC_col_pseudo, pch=c(1,3,4))
 axis(1, cex=1.7,at = 1:10, labels = unique(eti[1:30]), las = 2, hadj = T, font = 2, outer = F,pch = c(1,3,4))
 
-## graphes seulement 4 valeurs
+
+## graphes seulement 4 valeurs week 2
 par(mai = c(2,1,1,1))
 AUC_col = rep(c("black", "blue", "red","orange"), each = 3)
 plot(rep(1:4, each = 3), log(week$AUC[c(4:6,10:12,19:21, 25:27)]),
@@ -611,13 +612,21 @@ TukeyHSD(modelw1_PP)
 # t.test(week1$AUC[week1$names3=="Tol_PP"], week1$AUC[week1$names3=="Tol_PPSC_PP"])
 #   
 
+#GRAPH AUC WEEK 1
+par(mai = c(2,1,1,1))
+plot(rep(1:10, each = 3), log(week$AUC[1:30]),
+     cex.main=2.5,cex.axis=1.3, ylim = c(15.5, 25),
+     cex.lab=1.7,main = "Area under the curve according to the treatment\n Week 1",
+     xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4))
+axis(1, cex.axis=1.4,at = 1:10, labels = unique(eti[1:30]), las = 2, hadj = T, font = 2, outer = F)
 
+#GRAPH AUC WEEK 2
 #----------------week2
 #graphes week 2 SC
-par(mai = rep(1,4), pin = c(10, 6))
+par(mai = c(2,1,1,1))
 plot(rep(1:10, each = 3), log(week$AUC[31:60]),
      main = "Area under the curve according to the treatment\n Week 2",
-     cex.main=2.5,cex.axis=1.3,
+     cex.main=2.5,cex.axis=1.3, ylim = c(15.5, 25),
      cex.lab=1.7, xlab = "", xaxt = "n", ylab = "log (AUC)", pch = c(1,3,4))
 axis(1, cex.axis=1.4,at = 1:10, labels = unique(eti[31:60]), las = 2, hadj = T, font = 2, outer = F)
 

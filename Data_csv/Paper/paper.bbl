@@ -304,6 +304,32 @@
       \field{pages}{1\bibrangedash 21}
       \range{pages}{21}
     \endentry
+    \entry{R}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=a902f7a1275f47f57554b7ea75ccd0bc}{%
+           family={{R Core Team}},
+           familyi={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Vienna, Austria}%
+      }
+      \list{organization}{1}{%
+        {R Foundation for Statistical Computing}%
+      }
+      \strng{namehash}{a902f7a1275f47f57554b7ea75ccd0bc}
+      \strng{fullhash}{a902f7a1275f47f57554b7ea75ccd0bc}
+      \strng{authornamehash}{a902f7a1275f47f57554b7ea75ccd0bc}
+      \strng{authorfullhash}{a902f7a1275f47f57554b7ea75ccd0bc}
+      \field{sortinit}{5}
+      \field{sortinithash}{c9df3c9fb8f555dd9201cedc5e343021}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{R: A Language and Environment for Statistical Computing}
+      \field{year}{2017}
+      \verb{url}
+      \verb https://www.R-project.org/
+      \endverb
+    \endentry
     \entry{bouchez}{article}{}
       \name{author}{2}{}{%
         {{hash=d8f77576dbedbc41ef7174be3664a72b}{%
@@ -317,8 +343,8 @@
       \strng{fullhash}{5822bb2a0607787b4957ac5826ab4255}
       \strng{authornamehash}{5822bb2a0607787b4957ac5826ab4255}
       \strng{authorfullhash}{5822bb2a0607787b4957ac5826ab4255}
-      \field{sortinit}{5}
-      \field{sortinithash}{c9df3c9fb8f555dd9201cedc5e343021}
+      \field{sortinit}{6}
+      \field{sortinithash}{02bbed3ed82f61ae046619460488516d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{environmental biology}
@@ -345,8 +371,8 @@
       \strng{fullhash}{1aa6b7a1c9a962d2bbf95c9c2fd7405b}
       \strng{authornamehash}{1aa6b7a1c9a962d2bbf95c9c2fd7405b}
       \strng{authorfullhash}{1aa6b7a1c9a962d2bbf95c9c2fd7405b}
-      \field{sortinit}{6}
-      \field{sortinithash}{02bbed3ed82f61ae046619460488516d}
+      \field{sortinit}{7}
+      \field{sortinithash}{6ac7fe70cdec8cba8f65694411ce2532}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Applied and Environmental Biology}
@@ -370,8 +396,8 @@
       \strng{fullhash}{d0509526fc886f4dcbd5a515c5016f76}
       \strng{authornamehash}{d0509526fc886f4dcbd5a515c5016f76}
       \strng{authorfullhash}{d0509526fc886f4dcbd5a515c5016f76}
-      \field{sortinit}{7}
-      \field{sortinithash}{6ac7fe70cdec8cba8f65694411ce2532}
+      \field{sortinit}{8}
+      \field{sortinithash}{2f1b0e69e7617f99664f1cd00bb9603c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Environmental Pollution}
