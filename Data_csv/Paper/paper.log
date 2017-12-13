@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.8.8)  12 DEC 2017 17:08
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.8.8)  13 DEC 2017 14:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1380,60 +1380,60 @@ Underfull \hbox (badness 10000) in paragraph at lines 278--284
 
  []
 
+File: totcount_mixC1.PNG Graphic file (type bmp)
+<totcount_mixC1.PNG>
 
-Underfull \hbox (badness 6252) in paragraph at lines 286--294
+Overfull \hbox (5.69044pt too wide) in paragraph at lines 303--304
+ [][] 
+ []
+
+File: totcount_tol1.PNG Graphic file (type bmp)
+<totcount_tol1.PNG>
+
+Overfull \hbox (5.69044pt too wide) in paragraph at lines 309--310
+ [][] 
+ []
+
+
+Overfull \hbox (7.22688pt too wide) in paragraph at lines 301--313
+[]$[]$
+ []
+
+
+Overfull \hbox (7.22688pt too wide) in paragraph at lines 301--313
+[]$ 
+ []
+
+
+Underfull \hbox (badness 6252) in paragraph at lines 320--328
  \TU/Cambria(0)/m/it/10 2) Sand Community: [][][] \TU/Cambria(0)/m/n/10 The gro
 wth of the sand
  []
 
 
-Underfull \hbox (badness 2310) in paragraph at lines 286--294
+Underfull \hbox (badness 2310) in paragraph at lines 320--328
 \TU/Cambria(0)/m/n/10 interaction between the explicative variables (F =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 286--294
+Underfull \hbox (badness 10000) in paragraph at lines 320--328
 
  []
 
+File: totcount_mixC2.PNG Graphic file (type bmp)
+<totcount_mixC2.PNG>
 
-LaTeX Warning: Command \textendash invalid in math mode on input line 302.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 302.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 302.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 305--306
-
+Overfull \hbox (5.69044pt too wide) in paragraph at lines 338--339
+ [][] 
  []
 
+File: totcount_tol2.PNG Graphic file (type bmp)
+<totcount_tol2.PNG>
 
-Underfull \hbox (badness 6252) in paragraph at lines 307--310
- \TU/Cambria(0)/m/it/10 2) Sand Community: [][][] \TU/Cambria(0)/m/n/10 The gro
-wth of the sand
+Overfull \hbox (5.69044pt too wide) in paragraph at lines 344--345
+ [][] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 307--310
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 312--316
-
- []
-
-File: problem_barplot.PNG Graphic file (type bmp)
-<problem_barplot.PNG>
-File: problemw1.PNG Graphic file (type bmp)
-<problemw1.PNG>
-File: problemw2.PNG Graphic file (type bmp)
-<problemw2.PNG>
 
 Overfull \hbox (7.22688pt too wide) in paragraph at lines 336--348
 []$[]$
@@ -1444,49 +1444,102 @@ Overfull \hbox (7.22688pt too wide) in paragraph at lines 336--348
 []$ 
  []
 
+
+LaTeX Warning: Command \textendash invalid in math mode on input line 353.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 353.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 353.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 356--357
+
+ []
+
 [3]
+Underfull \hbox (badness 6252) in paragraph at lines 359--362
+ \TU/Cambria(0)/m/it/10 2) Sand Community: [][][] \TU/Cambria(0)/m/n/10 The gro
+wth of the sand
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 359--362
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 365--369
+
+ []
+
+File: problemw1.PNG Graphic file (type bmp)
+<problemw1.PNG>
+
+Overfull \hbox (5.69044pt too wide) in paragraph at lines 396--397
+ [][] 
+ []
+
+File: problemw2.PNG Graphic file (type bmp)
+<problemw2.PNG>
+
+Overfull \hbox (5.69044pt too wide) in paragraph at lines 402--403
+ [][] 
+ []
+
+
+Overfull \hbox (7.22688pt too wide) in paragraph at lines 394--406
+[]$[]$
+ []
+
+
+Overfull \hbox (7.22688pt too wide) in paragraph at lines 394--406
+[]$ 
+ []
+
 File: antibodytag.jpg Graphic file (type bmp)
 <antibodytag.jpg>
-
-Underfull \hbox (badness 1655) in paragraph at lines 406--406
+[4]
+Underfull \hbox (badness 1655) in paragraph at lines 463--463
 []\TU/Cambria(0)/m/n/10 Scottish Environment Protection Agency. \TU/Cambria(0)/
 m/it/10 Pollu-
  []
 
 
-Underfull \hbox (badness 1430) in paragraph at lines 406--406
+Underfull \hbox (badness 1430) in paragraph at lines 463--463
 [] [] [][][][] [] [][][][] [] [][][] [] [][] [] [][][][][][] [] [][][][][] []
  []
 
 
-Underfull \hbox (badness 1997) in paragraph at lines 406--406
+Underfull \hbox (badness 1997) in paragraph at lines 463--463
 \TU/Cambria(0)/m/n/10 vironmental bioremediation by microorganisms
  []
 
-[4]
-Underfull \hbox (badness 4120) in paragraph at lines 406--406
+
+Underfull \hbox (badness 4120) in paragraph at lines 463--463
 []\TU/Cambria(0)/m/n/10 Marian Morales et al. “The Genome of the
  []
 
 
-Underfull \hbox (badness 2644) in paragraph at lines 406--406
+Underfull \hbox (badness 2644) in paragraph at lines 463--463
 \TU/Cambria(0)/m/n/10 Toluene-Degrading Pseudomonas veronii Strain
  []
 
 
-Underfull \hbox (badness 5667) in paragraph at lines 406--406
+Underfull \hbox (badness 5667) in paragraph at lines 463--463
 \TU/Cambria(0)/m/n/10 1YdBTEX2 and Its Differential Gene Expres-
  []
 
 
-Underfull \hbox (badness 6110) in paragraph at lines 406--406
+Underfull \hbox (badness 6110) in paragraph at lines 463--463
 \TU/Cambria(0)/m/n/10 sion in Contaminated Sand.” In: \TU/Cambria(0)/m/it/10 PL
 OS ONE
  []
 
-[5
-
-]
+[5]
 File: flasks.jpg Graphic file (type bmp)
 <flasks.jpg>
  [6
@@ -1528,66 +1581,66 @@ File: flasks.jpg Graphic file (type bmp)
 File: totcount_mixC1.png Graphic file (type bmp)
 <totcount_mixC1.png>
 
-Overfull \hbox (22.7912pt too wide) in paragraph at lines 432--434
+Overfull \hbox (22.7912pt too wide) in paragraph at lines 489--491
  [][] 
  []
 
 File: totcount_tol1.png Graphic file (type bmp)
 <totcount_tol1.png>
 
-Overfull \hbox (22.7912pt too wide) in paragraph at lines 442--444
+Overfull \hbox (22.7912pt too wide) in paragraph at lines 499--501
  [][] 
  []
 
 File: SCgrowth1.png Graphic file (type bmp)
 <SCgrowth1.png>
 
-Overfull \hbox (22.7912pt too wide) in paragraph at lines 452--454
+Overfull \hbox (22.7912pt too wide) in paragraph at lines 509--511
  [][] 
  []
 
 File: PPgrowth1.png Graphic file (type bmp)
 <PPgrowth1.png>
 
-Overfull \hbox (22.7912pt too wide) in paragraph at lines 461--463
+Overfull \hbox (22.7912pt too wide) in paragraph at lines 518--520
  [][] 
  []
 
 File: totcount_mixC2.png Graphic file (type bmp)
 <totcount_mixC2.png>
 
-Overfull \hbox (22.7912pt too wide) in paragraph at lines 470--472
+Overfull \hbox (22.7912pt too wide) in paragraph at lines 527--529
  [][] 
  []
 
 File: totcount_tol2.png Graphic file (type bmp)
 <totcount_tol2.png>
 
-Overfull \hbox (22.7912pt too wide) in paragraph at lines 479--481
+Overfull \hbox (22.7912pt too wide) in paragraph at lines 536--538
  [][] 
  []
 
 File: SCgrowth2.png Graphic file (type bmp)
 <SCgrowth2.png>
 
-Overfull \hbox (22.7912pt too wide) in paragraph at lines 488--490
+Overfull \hbox (22.7912pt too wide) in paragraph at lines 545--547
  [][] 
  []
 
 File: PVgrowth2.png Graphic file (type bmp)
 <PVgrowth2.png>
 
-Overfull \hbox (22.7912pt too wide) in paragraph at lines 497--499
+Overfull \hbox (22.7912pt too wide) in paragraph at lines 554--556
  [][] 
  []
 
 
-Overfull \hbox (26.63031pt too wide) in paragraph at lines 429--503
+Overfull \hbox (26.63031pt too wide) in paragraph at lines 486--560
 []$$[]$$[]$$[]$ 
  []
 
 
-Overfull \hbox (26.63031pt too wide) in paragraph at lines 429--503
+Overfull \hbox (26.63031pt too wide) in paragraph at lines 486--560
 []$$[]$$[]$$[]$  
  []
 
@@ -1613,11 +1666,11 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 510.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 510.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 567.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 567.
 (./paper.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 510.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 510.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 567.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 567.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1625,15 +1678,15 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package logreq Info: Writing requests to 'paper.run.xml'.
 \openout1 = `paper.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 510.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 567.
  ) 
 Here is how much of TeX's memory you used:
- 27878 strings out of 492998
- 521586 string characters out of 6137852
- 1089740 words of memory out of 5000000
- 31567 multiletter control sequences out of 15000+600000
+ 27901 strings out of 492998
+ 522162 string characters out of 6137852
+ 1087621 words of memory out of 5000000
+ 31591 multiletter control sequences out of 15000+600000
  532907 words of font info for 103 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 45i,9n,67p,10397b,4483s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 45i,9n,67p,10397b,4481s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on paper.pdf (7 pages).

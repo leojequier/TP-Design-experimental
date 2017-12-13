@@ -304,6 +304,84 @@
       \field{pages}{1\bibrangedash 21}
       \range{pages}{21}
     \endentry
+    \entry{bouchez}{article}{}
+      \name{author}{2}{}{%
+        {{hash=d8f77576dbedbc41ef7174be3664a72b}{%
+           family={Bouchez},
+           familyi={B\bibinitperiod}}}%
+        {{hash=8c5b963ed4dc5d901f7a7ced7f41bf6a}{%
+           family={al.},
+           familyi={a\bibinitperiod}}}%
+      }
+      \strng{namehash}{5822bb2a0607787b4957ac5826ab4255}
+      \strng{fullhash}{5822bb2a0607787b4957ac5826ab4255}
+      \strng{authornamehash}{5822bb2a0607787b4957ac5826ab4255}
+      \strng{authorfullhash}{5822bb2a0607787b4957ac5826ab4255}
+      \field{sortinit}{5}
+      \field{sortinithash}{c9df3c9fb8f555dd9201cedc5e343021}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{environmental biology}
+      \field{number}{2}
+      \field{title}{Ecological study of a bioaugmentation failure}
+      \field{volume}{2}
+      \field{year}{2000}
+      \field{pages}{179\bibrangedash 190}
+      \range{pages}{12}
+    \endentry
+    \entry{oldarticle}{article}{}
+      \name{author}{3}{}{%
+        {{hash=06a3bdcb80b3ff956142438922a2efc3}{%
+           family={R.M.Goldstein},
+           familyi={R\bibinitperiod}}}%
+        {{hash=35ce49dcf1b6290c15f6bfb705a3143a}{%
+           family={L.M.Mallory},
+           familyi={L\bibinitperiod}}}%
+        {{hash=67d1a935c81a8f4b29706b029ada073f}{%
+           family={M.Alexander},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{1aa6b7a1c9a962d2bbf95c9c2fd7405b}
+      \strng{fullhash}{1aa6b7a1c9a962d2bbf95c9c2fd7405b}
+      \strng{authornamehash}{1aa6b7a1c9a962d2bbf95c9c2fd7405b}
+      \strng{authorfullhash}{1aa6b7a1c9a962d2bbf95c9c2fd7405b}
+      \field{sortinit}{6}
+      \field{sortinithash}{02bbed3ed82f61ae046619460488516d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Applied and Environmental Biology}
+      \field{number}{4}
+      \field{title}{Reasons for possible failure of inoculation to enhance biodegradation.}
+      \field{volume}{50}
+      \field{year}{1985}
+      \field{pages}{997\bibrangedash 983}
+      \range{pages}{-13}
+    \endentry
+    \entry{nodrawback}{article}{}
+      \name{author}{2}{}{%
+        {{hash=3ab6dd947e8d84bcc59a4377e7232a5b}{%
+           family={M.Cunliffe},
+           familyi={M\bibinitperiod}}}%
+        {{hash=8fc0c3dcec5a38f698fea24d3c465426}{%
+           family={M.A.Kertesz},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{d0509526fc886f4dcbd5a515c5016f76}
+      \strng{fullhash}{d0509526fc886f4dcbd5a515c5016f76}
+      \strng{authornamehash}{d0509526fc886f4dcbd5a515c5016f76}
+      \strng{authorfullhash}{d0509526fc886f4dcbd5a515c5016f76}
+      \field{sortinit}{7}
+      \field{sortinithash}{6ac7fe70cdec8cba8f65694411ce2532}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Environmental Pollution}
+      \field{number}{1}
+      \field{title}{Effect of Sphingobium yanoikuyae B1 inoculation on bacterial community dynamics and polycyclic aromatic hydrocarbon degradation in aged and freshly PAH-contaminated soils}
+      \field{volume}{144}
+      \field{year}{2006}
+      \field{pages}{228\bibrangedash 237}
+      \range{pages}{10}
+    \endentry
   \endsortlist
 \endrefsection
 \endinput

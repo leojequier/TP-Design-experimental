@@ -276,11 +276,45 @@ Response variable:
 
 
 First, we were interested in the total cell count of each treatment. We looked at the sum of both fluorescence counts.
-In mixed carbon (figure \ref{totcountmixC1}), PP and PPSC curves look very similar. SC seems to grow slower but catch up with the other culture after 40 hours.
-In toluene (figure \ref{totcounttol1}), PP and PPSC look again very similar. This time however, 
+In mixed carbon (figure \ref{totcountmixC1text}), PP and PPSC curves look very similar. SC seems to grow slower but catch up with the other culture after 40 hours.
+In toluene (figure \ref{totcounttol1text}), PP and PPSC look again very similar. This time however, 
 we don’t observe any growth in the SC culture.
 This experiment shows no signs that growing PP and SC together influences the growth of the overall population or the total cell count after 48 hours, in a mixed carbon or toluene media(compared to the PP alone control).
 Since the species are marked with different fluorescence, we can also compare the growth of each population separately in each treatment.\newline
+
+%\begin{figure}[H]
+%	\centering
+%	
+%	\includegraphics[width=9.3cm]{totcount_mixC1.PNG}
+%	\caption{ADD CAPTION}
+%	\label{totcountmixC1text}
+%\end{figure}
+%\begin{figure}[H]
+%	\centering
+%	
+%	\includegraphics[width=9.3cm]{totcount_tol1.PNG}
+%	\caption{ADD CAPTION}
+%	\label{totcounttol1text}
+%\end{figure}
+\begin{figure}[H]
+	
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=9cm]{totcount_mixC1.PNG}
+		\caption{}
+		\label{totcountmixC1text}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=9cm]{totcount_tol1.PNG}
+		\caption{}
+		\label{totcounttol1text}
+	\end{subfigure}
+	\caption{\ref{totcountmixC1text}: Total count (SYTO-9 Count + mCherry count) of SC, PP and PPSC over time in a mixed carbon medium during the first week. \ref{totcounttol1text} : Total count (SYTO-9 count + mCherry count) of SC, PP and PPSC over time in a toluene only medium during the first week.}
+	\label{totcount1}
+	
+	
+\end{figure}
 
 \subsubsection{Sand Community}
 The growth of the sand community in each treatment for the first experiment is represented in figure \ref{SCgrowth1}.
@@ -297,16 +331,35 @@ There is an important difference between the media (F =907.30, df = 1, $p = 2.36
 In contrast, our data shows no significant difference due to the presence or absence of the sand community and no interaction.
 We conclude that SC has no effect on the growth of PP and that PP grows better in the Toluene medium than in the mix carbon medium. It is certainly due the greater amount of carbon in the toluene media.
 
-
+\begin{figure}[H]
+	
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=9cm]{totcount_mixC2.PNG}
+		\caption{}
+		\label{totcountmixC2text}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=9cm]{totcount_tol2.PNG}
+		\caption{}		
+		\label{totcounttol2text}
+	\end{subfigure}
+	\caption{\ref{totcountmixC2text}: Total count (SYTO-9 Count + mCherry count) of SC, PV and PVSC over time in a mixed carbon medium during the second week. \ref{totcounttol2text} : Total count (SYTO-9 count + mCherry count) of SC, PV and PVSC over time in a toluene only medium during the second week.}
+	\label{totcount2}
+	
+\end{figure}
 
 \subsection{Week 2 $\textendash$ SC, PV, PV+SC}
 
 \subsubsection{Total cell count comparison}
-The total cell count over time is represented on figure \ref{totcountmixC2} and \ref{totcounttol2}, the conclusion is the same as in the first experiment. It shows no signs that growing PV and SC together influences the growth of the overall population nor the total cell count after 48 hours, in a mixed carbon or toluene media.\newline
+The total cell count over time is represented on figure \ref{totcountmixC2text} and \ref{totcounttol2text}, the conclusion is the same as in the first experiment. It shows no signs that growing PV and SC together influences the growth of the overall population nor the total cell count after 48 hours, in a mixed carbon or toluene media.\newline
+
 \subsubsection{Sand Community}
 The growth of the sand community in each treatment for the second experiment is represented in figure \ref{SCgrowth2}.
 In contrast with the first experiment, SC was able to grow in toluene. It is not surprising, as a community extracted from sand is typically composed of many kinds of bacteria. It is likely that at least one of them can degrade a given carbon source. But it shows that the sand community we extracted behaved differently from one experiment to another and thus cannot be considered similar. Therefore, we won't be able to compare the results from the two experiments. 
 The anova on the area under the curve shows no significant effect of any explicative variables, but we believe the results could be different if we continued the culture for a day because we can see on the growth graph that SC alone is still in exponential growth at 48 hours in toluene. It is plausible that with a few more timepoints, SC would grow higher alone than in presence of PV.\newline
+
 
 \subsubsection{Pseudomonas veronii}
 The growth of the PV in each treatment is represented in figure \ref{PVgrowth2}.
@@ -315,45 +368,49 @@ One can also notice that PP grew slightly less in presence of SC, in both media 
 \newline
 
 \section{DISCUSSION}
-While these results are promising, further analysis and plotting were carried out to ensure reliability of our results. 
-The first drawback of the design we noticed is the proportion of SC cells compared to PP or PV  (fig. \ref{barplot}). We see that the proportion of SC is low compared to the overall population ($\cong 5\%$). This would be a problem in a bioremediation context because the original community was almost completely replaced.
+%While these results are promising, further analysis and plotting were carried out to ensure reliability of our results. 
+%The first drawback of the design we noticed is the proportion of SC cells compared to PP or PV  (fig. \ref{barplot}). We see that the proportion of SC is low compared to the overall population ($\cong 5\%$). This would be a problem in a bioremediation context because the original community was almost completely replaced.
 
 
-\begin{figure}
-	\centering
-	 
-	\includegraphics[width=8cm]{problem_barplot.PNG}
-	\caption{Proportion of red and green fluorescence in the PV + SC and PP + SC cultures in toluene.}
-	\label{barplot}
-	  
-\end{figure}
-To solve this problem, we would like to analyse this further by trying different culture conditions. Firstly, we would try to have a mixed carbon with toluene substrate. Secondly, it would be great to vary toluene and carbon concentration. Third and final, we would like our conditions to be as close to reality as possible. For example growing the cells in sand would certainly affect their growth and fitness.
+%\begin{figure}
+%	\centering
+%	 
+%	\includegraphics[width=8cm]{problem_barplot.PNG}
+%	\caption{Proportion of red and green fluorescence in the PV + SC and PP + SC cultures in toluene.}
+%	\label{barplot}
+%	  
+%\end{figure}
+%To solve this problem, we would like to analyse this further by trying different culture conditions. Firstly, we would try to have a mixed carbon with toluene substrate. Secondly, it would be great to vary toluene and carbon concentration. Third and final, we would like our conditions to be as close to reality as possible. For example growing the cells in sand would certainly affect their growth and fitness.
 
-We noticed the second drawback when we plotted the count of SYTO-9 stained cells over time, for PP alone and PP with SC in toluene in figure \ref {problemsyto}. 
+Firstly, in other bioaugmentation experiments, one of the main challenge is the survival of the inoculated strain in presence of a bacterial community \cite{bouchez} \cite{oldarticle}, particularly in absence of pollutant \cite{nodrawback}.
+
+In our experiments, PP and PV were able to grow in both media in presence or absence of SC. This led us to think that PP and PV would be interesting candidates for bioaugemtation, especially as they have no problem growing with SC in mixed carbon. In addition, it seems that PP has a good growth in presence of SC, while PV has low growth in presence of SC. It makes PP a better candidate than PV for bioaugmentation.
+Further experiments would be required to know if this is also true in a sand medium and especially over a longer period of time. Similar experiments could also be performed on different native communities. Also, it would be interesting to vary the concentration of toluene in these experiments. 
+
+We noticed a slight drawback when we plotted the count of SYTO-9 stained cells over time, for PP alone and PP with SC in toluene in figure \ref {problemsyto}. 
 
 \begin{figure}
 	 
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[width=8cm]{problemw1.PNG}
+		\includegraphics[width=9cm]{problemw1.PNG}
 		
 		\label{problemw1}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[width=8cm]{problemw2.PNG}
+		\includegraphics[width=9cm]{problemw2.PNG}
 		
 		\label{problemw2}
 	\end{subfigure}
 \caption{Top figure : Total count of green stained cells in toluene for PP alone and PP with SC during week 1. it showed no significant differences. Bottom figure : Total count of green stained cells in toluene for PV alone and PV with SC during week 2. it showed no significant differences.}
 \label{problemsyto}
   
-
 \end{figure}
-The green cells count in PP alone is surprising, knowing that SYTO-9 was used to identify SC cells, while \textit{Pseudomonas putida} was tagged with mCherry, which emits a red fluorescence.  
 
-Our hypothesis is that some \textit{Pseudomonas putida} cells died and it stopped their metabolic activities, disabling the mCherry fluorescence. However, if the cells do not lyse, their DNA is still nicely protected and can be stained by SYTO-9. 
-The similarity between the two lines hints us that what we considered as SC cells in PP + SC represented in reality mostly dead \textit{Pseudomonas putida} cells and not SC cells. 
+The cell count in the Syto-9 only gate (green frame in fig. \ref{scatterplot}) in PP or PV alone is surprising, knowing that both PP and PV were tagged with mCherry, which emits a red fluorescence and causes an upwards shift in the fluorescence graph (as explained in fig. \ref{scatterplot}). 
+
+Our hypothesis is that some Pseudomonas putida cells died and stopped their metabolic activities, reducing mCherry fluorescence, causing them to appear in the SYTO-9 only gate. However, if the cells do not lyse, their DNA is still nicely protected and can be stained by SYTO-9. The similarity between the two lines hints us that what we considered as SC cells in PPSC are actually mostly dead \textit{Pseudomonas putida} cells and not SC cells.
 
 \subsection{Improvements}
 
