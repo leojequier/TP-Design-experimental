@@ -474,7 +474,7 @@ write.table(ess2, file = "ess2bis.csv", sep = ",")
 #Plot des comptes de SC
 par(mfrow = c(1,1))
 par(mai = rep(1,4), pin = c(10, 6))
-plot(cell_count2$time, cell_count2$MixC_SCmoy_G ,cex.main=2.5,
+plot(cell_count2$time, cell_count2$MixC_SCmoy_G ,cex.main=2.5, cex.axis=1.3,
      cex.lab=1.7,lwd=1.3,log = "y",xlim=c(0,48), ylim=c(2950,4028683330),
      type = "l",main="SC growth\n Week 2 ",xlab= "Time [Hours]", ylab="SC count")
 points(rep(cell_count2$time, times = 3), c(cell_count2$MixC_SC1_G, cell_count2$MixC_SC2_G,
@@ -495,7 +495,7 @@ points(rep(cell_count2$time, times = 3), c(cell_count2$Tol_PVSC1_G, cell_count2$
 #points(cell_count$time, Tol_all_in_pv, type = "o", col = "pink" ,lwd=1.2)#
 
 #
-legend("topleft",legend=c("SC alone in mixC","SC alone in Tol","SC in PVSC in mixC","SC in PVSC in Tol"),fill=c("black","red","blue","orange"),cex=2.2)
+legend("topleft",legend=c("SC alone in mixC","SC alone in Tol","SC in PVSC in mixC","SC in PVSC in Tol"),fill=c("black","red","blue","orange"),cex=1.7)
 #legend("bottomright", legend=c("PVSC total in mixC","PVSC total in Tol","total count in pv alone"), fill=c("brown", "gray", "pink"))
 
 
@@ -509,7 +509,7 @@ legend("topleft",legend=c("SC alone in mixC","SC alone in Tol","SC in PVSC in mi
 par(mai = rep(1,4), pin = c(10, 6))
 plot(cell_count2$time, cell_count2$MixC_PVmoy_R ,log="y",lwd=1.3,
      xlim=c(0,48),ylim=c(2950,4028683330), type="l",main="PV growth\n Week 2",xlab= "Time [Hours]", ylab="PV count", cex.main=2.5,
-     cex.lab=1.7)
+     cex.lab=1.7, cex.axis=1.3)
 
 
 points(rep(cell_count2$time,times = 3),c(cell_count2$MixC_PV1_R,cell_count2$MixC_PV2_R,cell_count2$MixC_PV3_R), col = "black")
@@ -521,7 +521,7 @@ points(cell_count2$time,cell_count2$Tol_PVSCmoy_R, type="l", col="orange",lwd=1.
 points(rep(cell_count2$time,times = 3),c(cell_count2$Tol_PVSC1_R,cell_count2$Tol_PVSC2_R,cell_count2$Tol_PVSC3_R), col = "orange")
 #points(cell_count$time, cell_count$MixC_PVSC_SCmean + cell_count$MixC_PVSC_PVmean, type="o", col="brown",lwd=1.3)
 #points(cell_count$time, cell_count$Tol_PVSC_SCmean + cell_count$Tol_PVSC_PVmean, type="o", col="gray",lwd=1.3)
-legend("topleft",legend=c("PV alone in mixC","PV alone in Tol","PV in PV+SC in mixC","PV in PV+SC in Tol"),fill=c("black","red","blue","orange"),cex=2.2)
+legend("topleft",legend=c("PV alone in mixC","PV alone in Tol","PV in PV+SC in mixC","PV in PV+SC in Tol"),fill=c("black","red","blue","orange"),cex=1.7)
 
 par(mfrow=c(1,1))
 
@@ -530,7 +530,7 @@ par(mfrow=c(1,1))
 ## -------------comptes totaux 
 par(mai = rep(1,4), pin = c(10, 6))
 plot(cell_count2$time, cell_count2$Tol_PVmoy_G+cell_count2$Tol_PVmoy_R,type = "l", cex.main=2.5,
-     cex.lab=1.7,log = "y", main = "Total count in Toluene \n Week 2",
+     cex.lab=1.7, cex.axis=1.3,log = "y", main = "Total count in Toluene \n Week 2",
      ylab = "Cell count", xlab = "Time[hours]", col = "green",ylim=c(2950,4028683330))
 points(cell_count2$time,cell_count2$Tol_PV1_G+cell_count2$Tol_PV1_R, type = "p", col = "green")
 points(cell_count2$time,cell_count2$Tol_PV2_G+cell_count2$Tol_PV2_R, type = "p", col = "green")
@@ -545,12 +545,12 @@ points(cell_count2$time,  cell_count2$Tol_SC1_G + cell_count2$Tol_SC1_R, type = 
 points(cell_count2$time,  cell_count2$Tol_SC2_G + cell_count2$Tol_SC2_R, type = "p", col = "red")
 points(cell_count2$time,  cell_count2$Tol_SC3_G + cell_count2$Tol_SC3_R, type = "p", col = "red")
 
-legend(x="topleft", legend = c("Tol SC alone", "Tol PV alone", "Tol PVSC"), fill=c("red", "green", "orange"), cex=2.2)
+legend(x="topleft", legend = c("Tol SC alone", "Tol PV alone", "Tol PVSC"), fill=c("red", "green", "orange"), cex=1.7)
 
 
 par(mai = rep(1,4), pin = c(10, 6))
 plot(cell_count2$time, cell_count2$MixC_PVSCmoy_G+ cell_count2$MixC_PVSCmoy_R,type = "l",
-     cex.lab=1.7, cex.main=2.5,
+     cex.lab=1.7, cex.main=2.5, cex.axis=1.3,
      log = "y", main = "Total count in Mixed Carbon \n Week 2",
      ylab = "Cell count", xlab = "Time[hours]", col = "orange",ylim=c(2950,4028683330))
 points(cell_count2$time, cell_count2$MixC_PVSC1_G+ cell_count2$MixC_PVSC1_R,type = "p", col = "orange")
@@ -564,7 +564,7 @@ points(cell_count2$time,  cell_count2$MixC_SCmoy_G+ cell_count2$MixC_SCmoy_R, ty
 points(cell_count2$time,  cell_count2$MixC_SC1_G+ cell_count2$MixC_SC1_R, type = "p", col = "red")
 points(cell_count2$time,  cell_count2$MixC_SC2_G+ cell_count2$MixC_SC2_R, type = "p", col = "red")
 points(cell_count2$time,  cell_count2$MixC_SC3_G+ cell_count2$MixC_SC3_R, type = "p", col = "red")
-legend(x="topleft",legend=c("MixC SC alone", "MixC PV alone", "MixC PVSC"), fill=c( "red", "green", "orange"), cex=2.2)
+legend(x="topleft",legend=c("MixC SC alone", "MixC PV alone", "MixC PVSC"), fill=c( "red", "green", "orange"), cex=1.7)
 
 
 
@@ -574,8 +574,8 @@ legend(x="topleft",legend=c("MixC SC alone", "MixC PV alone", "MixC PVSC"), fill
 
 par(mai = rep(1,4), pin = c(10, 6))
 plot(cell_count2$time, cell_count2$Tol_PVmoy_G,ylim= c(2033.5,1136783330),type = "l",
-     cex.lab=1.7, cex.main=2.5,
-     log = "y", main = "Cell count in SYTO-9 gate \n Week 2",
+     cex.lab=1.7, cex.main=2.5,cex.axis=1.3,
+     log = "y", main = "Cell count in green fluorescence gate - Toluene \n Week 2",
      ylab = "Total count", xlab = "Time[hours]", col = "red" )
 points(cell_count2$time, cell_count2$Tol_PVSCmoy_G, type = "l", col = "blue")
 points(cell_count2$time, cell_count2$Tol_PVSC1_G,type = "p", col = "blue")
@@ -586,6 +586,6 @@ points(cell_count2$time, cell_count2$Tol_PV1_G,type = "p", col = "red")
 points(cell_count2$time, cell_count2$Tol_PV2_G,type = "p", col = "red")
 points(cell_count2$time, cell_count2$Tol_PV3_G,type = "p", col = "red")
 
-legend(x = "bottomright",legend = c("PV alone in Tol", "PVSC in Tol"), fill = c("red", "blue"), cex=2.2)
+legend(x = "bottomright",legend = c("Green (only) fluorescence in PV", "Green (only) fluorescence in PVSC"), fill = c("red", "blue"), cex=1.7)
 
 t.test(cell_count2$Tol_PVmoy_G,cell_count2$Tol_PVSCmoy_G ) #p= 0.3704
