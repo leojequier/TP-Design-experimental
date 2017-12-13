@@ -524,7 +524,7 @@ plot(rep(1:4, each = 3), log(week$AUC[c(1:3,7:9,16:18, 22:24)]),
      cex.main=2.5,cex.axis=1.3,
      cex.lab=1.7,main = "Area under the curve according to the treatment\nSC Experiment 1",
      xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4), col=AUC_col, ylim = range(log(week$AUC)))
-axis(1, cex=1.7,at = 1:4, labels = c("SC in MixC", "SC in MixC\n in presence of PP ","SC in Tol", "SC in tol\nin presence of PP" ), las = 2, hadj = T, font = 2, outer = F)
+axis(1, cex=1.7,at = 1:4, labels = c("SC in MixC", "SC in MixC in \npresence of PP ","SC in Tol", "SC in tol\nin presence of PP" ), las = 2, hadj = T, font = 2, outer = F)
 #effect de pp in tol
 abline(h = mean(log(week$AUC[c(22:24)])))
 abline(h = mean(log(week$AUC[c(16:18)])))
@@ -579,7 +579,7 @@ plot(rep(1:4, each = 3), log(week$AUC[c(4:6,10:12,19:21, 25:27)]),
      cex.main=2.5,cex.axis=1.3,
      cex.lab=1.7,main = "Area under the curve according to the treatment\n PP Experiment 1",
      xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4), col=AUC_col, ylim = range(log(week$AUC)))
-axis(1, cex=1.7,at = 1:4, labels = c("PP in MixC", "PP in MixC\n in presence of SC ","PP in Tol", "PP in tol\nin presence of SC" ), las = 2, hadj = T, font = 2, outer = F)
+axis(1, cex=1.7,at = 1:4, labels = c("PP in MixC", "PP in MixC in \npresence of SC ","PP in Tol", "PP in tol\nin presence of SC" ), las = 2, hadj = T, font = 2, outer = F)
 
 
 ## test week 1 PP 
@@ -638,7 +638,7 @@ plot(rep(1:4, each = 3), log(week$AUC[c(1:3,7:9,16:18, 22:24)+30]),
      cex.main=2.5,cex.axis=1.3,
      cex.lab=1.7,main = "Area under the curve according to the treatment\nSC Experiment 2",
      xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4), col=AUC_col, ylim = range(log(week$AUC)))
-axis(1, cex=1.7,at = 1:4, labels = c("SC in MixC", "SC in MixC\n in presence of PV ","SC in Tol", "SC in tol\nin presence of PV" ), las = 2, hadj = T, font = 2, outer = F)
+axis(1, cex=1.7,at = 1:4, labels = c("SC in MixC", "SC in MixC in \npresence of PV ","SC in Tol", "SC in tol\nin presence of PV" ), las = 2, hadj = T, font = 2, outer = F)
 abline(h = mean(log(week$AUC[c(16:18, 22:24)])))
 
 
@@ -677,7 +677,7 @@ plot(rep(1:4, each = 3), log(week$AUC[c(4:6,10:12,19:21, 25:27)+30]),
      cex.main=2.5,cex.axis=1.3,
      cex.lab=1.7,main = "Area under the curve according to the treatment\n PV Experiment 2",
      xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4), col=AUC_col, ylim = range(log(week$AUC)))
-axis(1, cex=1.7,at = 1:4, labels = c("PV in MixC", "PV in MixC\n in presence of SC ","PV in Tol", "PV in tol\nin presence of SC" ), las = 2, hadj = T, font = 2, outer = F)
+axis(1, cex=1.7,at = 1:4, labels = c("PV in MixC", "PV in MixC in \npresence of SC ","PV in Tol", "PV in tol\nin presence of SC" ), las = 2, hadj = T, font = 2, outer = F)
 
 
 ## test week 2 PV
@@ -822,31 +822,31 @@ model_w1_tot = aov()
 #graphes AUC paper
 ## graphes de l'anova SC semaine 1 seulement 4 valeurs
 par(mfrow = c(1,1))
-par(mai = c(2,1,1,1))
+par(mai = c(2.5,1,1,1))
 AUC_col = rep(c("black", "blue", "red","orange"), each = 3)
 plot(rep(1:4, each = 3), log(week$AUC[c(1:3,7:9,16:18, 22:24)]),
-     cex.main=2.5,cex.axis=1.3, 
+     cex.main=2.5,cex.axis=1.5,  
      cex.lab=1.7,main = "AUC for each treatment of SC\nWeek 1",
      xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4), col=AUC_col, ylim = range(log(week$AUC)))
-axis(1, cex=1.7,at = 1:4, labels = c("SC in MixC", "SC in MixC\n in presence of PP ","SC in Tol", "SC in tol\nin presence of PP" ), las = 2, hadj = T, font = 2, outer = F)
+axis(1, cex.axis=1.7,at = 1:4, labels = c("SC in MixC", "SC in MixC in \npresence of PP ","SC in toluene", "SC in toluene in\n presence of PP" ), las = 2, hadj = T, font = 1, outer = F)
 
 plot(rep(1:4, each = 3), log(week$AUC[c(4:6,10:12,19:21, 25:27)]),
-     cex.main=2.5,cex.axis=1.3,
+     cex.main=2.5,cex.axis=1.5,
      cex.lab=1.7,main = "AUC for each treatment of PP\nWeek 1",
      xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4), col=AUC_col, ylim = range(log(week$AUC)))
-axis(1, cex=1.7,at = 1:4, labels = c("PP in MixC", "PP in MixC\n in presence of SC ","PP in Tol", "PP in tol\nin presence of SC" ), las = 2, hadj = T, font = 2, outer = F)
+axis(1, cex.axis=1.7,at = 1:4, labels = c("PP in MixC", "PP in MixC in \npresence of SC ","PP in toluene", "PP in toluene in\n presence of SC" ), las = 2, hadj = T, font = 1, outer = F)
 
 plot(rep(1:4, each = 3), log(week$AUC[c(1:3,7:9,16:18, 22:24)+30]),
-     cex.main=2.5,cex.axis=1.3,
+     cex.main=2.5,cex.axis=1.5,
      cex.lab=1.7,main = "AUC for each treatment of SC\nWeek 2",
      xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4), col=AUC_col, ylim = range(log(week$AUC)))
-axis(1, cex=1.7,at = 1:4, labels = c("SC in MixC", "SC in MixC\n in presence of PV ","SC in Tol", "SC in tol\nin presence of PV" ), las = 2, hadj = T, font = 2, outer = F)
+axis(1, cex.axis=1.7,at = 1:4, labels = c("SC in MixC", "SC in MixC in \npresence of PV ","SC in toluene", "SC in toluene in\n presence of PV" ), las = 2, hadj = T, font = 1, outer = F)
 
 plot(rep(1:4, each = 3), log(week$AUC[c(4:6,10:12,19:21, 25:27)+30]),
-     cex.main=2.5,cex.axis=1.3,
+     cex.main=2.5,cex.axis=1.5,
      cex.lab=1.7,main = "AUC for each treatment of PV\nWeek 2",
      xlab = "", xaxt = "n", ylab = "log (AUC)", pch=c(1,3,4), col=AUC_col, ylim = range(log(week$AUC)))
-axis(1, cex=1.7,at = 1:4, labels = c("PV in MixC", "PV in MixC\n in presence of SC ","PV in Tol", "PV in tol\nin presence of SC" ), las = 2, hadj = T, font = 2, outer = F)
+axis(1, cex.axis=1.7,at = 1:4, labels = c("PV in MixC", "PV in MixC in \npresence of SC ","PV in toluene", "PV in toluene in\n presence of SC" ), las = 2, hadj = T, font = 1, outer = F)
 
 
 

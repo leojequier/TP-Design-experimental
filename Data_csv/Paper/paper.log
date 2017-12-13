@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.8.8)  13 DEC 2017 15:49
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.8.8)  13 DEC 2017 17:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1308,9 +1308,9 @@ Package biblatex Info: Reference segment=0 on input line 141.
 File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 
 )
-Overfull \hbox (4.8274pt too wide) in paragraph at lines 179--179
+Overfull \hbox (2.28833pt too wide) in paragraph at lines 179--179
 [][][][]\TU/Cambria(0)/m/n/8 Flow cytometer, Novocyte : https://www.aceabio.com
-/products/nov-
+/products/nov
  []
 
 
@@ -1331,8 +1331,23 @@ Overfull \hbox (12.91733pt too wide) in paragraph at lines 207--208
 
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 227--227
+[][][][]\TU/Cambria(0)/m/n/8 Oil used with volatile solvent to decrease their
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--227
+\TU/Cambria(0)/m/n/8 toxicity by slowing it’s release in the medium. Ref.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--227
+\TU/Cambria(0)/m/n/8 https://www.sigmaaldrich.com/catalog/product/aldrich/12851
+1?lang
+ []
+
 LaTeX Font Info:    Try loading font information for U+msa on input line 227.
- (c:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
+(c:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 227.
@@ -1407,9 +1422,17 @@ Overfull \hbox (7.22688pt too wide) in paragraph at lines 323--335
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Underfull \hbox (badness 6252) in paragraph at lines 342--350
  \TU/Cambria(0)/m/it/10 2) Sand Community: [][][] \TU/Cambria(0)/m/n/10 The gro
 wth of the sand
+ []
+
+
+Underfull \hbox (badness 3068) in paragraph at lines 342--350
+\TU/Cambria(0)/m/n/10 community in each treatment for the first week
  []
 
 
@@ -1451,6 +1474,7 @@ Overfull \hbox (7.22688pt too wide) in paragraph at lines 358--370
 []$ 
  []
 
+[3]
 
 LaTeX Warning: Command \textendash invalid in math mode on input line 375.
 
@@ -1472,7 +1496,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 378--379
 
  []
 
-[3]
+
 Underfull \hbox (badness 6252) in paragraph at lines 381--384
  \TU/Cambria(0)/m/it/10 2) Sand Community: [][][] \TU/Cambria(0)/m/n/10 The gro
 wth of the sand
@@ -1521,10 +1545,9 @@ Overfull \hbox (12.1772pt too wide) in paragraph at lines 449--450
  [][] 
  []
 
-[4]
 File: antibodytag.jpg Graphic file (type bmp)
 <antibodytag.jpg>
-
+[4]
 Underfull \hbox (badness 1655) in paragraph at lines 505--505
 []\TU/Cambria(0)/m/n/10 Scottish Environment Protection Agency. \TU/Cambria(0)/
 m/it/10 Pollu-
@@ -1561,7 +1584,9 @@ Underfull \hbox (badness 6110) in paragraph at lines 505--505
 OS ONE
  []
 
-[5]
+[5] [6
+
+]
 File: flasks.jpg Graphic file (type bmp)
 <flasks.jpg>
 File: aucw1.PNG Graphic file (type bmp)
@@ -1591,7 +1616,7 @@ Overfull \hbox (7.22688pt too wide) in paragraph at lines 517--532
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6
+ [7
 
 ]
 *geometry* verbose mode - [ newgeometry ] result:
@@ -1697,7 +1722,7 @@ Overfull \hbox (1101.12352pt too wide) has occurred while \output is active
 [] []|[] []
  []
 
-[7
+[8
 
 
 
@@ -1731,10 +1756,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 627.
 Here is how much of TeX's memory you used:
  27939 strings out of 492998
  522725 string characters out of 6137852
- 1088274 words of memory out of 5000000
+ 1090313 words of memory out of 5000000
  31624 multiletter control sequences out of 15000+600000
  532907 words of font info for 103 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  45i,9n,67p,10397b,4482s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on paper.pdf (7 pages).
+Output written on paper.pdf (8 pages).
