@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.8.8)  13 DEC 2017 21:00
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.8.8)  14 DEC 2017 11:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1304,6 +1304,11 @@ Package biblatex Info: Reference segment=0 on input line 141.
 . <->"Cambria/BI/OT:script=latn;language=DFLT;+sups;+smcp;mapping=tex-text;"
 .................................................
 
+Underfull \hbox (badness 1701) in paragraph at lines 156--156
+\TU/Cambria(0)/m/n/8 Gamma Hydroxy butyric acid, D-cellobiose, alpha-D-Lactose,
+ Pu-
+ []
+
 (c:/texlive/2017/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 
@@ -1311,12 +1316,6 @@ File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 Overfull \hbox (2.28833pt too wide) in paragraph at lines 179--179
 [][][][]\TU/Cambria(0)/m/n/8 Flow cytometer, Novocyte : https://www.aceabio.com
 /products/nov
- []
-
-
-Underfull \hbox (badness 1701) in paragraph at lines 199--199
-\TU/Cambria(0)/m/n/8 Gamma Hydroxy butyric acid, D-cellobiose, alpha-D-Lactose,
- Pu-
  []
 
 File: erlenmeyer.PNG Graphic file (type bmp)
@@ -1375,6 +1374,9 @@ Underfull \hbox (badness 4024) in paragraph at lines 264--264
  []
 
 
+LaTeX Warning: Reference `aucpvw2' on page 2 undefined on input line 288.
+
+
 Underfull \hbox (badness 1603) in paragraph at lines 287--292
 \TU/Cambria(0)/m/n/10 We represented graphically the logarithm of these
  []
@@ -1392,9 +1394,9 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 301.
 
 
-Underfull \hbox (badness 3679) in paragraph at lines 305--311
+Underfull \hbox (badness 7256) in paragraph at lines 305--311
  \TU/Cambria(0)/m/it/10 1) Total cell count comparison: [][][] \TU/Cambria(0)/m
-/n/10 First, we were
+/n/10 First, we are
  []
 
 
@@ -1535,53 +1537,50 @@ Overfull \hbox (12.91733pt too wide) in paragraph at lines 486--487
 
 LaTeX Warning: Reference `scatterplot' on page 5 undefined on input line 495.
 
-
-LaTeX Warning: Reference `problemsyto' on page 5 undefined on input line 495.
-
 File: PP3T5.png Graphic file (type bmp)
 <PP3T5.png>
 File: PPSC1T5.png Graphic file (type bmp)
 <PPSC1T5.png>
 
-Overfull \hbox (12.1772pt too wide) in paragraph at lines 510--511
+Overfull \hbox (12.1772pt too wide) in paragraph at lines 511--512
  [][] 
  []
 
 File: antibodytag.jpg Graphic file (type bmp)
 <antibodytag.jpg>
 [5]
-Underfull \hbox (badness 1655) in paragraph at lines 567--567
+Underfull \hbox (badness 1655) in paragraph at lines 568--568
 []\TU/Cambria(0)/m/n/10 Scottish Environment Protection Agency. \TU/Cambria(0)/
 m/it/10 Pollu-
  []
 
 
-Underfull \hbox (badness 1430) in paragraph at lines 567--567
+Underfull \hbox (badness 1430) in paragraph at lines 568--568
 [] [] [][][][] [] [][][][] [] [][][] [] [][] [] [][][][][][] [] [][][][][] []
  []
 
 
-Underfull \hbox (badness 1997) in paragraph at lines 567--567
+Underfull \hbox (badness 1997) in paragraph at lines 568--568
 \TU/Cambria(0)/m/n/10 vironmental bioremediation by microorganisms
  []
 
 
-Underfull \hbox (badness 4120) in paragraph at lines 567--567
+Underfull \hbox (badness 4120) in paragraph at lines 568--568
 []\TU/Cambria(0)/m/n/10 Marian Morales et al. “The Genome of the
  []
 
 
-Underfull \hbox (badness 2644) in paragraph at lines 567--567
+Underfull \hbox (badness 2644) in paragraph at lines 568--568
 \TU/Cambria(0)/m/n/10 Toluene-Degrading Pseudomonas veronii Strain
  []
 
 
-Underfull \hbox (badness 5667) in paragraph at lines 567--567
+Underfull \hbox (badness 5667) in paragraph at lines 568--568
 \TU/Cambria(0)/m/n/10 1YdBTEX2 and Its Differential Gene Expres-
  []
 
 
-Underfull \hbox (badness 6110) in paragraph at lines 567--567
+Underfull \hbox (badness 6110) in paragraph at lines 568--568
 \TU/Cambria(0)/m/n/10 sion in Contaminated Sand.” In: \TU/Cambria(0)/m/it/10 PL
 OS ONE
  []
@@ -1630,66 +1629,66 @@ File: flasks.jpg Graphic file (type bmp)
 File: totcount_mixC1.png Graphic file (type bmp)
 <totcount_mixC1.png>
 
-Overfull \hbox (22.7912pt too wide) in paragraph at lines 593--595
+Overfull \hbox (22.7912pt too wide) in paragraph at lines 594--596
  [][] 
  []
 
 File: totcount_tol1.png Graphic file (type bmp)
 <totcount_tol1.png>
 
-Overfull \hbox (22.7912pt too wide) in paragraph at lines 603--605
+Overfull \hbox (22.7912pt too wide) in paragraph at lines 604--606
  [][] 
  []
 
 File: SCgrowth1.png Graphic file (type bmp)
 <SCgrowth1.png>
 
-Overfull \hbox (22.7912pt too wide) in paragraph at lines 613--615
+Overfull \hbox (22.7912pt too wide) in paragraph at lines 614--616
  [][] 
  []
 
 File: PPgrowth1.png Graphic file (type bmp)
 <PPgrowth1.png>
 
-Overfull \hbox (22.7912pt too wide) in paragraph at lines 622--624
+Overfull \hbox (22.7912pt too wide) in paragraph at lines 623--625
  [][] 
  []
 
 File: totcount_mixC2.png Graphic file (type bmp)
 <totcount_mixC2.png>
 
-Overfull \hbox (22.7912pt too wide) in paragraph at lines 631--633
+Overfull \hbox (22.7912pt too wide) in paragraph at lines 632--634
  [][] 
  []
 
 File: totcount_tol2.png Graphic file (type bmp)
 <totcount_tol2.png>
 
-Overfull \hbox (22.7912pt too wide) in paragraph at lines 640--642
+Overfull \hbox (22.7912pt too wide) in paragraph at lines 641--643
  [][] 
  []
 
 File: SCgrowth2.png Graphic file (type bmp)
 <SCgrowth2.png>
 
-Overfull \hbox (22.7912pt too wide) in paragraph at lines 649--651
+Overfull \hbox (22.7912pt too wide) in paragraph at lines 650--652
  [][] 
  []
 
 File: PVgrowth2.png Graphic file (type bmp)
 <PVgrowth2.png>
 
-Overfull \hbox (22.7912pt too wide) in paragraph at lines 658--660
+Overfull \hbox (22.7912pt too wide) in paragraph at lines 659--661
  [][] 
  []
 
 
-Overfull \hbox (26.63031pt too wide) in paragraph at lines 590--664
+Overfull \hbox (26.63031pt too wide) in paragraph at lines 591--665
 []$$[]$$[]$$[]$ 
  []
 
 
-Overfull \hbox (26.63031pt too wide) in paragraph at lines 590--664
+Overfull \hbox (26.63031pt too wide) in paragraph at lines 591--665
 []$$[]$$[]$$[]$  
  []
 
@@ -1715,11 +1714,11 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 671.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 671.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 672.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 672.
 (./paper.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 671.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 671.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 672.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 672.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1730,15 +1729,15 @@ LaTeX Warning: There were undefined references.
 Package logreq Info: Writing requests to 'paper.run.xml'.
 \openout1 = `paper.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 671.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 672.
  ) 
 Here is how much of TeX's memory you used:
  27937 strings out of 492998
- 522669 string characters out of 6137852
- 1088906 words of memory out of 5000000
+ 522659 string characters out of 6137852
+ 1089266 words of memory out of 5000000
  31620 multiletter control sequences out of 15000+600000
  532907 words of font info for 103 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 45i,9n,67p,10397b,4482s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 45i,9n,68p,10397b,4482s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on paper.pdf (8 pages).
